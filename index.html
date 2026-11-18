@@ -732,6 +732,23 @@ svg.dumb{width:100%;max-width:640px;display:block}
 @keyframes cfall{to{transform:translateY(110vh) rotate(720deg)}}
 body.present .bpop b{font-size:clamp(70px,14vh,170px)}
 
+/* 반짝 문장 */
+.gembox{background:linear-gradient(180deg,#fffbea,#fff)!important;border-color:#f1d27a!important}
+.gemsub{font-weight:600;color:#8a6d00;font-size:13px}
+.gems{display:flex;flex-direction:column;gap:10px;margin:6px 0 8px}
+.gem{display:flex;gap:8px;align-items:flex-start}
+.gemi{font-size:22px;line-height:1.6}
+.gemb{flex:1;min-width:0}
+.gemb .fld:first-child{font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:17px}
+.gemto{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px dashed #e6d38f}
+.gemgrp{border:1px solid #e3e8f0;border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.gemgrp>b{display:block;margin-bottom:6px}
+.gemrow{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px solid #f0f2f6;cursor:pointer}
+.gemrow input{margin-top:4px;width:18px;height:18px;flex:none}
+.gemrow q{display:block;font-size:15.5px;font-weight:700;quotes:'“' '”'}
+.gemrow small{color:#6b7787}
+.hwsrc{font-size:14px;color:#8a6d00;margin:-2px 0 8px;font-weight:600}
+
 </style>
 <script>
 /* =====================================================================
@@ -740,12 +757,12 @@ body.present .bpop b{font-size:clamp(70px,14vh,170px)}
    비워 두면(apiKey가 없으면) 이 기기(브라우저)에만 저장되는 모드로 열려요.
    ===================================================================== */
 window.FIREBASE_CONFIG = {
- apiKey: "AIzaSyB0tD4Hh_L_XQbIgg0jsYJWZHlVGbRksIc",
-  authDomain: "digilearn-tools.firebaseapp.com",
-  projectId: "digilearn-tools",
-  storageBucket: "digilearn-tools.firebasestorage.app",
-  messagingSenderId: "620653717503",
-  appId: "1:620653717503:web:1db72cd89d6e7655aae9ca"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 /* ▲▲▲ 여기까지 ▲▲▲ */
 </script>
@@ -4170,14 +4187,90 @@ tool({
   }
 });
 
+// ---------- 반짝 문장 (이야기 지도 ↔ 바른 글씨 쓰기) ----------
+function cleanGem(t) { return String(t || '').replace(/\s+/g, ' ').trim().replace(/^["“”'‘’「『]+|["“”'‘’」』]+$/g, '').trim().slice(0, 120); }
+function gemSource(g) { return (g.book ? '『' + g.book + '』' : '책 속') + (g.page ? ' ' + g.page + '쪽' : '') + (g.char ? ' · ' + g.char + '의 말' : '') + (g.who ? ' · ' + g.who + ' 고름' : ''); }
+// 선생님이 저장한 이야기 지도들과 학생 제출물에서 반짝 문장을 모아요.
+function gatherGems(B, cb) {
+  var done = false, un = null;
+  un = B.listActivities('storymap', function (acts) {
+    if (done) return; done = true; setTimeout(function () { if (un) un(); }, 0);
+    acts = acts.slice().sort(function (a, b) { return (b.updated || 0) - (a.updated || 0); });
+    Promise.all(acts.map(function (a) {
+      return new Promise(function (res) {
+        var got = false, u2 = null, items = [];
+        var d = a.data || {}, book = str(d.title, 60).replace(/\n/g, ' ').trim();
+        arr(d.gems).forEach(function (g) { var t = cleanGem(g && g.t); if (t) items.push({ t: t, book: book, page: str(g.page, 10), char: str(g.who, 20), who: '선생님' }); });
+        u2 = B.entries(a.id, {}, function (list) {
+          if (got) return; got = true; setTimeout(function () { if (u2) u2(); }, 0);
+          list.filter(function (e) { return e.kind === 'submit'; }).forEach(function (e) {
+            var sd = e.data || {}, bk = str(sd.title, 60).replace(/\n/g, ' ').trim() || book;
+            arr(sd.gems).forEach(function (g) { var t = cleanGem(g && g.t); if (t) items.push({ t: t, book: bk, page: str(g.page, 10), char: str(g.who, 20), who: e.name || '익명' }); });
+          });
+          res({ act: a, items: items });
+        });
+        setTimeout(function () { if (!got) { got = true; res({ act: a, items: items }); } }, 4000);
+      });
+    })).then(function (groups) { cb(groups.filter(function (g) { return g.items.length; })); });
+  });
+}
+// 반짝 문장 고르기 창 → 고른 것들을 onPick([{t, src}])로 넘겨요.
+function gemPicker(title, groups, btnLabel, onPick) {
+  var md = modal(title), boxes = [];
+  if (!groups.length) { md.box.append(h('div', { class: 'empty-note' }, '아직 모인 반짝 문장이 없어요. 이야기 지도에서 학생들이 ‘반짝 문장’을 써서 제출하면 여기에 모여요.')); return; }
+  md.box.append(h('p', { class: 'hint' }, '바른 글씨 쓰기로 보낼 문장을 골라요. 같은 문장은 한 번만 들어가요.'),
+    h('div', { class: 'row', style: { marginBottom: '8px' } },
+      h('button', { class: 'btn sm', onclick: function () { boxes.forEach(function (b) { b.cb.checked = true; }); } }, '모두 고르기'),
+      h('button', { class: 'btn sm', onclick: function () { boxes.forEach(function (b) { b.cb.checked = false; }); } }, '모두 빼기')));
+  var seen = {};
+  groups.forEach(function (g) {
+    var wrap = h('div', { class: 'gemgrp' }, h('b', {}, '🗺️ ' + (g.act ? (g.act.title || '이야기 지도') : g.title)));
+    g.items.forEach(function (it) {
+      var dup = seen[it.t]; seen[it.t] = 1;
+      var cb = h('input', { type: 'checkbox' }); cb.checked = !dup;
+      boxes.push({ cb: cb, it: it });
+      wrap.append(h('label', { class: 'gemrow' }, cb, h('span', {}, h('q', {}, it.t), h('small', {}, gemSource(it)))));
+    });
+    md.box.append(wrap);
+  });
+  md.box.append(h('div', { class: 'row', style: { justifyContent: 'flex-end', marginTop: '10px' } }, h('button', { class: 'btn pri', onclick: function () {
+    var out = [], s2 = {};
+    boxes.forEach(function (b) { if (b.cb.checked && !s2[b.it.t]) { s2[b.it.t] = 1; out.push({ t: b.it.t, src: gemSource(b.it) }); } });
+    if (!out.length) { toast('문장을 하나 이상 골라 주세요'); return; }
+    md.close(); onPick(out);
+  } }, btnLabel)));
+}
+
 // ---------- 이야기 지도 ----------
 tool({
   key: 'storymap', name: '이야기 지도', icon: '🗺️', group: 'think', kind: 'ind',
-  desc: '읽은 이야기의 인물, 배경, 사건의 흐름을 한눈에 정리해요.',
+  desc: '읽은 이야기의 인물, 배경, 사건의 흐름을 한눈에 정리하고, 마음에 남은 ‘반짝 문장’을 골라 바른 글씨 쓰기로 이어 가요.',
+  prepare: function (d) { d.gems = []; return d; },   // 선생님의 반짝 문장은 학생 화면에 미리 채우지 않아요
+  summary: function (subs) {
+    return sumTable(['이름', '제목', '✨ 반짝 문장'], subs.map(function (s) {
+      var d = s.data || {}; return [s.name || '익명', str(d.title, 40) || '—', arr(d.gems).map(function (g) { return cleanGem(g && g.t); }).filter(Boolean).map(function (t) { return '“' + t + '”'; }).join('  ') || '—'];
+    }));
+  },
   build: function (el, ctx) {
-    var F = {};
+    var F = {}, subs = [];
     function f(k, ph, rows) { F[k] = ta('', ph, rows || 2); return F[k]; }
     function box(label, field, cls) { return h('div', { class: 'box ' + (cls || '') }, h('b', {}, label), field); }
+    // 반짝 문장 (최대 3개)
+    var gemRows = h('div', { class: 'gems' }), gems = [];
+    function addGem(g, focus) {
+      if (gems.length >= 3) { ctx.toast('반짝 문장은 3개까지 적을 수 있어요'); return; }
+      g = g || {};
+      var t = ta('', '책 속에서 마음에 남은 문장을 그대로 옮겨 적어요', 2), pg = inp('', '쪽'), who = inp('', '누가 한 말? (선택)'), why = ta('', '이 문장을 고른 까닭', 1);
+      setTa(t, g.t); pg.value = str(g.page, 10); who.value = str(g.who, 20); setTa(why, g.why);
+      pg.style.flex = '0 0 80px'; pg.style.width = '80px'; pg.inputMode = 'numeric';
+      var row = h('div', { class: 'gem' }, h('span', { class: 'gemi' }, '✨'), h('div', { class: 'gemb' }, t,
+        h('div', { class: 'row', style: { marginTop: '6px', flexWrap: 'nowrap' } }, pg, who, h('button', { class: 'btn sm e', title: '이 문장 빼기', onclick: function () { gems.splice(gems.indexOf(o), 1); row.remove(); paintGemBtn(); ctx.dirty(); } }, '빼기')), why));
+      var o = { row: row, t: t, pg: pg, who: who, why: why };
+      gems.push(o); gemRows.append(row); paintGemBtn(); if (focus) setTimeout(function () { t.focus(); }, 0);
+    }
+    var addGemBtn = h('button', { class: 'btn sm e', onclick: function () { addGem({}, true); ctx.dirty(); } }, '＋ 반짝 문장 더하기');
+    function paintGemBtn() { addGemBtn.hidden = gems.length >= 3; }
+    var toHw = h('button', { class: 'btn sm pri', onclick: sendToHandwriting }, '✍️ 반짝 문장으로 바른 글씨 쓰기 만들기');
     el.append(h('div', { class: 'story' },
       box('제목', f('title', '이야기 제목', 1)), box('지은이', f('author', '지은이', 1)),
       box('인물', f('chars', '나오는 인물과 성격', 3), 'full'),
@@ -4186,14 +4279,42 @@ tool({
         h('div', {}, h('small', {}, '처음'), f('beg', '처음에 일어난 일', 4)), h('div', { class: 'arrow' }, '➜'),
         h('div', {}, h('small', {}, '가운데'), f('mid', '가운데에서 일어난 일', 4)), h('div', { class: 'arrow' }, '➜'),
         h('div', {}, h('small', {}, '끝'), f('end', '끝에 일어난 일', 4)))),
-      box('중심 생각 · 느낀 점', f('theme', '이야기가 전하는 생각과 내가 느낀 점', 3), 'full')));
+      box('중심 생각 · 느낀 점', f('theme', '이야기가 전하는 생각과 내가 느낀 점', 3), 'full'),
+      h('div', { class: 'box full gembox' }, h('b', {}, '✨ 반짝 문장 ', h('small', { class: 'gemsub' }, '— 책 속에서 마음에 반짝 남은 한 문장')),
+        gemRows, addGemBtn,
+        h('div', { class: 'tonly gemto' }, toHw, h('span', { class: 'hint', style: { margin: 0 } }, '이 지도와 학생들이 제출한 반짝 문장을 모아 바른 글씨 쓰기 문구로 보내요.')))));
     el.addEventListener('input', function () { ctx.dirty(); });
     var keys = Object.keys(F);
+    function gemData() { return gems.map(function (o) { return { t: o.t.value, page: o.pg.value, who: o.who.value, why: o.why.value }; }).filter(function (g) { return g.t.trim(); }); }
+    function sendToHandwriting() {
+      var book = F.title.value.replace(/\n/g, ' ').trim(), items = [];
+      gemData().forEach(function (g) { var t = cleanGem(g.t); if (t) items.push({ t: t, book: book, page: g.page, char: g.who, who: '선생님' }); });
+      subs.filter(function (e) { return e.kind === 'submit'; }).forEach(function (e) {
+        var sd = e.data || {}, bk = str(sd.title, 60).replace(/\n/g, ' ').trim() || book;
+        arr(sd.gems).forEach(function (g) { var t = cleanGem(g && g.t); if (t) items.push({ t: t, book: bk, page: str(g.page, 10), char: str(g.who, 20), who: e.name || '익명' }); });
+      });
+      gemPicker('✍️ 반짝 문장 → 바른 글씨 쓰기', items.length ? [{ title: book || '이 이야기 지도', items: items }] : [], '바른 글씨 쓰기 열기', function (out) {
+        var go = function () {
+          var srcs = {}; out.forEach(function (o) { srcs[o.t] = o.src; });
+          openTool('handwriting', { phrases: out.map(function (o) { return o.t; }).join('\n'), srcs: srcs });
+          toast('반짝 문장 ' + out.length + '개를 넣었어요. 고쳐 쓴 뒤 저장하고 학생과 함께해요.');
+        };
+        if (App.V && App.V.dirty) ctx.save().then(go, go); else go();
+      });
+    }
+    function setD(d) {
+      keys.forEach(function (k) { setTa(F[k], d[k]); });
+      gemRows.innerHTML = ''; gems = [];
+      var G = arr(d.gems).filter(function (g) { return g && (g.t || '').trim(); });
+      (G.length ? G : [{}]).slice(0, 3).forEach(function (g) { addGem(g); });
+    }
+    setD({});
     return {
       title: function () { return F.title.value.replace(/\n/g, ' '); },
-      get: function () { var o = {}; keys.forEach(function (k) { o[k] = F[k].value; }); return o; },
-      set: function (d) { keys.forEach(function (k) { setTa(F[k], d[k]); }); },
-      reset: function () { keys.forEach(function (k) { setTa(F[k], ''); }); }
+      get: function () { var o = {}; keys.forEach(function (k) { o[k] = F[k].value; }); o.gems = gemData(); return o; },
+      set: setD,
+      reset: function () { setD({}); },
+      onEntries: function (l) { subs = l; }
     };
   }
 });
@@ -6030,7 +6151,8 @@ tool({
   prepare: function (d) { d.strokes = {}; return d; },
   build: function (el, ctx) {
     var SAMPLE = ['가는 말이 고와야 오는 말이 곱다.', '천 리 길도 한 걸음부터', '티끌 모아 태산', '백지장도 맞들면 낫다.', '세 살 버릇 여든까지 간다.'];
-    var phrasesTa = ta('cfg', '연습할 문구를 한 줄에 하나씩 적어요', 3);
+    var phrasesTa = ta('cfg', '연습할 문구를 한 줄에 하나씩 적어요', 3), srcs = {};
+    var srcEl = h('div', { class: 'hwsrc' });
     var sel = 0, cols = 10, trace = 2, blank = 1, font = 'batang', strokes = {}, cur = [], writing = false;
     var pen = { color: '#1f2d3d', w: 0.006, erase: false };
     var picks = h('div', { class: 'hwpicks' });
@@ -6059,14 +6181,25 @@ tool({
         h('button', { class: 'btn sm cfg-btn', style: { marginTop: '6px' }, onclick: function () {
           var cur = lines(phrasesTa.value); SAMPLE.forEach(function (s) { if (cur.indexOf(s) < 0) cur.push(s); });
           setTa(phrasesTa, cur.join('\n')); renderPicks(); layout(); ctx.dirty();
-        } }, '＋ 예시 문구(속담) 넣기')),
+        } }, '＋ 예시 문구(속담) 넣기'),
+        h('button', { class: 'btn sm cfg-btn', style: { marginTop: '6px', marginLeft: '6px' }, onclick: function () {
+          toast('이야기 지도에서 반짝 문장을 모으고 있어요…');
+          gatherGems(TB(), function (groups) {
+            gemPicker('📚 이야기 지도의 반짝 문장 가져오기', groups, '문구에 넣기', function (out) {
+              var cur = lines(phrasesTa.value), n = 0;
+              out.forEach(function (o) { if (cur.indexOf(o.t) < 0) { cur.push(o.t); n++; } srcs[o.t] = o.src; });
+              setTa(phrasesTa, cur.join('\n')); renderPicks(); layout(); ctx.dirty(); toast('반짝 문장 ' + n + '개를 넣었어요');
+            });
+          });
+        } }, '✨ 이야기 지도의 반짝 문장 가져오기'),
+        h('p', { class: 'hint', style: { margin: '6px 0 0' } }, '문구는 선생님이 자유롭게 쓰고 고칠 수 있어요. 속담 예시나 이야기 지도의 ‘반짝 문장’을 불러와 함께 써도 돼요.')),
       h('span', { class: 'lbl noprint' }, '문구 고르기'), picks,
       h('div', { class: 'row noprint', style: { margin: '8px 0' } },
         opt('한 줄 칸 수', [[8, '8칸 (크게)'], [10, '10칸'], [12, '12칸'], [14, '14칸 (작게)']], function () { return cols; }, function (v) { cols = +v; }),
         opt('흐린 글씨 줄', [[0, '없음'], [1, '1줄'], [2, '2줄'], [3, '3줄']], function () { return trace; }, function (v) { trace = +v; }),
         opt('빈 줄', [[0, '없음'], [1, '1줄'], [2, '2줄']], function () { return blank; }, function (v) { blank = +v; }),
         opt('글씨체', [['batang', '바탕 (교과서체)'], ['dodum', '돋움']], function () { return font; }, function (v) { font = v; })),
-      preview, tools, wrap,
+      preview, srcEl, tools, wrap,
       h('p', { class: 'hint noprint' }, '∨ 는 띄어 쓰는 자리예요. 분홍 칸은 비워 두고 다음 칸에 써요. ‘따라 쓰기’를 누르면 손가락·펜·마우스로 칸 위에 쓸 수 있어요.'));
     phrasesTa.addEventListener('input', function () { ctx.dirty(); renderPicks(); layout(); });
     function phrases() { var L = lines(phrasesTa.value); return L.length ? L : []; }
@@ -6087,7 +6220,7 @@ tool({
     }
     function layout() {
       var P = phrases(), text = P[sel] || '';
-      preview.innerHTML = '';
+      preview.innerHTML = ''; srcEl.textContent = text && srcs[text] ? '📚 ' + srcs[text] : '';
       if (text) {
         var n = (text.match(/ /g) || []).length;
         preview.append(h('div', { class: 'hwbig ' + font }, Array.from(text).map(function (c) { return c === ' ' ? h('span', { class: 'sp' }, '∨') : c; })),
@@ -6177,6 +6310,7 @@ tool({
     window.addEventListener('resize', onR);
     function setD(d) {
       setTa(phrasesTa, d.phrases == null ? '' : d.phrases);
+      srcs = {}; if (d.srcs && typeof d.srcs === 'object') for (var sk in d.srcs) srcs[str(sk, 120)] = str(d.srcs[sk], 120);
       sel = d.sel | 0; cols = [8, 10, 12, 14].indexOf(+d.cols) >= 0 ? +d.cols : 10;
       trace = [0, 1, 2, 3].indexOf(+d.trace) >= 0 ? +d.trace : 2; blank = [0, 1, 2].indexOf(+d.blank) >= 0 ? +d.blank : 1;
       font = d.font === 'dodum' ? 'dodum' : 'batang';
@@ -6190,7 +6324,8 @@ tool({
       title: function () { var P = phrases(); return '바른 글씨 · ' + (P[0] || '') + (P.length > 1 ? ' 외 ' + (P.length - 1) + '개' : ''); },
       get: function () {
         var s = {}; for (var k in strokes) if (strokes[k] && strokes[k].length) s[k] = strokes[k];
-        return { phrases: phrasesTa.value, sel: sel, cols: cols, trace: trace, blank: blank, font: font, strokes: s };
+        var P = phrases(), sv = {}; P.forEach(function (t) { if (srcs[t]) sv[t] = srcs[t]; });
+        return { phrases: phrasesTa.value, srcs: sv, sel: sel, cols: cols, trace: trace, blank: blank, font: font, strokes: s };
       },
       set: setD, reset: function () { setD({}); },
       destroy: function () { window.removeEventListener('resize', onR); }
