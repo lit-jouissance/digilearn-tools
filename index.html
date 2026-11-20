@@ -1065,6 +1065,59 @@ body.has-drawer .drawer{width:min(340px,88vw);background:#f6f8fa;padding:14px 14
 .gpanel{padding:22px}.gpanel .tgrid{grid-template-columns:repeat(3,minmax(0,210px));justify-content:center;gap:14px}
 .gpanel .gsub{max-width:658px;margin:0 auto}.gpanel .gsub .tgrid{justify-content:start}
 @media (max-width:700px){.gpanel{padding:12px}.gpanel .tgrid{grid-template-columns:repeat(3,1fr);gap:8px}}
+/* 정리 · 백업 */
+.hfoot{display:flex;justify-content:center}.hlink{border:0;background:none;color:#7d8a96;font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px}.hlink:hover{background:#fff;color:#33404f}
+.dr-head{gap:6px}
+.mgseg{margin:0 0 10px}.mgseg button{display:inline-flex;align-items:center;gap:4px}
+.mgpanel{padding:18px}.mgintro{margin:0 0 12px;color:#4a5865;line-height:1.6}
+.mgbulk{align-items:center;gap:10px;margin:8px 0;min-height:30px}
+.mglist{display:flex;flex-direction:column;gap:6px}
+.mgrow{display:flex;align-items:center;gap:10px;background:#fafbfc;border:1px solid #edf0f3;border-radius:14px;padding:8px 10px}
+.mgrow .chip{width:34px;height:34px;font-size:18px}.mgrow .mgt{flex:1;min-width:0}.mgrow .mgt b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mgrow .mgt small{color:#7d8a96}
+.mgrow .btn .svgi,.mgdev .btn .svgi,.mgstep .btn .svgi{font-size:14px;vertical-align:-2px}
+.mgstep{border:1px solid #e6ebf0;border-radius:16px;padding:14px 16px;margin-bottom:12px;background:#fff}
+.mgstep h3,.mgstep summary{display:flex;align-items:center;gap:8px;margin:0 0 6px;font-size:16px;font-weight:900;cursor:default}.mgstep summary{cursor:pointer;margin:0}
+.mgstep .n{width:26px;height:26px;border-radius:50%;background:#2f6f9f;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+.mgstep p{margin:4px 0 10px;color:#4a5865;line-height:1.6}
+.mgopt{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:12px;cursor:pointer}.mgopt:hover{background:#f6f8fa}.mgopt input{width:20px;height:20px;margin-top:2px;flex:0 0 auto}
+.mgopt small{display:block;color:#7d8a96;line-height:1.5}.mgopt.danger b{color:#c92a2a}
+.btn.danger{background:#e03131;border-color:#e03131;color:#fff}.btn.danger:disabled{opacity:.45}
+.mgdev{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #edf0f3;border-radius:14px;padding:10px 12px;margin-bottom:8px;background:#fafbfc}
+.mgdev small{display:block;color:#7d8a96}.mgdev .sz{color:#2f6f9f;font-weight:700}.mgdev.danger{border-color:#ffc9c9;background:#fff5f5}
+.lrcnt{color:#2f6f9f;font-weight:700}
+/* 이름 고르기 */
+.namepick{display:inline-flex;align-items:center;gap:4px;border:0;background:#eef4ff;color:#1f3b63;border-radius:999px;padding:7px 14px;font-weight:800;font-size:14px;cursor:pointer}.namepick.empty{background:#fff3bf;color:#7a5a00;animation:recglow 1.4s infinite}
+.namepick .svgi{font-size:16px}
+.npgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:8px;max-height:60vh;overflow:auto;padding:2px}
+.npbtn{border:0;background:#fff;box-shadow:inset 0 0 0 1.5px #dfe5ec;border-radius:14px;padding:14px 6px;font-size:17px;font-weight:800;cursor:pointer;color:#22303d}
+.npbtn:hover{box-shadow:inset 0 0 0 2px #2f6f9f;background:#f4f8fd}.npbtn.on{background:#2f6f9f;color:#fff;box-shadow:none}
+.hfoot{gap:6px}
+.bar .st.saved{color:#2f8f5b;font-weight:700}
+/* 오늘 수업 */
+.today{background:#fff;border-radius:20px;padding:12px 14px;box-shadow:0 1px 2px #00000008,0 4px 14px #0000000a;display:flex;flex-direction:column;gap:8px}
+.tdh{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.tdh .chip{width:30px;height:30px;font-size:17px}.tdh b{font-size:15.5px;font-weight:900;color:#22303d}
+.tdm{font-size:13px;color:#7a5a00;font-weight:700;white-space:pre-wrap}
+.tdp{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;align-items:center;padding:1px}
+.tdc{flex:0 0 auto;display:flex;align-items:center;gap:6px;background:color-mix(in srgb,var(--gc) 9%,#fff);border-radius:12px;padding:5px 10px 5px 6px;max-width:220px}
+.tdc .pn{width:20px;height:20px;border-radius:50%;background:var(--gc);color:#fff;font-size:11.5px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.tdc b{font-size:13.5px;color:color-mix(in srgb,var(--gc) 75%,#000);white-space:nowrap}.tdc small{font-size:12px;color:#5b6b7a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tdlink{flex:0 0 auto;border:0;background:none;color:#2f6f9f;font-weight:800;font-size:12.5px;cursor:pointer;white-space:nowrap}
+.tda{display:flex;flex-direction:column;gap:5px}.tda:empty{display:none}
+body.has-today .home9{--side:min(560px,calc(100vh - 395px),100%)}
+@media (max-width:700px){body.has-today .home9{--side:100%}}
+.rchip .chip .svgi,.tda .chip .svgi{width:16px;height:16px}
+/* 도구 서랍 시안 B */
+.drfind{display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:2px 10px;box-shadow:inset 0 0 0 1px #e3e8ee;color:#8a97a3;margin-bottom:10px}.drfind .svgi{font-size:15px}
+.drq{flex:1;border:0;outline:0;background:none;font-size:14px;padding:8px 2px;min-width:0}
+.drsec{display:flex;flex-direction:column;gap:2px;margin-bottom:6px}.drsec .hlbl{margin:2px 0 4px}
+.drrow{display:flex;align-items:center;gap:9px;border:0;background:none;border-radius:10px;padding:5px 8px;cursor:pointer;text-align:left;color:#2c3a47;font-size:14px;font-weight:700;width:100%}
+.drrow .chip{width:26px;height:26px;font-size:15px;border-radius:8px}.drrow:hover{background:#fff}
+.drrow.on{background:#fff;box-shadow:inset 3px 0 0 var(--gc);color:var(--gc)}
+.drg{display:flex;align-items:center;gap:9px;width:100%;border:0;background:#fff;border-radius:12px;padding:7px 10px;margin-top:5px;cursor:pointer;box-shadow:0 1px 2px #00000008;text-align:left}
+.drg .chip{width:28px;height:28px;font-size:16px;border-radius:9px}.drg b{flex:1;font-size:14.5px;color:#22303d}.drg small{color:#9aa6b1;font-weight:800}.drg .cv{color:#9aa6b1;width:14px}
+.drg.cur b{color:var(--gc)}.drg.open{border-radius:12px 12px 4px 4px}
+.drgl{display:flex;flex-direction:column;gap:1px;background:#fff;border-radius:4px 4px 12px 12px;padding:4px 4px 6px 14px;margin-top:1px;box-shadow:0 1px 2px #00000008}
+.drrow .chip .svgi{width:16px;height:16px}.drg .chip .svgi{width:17px;height:17px}.rchip .chip .svgi{width:16px;height:16px}
 
 </style>
 <script>
@@ -1074,7 +1127,7 @@ body.has-drawer .drawer{width:min(340px,88vw);background:#f6f8fa;padding:14px 14
    비워 두면(apiKey가 없으면) 이 기기(브라우저)에만 저장되는 모드로 열려요.
    ===================================================================== */
 window.FIREBASE_CONFIG = {
- apiKey: "AIzaSyB0tD4Hh_L_XQbIgg0jsYJWZHlVGbRksIc",
+  apiKey: "AIzaSyB0tD4Hh_L_XQbIgg0jsYJWZHlVGbRksIc",
   authDomain: "digilearn-tools.firebaseapp.com",
   projectId: "digilearn-tools",
   storageBucket: "digilearn-tools.firebasestorage.app",
@@ -3393,8 +3446,8 @@ var qrcode = function() {
 </script>
 <script>
 /* 아이콘: Lucide (ISC License, https://lucide.dev) */
-var ICON_PATHS = {"file-pen-line": "<path d=\"M14.364 13.634a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506l4.013-4.009a1 1 0 0 0-3.004-3.004z\" /> <path d=\"M14.487 7.858A1 1 0 0 1 14 7V2\" /> <path d=\"M20 19.645V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l2.516 2.516\" /> <path d=\"M8 18h1\" />", "vote": "<path d=\"m9 12 2 2 4-4\" /> <path d=\"M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z\" /> <path d=\"M22 19H2\" />", "scan-search": "<path d=\"M3 7V5a2 2 0 0 1 2-2h2\" /> <path d=\"M17 3h2a2 2 0 0 1 2 2v2\" /> <path d=\"M21 17v2a2 2 0 0 1-2 2h-2\" /> <path d=\"M7 21H5a2 2 0 0 1-2-2v-2\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" /> <path d=\"m16 16-1.9-1.9\" />", "trophy": "<path d=\"M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2\" /> <path d=\"M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2\" /> <path d=\"M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3\" /> <path d=\"M4 22h16\" /> <path d=\"M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z\" /> <path d=\"M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3\" />", "layers": "<path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\" /> <path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\" /> <path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\" />", "school": "<path d=\"M14 21v-3a2 2 0 0 0-4 0v3\" /> <path d=\"M18 4.933V21\" /> <path d=\"m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6\" /> <path d=\"m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11\" /> <path d=\"M6 4.933V21\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" />", "languages": "<path d=\"m5 8 6 6\" /> <path d=\"m4 14 6-6 2-3\" /> <path d=\"M2 5h12\" /> <path d=\"M7 2h1\" /> <path d=\"m22 22-5-10-5 10\" /> <path d=\"M14 18h6\" />", "feather": "<path d=\"M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z\" /> <path d=\"M16 8 2 22\" /> <path d=\"M17.488 15H9\" />", "repeat": "<path d=\"m17 2 4 4-4 4\" /> <path d=\"M3 11v-1a4 4 0 0 1 4-4h14\" /> <path d=\"m7 22-4-4 4-4\" /> <path d=\"M21 13v1a4 4 0 0 1-4 4H3\" />", "mic-vocal": "<path d=\"m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12\" /> <path d=\"M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5\" /> <circle cx=\"16\" cy=\"7\" r=\"5\" />", "eye": "<path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "square-check-big": "<path d=\"M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344\" /> <path d=\"m9 11 3 3L22 4\" />", "signature": "<path d=\"m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284\" /> <path d=\"M3 21h18\" />", "palette": "<path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /> <circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" />", "pen-line": "<path d=\"M13 21h8\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "users-round": "<path d=\"M18 21a8 8 0 0 0-16 0\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3\" />", "timer": "<line x1=\"10\" x2=\"14\" y1=\"2\" y2=\"2\" /> <line x1=\"12\" x2=\"15\" y1=\"14\" y2=\"11\" /> <circle cx=\"12\" cy=\"14\" r=\"8\" />", "sticky-note": "<path d=\"M21 9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z\" /> <path d=\"M15 3v5a1 1 0 0 0 1 1h5\" />", "calendar-days": "<path d=\"M8 2v3\" /> <path d=\"M16 2v3\" /> <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M8 13h.01\" /> <path d=\"M12 13h.01\" /> <path d=\"M16 13h.01\" /> <path d=\"M8 17h.01\" /> <path d=\"M12 17h.01\" /> <path d=\"M16 17h.01\" />", "ferris-wheel": "<circle cx=\"12\" cy=\"12\" r=\"2\" /> <path d=\"M12 2v4\" /> <path d=\"m6.8 15-3.5 2\" /> <path d=\"m20.7 7-3.5 2\" /> <path d=\"M6.8 9 3.3 7\" /> <path d=\"m20.7 17-3.5-2\" /> <path d=\"m9 22 3-8 3 8\" /> <path d=\"M8 22h8\" /> <path d=\"M18 18.7a9 9 0 1 0-12 0\" />", "lightbulb": "<path d=\"M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5\" /> <path d=\"M9 18h6\" /> <path d=\"M10 22h4\" />", "list-checks": "<path d=\"M13 5h8\" /> <path d=\"M13 12h8\" /> <path d=\"M13 19h8\" /> <path d=\"m3 17 2 2 4-4\" /> <path d=\"m3 7 2 2 4-4\" />", "scale": "<path d=\"M12 3v18\" /> <path d=\"m19 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1\" /> <path d=\"m5 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M7 21h10\" />", "signpost": "<path d=\"M12 13v8\" /> <path d=\"M12 3v3\" /> <path d=\"M2.354 10.354a1.207 1.207 0 0 1 0-1.708l2.06-2.06A2 2 0 0 1 5.828 6h12.344a2 2 0 0 1 1.414.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1-1.414.586H5.828a2 2 0 0 1-1.414-.586z\" />", "cloud": "<path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\" />", "flower-2": "<path d=\"M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1\" /> <circle cx=\"12\" cy=\"8\" r=\"2\" /> <path d=\"M12 10v12\" /> <path d=\"M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z\" /> <path d=\"M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z\" />", "search": "<path d=\"m21 21-4.34-4.34\" /> <circle cx=\"11\" cy=\"11\" r=\"8\" />", "blend": "<circle cx=\"15\" cy=\"9\" r=\"7\" /> <circle cx=\"9\" cy=\"15\" r=\"7\" />", "mic": "<path d=\"M12 19v3\" /> <path d=\"M19 10v2a7 7 0 0 1-14 0v-2\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"13\" rx=\"3\" />", "audio-lines": "<path d=\"M2 10v3\" /> <path d=\"M6 6v11\" /> <path d=\"M10 3v18\" /> <path d=\"M14 8v7\" /> <path d=\"M18 5v13\" /> <path d=\"M22 10v3\" />", "handshake": "<path d=\"m11 17 2 2a1 1 0 1 0 3-3\" /> <path d=\"m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4\" /> <path d=\"m21 3 1 11h-2\" /> <path d=\"M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3\" /> <path d=\"M3 4h8\" />", "megaphone": "<path d=\"M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z\" /> <path d=\"M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14\" /> <path d=\"M8 6v8\" />", "house": "<path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\" /> <path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />", "book-open-text": "<path d=\"M12 5v16\" /> <path d=\"M16 13h2\" /> <path d=\"M16 9h2\" /> <path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\" /> <path d=\"M6 13h2\" /> <path d=\"M6 9h2\" />", "map": "<path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /> <path d=\"M15 5.764v15\" /> <path d=\"M9 3.236v15\" />", "folder-heart": "<path d=\"M10.638 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v3.417\" /> <path d=\"M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z\" />", "list-ordered": "<path d=\"M11 5h10\" /> <path d=\"M11 12h10\" /> <path d=\"M11 19h10\" /> <path d=\"M4 4h1v5\" /> <path d=\"M4 9h2\" /> <path d=\"M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02\" />", "messages-square": "<path d=\"M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z\" /> <path d=\"M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1\" />", "armchair": "<path d=\"M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3\" /> <path d=\"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z\" /> <path d=\"M5 18v2\" /> <path d=\"M19 18v2\" />", "chart-spline": "<path d=\"M3 3v16a2 2 0 0 0 2 2h16\" /> <path d=\"M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7\" />", "network": "<rect x=\"16\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"2\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\" /> <path d=\"M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3\" /> <path d=\"M12 12V8\" />", "thermometer": "<path d=\"M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\" />", "hand": "<path d=\"M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2\" /> <path d=\"M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2\" /> <path d=\"M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8\" /> <path d=\"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15\" />", "fish": "<path d=\"M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z\" /> <path d=\"M18 12v.5\" /> <path d=\"M16 17.93a9.77 9.77 0 0 1 0-11.86\" /> <path d=\"M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33\" /> <path d=\"M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4\" /> <path d=\"m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98\" />", "refresh-cw": "<path d=\"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8\" /> <path d=\"M21 3v5h-5\" /> <path d=\"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16\" /> <path d=\"M8 16H3v5\" />", "grid-3x3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M3 15h18\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "notebook-pen": "<path d=\"M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4\" /> <path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <path d=\"M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z\" />", "door-open": "<path d=\"M10 21H2\" /> <path d=\"M10 3H7a2 2 0 00-2 2v16\" /> <path d=\"M14 12h.01\" /> <path d=\"M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z\" /> <path d=\"M22 21h-3\" />", "radio-tower": "<path d=\"M4.9 16.1C1 12.2 1 5.8 4.9 1.9\" /> <path d=\"M7.8 4.7a6.14 6.14 0 0 0-.8 7.5\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" /> <path d=\"M16.2 4.8c2 2 2.26 5.11.8 7.47\" /> <path d=\"M19.1 1.9a9.96 9.96 0 0 1 0 14.1\" /> <path d=\"M9.5 18h5\" /> <path d=\"m8 22 4-11 4 11\" />", "id-card": "<path d=\"M13 19a4 4 0 00-8 0\" /> <path d=\"M16 10h2\" /> <path d=\"M16 14h2\" /> <circle cx=\"9\" cy=\"12\" r=\"3\" /> <rect x=\"2\" y=\"5\" width=\"20\" height=\"14\" rx=\"2\" />", "grid-2x2-check": "<path d=\"M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3\" /> <path d=\"m16 19 2 2 4-4\" />", "brain": "<path d=\"M12 18V5\" /> <path d=\"M15 13a4.17 4.17 0 01-3-4 4.17 4.17 0 01-3 4\" /> <path d=\"M17.707 6.294A3 3 0 1012 5a3 3 0 10-5.707 1.294\" /> <path d=\"M17.996 5.125a4 4 0 012.526 5.77\" /> <path d=\"M18 18a4 4 0 002-7.465\" /> <path d=\"M19.967 17.482a4 4 0 11-7.967.517 4 4 0 11-7.967-.517\" /> <path d=\"M6 18a4 4 0 01-2-7.465\" /> <path d=\"M6.004 5.125a4 4 0 00-2.526 5.77\" />", "pencil-line": "<path d=\"M13 21h8\" /> <path d=\"m15 5 4 4\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "chart-no-axes-column-increasing": "<path d=\"M5 21v-6\" /> <path d=\"M12 21V9\" /> <path d=\"M19 21V3\" />", "history": "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\" /> <path d=\"M3 3v5h5\" /> <path d=\"M12 7v5l4 2\" />", "notebook-text": "<path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\" /> <path d=\"M9.5 8h5\" /> <path d=\"M9.5 12H16\" /> <path d=\"M9.5 16H14\" />", "blocks": "<path d=\"M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2\" /> <rect x=\"14\" y=\"2\" width=\"8\" height=\"8\" rx=\"1\" />", "clipboard-list": "<rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\" /> <path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" /> <path d=\"M12 11h4\" /> <path d=\"M12 16h4\" /> <path d=\"M8 11h.01\" /> <path d=\"M8 16h.01\" />", "shuffle": "<path d=\"m18 14 4 4-4 4\" /> <path d=\"m18 2 4 4-4 4\" /> <path d=\"M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22\" /> <path d=\"M2 6h1.972a4 4 0 0 1 3.6 2.2\" /> <path d=\"M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45\" />", "sprout": "<path d=\"M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3\" /> <path d=\"M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4\" /> <path d=\"M5 21h14\" />", "columns-3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />"};
-var GROUP_ICON = {"think": "brain", "deep": "lightbulb", "write": "pen-line", "live": "radio-tower", "group": "users-round", "dict": "audio-lines", "review": "repeat", "record": "clipboard-list", "class": "school", "_home": "house", "_search": "search", "_clock": "history"};
+var ICON_PATHS = {"pen-line": "<path d=\"M13 21h8\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "smartphone": "<rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\" /> <path d=\"M12 18h.01\" />", "megaphone": "<path d=\"M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z\" /> <path d=\"M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14\" /> <path d=\"M8 6v8\" />", "sticky-note": "<path d=\"M21 9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z\" /> <path d=\"M15 3v5a1 1 0 0 0 1 1h5\" />", "notebook-pen": "<path d=\"M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4\" /> <path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <path d=\"M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z\" />", "user-round-check": "<path d=\"M2 21a8 8 0 0 1 13.292-6\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"m16 19 2 2 4-4\" />", "cloud": "<path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\" />", "download": "<path d=\"M12 15V3\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" /> <path d=\"m7 10 5 5 5-5\" />", "timer": "<line x1=\"10\" x2=\"14\" y1=\"2\" y2=\"2\" /> <line x1=\"12\" x2=\"15\" y1=\"14\" y2=\"11\" /> <circle cx=\"12\" cy=\"14\" r=\"8\" />", "pencil-line": "<path d=\"M13 21h8\" /> <path d=\"m15 5 4 4\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "feather": "<path d=\"M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z\" /> <path d=\"M16 8 2 22\" /> <path d=\"M17.488 15H9\" />", "thermometer": "<path d=\"M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\" />", "map": "<path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /> <path d=\"M15 5.764v15\" /> <path d=\"M9 3.236v15\" />", "brain": "<path d=\"M12 18V5\" /> <path d=\"M15 13a4.17 4.17 0 01-3-4 4.17 4.17 0 01-3 4\" /> <path d=\"M17.707 6.294A3 3 0 1012 5a3 3 0 10-5.707 1.294\" /> <path d=\"M17.996 5.125a4 4 0 012.526 5.77\" /> <path d=\"M18 18a4 4 0 002-7.465\" /> <path d=\"M19.967 17.482a4 4 0 11-7.967.517 4 4 0 11-7.967-.517\" /> <path d=\"M6 18a4 4 0 01-2-7.465\" /> <path d=\"M6.004 5.125a4 4 0 00-2.526 5.77\" />", "sprout": "<path d=\"M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3\" /> <path d=\"M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4\" /> <path d=\"M5 21h14\" />", "sun": "<circle cx=\"12\" cy=\"12\" r=\"4\" /> <path d=\"M12 2v2\" /> <path d=\"M12 20v2\" /> <path d=\"m4.93 4.93 1.41 1.41\" /> <path d=\"m17.66 17.66 1.41 1.41\" /> <path d=\"M2 12h2\" /> <path d=\"M20 12h2\" /> <path d=\"m6.34 17.66-1.41 1.41\" /> <path d=\"m19.07 4.93-1.41 1.41\" />", "mic-vocal": "<path d=\"m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12\" /> <path d=\"M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5\" /> <circle cx=\"16\" cy=\"7\" r=\"5\" />", "grid-2x2-check": "<path d=\"M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3\" /> <path d=\"m16 19 2 2 4-4\" />", "hand": "<path d=\"M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2\" /> <path d=\"M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2\" /> <path d=\"M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8\" /> <path d=\"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15\" />", "door-open": "<path d=\"M10 21H2\" /> <path d=\"M10 3H7a2 2 0 00-2 2v16\" /> <path d=\"M14 12h.01\" /> <path d=\"M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z\" /> <path d=\"M22 21h-3\" />", "handshake": "<path d=\"m11 17 2 2a1 1 0 1 0 3-3\" /> <path d=\"m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4\" /> <path d=\"m21 3 1 11h-2\" /> <path d=\"M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3\" /> <path d=\"M3 4h8\" />", "school": "<path d=\"M14 21v-3a2 2 0 0 0-4 0v3\" /> <path d=\"M18 4.933V21\" /> <path d=\"m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6\" /> <path d=\"m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11\" /> <path d=\"M6 4.933V21\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" />", "id-card": "<path d=\"M13 19a4 4 0 00-8 0\" /> <path d=\"M16 10h2\" /> <path d=\"M16 14h2\" /> <circle cx=\"9\" cy=\"12\" r=\"3\" /> <rect x=\"2\" y=\"5\" width=\"20\" height=\"14\" rx=\"2\" />", "signature": "<path d=\"m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284\" /> <path d=\"M3 21h18\" />", "columns-3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "lightbulb": "<path d=\"M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5\" /> <path d=\"M9 18h6\" /> <path d=\"M10 22h4\" />", "radio-tower": "<path d=\"M4.9 16.1C1 12.2 1 5.8 4.9 1.9\" /> <path d=\"M7.8 4.7a6.14 6.14 0 0 0-.8 7.5\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" /> <path d=\"M16.2 4.8c2 2 2.26 5.11.8 7.47\" /> <path d=\"M19.1 1.9a9.96 9.96 0 0 1 0 14.1\" /> <path d=\"M9.5 18h5\" /> <path d=\"m8 22 4-11 4 11\" />", "grid-3x3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M3 15h18\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "palette": "<path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /> <circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" />", "square-check-big": "<path d=\"M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344\" /> <path d=\"m9 11 3 3L22 4\" />", "chart-spline": "<path d=\"M3 3v16a2 2 0 0 0 2 2h16\" /> <path d=\"M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7\" />", "file-pen-line": "<path d=\"M14.364 13.634a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506l4.013-4.009a1 1 0 0 0-3.004-3.004z\" /> <path d=\"M14.487 7.858A1 1 0 0 1 14 7V2\" /> <path d=\"M20 19.645V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l2.516 2.516\" /> <path d=\"M8 18h1\" />", "calendar-days": "<path d=\"M8 2v3\" /> <path d=\"M16 2v3\" /> <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M8 13h.01\" /> <path d=\"M12 13h.01\" /> <path d=\"M16 13h.01\" /> <path d=\"M8 17h.01\" /> <path d=\"M12 17h.01\" /> <path d=\"M16 17h.01\" />", "calendar-clock": "<path d=\"M16 2v3\" /> <path d=\"M17 15.5v1.7l1 .625\" /> <path d=\"M21 8.936V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h3.935\" /> <path d=\"M3 9h9.873\" /> <path d=\"M8 2v3\" /> <circle cx=\"17\" cy=\"17\" r=\"5\" />", "network": "<rect x=\"16\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"2\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\" /> <path d=\"M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3\" /> <path d=\"M12 12V8\" />", "list-checks": "<path d=\"M13 5h8\" /> <path d=\"M13 12h8\" /> <path d=\"M13 19h8\" /> <path d=\"m3 17 2 2 4-4\" /> <path d=\"m3 7 2 2 4-4\" />", "blend": "<circle cx=\"15\" cy=\"9\" r=\"7\" /> <circle cx=\"9\" cy=\"15\" r=\"7\" />", "search": "<path d=\"m21 21-4.34-4.34\" /> <circle cx=\"11\" cy=\"11\" r=\"8\" />", "chart-no-axes-column-increasing": "<path d=\"M5 21v-6\" /> <path d=\"M12 21V9\" /> <path d=\"M19 21V3\" />", "languages": "<path d=\"m5 8 6 6\" /> <path d=\"m4 14 6-6 2-3\" /> <path d=\"M2 5h12\" /> <path d=\"M7 2h1\" /> <path d=\"m22 22-5-10-5 10\" /> <path d=\"M14 18h6\" />", "vote": "<path d=\"m9 12 2 2 4-4\" /> <path d=\"M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z\" /> <path d=\"M22 19H2\" />", "scan-search": "<path d=\"M3 7V5a2 2 0 0 1 2-2h2\" /> <path d=\"M17 3h2a2 2 0 0 1 2 2v2\" /> <path d=\"M21 17v2a2 2 0 0 1-2 2h-2\" /> <path d=\"M7 21H5a2 2 0 0 1-2-2v-2\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" /> <path d=\"m16 16-1.9-1.9\" />", "list-ordered": "<path d=\"M11 5h10\" /> <path d=\"M11 12h10\" /> <path d=\"M11 19h10\" /> <path d=\"M4 4h1v5\" /> <path d=\"M4 9h2\" /> <path d=\"M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02\" />", "history": "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\" /> <path d=\"M3 3v5h5\" /> <path d=\"M12 7v5l4 2\" />", "layers": "<path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\" /> <path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\" /> <path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\" />", "trash-2": "<path d=\"M10 11v6\" /> <path d=\"M14 11v6\" /> <path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\" /> <path d=\"M3 6h18\" /> <path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\" />", "armchair": "<path d=\"M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3\" /> <path d=\"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z\" /> <path d=\"M5 18v2\" /> <path d=\"M19 18v2\" />", "trophy": "<path d=\"M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2\" /> <path d=\"M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2\" /> <path d=\"M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3\" /> <path d=\"M4 22h16\" /> <path d=\"M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z\" /> <path d=\"M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3\" />", "signpost": "<path d=\"M12 13v8\" /> <path d=\"M12 3v3\" /> <path d=\"M2.354 10.354a1.207 1.207 0 0 1 0-1.708l2.06-2.06A2 2 0 0 1 5.828 6h12.344a2 2 0 0 1 1.414.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1-1.414.586H5.828a2 2 0 0 1-1.414-.586z\" />", "settings": "<path d=\"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "notebook-text": "<path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\" /> <path d=\"M9.5 8h5\" /> <path d=\"M9.5 12H16\" /> <path d=\"M9.5 16H14\" />", "blocks": "<path d=\"M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2\" /> <rect x=\"14\" y=\"2\" width=\"8\" height=\"8\" rx=\"1\" />", "messages-square": "<path d=\"M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z\" /> <path d=\"M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1\" />", "audio-lines": "<path d=\"M2 10v3\" /> <path d=\"M6 6v11\" /> <path d=\"M10 3v18\" /> <path d=\"M14 8v7\" /> <path d=\"M18 5v13\" /> <path d=\"M22 10v3\" />", "mic": "<path d=\"M12 19v3\" /> <path d=\"M19 10v2a7 7 0 0 1-14 0v-2\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"13\" rx=\"3\" />", "copy": "<rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\" /> <path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\" />", "upload": "<path d=\"M12 3v12\" /> <path d=\"m17 8-5-5-5 5\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" />", "folder-heart": "<path d=\"M10.638 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v3.417\" /> <path d=\"M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z\" />", "flower-2": "<path d=\"M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1\" /> <circle cx=\"12\" cy=\"8\" r=\"2\" /> <path d=\"M12 10v12\" /> <path d=\"M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z\" /> <path d=\"M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z\" />", "refresh-cw": "<path d=\"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8\" /> <path d=\"M21 3v5h-5\" /> <path d=\"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16\" /> <path d=\"M8 16H3v5\" />", "book-open-text": "<path d=\"M12 5v16\" /> <path d=\"M16 13h2\" /> <path d=\"M16 9h2\" /> <path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\" /> <path d=\"M6 13h2\" /> <path d=\"M6 9h2\" />", "recycle": "<path d=\"M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5\" /> <path d=\"M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12\" /> <path d=\"m14 16-3 3 3 3\" /> <path d=\"M8.293 13.596 7.196 9.5 3.1 10.598\" /> <path d=\"m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843\" /> <path d=\"m13.378 9.633 4.096 1.098 1.097-4.096\" />", "scale": "<path d=\"M12 3v18\" /> <path d=\"m19 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1\" /> <path d=\"m5 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M7 21h10\" />", "archive-restore": "<rect width=\"20\" height=\"5\" x=\"2\" y=\"3\" rx=\"1\" /> <path d=\"M4 8v11a2 2 0 0 0 2 2h2\" /> <path d=\"M20 8v11a2 2 0 0 1-2 2h-2\" /> <path d=\"m9 15 3-3 3 3\" /> <path d=\"M12 12v9\" />", "eye": "<path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "house": "<path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\" /> <path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />", "cloud-check": "<path d=\"m17 15-5.5 5.5L9 18\" /> <path d=\"M5.516 16.07A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 3.501 7.327\" />", "repeat": "<path d=\"m17 2 4 4-4 4\" /> <path d=\"M3 11v-1a4 4 0 0 1 4-4h14\" /> <path d=\"m7 22-4-4 4-4\" /> <path d=\"M21 13v1a4 4 0 0 1-4 4H3\" />", "users-round": "<path d=\"M18 21a8 8 0 0 0-16 0\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3\" />", "ferris-wheel": "<circle cx=\"12\" cy=\"12\" r=\"2\" /> <path d=\"M12 2v4\" /> <path d=\"m6.8 15-3.5 2\" /> <path d=\"m20.7 7-3.5 2\" /> <path d=\"M6.8 9 3.3 7\" /> <path d=\"m20.7 17-3.5-2\" /> <path d=\"m9 22 3-8 3 8\" /> <path d=\"M8 22h8\" /> <path d=\"M18 18.7a9 9 0 1 0-12 0\" />", "clipboard-list": "<rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\" /> <path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" /> <path d=\"M12 11h4\" /> <path d=\"M12 16h4\" /> <path d=\"M8 11h.01\" /> <path d=\"M8 16h.01\" />", "shuffle": "<path d=\"m18 14 4 4-4 4\" /> <path d=\"m18 2 4 4-4 4\" /> <path d=\"M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22\" /> <path d=\"M2 6h1.972a4 4 0 0 1 3.6 2.2\" /> <path d=\"M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45\" />", "fish": "<path d=\"M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z\" /> <path d=\"M18 12v.5\" /> <path d=\"M16 17.93a9.77 9.77 0 0 1 0-11.86\" /> <path d=\"M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33\" /> <path d=\"M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4\" /> <path d=\"m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98\" />"};
+var GROUP_ICON = {"think": "brain", "deep": "lightbulb", "write": "pen-line", "live": "radio-tower", "group": "users-round", "dict": "audio-lines", "review": "repeat", "record": "clipboard-list", "class": "school", "_home": "house", "_search": "search", "_clock": "history", "_settings": "settings", "_backup": "archive-restore", "_recycle": "recycle", "_device": "smartphone", "_copy": "copy", "_trash": "trash-2", "_down": "download", "_up": "upload", "_today": "calendar-clock", "_sun": "sun", "_save": "cloud-check", "_user": "user-round-check"};
 var TOOL_ICON = {"mandalart": "grid-3x3", "mindmap": "network", "venn": "blend", "kwl": "columns-3", "fishbone": "fish", "storymap": "map", "picker": "shuffle", "wheel": "ferris-wheel", "timer": "timer", "flashcards": "layers", "bingo": "grid-2x2-check", "sequence": "list-ordered", "journal": "notebook-text", "rubric": "list-checks", "vote": "vote", "exitcard": "door-open", "thermo": "thermometer", "wordcloud": "cloud", "wall": "sticky-note", "dictation": "pencil-line", "engwords": "languages", "cer": "scale", "seethink": "scan-search", "changed": "refresh-cw", "debate": "messages-square", "observe": "eye", "checklist": "square-check-big", "portfolio": "folder-heart", "quiz": "trophy", "notice": "megaphone", "weekly": "calendar-days", "handwriting": "signature", "meditate": "flower-2", "speak": "hand", "roles": "id-card", "seats": "armchair", "peer": "handshake", "records": "file-pen-line", "readaloud": "mic", "structure": "blocks", "qladder": "chart-no-axes-column-increasing", "moodgraph": "chart-spline", "interview": "mic-vocal", "ifhero": "signpost", "poemcard": "feather", "poemart": "palette", "lifewrite": "sprout", "readlog": "book-open-text", "learnwrite": "notebook-pen"};
 function ico(name, cls) {
   var p = ICON_PATHS[name] || ICON_PATHS[GROUP_ICON[name]] || ICON_PATHS[TOOL_ICON[name]] || ICON_PATHS.house;
@@ -3645,7 +3698,11 @@ function LocalBackend() {
     delEntry: function (aid, eid) {
       put('ent-' + aid, get('ent-' + aid, []).filter(function (e) { return e.id !== eid; }));
       emit('ent-' + aid); return Promise.resolve();
-    }
+    },
+    allActivities: function () { return Promise.resolve(get('acts', [])); },
+    entriesOnce: function (aid) { return Promise.resolve(get('ent-' + aid, [])); },
+    clearEntries: function (aid) { try { localStorage.removeItem(K + 'ent-' + aid); } catch (e) {} emit('ent-' + aid); return Promise.resolve(); },
+    restoreEntries: function (aid, list) { var l = get('ent-' + aid, []).concat(list); if (!put('ent-' + aid, l)) return failed(); emit('ent-' + aid); return Promise.resolve(); }
   };
 }
 
@@ -3698,7 +3755,12 @@ function FireBackend(cfg) {
       setMyEntry: function (aid, rec) {
         return F.setDoc(dref('activities', aid, 'entries', user.uid), Object.assign({}, rec, { uid: user.uid, ts: Date.now() })).then(function () { return user.uid; });
       },
-      delEntry: function (aid, eid) { return F.deleteDoc(dref('activities', aid, 'entries', eid)); }
+      delEntry: function (aid, eid) { return F.deleteDoc(dref('activities', aid, 'entries', eid)); },
+      allActivities: function () { if (!user) return Promise.resolve([]); return F.getDocs(F.query(col('activities'), F.where('owner', '==', user.uid))).then(map); },
+      entriesOnce: function (aid) { return F.getDocs(col('activities', aid, 'entries')).then(map); },
+      clearEntries: function (aid) { return F.getDocs(col('activities', aid, 'entries')).then(function (s) { return Promise.all(s.docs.map(function (d) { return F.deleteDoc(d.ref); })); }); },
+      // 되살릴 때 학생 응답은 선생님 계정 이름으로 다시 만들어져요 (보안 규칙 때문)
+      restoreEntries: function (aid, list) { return Promise.all(list.map(function (e) { var r = Object.assign({}, e); delete r.id; r.uid = user.uid; r.restoredFrom = e.uid || ''; return F.addDoc(col('activities', aid, 'entries'), r); })); }
     };
     return new Promise(function (resolve, reject) {
       var first = true;
@@ -3783,6 +3845,35 @@ var Install = (function () {
 })();
 Install.registerSW();
 
+// ---------- 우리 반 명단 (학생이 이름을 골라 들어와요) ----------
+var CR = { txt: '', list: [], aid: null, loaded: false, cbs: [] };
+function loadClassRoster() {
+  var B = TB(); if (App.fire && !App.fire.isTeacher()) return;
+  var done = false, un = B.listActivities('classroster', function (l) {
+    var a = (l || []).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); })[0];
+    CR.aid = a ? a.id : null; CR.txt = a && a.data ? str(a.data.roster, 4000) : ''; CR.list = rosterList(CR.txt); CR.loaded = true;
+    if (!done) { done = true; setTimeout(function () { if (un) un(); }, 0); }
+    CR.cbs.splice(0).forEach(function (f) { f(); });
+    var hf = $('.hfoot .hlink'); if (hf && !App.V) { hf.innerHTML = ''; hf.append(ico('_user'), ' 우리 반 명단' + (CR.list.length ? ' (' + CR.list.length + '명)' : '')); }
+  });
+}
+function saveClassRoster(txt) {
+  var B = TB();
+  return B.saveActivity(CR.aid, { tool: 'classroster', title: '우리 반 명단', data: { roster: txt }, shared: false }).then(function (id) { CR.aid = id; CR.txt = txt; CR.list = rosterList(txt); });
+}
+function openClassRoster() {
+  if (App.fire && !App.fire.isTeacher()) { toast('선생님으로 로그인한 뒤 명단을 정할 수 있어요'); return; }
+  var md = modal('👥 우리 반 명단');
+  var t = ta('', '한 줄에 한 명씩 "번호 이름" (예: 3 김민지)', 10); setTa(t, CR.txt);
+  var cnt = h('span', { class: 'hint', style: { margin: 0 } });
+  function paint() { cnt.textContent = rosterList(t.value).length + '명'; }
+  t.addEventListener('input', paint); paint();
+  md.box.append(h('p', { class: 'hint' }, '여기 적은 명단은 ', h('b', {}, '학생이 활동에 들어올 때 이름을 고르는 목록'), '이 되고, 관찰 기록·체크표·자리 바꾸기 같은 선생님 도구의 명단 칸에도 저절로 들어가요. 이름을 고르게 하면 같은 학생의 기록이 한곳에 잘 모여요.'), t,
+    h('div', { class: 'row', style: { alignItems: 'center', marginTop: '8px' } }, cnt,
+      h('button', { class: 'btn sm', onclick: function () { pullRoster(function (r) { if (!r) { toast('불러올 명단이 없어요'); return; } setTa(t, r.txt); paint(); toast('‘' + (r.title || '') + '’의 명단을 불러왔어요'); }); } }, '📋 다른 도구의 명단 불러오기'),
+      h('span', { style: { flex: 1 } }),
+      h('button', { class: 'btn pri', onclick: function () { saveClassRoster(t.value).then(function () { toast('명단을 저장했어요 (' + CR.list.length + '명)'); md.close(); if (!App.V) renderHome(); }, errToast); } }, '저장')));
+}
 function renderTop() {
   var box = $('#who'); box.innerHTML = '';
   var V = App.V;
@@ -3807,6 +3898,8 @@ function teacherLogin() {
 function closeView() {
   if (document.body.classList.contains('present')) togglePresent(false);
   var V = App.V;
+  if (V && !V.student && V.dirty && !V.viewing && V.inst) { clearTimeout(V.autoT); try { saveV(V).catch(function () {}); } catch (e) {} }
+  if (V) clearTimeout(V.autoT);
   if (V) { V.unsubs.forEach(function (f) { try { f && f(); } catch (e) {} }); if (V.unEnt) V.unEnt(); if (V.inst && V.inst.destroy) V.inst.destroy(); }
   App.V = null;
 }
@@ -3841,6 +3934,7 @@ function renderHome(gkey) {
   var m = App.main; m.innerHTML = ''; document.body.classList.remove('hsearching');
   var g = GROUPS.filter(function (x) { return x[0] === gkey; })[0];
   if (g) { renderGroup(m, g); return; }
+  if (gkey === 'manage') { renderManage(m); window.scrollTo(0, 0); return; }
   var rc = (App.local.get('recent', []) || []).map(function (k) { return TOOLS.filter(function (t) { return t.key === k; })[0]; }).filter(Boolean).slice(0, 6);
   var recent = h('div', { class: 'hrecent' }, h('span', { class: 'hlbl' }, ico('_clock'), '최근 쓴 도구'),
     rc.length ? h('div', { class: 'rchips' }, rc.map(function (t) { return gc(h('button', { class: 'rchip', onclick: function () { location.hash = t.key; } }, h('span', { class: 'chip' }, toolIco(t)), t.name), groupOf(t)[3]); }))
@@ -3851,12 +3945,59 @@ function renderHome(gkey) {
     var v = q.value.trim().replace(/\s+/g, ''); res.innerHTML = '';
     document.body.classList.toggle('hsearching', !!v);
     if (!v) return;
-    var hit = TOOLS.filter(function (t) { return (t.name + (SHORT[t.key] || '') + groupOf(t)[1]).replace(/\s+/g, '').indexOf(v) >= 0; });
+    var hit = TOOLS.filter(function (t) { return GROUPS.some(function (g) { return g[0] === t.group; }) && (t.name + (SHORT[t.key] || '') + groupOf(t)[1]).replace(/\s+/g, '').indexOf(v) >= 0; });
     res.append(hit.length ? h('div', { class: 'tgrid' }, hit.map(function (t) { return toolTile(t); })) : h('div', { class: 'empty-note' }, '맞는 도구가 없어요.'));
   });
-  m.append(h('div', { class: 'home9' }, recent, h('div', { class: 'tiles hmain' }, GROUPS.map(function (g) { return groupTile(g); })),
-    h('label', { class: 'hfind' }, h('span', { class: 'hfi' }, ico('_search')), q), res));
+  var today = h('div', { class: 'today' });
+  m.append(h('div', { class: 'home9' }, today, recent, h('div', { class: 'tiles hmain' }, GROUPS.map(function (g) { return groupTile(g); })),
+    h('label', { class: 'hfind' }, h('span', { class: 'hfi' }, ico('_search')), q), res,
+    h('div', { class: 'hfoot' }, h('button', { class: 'hlink', onclick: openClassRoster }, ico('_user'), ' 우리 반 명단' + (CR.list.length ? ' (' + CR.list.length + '명)' : '')), h('button', { class: 'hlink', onclick: function () { location.hash = '@manage'; } }, ico('_settings'), ' 정리 · 백업'))));
+  paintToday(today);
   window.scrollTo(0, 0);
+}
+// ---------- 오늘 수업: 주간학습 안내의 오늘 시간표 + 오늘 만든 활동 ----------
+function paintToday(box) {
+  if (App.fire && !App.fire.isTeacher()) { box.remove(); return; }
+  var B = TB(), t = todayISO(), wd = (dOf(t).getDay() + 6) % 7;
+  box.append(h('div', { class: 'tdh' }, gc(h('span', { class: 'chip' }, ico('_today')), '#2f6f9f'), h('b', {}, '오늘 · ' + koDate(t)), h('span', { class: 'tdm' })));
+  B.allActivities().then(function (acts) {
+    if (App.V || !box.isConnected) return;
+    var meta = $('.tdm', box), rows = h('div', { class: 'tdp' }), mine = h('div', { class: 'tda' });
+    var wk = acts.filter(function (a) { return a.tool === 'weekly' && a.data && mondayOf(a.data.mon || '') === mondayOf(t); }).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); })[0];
+    var allWk = acts.filter(function (a) { return a.tool === 'weekly' && a.data; }).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); })[0];
+    var ev = allWk ? parseEvents(allWk.data.events, t) : [], es = evOn(ev, t);
+    var bits = es.map(function (e) { return (e.off ? '🏖️ ' : '📌 ') + e.t; });
+    if (wk && wd < 5) {
+      var d = wk.data, P = +d.P || 6, prep = str(arr(d.prep)[wd]).trim();
+      if (prep) bits.push('🎒 ' + prep);
+      for (var p = 1; p <= P; p++) {
+        var k = wd + '-' + p, sj = str((d.subj || {})[k]).trim(), c = str((d.cont || {})[k]).trim();
+        if (!sj && !c) continue;
+        rows.append(gc(h('div', { class: 'tdc', title: c }, h('span', { class: 'pn' }, p), h('b', {}, sj || '·'), c ? h('small', {}, c.split('\n')[0]) : null), wkCol(sj) || '#8a97a3'));
+      }
+      if (!rows.children.length) rows.append(h('span', { class: 'hint', style: { margin: 0 } }, '오늘 칸이 비어 있어요.'));
+      rows.append(h('button', { class: 'tdlink', onclick: function () { openActivity(wk); } }, '주간학습 안내 열기 ›'));
+    } else if (wd >= 5) {
+      var up = ev.filter(function (e) { return e.b > t; }).slice(0, 2);
+      rows.append(h('span', { class: 'hint', style: { margin: 0 } }, '주말이에요. 푹 쉬세요!' + (up.length ? ' 다가오는 일정: ' + up.map(function (e) { return wkMD(e.a) + ' ' + e.t; }).join(', ') : '')));
+    } else {
+      rows.append(h('span', { class: 'hint', style: { margin: 0 } }, '이번 주 주간학습 안내를 만들면 오늘 시간표가 여기에 보여요.'), h('button', { class: 'tdlink', onclick: function () { location.hash = 'weekly'; } }, '주간학습 안내 만들기 ›'));
+    }
+    meta.textContent = bits.join('  ');
+    var todays = acts.filter(function (a) { return a.tool !== 'weekly' && a.tool !== 'classroster' && a.updated && t === isoDay(a.updated); }).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); }).slice(0, 8);
+    if (todays.length) mine.append(h('span', { class: 'hlbl' }, '오늘 만든 활동'), h('div', { class: 'rchips' }, todays.map(function (a) {
+      var d = TOOLS.filter(function (x) { return x.key === a.tool; })[0]; if (!d) return null;
+      return gc(h('button', { class: 'rchip', title: d.name, onclick: function () { openActivity(a); } }, h('span', { class: 'chip' }, toolIco(d)), str(a.title, 24) || d.name), groupOf(d)[3]);
+    })));
+    box.append(rows, mine);
+    document.body.classList.add('has-today');
+  }, function () { box.remove(); });
+}
+function isoDay(ms) { var d = new Date(ms); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+// 저장한 활동 하나를 바로 열어요
+function openActivity(a) {
+  App.pendingOpen = a;
+  if (location.hash === '#' + a.tool) route(); else location.hash = a.tool;
 }
 // 묶음 화면: 도구 화면과 같은 틀 · 다른 묶음은 오른쪽 도구 서랍
 function renderGroup(m, g) {
@@ -3886,7 +4027,9 @@ function makeCtx(V) {
     dirty: function () {
       if (V.viewing || V.loading) return;
       if (V.student) { saveDraft(V); return; }
+      V.rev = (V.rev || 0) + 1;
       if (!V.dirty) { V.dirty = true; refreshBar(V); }
+      autoSave(V);
     },
     name: function () { return V.student ? (studentName() || '익명') : (App.fire && App.fire.isTeacher() ? '선생님' : '나'); },
     uid: function () { return V.B.uid(); },
@@ -3898,6 +4041,15 @@ function makeCtx(V) {
     save: function () { return V.student ? Promise.resolve() : saveV(V); },
     toast: toast
   };
+}
+// 복사·다시 쓰기 때 활동 설정에서 학생별 기록(선생님 피드백 등)을 빼요
+var PERSONAL_KEYS = ['fb', 'log', 'marks', 'drafts', 'notes', 'memos', 'seats', 'fixed', 'prev', 'order'];
+function stripPersonal(d) { var o = clean(d); PERSONAL_KEYS.forEach(function (k) { if (k in o && typeof o[k] === 'object') delete o[k]; }); return o; }
+// 학생 응답을 지우고, 활동 설정 안의 학생별 피드백(fb)도 비워요
+function clearActivity(B, a) {
+  return B.clearEntries(a.id).then(function () {
+    if (a.data && a.data.fb && Object.keys(a.data.fb).length) { var d = clean(a.data); d.fb = {}; return B.saveActivity(a.id, { tool: a.tool, title: a.title, data: d, shared: !!a.shared }); }
+  });
 }
 function errToast(e) { toast('저장하지 못했어요. 인터넷 연결을 확인해 주세요.'); console.warn(e); throw e; }
 function withAid(V) {
@@ -3918,15 +4070,18 @@ function openTool(key, keep) {
   V.loading = true;
   V.inst = def.build(V.body, makeCtx(V));
   if (keep) { V.inst.set(keep); }
+  var po = App.pendingOpen; App.pendingOpen = null;
+  if (po && po.tool === key) V.inst.set(clean(po.data || {}));
   V.loading = false;
   buildBar(V);
   V.unsubs.push(V.B.listActivities(def.key, function (list) {
     V.acts = list.sort(function (a, b) { return (b.updated || 0) - (a.updated || 0); });
     refreshBar(V); if (V.listModal) V.listModal.render();
   }));
-  setAid(V, null);
+  setAid(V, po && po.tool === key ? po.id : null);
+  if (po && po.tool === key) { V.savedAt = po.updated; refreshBar(V); }
   if (keep) { V.dirty = true; refreshBar(V); }
-  Drawer.enable(true, key, function () { return !!(App.V && App.V.dirty); });
+  Drawer.enable(true, key, function () { return false; });
 }
 
 function setAid(V, id) {
@@ -3936,14 +4091,23 @@ function setAid(V, id) {
   else if (V.inst.onEntries) V.inst.onEntries([]);
 }
 
+// 자동 저장: 손을 멈추고 2초가 지나면 저장해요
+function autoSave(V, ms) {
+  clearTimeout(V.autoT);
+  V.autoT = setTimeout(function () { if (App.V === V && V.dirty && !V.viewing && !V.student) saveV(V).catch(function () {}); }, ms || 2000);
+}
 function saveV(V) {
   if (V.busy) return V.busyP;
   V.busy = true; refreshBar(V, '저장 중…');
-  var data = clean(V.inst.get());
+  var data = clean(V.inst.get()), rev0 = V.rev || 0, gen0 = V.gen || 0;
   var rec = { tool: V.def.key, title: str(V.inst.title() || '', 80) || '제목 없음', data: data, shared: !!(V.def.shared && V.def.shared(data)) };
+  if (V.def.kind !== 'screen' && CR.list.length) { rec.cls = CR.list.slice(0, 80); if (CR.aid) rec.clsId = CR.aid; }
   V.busyP = V.B.saveActivity(V.aid, rec).then(function (id) {
-    V.busy = false; V.dirty = false; V.savedAt = Date.now();
+    V.busy = false;
+    if ((V.gen || 0) !== gen0) { refreshBar(V); return id; }   // 그사이 다른 활동을 열었거나 새로 만들었어요
+    V.dirty = (V.rev || 0) !== rev0; V.savedAt = Date.now();
     if (id !== V.aid) setAid(V, id);
+    if (V.dirty) autoSave(V, 800);
     refreshBar(V); return id;
   }, function (e) {
     V.busy = false; refreshBar(V); toast('저장하지 못했어요. ' + (e && e.message || '')); throw e;
@@ -3954,9 +4118,11 @@ function saveV(V) {
 function buildBar(V) {
   var bar = V.bar; bar.innerHTML = '';
   V.btnSave = h('button', { class: 'btn pri', onclick: function () { saveV(V).then(function () { toast('저장했어요'); }).catch(function () {}); } }, '저장');
-  var nw = twoTap(h('button', { class: 'btn' }, '새로 만들기'), '새로 만들기', '저장 안 한 내용이 사라져요 · 한 번 더', function () {
+  var nw = twoTap(h('button', { class: 'btn' }, '새로 만들기'), '새로 만들기', '', function () {
+    if (V.dirty && !V.viewing) { clearTimeout(V.autoT); saveV(V).catch(function () {}); }
+    V.gen = (V.gen || 0) + 1;
     V.loading = true; V.inst.reset(); V.loading = false; setAid(V, null); V.dirty = false; refreshBar(V);
-  }, function () { return V.dirty; });
+  }, function () { return false; });
   V.btnList = h('button', { class: 'btn', onclick: function () { openList(V); } }, '저장 목록');
   bar.append(V.btnSave, nw, V.btnList);
   if (V.def.kind !== 'screen') {
@@ -3977,8 +4143,8 @@ function buildBar(V) {
 function refreshBar(V, msg) {
   if (!V.st || V.student) { if (V.student) refreshStudentBar(V); return; }
   var where = V.B.kind === 'local' ? ' · 이 기기에 저장' : '';
-  V.st.textContent = msg || ((V.dirty ? '저장 안 한 내용이 있어요' : V.aid ? '저장됨' + (V.savedAt ? ' ' + fmt(V.savedAt) : '') : '아직 저장하지 않았어요') + where);
-  V.st.classList.toggle('dirty', !!V.dirty && !msg);
+  V.st.textContent = msg || ((V.dirty ? '✎ 입력 중 · 곧 자동 저장돼요' : V.aid ? '✓ 자동 저장됨' + (V.savedAt ? ' ' + fmt(V.savedAt) : '') : '쓰기 시작하면 자동으로 저장돼요') + where);
+  V.st.classList.toggle('dirty', false); V.st.classList.toggle('saved', !V.dirty && !!V.aid && !msg);
   V.btnList.textContent = '저장 목록 (' + V.acts.length + ')';
   V.btnSave.disabled = !!V.busy || !!V.viewing;
   if (V.btnSub) {
@@ -3997,17 +4163,27 @@ function openList(V) {
     wrap.innerHTML = '';
     if (!V.acts.length) { wrap.append(h('div', { class: 'empty-note' }, '저장한 활동이 아직 없어요.')); return; }
     V.acts.forEach(function (a) {
-      var open = twoTap(h('button', { class: 'btn sm pri' }, '열기'), '열기', '저장 안 한 내용이 사라져요 · 한 번 더', function () {
+      var open = twoTap(h('button', { class: 'btn sm pri' }, '열기'), '열기', '', function () {
         endViewing(V);
+        if (V.dirty) { clearTimeout(V.autoT); saveV(V).catch(function () {}); }
+        V.gen = (V.gen || 0) + 1;
         V.loading = true; V.inst.set(clean(a.data || {})); V.loading = false;
         setAid(V, a.id); V.dirty = false; V.savedAt = a.updated; refreshBar(V); md.close();
-      }, function () { return V.dirty; });
+      }, function () { return false; });
       var del = twoTap(h('button', { class: 'btn sm' }, '삭제'), '삭제', '정말 지울까요?', function () {
         V.B.deleteActivity(a.id).catch(errToast);
         if (V.aid === a.id) { setAid(V, null); V.dirty = true; refreshBar(V); }
       });
+      var cnt = h('small', { class: 'lrcnt' });
+      if (V.B.entriesOnce) V.B.entriesOnce(a.id).then(function (l) { cnt.textContent = l.length ? ' · 학생 응답 ' + l.length + '개' : ''; clr.hidden = !l.length; }).catch(function () {});
+      var clr = twoTap(h('button', { class: 'btn sm', title: '설정은 그대로 두고 학생 응답만 지워 다시 써요' }, '♻️ 응답 비우기'), '♻️ 응답 비우기', '학생 응답을 모두 지울까요?', function () {
+        clearActivity(V.B, a).then(function () { toast('학생 응답을 비웠어요. 이 활동을 다시 쓸 수 있어요'); if (V.aid === a.id && a.data && a.data.fb) { V.loading = true; V.inst.set(stripPersonal(a.data)); V.loading = false; } md.render(); }, errToast);
+      }); clr.hidden = true;
+      var cp = h('button', { class: 'btn sm', title: '학생 응답 없이 설정만 복사해 새 활동으로 만들어요', onclick: function () {
+        V.B.saveActivity(null, { tool: a.tool, title: str((a.title || '') + ' (복사)', 80), data: stripPersonal(a.data || {}), shared: !!a.shared }).then(function () { toast('복사했어요. 목록 맨 위에 있어요'); }, errToast);
+      } }, '📄 복사');
       wrap.append(h('div', { class: 'list-row' + (a.id === V.aid ? ' cur' : '') },
-        h('div', { class: 't' }, a.title || '제목 없음', h('small', {}, fmt(a.updated))), open, del));
+        h('div', { class: 't' }, a.title || '제목 없음', h('small', {}, fmt(a.updated)), cnt), open, cp, clr, del));
     });
   };
   md.el.onclose = function () { V.listModal = null; };
@@ -4187,7 +4363,30 @@ function buildStudentBar(V, act) {
   var name = h('input', { class: 'name', placeholder: '내 이름 (번호)', maxlength: 20, value: studentName() });
   name.addEventListener('input', function () { App.local.put('name', name.value.trim()); });
   V.nameInput = name;
-  bar.append(h('span', { style: { fontSize: '13px', fontWeight: 700 } }, '이름'), name);
+  var lbl = h('span', { style: { fontSize: '13px', fontWeight: 700 } }, '이름');
+  bar.append(lbl, name);
+  // 명단이 있으면 이름을 눌러 골라요
+  var names = arr(act.cls).map(function (x) { return str(x, 30); }).filter(Boolean);
+  function setupPick(L) {
+    if (!L.length) return;
+    names = L; name.hidden = true; lbl.hidden = true;
+    var chipB = h('button', { class: 'namepick', onclick: pickName });
+    function paintChip() { var n = studentName(); chipB.innerHTML = ''; chipB.append(ico('_user'), n ? ' ' + n : ' 내 이름 고르기'); chipB.classList.toggle('empty', !n); }
+    function pickName() {
+      var md = modal('🙋 내 이름을 눌러요'), typed = h('div', { hidden: true });
+      var other = inp('', '이름 (번호)'); typed.append(other, h('button', { class: 'btn pri sm', onclick: function () { if (!other.value.trim()) return; choose(other.value.trim()); } }, '이걸로 할게요'));
+      function choose(n) { App.local.put('name', n); name.value = n; paintChip(); md.close(); toast(n + ', 반가워요!'); name.dispatchEvent(new Event('input')); if (V.inst && V.inst.onName) V.inst.onName(n); }
+      md.box.classList.add('wide');
+      md.box.append(h('div', { class: 'npgrid' }, names.map(function (n) { var b = h('button', { class: 'npbtn' + (n === studentName() ? ' on' : ''), onclick: function () { choose(n); } }, n); return b; })),
+        h('div', { class: 'row', style: { marginTop: '10px', alignItems: 'center' } }, h('button', { class: 'btn sm', onclick: function () { typed.hidden = false; other.focus(); } }, '명단에 내 이름이 없어요'), typed));
+    }
+    paintChip(); lbl.after(chipB);
+    if (!studentName() || names.indexOf(studentName()) < 0 && names.map(normName).indexOf(normName(studentName())) < 0) setTimeout(pickName, 300);
+    else { var exact = names.filter(function (n) { return normName(n) === normName(studentName()); })[0]; if (exact && exact !== studentName()) { App.local.put('name', exact); name.value = exact; paintChip(); } }
+  }
+  if (act.clsId && V.B.getActivity) {
+    var got = false, un = V.B.getActivity(act.clsId, function (r) { if (got) return; got = true; setTimeout(function () { if (un) un(); }, 0); var L = r && r.data ? rosterList(r.data.roster) : []; setupPick(L.length ? L : names); });
+  } else setupPick(names);
   if (V.def.kind === 'ind' && !V.def.noSubmit) {
     V.btnSubmit = h('button', { class: 'btn pri', onclick: function () {
       if (!name.value.trim()) { toast('이름을 먼저 적어 주세요'); name.focus(); return; }
@@ -4231,14 +4430,53 @@ var Drawer = (function () {
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) show(false); });
   }
   function show(on) { open = !!on && document.body.classList.contains('has-drawer'); document.body.classList.toggle('dr-open', open); }
-  var dgroup = null, gpage = null;
+  var dgroup = null, gpage = null, openG = {};
+  // 시안 B: 찾기 + 최근 + 접히는 차례
+  function renderList(curKey) {
+    dr.innerHTML = '';
+    var cur = TOOLS.filter(function (t) { return t.key === curKey; })[0], curG = cur ? cur.group : gpage;
+    if (curG && openG[curG] == null) openG[curG] = true;
+    var q = h('input', { class: 'drq', type: 'search', placeholder: '도구 찾기', autocomplete: 'off' });
+    var body = h('div', { class: 'drl' });
+    dr.append(h('div', { class: 'dr-head' }, h('b', {}, '도구 서랍'), h('span', { style: { flex: 1 } }),
+        h('button', { class: 'ghome', title: '정리 · 백업', onclick: function () { show(false); location.hash = '@manage'; } }, ico('_settings')),
+        h('button', { class: 'ghome', title: '처음 화면', onclick: function () { go(''); } }, ico('_home'))),
+      h('label', { class: 'drfind' }, ico('_search'), q), body);
+    function row(t) {
+      var g = groupOf(t);
+      return gc(h('button', { class: 'drrow' + (t.key === curKey ? ' on' : ''), onclick: function () { if (t.key === curKey) { show(false); return; } go(t.key); } },
+        h('span', { class: 'chip' }, toolIco(t)), h('span', { class: 'nm' }, t.name)), g[3]);
+    }
+    function paint() {
+      body.innerHTML = '';
+      var v = q.value.trim().replace(/\s+/g, '');
+      if (v) {
+        var hit = TOOLS.filter(function (t) { return GROUPS.some(function (g) { return g[0] === t.group; }) && (t.name + (SHORT[t.key] || '') + groupOf(t)[1]).replace(/\s+/g, '').indexOf(v) >= 0; });
+        body.append(hit.length ? h('div', { class: 'drsec' }, hit.map(row)) : h('div', { class: 'hint' }, '맞는 도구가 없어요.'));
+        return;
+      }
+      var rc = (App.local.get('recent', []) || []).filter(function (k) { return k !== curKey; }).map(function (k) { return TOOLS.filter(function (t) { return t.key === k; })[0]; }).filter(Boolean).slice(0, 4);
+      if (rc.length) body.append(h('div', { class: 'drsec' }, h('span', { class: 'hlbl' }, ico('_clock'), '최근 쓴 도구'), rc.map(row)));
+      body.append(h('span', { class: 'hlbl', style: { margin: '10px 0 4px' } }, '전체 차례'));
+      GROUPS.forEach(function (g) {
+        var list = TOOLS.filter(function (t) { return t.group === g[0]; }); if (!list.length) return;
+        var opened = !!openG[g[0]];
+        var head = gc(h('button', { class: 'drg' + (opened ? ' open' : '') + (g[0] === curG ? ' cur' : ''), onclick: function () { openG[g[0]] = !opened; paint(); } },
+          h('span', { class: 'chip' }, groupIco(g)), h('b', {}, g[1]), h('small', {}, list.length), h('span', { class: 'cv' }, opened ? '▾' : '▸')), g[3]);
+        body.append(head);
+        if (opened) body.append(h('div', { class: 'drgl' }, list.map(row)));
+      });
+    }
+    q.addEventListener('input', paint); paint();
+  }
   function render(curKey, isDirty) {
     if (!dr) build();
+    if ((new URLSearchParams(location.search).get('drawer') || App.local.get('drawerStyle', 'b')) === 'b') { renderList(curKey); return; }
     dr.innerHTML = '';
     var cur = TOOLS.filter(function (t) { return t.key === curKey; })[0];
     var g = GROUPS.filter(function (x) { return x[0] === dgroup; })[0] || (cur ? groupOf(cur) : GROUPS.filter(function (x) { return x[0] === gpage; })[0] || GROUPS[0]);
     function goT(t, b) { if (t.key === curKey) { show(false); return; } twoTap(b, b.textContent, '저장 안 한 내용이 있어요 · 한 번 더', function () { dgroup = null; go(t.key); }, isDirty); }
-    dr.append(h('div', { class: 'dr-head' }, h('b', {}, '도구 서랍'), h('button', { class: 'ghome', title: '처음 화면', onclick: function () { dgroup = null; go(''); } }, ico('_home'))),
+    dr.append(h('div', { class: 'dr-head' }, h('b', {}, '도구 서랍'), h('span', { style: { flex: 1 } }), h('button', { class: 'ghome', title: '정리 · 백업', onclick: function () { dgroup = null; show(false); location.hash = '@manage'; } }, ico('_settings')), h('button', { class: 'ghome', title: '처음 화면', onclick: function () { dgroup = null; go(''); } }, ico('_home'))),
       h('div', { class: 'dr-cats' }, GROUPS.map(function (x) {
         var b = groupTile(x, true, function () { if (gpage) { show(false); location.hash = '@' + x[0]; return; } dgroup = x[0]; render(curKey, isDirty); });
         if (x === g) b.classList.add('on'); return b;
@@ -4291,13 +4529,14 @@ function boot() {
     else location.hash = '';
   });
   window.addEventListener('hashchange', route);
+  window.addEventListener('beforeunload', function (e) { var V = App.V; if (V && !V.student && V.dirty && !V.viewing) { try { saveV(V); } catch (x) {} e.preventDefault(); e.returnValue = ''; } });
   var cfg = window.FIREBASE_CONFIG;
   if (cfg && cfg.apiKey) {
     App.main.append(h('div', { class: 'empty-note' }, '연결하는 중…'));
     FireBackend(cfg).then(function (fb) {
-      App.fire = fb;
+      App.fire = fb; loadClassRoster();
       fb.onAuth(function () {
-        renderTop();
+        renderTop(); loadClassRoster();
         var V = App.V;
         if (V && !V.student) { var keep = V.dirty ? clean(V.inst.get()) : null; openTool(V.def.key, keep); }
       });
@@ -4307,7 +4546,7 @@ function boot() {
       toast('Firebase에 연결하지 못해 이 기기 저장으로 열었어요.');
       route();
     });
-  } else route();
+  } else { loadClassRoster(); route(); }
 }
 
 /* ===================== 생각 정리 ===================== */
@@ -5906,7 +6145,7 @@ tool({
 
 // ---------- 학습 일지 ----------
 tool({
-  key: 'journal', name: '학습 일지', icon: '📔', group: 'record', kind: 'ind',
+  key: 'journal', name: '학습 일지', icon: '📔', group: 'retired', kind: 'ind', // 배움이 깃드는 글쓰기로 합쳤어요. 예전 기록·링크는 그대로 열려요
   desc: '오늘 배운 것, 잘한 점, 아쉬운 점을 돌아보며 기록해요.',
   build: function (el, ctx) {
     var MOODS = ['😄', '🙂', '😐', '🙁', '😣'];
@@ -7243,6 +7482,7 @@ function onceEntries(B, aid) {
 // 다른 도구에 적어 둔 명단을 가져와요 (가장 최근 것)
 function pullRoster(cb) {
   var B = TB();
+  if (typeof CR !== 'undefined' && CR.list.length) { cb({ txt: CR.txt, title: '우리 반 명단', updated: Date.now() }); return; }
   Promise.all(['observe', 'checklist', 'portfolio', 'speak', 'roles', 'seats', 'records', 'picker'].map(function (t) { return onceActs(B, t); })).then(function (lists) {
     var best = null;
     lists.forEach(function (l) { l.forEach(function (a) { var d = a.data || {}, txt = d.roster || d.names; if (txt && rosterList(txt).length && (!best || (a.updated || 0) > (best.updated || 0))) best = { updated: a.updated, txt: txt, title: a.title }; }); });
@@ -7264,7 +7504,7 @@ function rosterBox(ctx, onChange) {
       h('span', { class: 'hint', style: { margin: 0 } }, '학생이 적는 이름과 같게 적으면 기록이 잘 모여요.')));
   t.addEventListener('input', function () { paint(); ctx.dirty(); onChange(); });
   function paint() { var n = rosterList(t.value).length; cnt.textContent = '(' + n + '명)'; if (!n) box.open = true; }
-  return { el: box, ta: t, list: function () { return rosterList(t.value); }, set: function (v) { setTa(t, v || ''); paint(); }, paint: paint };
+  return { el: box, ta: t, list: function () { return rosterList(t.value); }, set: function (v) { if (!v && typeof CR !== 'undefined' && CR.txt && !ctx.student) v = CR.txt; setTa(t, v || ''); paint(); }, paint: paint };
 }
 
 // ---------- 관찰 기록 ----------
@@ -8606,8 +8846,8 @@ var LW_STEPS = [
   ['🧺', '생각 모으기', '글의 재료를 모아요. 문장이 아니어도 괜찮아요. 낱말이나 짧은 메모로 적어요.'],
   ['🧵', '한 편의 글로 엮기', '모은 생각을 보며 문단을 이어 한 편의 글로 써요. 제목도 붙여요.'],
   ['🗣️', '읽고 고쳐 쓰기', '내 글을 소리 내어 읽으며 어색한 문장을 눌러 표시하고, 아래에서 고쳐 써 완성해요.']];
-var LW_PARAS = [['열기', '오늘 무엇을 배웠는지, 수업 전에 나는 어떻게 알고 있었는지'], ['수업 이야기', '어떤 활동을 했는지 순서대로'], ['깨달음', '새로 알게 된 것을 내 말로 설명하기'], ['닫기', '아직 궁금한 것, 삶에서 만난 장면']];
-var LW_LINKS = ['처음에는 ~라고 생각했는데', '그런데 오늘', '먼저', '그다음에', '마지막으로', '왜냐하면', '그래서', '예를 들어', '이제는', '아직 ~이 궁금하다', '앞으로'];
+var LW_PARAS = [['열기', '오늘 무엇을 배웠는지, 수업 전에 나는 어떻게 알고 있었는지'], ['수업 이야기', '어떤 활동을 했는지 순서대로'], ['깨달음', '새로 알게 된 것을 내 말로 설명하기'], ['닫기', '아직 궁금한 것, 삶에서 만난 장면, 나를 돌아본 마음과 다짐']];
+var LW_LINKS = ['처음에는 ~라고 생각했는데', '그런데 오늘', '먼저', '그다음에', '마지막으로', '왜냐하면', '그래서', '예를 들어', '이제는', '아직 ~이 궁금하다', '오늘 나는', '다음에는', '앞으로'];
 var WR_READCHK = ['숨이 찰 만큼 긴 문장은 없나요?', '같은 낱말이 자꾸 나오지 않나요?', '읽는 사람이 알아듣기 어려운 곳은 없나요?', '더 자세히 쓰고 싶은 장면이 있나요?', '문장의 끝이 어색하지 않나요?'];
 var WR_FINCHK = ['문장 끝에 마침표(.)를 찍었어요', '띄어쓰기를 살폈어요', '헷갈리는 맞춤법을 확인했어요', '내용이 바뀌는 곳에서 문단을 나눴어요'];
 var WR_STAMP = ['', '🌟 마음이 담긴 글', '👀 자세히 본 글', '💪 끝까지 고친 글', '💡 생각이 깊은 글', '😊 읽는 재미가 있는 글'];
@@ -8616,7 +8856,7 @@ var READ_WAYS = [['free', '자유롭게', '책을 읽고 떠오른 생각과 느
   ['line', '마음에 남은 문장', '마음에 남은 문장을 옮겨 적고, 왜 마음에 남았는지 써요.']];
 Object.assign(KEY_KO, { 'f.date': '날짜', 'f.topic': '주제', 'f.wx': '날씨', 'f.wxt': '날씨 (내 말로)', 'f.title': '제목', 'f.book': '책 제목', 'f.author': '지은이', 'f.pub': '출판사', 'f.year': '출판년도',
   'f.p1': '읽은 쪽 (부터)', 'f.p2': '읽은 쪽 (까지)', 'f.way': '쓰는 방법', 'f.subject': '교과', 'f.period': '교시', 'f.goal': '학습 목표', 'f.before': '수업 전 알고 있던 것', 'f.flow': '수업의 흐름',
-  'f.learned': '새롭게 알게 된 것', 'f.explain': '내 말로 설명하기', 'f.ask': '궁금하거나 헷갈리는 것', 'f.life': '삶과 잇기', draft: '처음 쓴 글', rev: '고쳐 쓴 글', fin: '완성한 글', step: '단계', done: '완성' });
+  'f.learned': '새롭게 알게 된 것', 'f.explain': '내 말로 설명하기', 'f.ask': '궁금하거나 헷갈리는 것', 'f.life': '삶과 잇기', 'f.self': '나를 돌아보기', draft: '처음 쓴 글', rev: '고쳐 쓴 글', fin: '완성한 글', step: '단계', done: '완성' });
 
 function wrSentences(t) {
   return String(t || '').split(/\n/).map(function (p) { return (p.match(/[^.!?…]+[.!?…]*["'”’」)]*\s*/g) || []).map(function (s) { return s.trim(); }).filter(Boolean); });
@@ -9127,8 +9367,215 @@ writeTool({
     { k: 'learned', l: '💡 새롭게 알게 된 것', ph: '예: 증발 → 구름 → 비', rows: 2, req: true },
     { k: 'explain', l: '🗣️ 내 말로 설명하기', ph: '친구에게 설명하듯 한두 마디로', rows: 2, req: true },
     { k: 'ask', l: '❓ 아직 궁금하거나 헷갈리는 것', ph: '더 알고 싶은 것, 아직 헷갈리는 것 (없으면 ‘없어요’)', rows: 2, req: true },
-    { k: 'life', l: '🌍 삶과 잇기', ph: '오늘 배운 것을 어디에서 보거나 쓸 수 있을까요?', rows: 2, opt: true }]
+    { k: 'life', l: '🌍 삶과 잇기', ph: '오늘 배운 것을 어디에서 보거나 쓸 수 있을까요?', rows: 2, opt: true },
+    { k: 'self', l: '🪞 나를 돌아보기', ph: '오늘 내 기분, 잘한 점, 아쉬운 점, 다음 다짐 (예: 😊 발표해서 뿌듯 / 실험 정리가 늦음 / 다음엔 시간 지키기)', hint: '기분 · 잘한 점 · 아쉬운 점 · 다음 다짐을 짧게 메모해요.', rows: 2, opt: true }]
 });
+
+/* ===================== 정리 · 백업 (활동 다시 쓰기 · 새 학년도 정리 · 이 기기 정리) ===================== */
+// 학생 이름이 담긴 선생님 기록 도구
+var PERSONAL_TOOLS = ['observe', 'checklist', 'portfolio', 'speak', 'roles', 'seats', 'records', 'peer'];
+function toolDef(k) { return TOOLS.filter(function (t) { return t.key === k; })[0]; }
+function todayStr() { var d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+function downloadJSON(name, obj) {
+  var b = new Blob([JSON.stringify(obj)], { type: 'application/json' }), a = document.createElement('a');
+  a.href = URL.createObjectURL(b); a.download = name; document.body.append(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+}
+function kb(n) { return n > 1048576 ? (n / 1048576).toFixed(1) + 'MB' : Math.max(1, Math.round(n / 1024)) + 'KB'; }
+
+function renderManage(m) {
+  var B = TB(), canTeach = !App.fire || App.fire.isTeacher();
+  m.append(h('div', { class: 'thead' },
+    h('div', { class: 'thd' }, homeBtn(), gc(h('span', { class: 'chip' }, ico('_settings')), '#5b6b7a'), h('h2', {}, '정리 · 백업')),
+    h('p', {}, '쓰던 활동을 비워 다시 쓰고, 새 학년도를 맞아 기록을 백업하고 정리하고, 이 기기에 남은 내용을 지워요.')));
+  var nav = h('div', { class: 'seg mgseg' }), body = h('div', { class: 'panel mgpanel' });
+  var TABS = [['reuse', '_recycle', '활동 다시 쓰기'], ['year', '_backup', '새 학년도 정리'], ['device', '_device', '이 기기 정리']];
+  var cur = App.local.get('mgTab', 'reuse');
+  TABS.forEach(function (t) { nav.append(h('button', { onclick: function () { cur = t[0]; App.local.put('mgTab', cur); paint(); } }, ico(t[1]), ' ' + t[2])); });
+  m.append(nav, body);
+  function paint() {
+    $$('button', nav).forEach(function (b, i) { b.classList.toggle('on', TABS[i][0] === cur); });
+    body.innerHTML = '';
+    if (cur !== 'device' && !canTeach) { body.append(h('div', { class: 'empty-note' }, '선생님으로 로그인하면 쓸 수 있어요. 오른쪽 위 ‘선생님 로그인’을 눌러 주세요.')); return; }
+    if (cur === 'reuse') paintReuse(); else if (cur === 'year') paintYear(); else paintDevice();
+  }
+
+  // ---------- ♻️ 활동 다시 쓰기 ----------
+  function paintReuse() {
+    body.append(h('p', { class: 'mgintro' }, '활동의 설정(문제, 질문, 명단 등)은 그대로 두고 ', h('b', {}, '학생 응답만 비워'), ' 다음 반·다음 해에 다시 쓰거나, ', h('b', {}, '응답 없이 복사'), '해 새 활동으로 만들어요. 각 도구의 ‘저장 목록’에서도 같은 일을 할 수 있어요.'));
+    var tf = h('select', { class: 'fld', style: { width: 'auto' } }, h('option', { value: '' }, '모든 도구'));
+    var q = h('input', { class: 'fld', type: 'search', placeholder: '활동 이름으로 찾기', style: { flex: 1, minWidth: '140px' } });
+    var bulk = h('div', { class: 'row mgbulk' }), listEl = h('div', { class: 'mglist' }, h('div', { class: 'empty-note' }, '활동을 불러오는 중…'));
+    body.append(h('div', { class: 'row', style: { alignItems: 'center' } }, tf, q), bulk, listEl);
+    var acts = [], counts = {}, sel = {};
+    B.allActivities().then(function (l) {
+      acts = l.sort(function (a, b) { return (b.updated || 0) - (a.updated || 0); });
+      var keys = []; acts.forEach(function (a) { if (keys.indexOf(a.tool) < 0) keys.push(a.tool); });
+      keys.forEach(function (k) { var d = toolDef(k); if (d) tf.append(h('option', { value: k }, d.name)); });
+      draw();
+      acts.forEach(function (a) { B.entriesOnce(a.id).then(function (es) { counts[a.id] = es.length; var c = $('[data-cnt="' + a.id + '"]', listEl); if (c) c.textContent = es.length ? '응답 ' + es.length + '개' : '응답 없음'; }).catch(function () {}); });
+    }, function () { listEl.innerHTML = ''; listEl.append(h('div', { class: 'empty-note' }, '활동을 불러오지 못했어요. 인터넷 연결을 확인해 주세요.')); });
+    tf.addEventListener('change', draw); q.addEventListener('input', draw);
+    function shown() { var v = q.value.trim(); return acts.filter(function (a) { return (!tf.value || a.tool === tf.value) && (!v || String(a.title || '').indexOf(v) >= 0); }); }
+    function draw() {
+      listEl.innerHTML = '';
+      var L = shown();
+      if (!L.length) { listEl.append(h('div', { class: 'empty-note' }, acts.length ? '맞는 활동이 없어요.' : '저장한 활동이 아직 없어요.')); paintBulk(); return; }
+      L.forEach(function (a) {
+        var d = toolDef(a.tool); if (!d) return;
+        var cb = h('input', { type: 'checkbox' }); cb.checked = !!sel[a.id]; cb.addEventListener('change', function () { if (cb.checked) sel[a.id] = 1; else delete sel[a.id]; paintBulk(); });
+        var cnt = h('small', { 'data-cnt': a.id }, counts[a.id] == null ? '…' : counts[a.id] ? '응답 ' + counts[a.id] + '개' : '응답 없음');
+        var clr = twoTap(h('button', { class: 'btn sm' }, ico('_recycle'), ' 응답 비우기'), '응답 비우기', '정말 비울까요?', function () {
+          clearActivity(B, a).then(function () { counts[a.id] = 0; cnt.textContent = '응답 없음'; toast('‘' + (a.title || d.name) + '’ 응답을 비웠어요'); }, errToast);
+        });
+        var cp = h('button', { class: 'btn sm', onclick: function () {
+          B.saveActivity(null, { tool: a.tool, title: str((a.title || '') + ' (복사)', 80), data: stripPersonal(a.data || {}), shared: !!a.shared }).then(function (id) {
+            acts.unshift({ id: id, tool: a.tool, title: str((a.title || '') + ' (복사)', 80), data: stripPersonal(a.data || {}), updated: Date.now() }); counts[id] = 0; draw(); toast('복사했어요');
+          }, errToast);
+        } }, ico('_copy'), ' 복사');
+        var del = twoTap(h('button', { class: 'btn sm' }, ico('_trash')), '지우기', '활동과 응답을 모두 지울까요?', function () {
+          B.deleteActivity(a.id).then(function () { acts = acts.filter(function (x) { return x !== a; }); delete sel[a.id]; draw(); toast('지웠어요'); }, errToast);
+        });
+        listEl.append(gc(h('div', { class: 'mgrow' }, cb, h('span', { class: 'chip' }, toolIco(d)),
+          h('div', { class: 'mgt' }, h('b', {}, a.title || '제목 없음'), h('small', {}, d.name + ' · ' + fmt(a.updated) + ' · '), cnt), cp, clr, del), groupOf(d)[3]));
+      });
+      paintBulk();
+    }
+    function paintBulk() {
+      bulk.innerHTML = '';
+      var ids = Object.keys(sel), L = shown();
+      var all = h('label', { class: 'chk' }, h('input', { type: 'checkbox', onchange: function (e) { L.forEach(function (a) { if (e.target.checked) sel[a.id] = 1; else delete sel[a.id]; }); draw(); } }), ' 보이는 활동 모두 고르기');
+      bulk.append(all);
+      if (!ids.length) return;
+      bulk.append(h('b', {}, ids.length + '개 고름'),
+        twoTap(h('button', { class: 'btn sm' }, ico('_recycle'), ' 고른 활동 응답 비우기'), '고른 활동 응답 비우기', ids.length + '개 활동의 응답을 비울까요?', function () {
+          var T = acts.filter(function (a) { return sel[a.id]; }), n = 0;
+          Promise.all(T.map(function (a) { return clearActivity(B, a).then(function () { n++; counts[a.id] = 0; }); })).then(function () { sel = {}; draw(); toast(n + '개 활동의 응답을 비웠어요'); }, errToast);
+        }));
+    }
+  }
+
+  // ---------- 🎒 새 학년도 정리 ----------
+  function paintYear() {
+    var backed = false;
+    var st1 = h('div', { class: 'mgstep' }, h('h3', {}, h('span', { class: 'n' }, '1'), '백업 파일 받기'),
+      h('p', {}, '모든 활동과 학생 응답을 파일 하나로 내려받아요. 정리하기 전에 꼭 받아 두세요. 학교 컴퓨터나 USB에 보관하고, 필요하면 아래 ‘백업 파일로 되살리기’로 다시 넣을 수 있어요.'));
+    var bInfo = h('span', { class: 'hint', style: { margin: 0 } });
+    var bBtn = h('button', { class: 'btn pri', onclick: function () {
+      bBtn.disabled = true; bInfo.textContent = '모으는 중…';
+      makeBackup(B, function (p) { bInfo.textContent = '모으는 중… ' + p; }).then(function (bk) {
+        var n = bk.acts.length, e = Object.keys(bk.ent).reduce(function (s, k) { return s + bk.ent[k].length; }, 0);
+        downloadJSON('우리반학습도구-백업-' + todayStr() + '.json', bk);
+        backed = true; bBtn.disabled = false; bInfo.textContent = '✅ 활동 ' + n + '개 · 학생 응답 ' + e + '개를 백업했어요'; paintGo();
+      }, function () { bBtn.disabled = false; bInfo.textContent = '백업하지 못했어요. 인터넷 연결을 확인해 주세요.'; });
+    } }, ico('_down'), ' 백업 파일 받기');
+    st1.append(h('div', { class: 'row', style: { alignItems: 'center' } }, bBtn, bInfo));
+
+    var O = [
+      ['ent', true, '모든 활동의 학생 응답 지우기', '문제·질문·안내 같은 활동 설정은 남아서 새 학생들과 다시 쓸 수 있어요.'],
+      ['personal', true, '학생 이름이 담긴 선생님 기록 지우기', '관찰 기록, 과제·준비물 체크표, 학생 성장 기록, 발표 기회, 1인 1역 역할표, 자리 바꾸기, 생활기록부 문장, 모둠 동료평가 활동을 지워요.'],
+      ['all', false, '모든 활동 지우기 (완전히 처음 상태로)', '받아쓰기 문제, 낱말 카드처럼 다시 쓸 수 있는 활동까지 모두 지워요.'],
+      ['device', true, '이 기기의 초안 · 최근 기록도 지우기', '학생이 쓰던 초안, 최근 쓴 도구, 알림장 확인 표시를 지워요.']];
+    var C = {};
+    var st2 = h('div', { class: 'mgstep' }, h('h3', {}, h('span', { class: 'n' }, '2'), '정리할 것 고르기'), O.map(function (o) {
+      var cb = h('input', { type: 'checkbox' }); cb.checked = o[1]; C[o[0]] = cb;
+      cb.addEventListener('change', function () { if (o[0] === 'all') { C.ent.disabled = C.personal.disabled = cb.checked; } paintGo(); });
+      return h('label', { class: 'mgopt' + (o[0] === 'all' ? ' danger' : '') }, cb, h('div', {}, h('b', {}, o[2]), h('small', {}, o[3])));
+    }));
+    var word = '정리합니다', conf = h('input', { class: 'fld', placeholder: '‘' + word + '’라고 적어요', style: { maxWidth: '220px' } });
+    var noBk = h('input', { type: 'checkbox' });
+    var go = h('button', { class: 'btn pri danger', onclick: run }, ico('_trash'), ' 정리하기');
+    var prog = h('div', { class: 'hint' });
+    var st3 = h('div', { class: 'mgstep' }, h('h3', {}, h('span', { class: 'n' }, '3'), '정리하기'),
+      h('p', {}, '지운 내용은 백업 파일 없이는 되살릴 수 없어요. 확인을 위해 아래 칸에 ', h('b', {}, '‘' + word + '’'), '라고 적어 주세요.'),
+      h('div', { class: 'row', style: { alignItems: 'center' } }, conf, go), h('label', { class: 'chk mgnobk' }, noBk, ' 백업 없이 진행할게요'), prog);
+    conf.addEventListener('input', paintGo); noBk.addEventListener('change', paintGo);
+    function paintGo() { var any = Object.keys(C).some(function (k) { return C[k].checked && !C[k].disabled; }); go.disabled = !(any && conf.value.trim() === word && (backed || noBk.checked)); $('.mgnobk', st3).hidden = backed; }
+    function run() {
+      go.disabled = true; prog.textContent = '정리하는 중…';
+      B.allActivities().then(function (acts) {
+        var all = C.all.checked, done = 0, jobs = [];
+        acts.forEach(function (a) {
+          if (all || (C.personal.checked && PERSONAL_TOOLS.indexOf(a.tool) >= 0)) jobs.push(function () { return B.deleteActivity(a.id); });
+          else if (C.ent.checked) jobs.push(function () { return clearActivity(B, a); });
+        });
+        var i = 0;
+        function next() {
+          if (i >= jobs.length) return Promise.resolve();
+          return jobs[i++]().catch(function () {}).then(function () { done++; prog.textContent = '정리하는 중… ' + done + ' / ' + jobs.length; return next(); });
+        }
+        return next().then(function () {
+          if (C.device.checked) clearDevice(['draft', 'recent']);
+          prog.textContent = '✅ 정리를 마쳤어요 (' + jobs.length + '개 활동). 새 학년도도 즐겁게 보내세요!'; conf.value = ''; toast('정리를 마쳤어요');
+        });
+      }, function () { prog.textContent = '정리하지 못했어요. 인터넷 연결을 확인해 주세요.'; paintGo(); });
+    }
+    // 되살리기
+    var file = h('input', { type: 'file', accept: '.json,application/json' }), rInfo = h('div', { class: 'hint' }), rBtn = h('button', { class: 'btn', disabled: true }, ico('_up'), ' 되살리기'), bk = null;
+    file.addEventListener('change', function () {
+      var f = file.files[0]; if (!f) return; var fr = new FileReader();
+      fr.onload = function () {
+        try { bk = JSON.parse(fr.result); if (bk.app !== 'woori-class-tools' || !Array.isArray(bk.acts)) throw 0; }
+        catch (e) { bk = null; rInfo.textContent = '우리 반 학습도구 백업 파일이 아니에요.'; rBtn.disabled = true; return; }
+        rInfo.textContent = (bk.at ? new Date(bk.at).toLocaleString('ko-KR') + '에 만든 백업 · ' : '') + '활동 ' + bk.acts.length + '개 · 학생 응답 ' + Object.keys(bk.ent || {}).reduce(function (s, k) { return s + bk.ent[k].length; }, 0) + '개'; rBtn.disabled = false;
+      };
+      fr.readAsText(f);
+    });
+    rBtn.addEventListener('click', function () {
+      if (!bk) return; rBtn.disabled = true; var n = 0;
+      var i = 0;
+      function next() {
+        if (i >= bk.acts.length) return Promise.resolve();
+        var a = bk.acts[i++];
+        return B.saveActivity(a.id, { tool: a.tool, title: a.title, data: a.data || {}, shared: !!a.shared }).then(function (id) {
+          var es = (bk.ent || {})[a.id] || [];
+          return B.entriesOnce(id).then(function (cur) { if (!cur.length && es.length) return B.restoreEntries(id, es); });
+        }).catch(function () {}).then(function () { n++; rInfo.textContent = '되살리는 중… ' + n + ' / ' + bk.acts.length; return next(); });
+      }
+      next().then(function () { rInfo.textContent = '✅ 활동 ' + n + '개를 되살렸어요. 이미 응답이 있는 활동에는 응답을 겹쳐 넣지 않았어요.'; toast('되살렸어요'); });
+    });
+    var st4 = h('details', { class: 'mgstep mgrestore' }, h('summary', {}, h('span', { class: 'n' }, ico('_up')), '백업 파일로 되살리기'),
+      h('p', {}, '받아 둔 백업 파일을 고르면 활동과 학생 응답을 다시 넣어요. 같은 활동이 있으면 백업 내용으로 바뀌어요.'), h('div', { class: 'row', style: { alignItems: 'center' } }, file, rBtn), rInfo);
+    body.append(h('p', { class: 'mgintro' }, '학년이 끝나면 ', h('b', {}, '백업 → 고르기 → 정리'), ' 순서로 해요. 학생 개인정보는 필요한 기간이 지나면 지우는 것이 원칙이에요.'), st1, st2, st3, st4);
+    paintGo();
+  }
+
+  // ---------- 📱 이 기기 정리 ----------
+  function paintDevice() {
+    var CATS = deviceCats();
+    body.append(h('p', { class: 'mgintro' }, '이 브라우저에만 남아 있는 내용이에요. 다른 기기나 선생님 계정의 활동에는 영향이 없어요', B.kind === 'local' ? h('b', {}, ' (지금은 ‘이 기기에 저장’ 모드라서 활동도 이 기기에 있어요)') : '', '.'));
+    var tot = 0;
+    CATS.forEach(function (c) {
+      var ks = c.keys(), size = ks.reduce(function (s, k) { return s + (localStorage.getItem(k) || '').length * 2; }, 0); tot += size;
+      body.append(h('div', { class: 'mgdev' + (c.danger ? ' danger' : '') }, h('div', {}, h('b', {}, c.name), h('small', {}, c.desc), h('small', { class: 'sz' }, ks.length ? ks.length + '개 · ' + kb(size) : '없음')),
+        ks.length ? twoTap(h('button', { class: 'btn sm' + (c.danger ? ' danger' : '') }, ico('_trash'), ' 지우기'), '지우기', c.danger ? '활동이 모두 사라져요 · 한 번 더' : '정말 지울까요?', function () { clearDevice([c.id]); toast(c.name + '을(를) 지웠어요'); paint(); }) : null));
+    });
+    body.append(h('div', { class: 'row', style: { marginTop: '12px', alignItems: 'center' } },
+      twoTap(h('button', { class: 'btn' }, ico('_trash'), ' 활동을 빼고 모두 지우기'), '활동을 빼고 모두 지우기', '정말 지울까요?', function () { clearDevice(CATS.filter(function (c) { return !c.danger; }).map(function (c) { return c.id; })); toast('이 기기를 정리했어요'); paint(); }),
+      h('span', { class: 'hint', style: { margin: 0 } }, '이 기기에서 쓰는 공간: 약 ' + kb(tot))));
+  }
+  paint();
+}
+function deviceCats() {
+  var P = 'lt2-';
+  function keys(test) { var r = []; for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (k && k.indexOf(P) === 0 && test(k.slice(P.length))) r.push(k); } return r; }
+  var C = [
+    { id: 'draft', name: '쓰던 초안 · 확인 표시', desc: '학생이 이 기기에서 쓰던 글·답의 초안, 알림장 체크 표시', keys: function () { return keys(function (k) { return /^(draft-|wr-|nchk-)/.test(k); }); } },
+    { id: 'recent', name: '최근 쓴 도구 · 화면 설정', desc: '첫 화면의 최근 쓴 도구, 마지막으로 연 탭', keys: function () { return keys(function (k) { return /^(recent|homeGroup|mgTab)$/.test(k); }); } },
+    { id: 'base', name: '기본 시간표', desc: '주간학습 안내에서 ‘기본 시간표로 기억’한 과목', keys: function () { return keys(function (k) { return k === 'wk-base'; }); } },
+    { id: 'name', name: '학생 이름', desc: '이 기기로 참여할 때 적은 이름 (공용 기기를 넘겨줄 때 지워요)', keys: function () { return keys(function (k) { return k === 'name' || k === 'stu'; }); } }];
+  if (TB().kind === 'local') C.push({ id: 'acts', danger: true, name: '저장한 활동과 학생 응답', desc: '‘이 기기에 저장’ 모드에서 만든 모든 활동. 지우기 전에 ‘새 학년도 정리’에서 백업하세요.', keys: function () { return keys(function (k) { return k === 'acts' || k.indexOf('ent-') === 0; }); } });
+  return C;
+}
+function clearDevice(ids) {
+  deviceCats().forEach(function (c) { if (ids.indexOf(c.id) >= 0) c.keys().forEach(function (k) { try { localStorage.removeItem(k); } catch (e) {} }); });
+}
+function makeBackup(B, onProg) {
+  return B.allActivities().then(function (acts) {
+    var ent = {}, n = 0;
+    return Promise.all(acts.map(function (a) { return B.entriesOnce(a.id).then(function (es) { ent[a.id] = es; n++; if (onProg) onProg(n + ' / ' + acts.length); }, function () { ent[a.id] = []; }); }))
+      .then(function () { return { app: 'woori-class-tools', ver: 1, at: Date.now(), acts: acts.map(function (a) { return { id: a.id, tool: a.tool, title: a.title, data: a.data, shared: !!a.shared, updated: a.updated }; }), ent: ent }; });
+  });
+}
 
 boot();
 </script>
