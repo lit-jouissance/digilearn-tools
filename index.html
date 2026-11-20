@@ -845,9 +845,9 @@ body.present .bpop b{font-size:clamp(70px,14vh,170px)}
 .stcols{display:flex;gap:10px;margin-bottom:10px}.stcol{flex:1;border-radius:12px;padding:8px;background:#f2f6fb;display:flex;flex-direction:column;gap:6px}.stcol.c-1{background:#fbf3ec}
 .stcol h4{margin:0 0 4px;text-align:center}
 /* 질문 사다리 */
-.ladder{display:flex;flex-direction:column;gap:10px;border-left:8px solid #c9a46a;border-right:8px solid #c9a46a;padding:10px;border-radius:8px;background:repeating-linear-gradient(#fff 0,#fff 2px,transparent 2px,transparent 100%)}
-.rung{border:2px solid #e8d8b8;border-radius:12px;padding:10px;background:#fffdf7}.rung.r-judge{background:#f6f1ff;border-color:#d9cdf0}.rung.r-infer{background:#f0f7ff;border-color:#cfe0f3}
-.rungh{display:flex;gap:10px;align-items:center}.rungh small{display:block;color:#6b7787}.rungi{font-size:26px}.rungh .qlbest{margin-left:auto}.qlbest.on{background:#fff4c2;border-color:#e6c200}
+.qlad{display:flex;flex-direction:column;gap:10px;border-left:8px solid #c9a46a;border-right:8px solid #c9a46a;padding:10px;border-radius:8px;background:repeating-linear-gradient(#fff 0,#fff 2px,transparent 2px,transparent 100%)}
+.qrung{border:2px solid #e8d8b8;border-radius:12px;padding:10px;background:#fffdf7}.qrung.r-judge{background:#f6f1ff;border-color:#d9cdf0}.qrung.r-infer{background:#f0f7ff;border-color:#cfe0f3}
+.qrungh{display:flex;gap:10px;align-items:center}.qrungh small{display:block;color:#6b7787}.qrungi{font-size:26px}.qrungh .qlbest{margin-left:auto}.qlbest.on{background:#fff4c2;border-color:#e6c200}
 .qlsum{margin-bottom:10px}.qlsum>b{display:block;margin-bottom:4px}.qlsum small{color:#8a96a6}
 /* 인물 마음 그래프 */
 .mgrow{display:flex;gap:8px;align-items:flex-start;border:1px solid #e3e8f0;border-radius:12px;padding:8px;margin-bottom:6px;background:#fff}
@@ -923,7 +923,6 @@ button.pline{cursor:pointer}button.pline:hover{background:#fff1c9}.pline.on{back
 .wkt{border-collapse:separate;border-spacing:4px;width:100%;min-width:640px;table-layout:fixed}
 .wkt th{background:#eef3f9;border-radius:10px;padding:8px 6px;vertical-align:top;font-size:calc(var(--wz) * 15px)}
 .wkt th.pc{width:34px;background:#f5f7fa;color:#7a8896;vertical-align:middle}
-.wkt th .dn{font-size:calc(var(--wz) * 20px);font-weight:900}.wkt th .dn small{display:block;font-size:.65em;color:#6b7c8c;font-weight:700}
 .wkt td{background:#fafbfd;border-radius:10px;padding:7px 9px;vertical-align:top;font-size:calc(var(--wz) * 15px);line-height:1.45}
 .wkt td b{display:block;font-size:calc(var(--wz) * 17px)}.wkt td .wcx{white-space:pre-wrap;color:#33414e}
 .wkt .today{outline:3px solid #f2b705;background:#fffbea}.wkt th.today{background:#ffe680}
@@ -7655,12 +7654,12 @@ tool({
   },
   build: function (el, ctx) {
     var title = inp('cfg', '읽은 글의 제목'), F = {}, best = '';
-    var rungs = h('div', { class: 'ladder' });
+    var rungs = h('div', { class: 'qlad' });
     LADDER.slice().reverse().forEach(function (L) {
       var q = ta('', '나의 질문', 2), a = ta('', '나의 답 (또는 답을 찾는 방법)', 2);
       F[L[0]] = { q: q, a: a };
       var star = h('button', { class: 'btn sm qlbest', 'data-k': L[0], onclick: function () { if (el.classList.contains('ro')) return; best = best === L[0] ? '' : L[0]; paintBest(); ctx.dirty(); } }, '⭐ 가장 좋은 질문');
-      rungs.append(h('div', { class: 'rung r-' + L[0] }, h('div', { class: 'rungh' }, h('span', { class: 'rungi' }, L[2]), h('div', {}, h('b', {}, L[1]), h('small', {}, L[3])), star),
+      rungs.append(h('div', { class: 'qrung r-' + L[0] }, h('div', { class: 'qrungh' }, h('span', { class: 'qrungi' }, L[2]), h('div', {}, h('b', {}, L[1]), h('small', {}, L[3])), star),
         h('p', { class: 'hint', style: { margin: '2px 0 6px' } }, L[4]), q, a));
     });
     el.append(h('span', { class: 'lbl' }, '읽은 글'), title, h('p', { class: 'hint' }, '아래(1단)부터 위(3단)로 사다리를 올라가요. 마지막에 가장 좋은 질문에 ⭐를 눌러 친구들과 이야기 나눠요.'), rungs);
