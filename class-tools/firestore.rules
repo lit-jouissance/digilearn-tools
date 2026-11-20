@@ -1,0 +1,45 @@
+rules_version = '2';
+// 우리 반 학습도구 — Firestore 보안 규칙
+// Firebase 콘솔 → Firestore Database → 규칙 탭에 그대로 붙여 넣고 [게시]를 누르세요.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+
+    // 선생님 = Google로 로그인한 사람 (학생은 자동 익명 로그인)
+    // 다른 Google 계정이 선생님으로 쓰지 못하게 하려면 아래 주석(//)을 지우고 선생님 이메일을 적으세요.
+    function isTeacher() {
+      return signedIn()
+        && request.auth.token.firebase.sign_in_provider == 'google.com'
+        // && request.auth.token.email in ['teacher@example.com']
+        ;
+    }
+
+    // 활동(선생님이 저장한 것)
+    match /activities/{aid} {
+      allow get: if signedIn();                                              // 링크를 받은 학생은 열어 볼 수 있음
+      allow list: if signedIn() && resource.data.owner == request.auth.uid;  // 목록은 내 것만
+      allow create: if isTeacher() && request.resource.data.owner == request.auth.uid;
+      allow update: if isTeacher() && resource.data.owner == request.auth.uid
+                    && request.resource.data.owner == request.auth.uid;
+      allow delete: if signedIn() && resource.data.owner == request.auth.uid;
+
+      function act() { return get(/databases/$(database)/documents/activities/$(aid)).data; }
+
+      // 학생 참여 기록(투표, 글, 낱말, 카드, 제출물)
+      match /entries/{eid} {
+        // 내 기록 · 선생님 · '함께 보기' 활동(담벼락, 워드클라우드, 결과 공개한 투표 등)만 읽기
+        allow read: if signedIn() && (
+          resource.data.uid == request.auth.uid
+          || act().owner == request.auth.uid
+          || act().shared == true);
+        allow create: if signedIn() && request.resource.data.uid == request.auth.uid
+                      && request.resource.data.size() <= 12;
+        allow update: if signedIn() && resource.data.uid == request.auth.uid
+                      && request.resource.data.uid == request.auth.uid;
+        // 내 것은 내가, 모든 기록은 선생님이 지울 수 있음
+        allow delete: if signedIn() && (resource.data.uid == request.auth.uid || act().owner == request.auth.uid);
+      }
+    }
+  }
+}

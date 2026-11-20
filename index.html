@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#2f6f9f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="우리 반 학습도구">
+<meta name="description" content="만다라트·마인드맵·워드클라우드·담벼락·투표·받아쓰기 등 우리 반 수업 활동 도구 모음">
 <title>우리 반 학습도구</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -748,6 +755,81 @@ body.present .bpop b{font-size:clamp(70px,14vh,170px)}
 .gemrow q{display:block;font-size:15.5px;font-weight:700;quotes:'“' '”'}
 .gemrow small{color:#6b7787}
 .hwsrc{font-size:14px;color:#8a6d00;margin:-2px 0 8px;font-weight:600}
+.instbtn{background:#eaf3ff;border-color:#9cc3ec;color:#1d4f7a;margin-right:6px}
+.insthelp{line-height:1.9;padding-left:22px;font-size:15px}
+
+/* 반 명단 · 관찰 기록 */
+.roster{background:#f6f8fa;border:2px solid #d7dee4;border-radius:14px;padding:8px 12px;margin-bottom:12px}
+.roster summary{cursor:pointer;font-weight:800}
+.roster textarea{margin-top:8px}
+.obchips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.obchip{border:2px solid #d7dee4;background:#fff;border-radius:999px;padding:6px 12px;font-family:inherit;font-size:14px;cursor:pointer}
+.obchip.on{background:#2f6f9f;border-color:#2f6f9f;color:#fff;font-weight:700}
+.obstats{display:flex;flex-wrap:wrap;gap:6px}
+.obstat{border:1px solid #e3e8f0;background:#fff;border-radius:10px;padding:5px 10px;font-family:inherit;font-size:13.5px;cursor:pointer;display:flex;gap:6px;align-items:center}
+.obstat b{background:#e8eef6;border-radius:999px;padding:0 7px}
+.obstat.zero{border-color:#f0b4c4;background:#fff5f8}.obstat.zero b{background:#f8d3de;color:#a3304f}
+.obstat.low b{background:#fde9c4}
+.oblist{display:flex;flex-direction:column;gap:8px}
+.obnote{border:1px solid #e3e8f0;border-left:6px solid #8a96a6;border-radius:10px;padding:8px 12px;background:#fff}
+.obnote.good{border-left-color:#2f8f5b}.obnote.help{border-left-color:#e0603a}
+.obh{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.obh span{color:#6b7787;font-size:13px;flex:1}
+.obnote p{margin:6px 0 0;white-space:pre-wrap}
+/* 과제 체크표 */
+.ckwrap{overflow-x:auto;border:1px solid #e3e8f0;border-radius:12px;background:#fff}
+.cktable{border-collapse:collapse;min-width:100%}
+.cktable th,.cktable td{border-bottom:1px solid #eef1f5;border-right:1px solid #eef1f5;padding:6px 8px;text-align:center}
+.cktable th{background:#f6f8fa;vertical-align:top;min-width:110px}
+.cktable .ckname{text-align:left;position:sticky;left:0;background:#fff;font-weight:700;white-space:nowrap;z-index:1}
+.cktable th.ckname{background:#f6f8fa}
+.ckth{display:flex;flex-direction:column;gap:3px;align-items:center}.ckth small{color:#6b7787}.ckth b{font-size:14px}
+.ckcnt{font-size:12px;background:#e8eef6;border-radius:999px;padding:0 8px}.ckcnt.all{background:#d6f0d8;color:#1f6b3f}
+.ckbtns{display:flex;gap:4px}.ckbtns .btn{padding:2px 6px;font-size:11px}
+.ckc{cursor:pointer;font-size:20px;height:38px;user-select:none}.ckc:hover{background:#f3f7fc}
+.ckc.x{background:#fff3f3}.ckc.l{background:#fff8e6}.ckc.o{background:#f3fbf4}
+.ckmisscnt.on{color:#d0457a;font-weight:900}
+.ckm{padding:6px 0;border-bottom:1px dashed #e3e8f0}.ckmn{display:inline-block;background:#f0f2f6;border-radius:999px;padding:2px 9px;margin:2px;font-size:13.5px}.ckmn.x{background:#fde2e2;color:#a3304f}
+/* 성장 기록 */
+.pfgrid{display:grid;grid-template-columns:220px 1fr;gap:14px;align-items:start}
+@media (max-width:760px){.pfgrid{grid-template-columns:1fr}}
+.pfside{display:flex;flex-direction:column;gap:4px;max-height:70vh;overflow:auto}
+.pfname{display:flex;gap:6px;align-items:center;border:1px solid #e3e8f0;background:#fff;border-radius:10px;padding:7px 10px;font-family:inherit;font-size:14px;cursor:pointer;text-align:left}
+.pfname span{flex:1}.pfname b{color:#2f6f9f}.pfname.on{background:#2f6f9f;color:#fff;border-color:#2f6f9f}.pfname.on b{color:#fff}
+.pfname.extra{color:#8a96a6;border-style:dashed}
+.pfhead{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}.pfhead h3{margin:0}
+.pftl{display:flex;flex-direction:column;gap:8px}
+.pfrec{border:1px solid #e3e8f0;border-left:6px solid #2f6f9f;border-radius:10px;padding:8px 12px;background:#fff}
+.pfrec.k-ob{border-left-color:#2f8f5b}.pfrec.k-ck{border-left-color:#c99a12}.pfrec.miss{border-left-color:#d0457a;background:#fff7f9}
+.pfrh{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:13px;color:#5a6577}.pfrh span{font-weight:700;color:#22303c}
+.pfrec p{margin:4px 0 0;white-space:pre-wrap;word-break:keep-all;overflow-wrap:anywhere}
+@media print{body.print-pf main>*:not(.panel),body.print-pf .panel>*:not(.pfgrid),body.print-pf .pfside,body.print-pf .noprint{display:none !important}
+  body.print-pf .pfgrid{display:block}}
+/* 퀴즈 대회 */
+.qzq{border:1px solid #e3e8f0;border-radius:12px;padding:10px;margin-bottom:8px;background:#fff}.qzq .row{flex-wrap:nowrap}.qzq .row .fld{flex:1}
+.qzopts{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0}
+.qzctrl{margin:10px 0}.qzbtns .big{font-size:18px;padding:10px 26px}
+.qzstage{min-height:260px}
+.qzwait{text-align:center;padding:30px 10px}.qzbig{font-size:clamp(28px,4vw,46px);font-weight:900;text-align:center;margin:10px 0}
+.qzhead{display:flex;justify-content:space-between;font-weight:900;font-size:18px;color:#5a6577}
+.qzclock{background:#22303c;color:#fff;border-radius:999px;padding:4px 16px;font-variant-numeric:tabular-nums}.qzclock.hurry{background:#d0457a;animation:pulse .5s infinite alternate}
+.qzqtext{font-size:clamp(22px,3.2vw,40px);font-weight:900;text-align:center;margin:18px 0;word-break:keep-all}
+.qzch{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.qzc{border:0;border-radius:16px;padding:22px 14px;font-family:inherit;font-size:clamp(17px,2.2vw,26px);font-weight:800;color:#fff;background:var(--c);cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.15);text-align:left}
+.qzch.ox .qzc{font-size:clamp(40px,7vw,80px);text-align:center;padding:26px}
+.qzc:disabled{cursor:default}.qzc.picked{outline:5px solid #22303c;outline-offset:2px}
+.qzstage .qzc:disabled:not(.picked):not(.right){opacity:.75}
+.qzc.right{background:#2f8f5b !important;outline:5px solid #ffd43b;opacity:1}.qzc.wrong{opacity:.45}
+.qzmsg{text-align:center;font-size:20px;font-weight:800;margin:16px 0;color:#5a6577}.qzmsg.ok{color:#2f8f5b}
+.qzme{text-align:center;font-weight:900;font-size:18px}
+.qzrate{text-align:center;font-size:20px;margin:10px 0}.qzrate b{font-size:30px;color:#2f8f5b}
+.qzlead{max-width:560px;margin:10px auto}
+.qzrow{display:flex;gap:10px;align-items:center;padding:7px 12px;border-radius:10px;background:#f6f8fa;margin-bottom:5px}
+.qzrow span{flex:1;font-weight:700}.qzrow em{font-style:normal;color:#5a6577}
+.qzrow.r0{background:#fff4c2}.qzrow.r1{background:#eef1f5}.qzrow.r2{background:#fbe6d6}
+.qzpod{display:flex;justify-content:center;align-items:flex-end;gap:12px;margin:20px 0}
+.pod{display:flex;flex-direction:column;align-items:center;width:150px}.pod b{font-size:18px}.pmed{font-size:44px}
+.pod .pbar{width:100%;border-radius:12px 12px 0 0;margin-top:6px}
+.pod.p0 .pbar{height:130px;background:#ffd43b}.pod.p1 .pbar{height:95px;background:#ced4da}.pod.p2 .pbar{height:70px;background:#e8a87c}
 
 </style>
 <script>
@@ -757,12 +839,12 @@ body.present .bpop b{font-size:clamp(70px,14vh,170px)}
    비워 두면(apiKey가 없으면) 이 기기(브라우저)에만 저장되는 모드로 열려요.
    ===================================================================== */
 window.FIREBASE_CONFIG = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+  apiKey: "AIzaSyB0tD4Hh_L_XQbIgg0jsYJWZHlVGbRksIc",
+  authDomain: "digilearn-tools.firebaseapp.com",
+  projectId: "digilearn-tools",
+  storageBucket: "digilearn-tools.firebasestorage.app",
+  messagingSenderId: "620653717503",
+  appId: "1:620653717503:web:1db72cd89d6e7655aae9ca"
 };
 /* ▲▲▲ 여기까지 ▲▲▲ */
 </script>
@@ -3394,7 +3476,7 @@ var GROUPS = [
   ['group', '모둠 활동', '👥', '#2f8f5b', '교사 화면에 띄워요'],
   ['dict', '받아쓰기 · 바른 글씨', '📝', '#b07d00', '불러주기 · 정답 보여주기 · 띄어쓰기 보며 따라 쓰기'],
   ['review', '정리 · 복습', '🔁', '#1f8a8a', '외우고 풀어 보며 다지기'],
-  ['record', '기록 · 평가', '📒', '#d0457a', '돌아보고 스스로 평가해요'],
+  ['record', '기록 · 평가', '📒', '#d0457a', '스스로 평가 · 선생님 관찰 · 성장 기록'],
   ['class', '학급 생활', '🏫', '#3b5bdb', '알림장 · 마음을 가라앉히는 명상']];
 var SHORT = {
   mandalart: '칸칸이 생각 채우기', mindmap: '가지 뻗어 생각 넓히기', venn: '같은 점 · 다른 점 비교', kwl: '아는 것 · 궁금한 것 · 배운 것',
@@ -3403,7 +3485,8 @@ var SHORT = {
   thermo: '이해도 다섯 단계', wordcloud: '낱말 모아 구름 만들기', wall: '생각 붙이고 댓글 달기', picker: '발표자 뽑기 · 모둠 짜기',
   wheel: '역할 · 순서 정하기', timer: '활동 시간 알림', dictation: '국어 10문제 회차별', engwords: '영어 15개 회차별',
   flashcards: '뒤집으며 외우기', bingo: '배운 낱말로 빙고', sequence: '순서대로 맞추기', journal: '오늘 배움 돌아보기', rubric: '기준표로 스스로 평가',
-  notice: '알림 · 숙제 · 준비물', handwriting: '띄어쓰기 보며 따라 쓰기', meditate: '숨쉬기와 클래식 25곡'
+  notice: '알림 · 숙제 · 준비물', handwriting: '띄어쓰기 보며 따라 쓰기', meditate: '숨쉬기와 클래식 49곡',
+  observe: '수업 중 학생 모습 기록', checklist: '과제 · 준비물 냈는지 체크', portfolio: '학생별 기록 한곳에 모아 보기', quiz: 'OX · 객관식 실시간 퀴즈'
 };
 
 var App = { fire: null, local: LocalBackend(), main: null, V: null };
@@ -3411,9 +3494,45 @@ function TB() { return App.fire && App.fire.isTeacher() ? App.fire : App.local; 
 function SB() { return App.fire || App.local; }                                   // 학생 참여 저장소
 function studentName() { return App.local.get('name', ''); }
 
+// ---------- 데스크톱·태블릿에 앱으로 설치 (PWA) ----------
+var Install = (function () {
+  var deferred = null;
+  function standalone() { return (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true; }
+  function isIOS() { return /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); }
+  function isSafariMac() { var u = navigator.userAgent; return /Macintosh/.test(u) && /Safari/.test(u) && !/Chrome|Chromium|Edg/.test(u); }
+  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; renderTop(); });
+  window.addEventListener('appinstalled', function () { deferred = null; toast('앱으로 설치했어요! 바탕 화면이나 시작 메뉴에서 열 수 있어요 🎉'); renderTop(); });
+  function help() {
+    var md = modal('💻 앱으로 설치하기');
+    var ios = isIOS(), mac = isSafariMac();
+    md.box.append(h('p', {}, '설치하면 바탕 화면·작업 표시줄·Dock에 아이콘이 생기고, 주소창 없이 앱처럼 열려요.'),
+      h('ol', { class: 'insthelp' },
+        ios ? [h('li', {}, 'Safari 아래(또는 위)의 공유 단추 ', h('b', {}, '⬆︎'), '를 눌러요.'), h('li', {}, h('b', {}, '홈 화면에 추가'), '를 눌러요.'), h('li', {}, '오른쪽 위 ', h('b', {}, '추가'), '를 누르면 끝!')]
+        : mac ? [h('li', {}, 'Safari 메뉴의 ', h('b', {}, '파일 → Dock에 추가'), '를 눌러요.'), h('li', {}, h('b', {}, '추가'), '를 누르면 끝!')]
+        : [h('li', {}, h('b', {}, '크롬'), ' 또는 ', h('b', {}, '엣지'), '로 이 주소를 열어요. (웨일도 같아요)'),
+           h('li', {}, '주소창 오른쪽 끝의 ', h('b', {}, '설치 아이콘(🖥️⬇)'), '을 누르거나, 오른쪽 위 ', h('b', {}, '⋮ 메뉴 → 앱 설치(또는 "페이지를 앱으로 설치")'), '를 눌러요.'),
+           h('li', {}, h('b', {}, '설치'), '를 누르면 바탕 화면과 시작 메뉴에 아이콘이 생겨요.')]),
+      h('p', { class: 'hint' }, '학생 참여 링크(QR)는 설치하지 않아도 그대로 열려요. 앱을 지우려면 앱 창 오른쪽 위 ⋮ 메뉴에서 "제거"를 눌러요.'));
+  }
+  function button() {
+    if (standalone()) return null;
+    return h('button', { class: 'btn sm instbtn', title: '이 앱을 컴퓨터에 설치해요', onclick: function () {
+      if (deferred) { var d = deferred; deferred = null; d.prompt(); d.userChoice.then(function (r) { if (r.outcome !== 'accepted') { deferred = d; } renderTop(); }); }
+      else help();
+    } }, '💻 앱 설치');
+  }
+  function registerSW() {
+    if (!('serviceWorker' in navigator) || location.protocol === 'file:') return;
+    window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function (e) { console.warn('sw', e); }); });
+  }
+  return { button: button, help: help, standalone: standalone, registerSW: registerSW };
+})();
+Install.registerSW();
+
 function renderTop() {
   var box = $('#who'); box.innerHTML = '';
   var V = App.V;
+  var ib = !(V && V.student) && Install.button(); if (ib) box.append(ib);
   if (V && V.student) { box.append(h('span', { class: 'chip-s' }, '학생 참여 중')); return; }
   if (!App.fire) {
     box.append(h('span', { class: 'chip-s', title: 'Firebase 설정 전에는 이 기기에만 저장돼요.' }, '이 기기에 저장'));
@@ -3564,6 +3683,10 @@ function buildBar(V) {
     V.btnSub = h('button', { class: 'btn', onclick: function () { openSubs(V); } }, '제출물');
     bar.append(V.btnSub);
   }
+  if (V.def.kind === 'live') {
+    V.btnExp = h('button', { class: 'btn', title: '학생들이 낸 응답을 엑셀에서 열 수 있는 파일로 내려받아요', onclick: function () { exportRecords(V); } }, '📥 기록 내려받기');
+    bar.append(V.btnExp);
+  }
   V.st = h('span', { class: 'st' }); bar.append(V.st);
   refreshBar(V);
 }
@@ -3579,6 +3702,7 @@ function refreshBar(V, msg) {
     V.btnSub.textContent = '제출물 (' + n + ')';
     V.btnSub.hidden = !V.aid;
   }
+  if (V.btnExp) V.btnExp.hidden = !V.aid;
 }
 
 function openList(V) {
@@ -3648,6 +3772,40 @@ function copy(t) {
 }
 
 // 제출물 보기 (교사)
+// ---------- 학생 기록을 엑셀(CSV)로 내려받기 ----------
+var SKIP_KEYS = { strokes: 1, uid: 1, id: 1, srcs: 1 };
+function flatVal(v) {
+  if (v == null) return '';
+  if (typeof v === 'boolean') return v ? 'O' : '';
+  if (typeof v !== 'object') return String(v);
+  if (Array.isArray(v)) return v.map(flatVal).filter(function (x) { return x !== ''; }).join(' / ');
+  return Object.keys(v).filter(function (k) { return !SKIP_KEYS[k]; }).map(function (k) { var x = flatVal(v[k]); return x === '' ? '' : x; }).filter(Boolean).join(' · ');
+}
+function toCSV(rows) {
+  return '\ufeff' + rows.map(function (r) { return r.map(function (c) { c = String(c == null ? '' : c); return /[",\n\r]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c; }).join(','); }).join('\r\n');
+}
+function downloadCSV(name, rows) {
+  var blob = new Blob([toCSV(rows)], { type: 'text/csv;charset=utf-8' });
+  var a = h('a', { href: URL.createObjectURL(blob), download: name.replace(/[\\/:*?"<>|]/g, '_') + '.csv' });
+  document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  toast('엑셀에서 열 수 있는 파일(CSV)로 내려받았어요');
+}
+var KEY_KO = { c: '고른 답(0부터)', ms: '걸린 시간(ms)', q: '질문', before: '전에는', after: '지금은', why: '까닭', level: '단계', conf0: '수업 전 확신(1~5)', conf1: '수업 후 확신(1~5)', choice: '고른 보기', text: '내용', w: '낱말', answers: '답', prompts: '질문', comment: '하고 싶은 말', title: '제목', topic: '주제', gems: '반짝 문장', author: '지은이', chars: '인물', when: '때', where: '곳', beg: '처음', mid: '가운데', end: '끝', theme: '중심 생각', side: '입장', rt: '댓글 종류', to: '대상', color: '색', marks: '표시', lines: '빙고 줄 수', cells: '칸', bank: '낱말 모음', size: '크기', play: '빙고 하기' };
+var KIND_KO = { join: '참가', ans: '퀴즈 답', submit: '제출', vote: '투표', card: '출구 카드', level: '온도계', word: '낱말', post: '글', reply: '댓글', pos: '자리 옮김', stance: '입장', arg: '근거' };
+function exportRecords(V) {
+  var title = (V.inst.title && V.inst.title()) || V.def.name, list = V.entries.filter(function (e) { return e.kind !== 'pos'; });
+  if (!list.length) { toast('아직 내려받을 학생 기록이 없어요'); return; }
+  var keys = [];
+  list.forEach(function (e) { var src = e.kind === 'submit' ? (e.data || {}) : e; Object.keys(src).forEach(function (k) { if (['name', 'kind', 'ts', 'data'].indexOf(k) < 0 && !SKIP_KEYS[k] && keys.indexOf(k) < 0) keys.push(k); }); });
+  var opts = V.def.key === 'vote' ? (V.inst.get().options || []) : null;
+  var rows = [['이름', '종류', '시각'].concat(keys.map(function (k) { return KEY_KO[k] || k; }))];
+  list.slice().sort(function (a, b) { return String(a.name).localeCompare(String(b.name), 'ko') || (a.ts || 0) - (b.ts || 0); }).forEach(function (e) {
+    var src = e.kind === 'submit' ? (e.data || {}) : e;
+    rows.push([e.name || '익명', KIND_KO[e.kind] || e.kind || '', e.ts ? new Date(e.ts).toLocaleString('ko-KR') : ''].concat(keys.map(function (k) { if (opts && k === 'choice' && opts[src[k]] != null) return (src[k] + 1) + '. ' + (opts[src[k]] || '보기 ' + (src[k] + 1)); return flatVal(src[k]); })));
+  });
+  downloadCSV(V.def.name + ' - ' + title + ' - ' + new Date().toISOString().slice(0, 10), rows);
+}
+
 function openSubs(V) {
   var md = modal(V.def.name + ' 제출물');
   var wrap = h('div'); md.box.append(wrap);
@@ -3658,6 +3816,7 @@ function openSubs(V) {
     wrap.innerHTML = '';
     var subs = V.entries.filter(function (e) { return e.kind === 'submit'; }).sort(function (a, b) { return String(a.name).localeCompare(String(b.name), 'ko'); });
     if (!subs.length) { wrap.append(h('div', { class: 'empty-note' }, '아직 제출한 학생이 없어요.')); return; }
+    wrap.append(h('div', { class: 'row', style: { justifyContent: 'flex-end', marginBottom: '6px' } }, h('button', { class: 'btn sm', onclick: function () { exportRecords(V); } }, '📥 엑셀로 내려받기 (CSV)')));
     if (V.def.summary) { wrap.append(h('span', { class: 'lbl', style: { marginTop: 0 } }, '한눈에 보기 (' + subs.length + '명)'), V.def.summary(subs), h('span', { class: 'lbl' }, '한 명씩 보기')); }
     subs.forEach(function (s) {
       var del = twoTap(h('button', { class: 'btn sm' }, '삭제'), '삭제', '정말 지울까요?', function () { V.B.delEntry(V.aid, s.id).catch(errToast); });
@@ -6056,7 +6215,7 @@ tool({
   }
 });
 
-var TRACKS = [{"id": "bach-air", "c": "바흐", "t": "〈G선상의 아리아〉 (관현악 모음곡 3번)", "p": "미국 공군 밴드 현악단 (Air Force Strings)", "lic": "퍼블릭 도메인 (미국 정부 저작물)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/e/ec/Air_-_Air_Force_Strings_-_United_States_Air_Force_Band.mp3", "https://upload.wikimedia.org/wikipedia/commons/5/55/Air.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Air_-_Air_Force_Strings_-_United_States_Air_Force_Band.mp3", "sec": 183}, {"id": "bach-goldberg", "c": "바흐", "t": "골드베르크 변주곡 중 〈아리아〉", "p": "Kimiko Ishizaka (Open Goldberg Variations)", "lic": "CC0 / 퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/4/42/Goldberg_Variations_01_Aria.ogg/Goldberg_Variations_01_Aria.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/4/42/Goldberg_Variations_01_Aria.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Goldberg_Variations_01_Aria.ogg", "sec": 300}, {"id": "bach-prelude", "c": "바흐", "t": "평균율 클라비어곡집 1권 〈전주곡 1번 C장조〉", "p": "Kimiko Ishizaka (Open Well-Tempered Clavier)", "lic": "CC0 / 퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b6/Kimiko_Ishizaka_-_Bach_-_Well-Tempered_Clavier,_Book_1_-_01_Prelude_No._1_in_C_major,_BWV_846.ogg/Kimiko_Ishizaka_-_Bach_-_Well-Tempered_Clavier,_Book_1_-_01_Prelude_No._1_in_C_major,_BWV_846.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/b/b6/Kimiko_Ishizaka_-_Bach_-_Well-Tempered_Clavier,_Book_1_-_01_Prelude_No._1_in_C_major,_BWV_846.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Kimiko_Ishizaka_-_Bach_-_Well-Tempered_Clavier,_Book_1_-_01_Prelude_No._1_in_C_major,_BWV_846.ogg", "sec": 140}, {"id": "bach-jesu", "c": "바흐", "t": "〈예수는 인간 소망의 기쁨〉 BWV 147", "p": "Orchestra Gli Armonici (Musopen)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/2/27/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/2/27/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg", "sec": 202}, {"id": "pachelbel", "c": "파헬벨", "t": "〈카논 D장조〉", "p": "Kevin MacLeod (incompetech.com)", "lic": "CC BY 3.0 (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/c/c6/Canon_in_D_Major_(ISRC_USUAN1100301).mp3"], "page": "https://commons.wikimedia.org/wiki/File:Canon_in_D_Major_(ISRC_USUAN1100301).mp3", "sec": 265}, {"id": "handel", "c": "헨델", "t": "하프시코드 모음곡 5번 〈유쾌한 대장장이〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/Handel_-_Suites_for_Harpsichord_-_No.5_in_E_major_-_The_Harmonious_Blacksmith.ogg/Handel_-_Suites_for_Harpsichord_-_No.5_in_E_major_-_The_Harmonious_Blacksmith.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/db/Handel_-_Suites_for_Harpsichord_-_No.5_in_E_major_-_The_Harmonious_Blacksmith.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Handel_-_Suites_for_Harpsichord_-_No.5_in_E_major_-_The_Harmonious_Blacksmith.ogg", "sec": 0}, {"id": "albinoni", "c": "알비노니", "t": "오보에 협주곡 D단조 Op.9-2 2악장 〈아다지오〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/da/Albinoni,_Concerto_for_Oboe_and_Strings_No._2_in_D_minor,_Op._9,_II._Adagio.ogg/Albinoni,_Concerto_for_Oboe_and_Strings_No._2_in_D_minor,_Op._9,_II._Adagio.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/da/Albinoni,_Concerto_for_Oboe_and_Strings_No._2_in_D_minor,_Op._9,_II._Adagio.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Albinoni,_Concerto_for_Oboe_and_Strings_No._2_in_D_minor,_Op._9,_II._Adagio.ogg", "sec": 0}, {"id": "vivaldi", "c": "비발디", "t": "사계 중 〈겨울〉 2악장 라르고", "p": "The Modena Chamber Orchestra (Musopen)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8b/The_Modena_Chamber_Orchestra_-_Vivaldi%27s_Winter,_RV_297_-_II._Largo.ogg/The_Modena_Chamber_Orchestra_-_Vivaldi%27s_Winter,_RV_297_-_II._Largo.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/8/8b/The_Modena_Chamber_Orchestra_-_Vivaldi%27s_Winter,_RV_297_-_II._Largo.ogg"], "page": "https://commons.wikimedia.org/wiki/File:The_Modena_Chamber_Orchestra_-_Vivaldi%27s_Winter,_RV_297_-_II._Largo.ogg", "sec": 0}, {"id": "mozart-clarinet", "c": "모차르트", "t": "클라리넷 협주곡 A장조 K.622 2악장 〈아다지오〉", "p": "Bruce Edwards, Fulda Symphonic Orchestra", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8b/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_2._Adagio.ogg/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_2._Adagio.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/8/8b/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_2._Adagio.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_2._Adagio.ogg", "sec": 419}, {"id": "mozart-figaro", "c": "모차르트", "t": "피가로의 결혼 중 〈저녁 바람 부드럽게〉 (Sull'aria)", "p": "Ferenc Fricsay, RIAS 교향악단, Irmgard Seefried, Maria Stader (1961)", "lic": "1961년 음반 · 저작인접권 보호기간 지남 (퍼블릭 도메인)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d8/Mozart_-_Le_Nozze_di_Figaro_(Fricsay)_-_Act_3_-_53._Che_soave_zeffiretto.ogg/Mozart_-_Le_Nozze_di_Figaro_(Fricsay)_-_Act_3_-_53._Che_soave_zeffiretto.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/d8/Mozart_-_Le_Nozze_di_Figaro_(Fricsay)_-_Act_3_-_53._Che_soave_zeffiretto.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Mozart_-_Le_Nozze_di_Figaro_(Fricsay)_-_Act_3_-_53._Che_soave_zeffiretto.ogg", "sec": 187}, {"id": "beet-moonlight", "c": "베토벤", "t": "피아노 소나타 14번 〈월광〉 1악장", "p": "Paul Pitman (Musopen)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/4/48/Ludwig_van_Beethoven_-_sonata_no._14_in_c_sharp_minor_%27moonlight%27,_op._27_no._2_-_i._adagio_sostenuto.ogg/Ludwig_van_Beethoven_-_sonata_no._14_in_c_sharp_minor_%27moonlight%27,_op._27_no._2_-_i._adagio_sostenuto.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/4/48/Ludwig_van_Beethoven_-_sonata_no._14_in_c_sharp_minor_%27moonlight%27,_op._27_no._2_-_i._adagio_sostenuto.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_sonata_no._14_in_c_sharp_minor_%27moonlight%27,_op._27_no._2_-_i._adagio_sostenuto.ogg", "sec": 336}, {"id": "beet-pathetique", "c": "베토벤", "t": "피아노 소나타 8번 〈비창〉 2악장", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/6/63/Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_II._Adagio_cantabile.ogg/Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_II._Adagio_cantabile.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/6/63/Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_II._Adagio_cantabile.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_II._Adagio_cantabile.ogg", "sec": 300}, {"id": "beet-pastorale-son", "c": "베토벤", "t": "피아노 소나타 15번 〈전원〉 2악장 안단테", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/4/49/Ludwig_van_Beethoven_-_sonata_no._15_in_d_major,_op._28_%27pastorale%27_-_ii._andante.ogg/Ludwig_van_Beethoven_-_sonata_no._15_in_d_major,_op._28_%27pastorale%27_-_ii._andante.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/4/49/Ludwig_van_Beethoven_-_sonata_no._15_in_d_major,_op._28_%27pastorale%27_-_ii._andante.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_sonata_no._15_in_d_major,_op._28_%27pastorale%27_-_ii._andante.ogg", "sec": 438}, {"id": "schubert", "c": "슈베르트", "t": "피아노 소나타 B♭장조 D.960 2악장 〈안단테 소스테누토〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e3/Franz_Schubert_-_sonata_in_b_flat,_d._960_-_ii._andante_sostenuto.ogg/Franz_Schubert_-_sonata_in_b_flat,_d._960_-_ii._andante_sostenuto.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/e/e3/Franz_Schubert_-_sonata_in_b_flat,_d._960_-_ii._andante_sostenuto.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Franz_Schubert_-_sonata_in_b_flat,_d._960_-_ii._andante_sostenuto.ogg", "sec": 0}, {"id": "schumann-dream", "c": "슈만", "t": "어린이 정경 중 〈트로이메라이(꿈)〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/0/06/Robert_Schumann_-_scenes_from_childhood,_op._15_-_vii._dreaming.ogg/Robert_Schumann_-_scenes_from_childhood,_op._15_-_vii._dreaming.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/0/06/Robert_Schumann_-_scenes_from_childhood,_op._15_-_vii._dreaming.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Robert_Schumann_-_scenes_from_childhood,_op._15_-_vii._dreaming.ogg", "sec": 203}, {"id": "schumann-lands", "c": "슈만", "t": "어린이 정경 중 〈낯선 나라와 사람들〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/c/ce/Robert_Schumann_-_scenes_from_childhood,_op._15_-_i._of_foreign_lands_and_peoples.ogg/Robert_Schumann_-_scenes_from_childhood,_op._15_-_i._of_foreign_lands_and_peoples.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Robert_Schumann_-_scenes_from_childhood,_op._15_-_i._of_foreign_lands_and_peoples.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Robert_Schumann_-_scenes_from_childhood,_op._15_-_i._of_foreign_lands_and_peoples.ogg", "sec": 100}, {"id": "schumann-asleep", "c": "슈만", "t": "어린이 정경 중 〈잠드는 아이〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/f/fa/Robert_Schumann_-_scenes_from_childhood,_op._15_-_xii._child_falling_asleep.ogg/Robert_Schumann_-_scenes_from_childhood,_op._15_-_xii._child_falling_asleep.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/f/fa/Robert_Schumann_-_scenes_from_childhood,_op._15_-_xii._child_falling_asleep.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Robert_Schumann_-_scenes_from_childhood,_op._15_-_xii._child_falling_asleep.ogg", "sec": 121}, {"id": "brahms", "c": "브람스", "t": "피아노 소품 Op.118 중 〈인터메초 2번〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/Johannes_Brahms_-_klavierstucke,_op._118_-_ii._intermezzo.ogg/Johannes_Brahms_-_klavierstucke,_op._118_-_ii._intermezzo.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/7/7e/Johannes_Brahms_-_klavierstucke,_op._118_-_ii._intermezzo.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Johannes_Brahms_-_klavierstucke,_op._118_-_ii._intermezzo.ogg", "sec": 0}, {"id": "smetana", "c": "스메타나", "t": "나의 조국 중 〈몰다우(블타바)〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/0/08/Bedrich_Smetana_-_ma_vlast_-_i._vltava_%27the_moldau%27.ogg/Bedrich_Smetana_-_ma_vlast_-_i._vltava_%27the_moldau%27.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/0/08/Bedrich_Smetana_-_ma_vlast_-_i._vltava_%27the_moldau%27.ogg", "https://upload.wikimedia.org/wikipedia/commons/3/39/Smetana,_M%C3%A1_vlast_-_Vltava_-_The_Moldau.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Bedrich_Smetana_-_ma_vlast_-_i._vltava_%27the_moldau%27.ogg", "sec": 891}, {"id": "dvorak", "c": "드보르자크", "t": "교향곡 9번 〈신세계로부터〉 2악장 라르고", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Antonin_Dvorak_-_symphony_no._9_in_e_minor_%27from_the_new_world%27,_op._95_-_ii._largo.ogg/Antonin_Dvorak_-_symphony_no._9_in_e_minor_%27from_the_new_world%27,_op._95_-_ii._largo.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/c/c3/Antonin_Dvorak_-_symphony_no._9_in_e_minor_%27from_the_new_world%27,_op._95_-_ii._largo.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Antonin_Dvorak_-_symphony_no._9_in_e_minor_%27from_the_new_world%27,_op._95_-_ii._largo.ogg", "sec": 0}, {"id": "grieg", "c": "그리그", "t": "페르 귄트 모음곡 중 〈아침〉", "p": "체코 국립 교향악단 (Musopen)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1a/Musopen_-_Morning.ogg/Musopen_-_Morning.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/1/1a/Musopen_-_Morning.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Musopen_-_Morning.ogg", "sec": 229}, {"id": "mascagni", "c": "마스카니", "t": "카발레리아 루스티카나 중 〈간주곡〉", "p": "Fulda Symphonic Orchestra, Simon Schindler", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a8/Pietro_Mascagni_-_Cavalleria_Rusticana_-_Intermezzo_Sinfonico.ogg/Pietro_Mascagni_-_Cavalleria_Rusticana_-_Intermezzo_Sinfonico.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/a/a8/Pietro_Mascagni_-_Cavalleria_Rusticana_-_Intermezzo_Sinfonico.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Pietro_Mascagni_-_Cavalleria_Rusticana_-_Intermezzo_Sinfonico.ogg", "sec": 181}, {"id": "satie", "c": "사티", "t": "〈짐노페디 1번〉", "p": "Robin Alciatore (Musopen)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/9/90/Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg/Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/9/90/Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg", "sec": 0}, {"id": "debussy", "c": "드뷔시", "t": "베르가마스크 모음곡 중 〈달빛〉", "p": "Laurens Goedhart", "lic": "CC BY 3.0 (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/b/be/Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg/Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/b/be/Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg", "sec": 304}, {"id": "rach", "c": "라흐마니노프", "t": "피아노 협주곡 2번 2악장 〈아다지오 소스테누토〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a5/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_ii._adagio_sostenuto.ogg/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_ii._adagio_sostenuto.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/a/a5/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_ii._adagio_sostenuto.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_ii._adagio_sostenuto.ogg", "sec": 660}, {"id": "b-nacht", "c": "모차르트", "t": "〈아이네 클라이네 나흐트무지크〉 1악장", "p": "Advent Chamber Orchestra", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/2/24/Mozart_-_Eine_kleine_Nachtmusik_-_1._Allegro.ogg/Mozart_-_Eine_kleine_Nachtmusik_-_1._Allegro.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/2/24/Mozart_-_Eine_kleine_Nachtmusik_-_1._Allegro.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Mozart_-_Eine_kleine_Nachtmusik_-_1._Allegro.ogg", "sec": 355, "m": "bright"}, {"id": "b-spring", "c": "비발디", "t": "사계 중 〈봄〉 1악장", "p": "John Harrison (바이올린), Wichita State University", "lic": "CC BY-SA (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/f/ff/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga.mp3", "https://upload.wikimedia.org/wikipedia/commons/f/ff/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga"], "page": "https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga", "sec": 215, "m": "bright"}, {"id": "b-turkish", "c": "모차르트", "t": "〈터키 행진곡〉 (피아노 소나타 11번 3악장)", "p": "Romuald Greiss", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4e/Mozart-Marsz_turecki-(Romuald_Greiss).ogg/Mozart-Marsz_turecki-(Romuald_Greiss).ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/4/4e/Mozart-Marsz_turecki-(Romuald_Greiss).ogg"], "page": "https://commons.wikimedia.org/wiki/File:Mozart-Marsz_turecki-(Romuald_Greiss).ogg", "sec": 181, "m": "bright"}, {"id": "b-danube", "c": "요한 슈트라우스 2세", "t": "〈아름답고 푸른 도나우〉", "p": "Musopen", "lic": "CC0 / 퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/9/91/Strauss,_An_der_sch%C3%B6nen_blauen_Donau.ogg/Strauss,_An_der_sch%C3%B6nen_blauen_Donau.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/9/91/Strauss,_An_der_sch%C3%B6nen_blauen_Donau.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Strauss,_An_der_sch%C3%B6nen_blauen_Donau.ogg", "sec": 178, "m": "bright"}, {"id": "b-minuet", "c": "베토벤", "t": "〈미뉴에트 G장조〉", "p": "Peter Johnston", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/Minuet_in_G_(Beethoven),_piano.ogg/Minuet_in_G_(Beethoven),_piano.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/db/Minuet_in_G_(Beethoven),_piano.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Minuet_in_G_(Beethoven),_piano.ogg", "sec": 144, "m": "bright"}, {"id": "b-k545", "c": "모차르트", "t": "피아노 소나타 16번 K.545 3악장 〈론도〉", "p": "위키미디어 공용 기여자", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/1/11/K545_rondo.ogg/K545_rondo.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/1/11/K545_rondo.ogg"], "page": "https://commons.wikimedia.org/wiki/File:K545_rondo.ogg", "sec": 82, "m": "bright"}, {"id": "b-hungary", "c": "브람스", "t": "〈헝가리 무곡 6번〉", "p": "출처 페이지 참고 (EFF 자유 음원)", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/df/Johannes_Brahms_-_Ungarischer_Tanz_6_D-Dur.ogg/Johannes_Brahms_-_Ungarischer_Tanz_6_D-Dur.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/df/Johannes_Brahms_-_Ungarischer_Tanz_6_D-Dur.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Johannes_Brahms_-_Ungarischer_Tanz_6_D-Dur.ogg", "sec": 231, "m": "bright"}, {"id": "b-clar3", "c": "모차르트", "t": "클라리넷 협주곡 3악장 〈론도〉", "p": "Bruce Edwards, Fulda Symphonic Orchestra", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ae/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_3._Rondo_(Allegro).ogg/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_3._Rondo_(Allegro).ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/a/ae/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_3._Rondo_(Allegro).ogg"], "page": "https://commons.wikimedia.org/wiki/File:Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_3._Rondo_(Allegro).ogg", "sec": 546, "m": "bright"}, {"id": "b-mendel", "c": "멘델스존", "t": "바이올린 협주곡 E단조 3악장", "p": "출처 페이지 참고 (EFF 자유 음원)", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/6/67/Felix_Mendelssohn_-_Violinkonzert_e-moll_-_3._Allegro_molto_vivace.ogg/Felix_Mendelssohn_-_Violinkonzert_e-moll_-_3._Allegro_molto_vivace.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/6/67/Felix_Mendelssohn_-_Violinkonzert_e-moll_-_3._Allegro_molto_vivace.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Felix_Mendelssohn_-_Violinkonzert_e-moll_-_3._Allegro_molto_vivace.ogg", "sec": 413, "m": "bright"}, {"id": "b-beet5", "c": "베토벤", "t": "교향곡 5번 〈운명〉 4악장", "p": "Fulda Symphonic Orchestra, Simon Schindler", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3b/Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_4._Allegro.ogg/Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_4._Allegro.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/3/3b/Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_4._Allegro.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_4._Allegro.ogg", "sec": 0, "m": "bright"}];
+var TRACKS = [{"id": "bach-air", "c": "바흐", "t": "〈G선상의 아리아〉 (관현악 모음곡 3번)", "p": "미국 공군 밴드 현악단 (Air Force Strings)", "lic": "퍼블릭 도메인 (미국 정부 저작물)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/e/ec/Air_-_Air_Force_Strings_-_United_States_Air_Force_Band.mp3", "https://upload.wikimedia.org/wikipedia/commons/5/55/Air.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Air_-_Air_Force_Strings_-_United_States_Air_Force_Band.mp3", "sec": 183}, {"id": "bach-goldberg", "c": "바흐", "t": "골드베르크 변주곡 중 〈아리아〉", "p": "Kimiko Ishizaka (Open Goldberg Variations)", "lic": "CC0 / 퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/4/42/Goldberg_Variations_01_Aria.ogg/Goldberg_Variations_01_Aria.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/4/42/Goldberg_Variations_01_Aria.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Goldberg_Variations_01_Aria.ogg", "sec": 300}, {"id": "bach-prelude", "c": "바흐", "t": "평균율 클라비어곡집 1권 〈전주곡 1번 C장조〉", "p": "Kimiko Ishizaka (Open Well-Tempered Clavier)", "lic": "CC0 / 퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b6/Kimiko_Ishizaka_-_Bach_-_Well-Tempered_Clavier,_Book_1_-_01_Prelude_No._1_in_C_major,_BWV_846.ogg/Kimiko_Ishizaka_-_Bach_-_Well-Tempered_Clavier,_Book_1_-_01_Prelude_No._1_in_C_major,_BWV_846.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/b/b6/Kimiko_Ishizaka_-_Bach_-_Well-Tempered_Clavier,_Book_1_-_01_Prelude_No._1_in_C_major,_BWV_846.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Kimiko_Ishizaka_-_Bach_-_Well-Tempered_Clavier,_Book_1_-_01_Prelude_No._1_in_C_major,_BWV_846.ogg", "sec": 140}, {"id": "bach-jesu", "c": "바흐", "t": "〈예수는 인간 소망의 기쁨〉 BWV 147", "p": "Orchestra Gli Armonici (Musopen)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/2/27/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/2/27/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg", "sec": 202}, {"id": "pachelbel", "c": "파헬벨", "t": "〈카논 D장조〉", "p": "Kevin MacLeod (incompetech.com)", "lic": "CC BY 3.0 (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/c/c6/Canon_in_D_Major_(ISRC_USUAN1100301).mp3"], "page": "https://commons.wikimedia.org/wiki/File:Canon_in_D_Major_(ISRC_USUAN1100301).mp3", "sec": 265}, {"id": "handel", "c": "헨델", "t": "하프시코드 모음곡 5번 〈유쾌한 대장장이〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/Handel_-_Suites_for_Harpsichord_-_No.5_in_E_major_-_The_Harmonious_Blacksmith.ogg/Handel_-_Suites_for_Harpsichord_-_No.5_in_E_major_-_The_Harmonious_Blacksmith.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/db/Handel_-_Suites_for_Harpsichord_-_No.5_in_E_major_-_The_Harmonious_Blacksmith.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Handel_-_Suites_for_Harpsichord_-_No.5_in_E_major_-_The_Harmonious_Blacksmith.ogg", "sec": 0}, {"id": "albinoni", "c": "알비노니", "t": "오보에 협주곡 D단조 Op.9-2 2악장 〈아다지오〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/da/Albinoni,_Concerto_for_Oboe_and_Strings_No._2_in_D_minor,_Op._9,_II._Adagio.ogg/Albinoni,_Concerto_for_Oboe_and_Strings_No._2_in_D_minor,_Op._9,_II._Adagio.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/da/Albinoni,_Concerto_for_Oboe_and_Strings_No._2_in_D_minor,_Op._9,_II._Adagio.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Albinoni,_Concerto_for_Oboe_and_Strings_No._2_in_D_minor,_Op._9,_II._Adagio.ogg", "sec": 0}, {"id": "vivaldi", "c": "비발디", "t": "사계 중 〈겨울〉 2악장 라르고", "p": "The Modena Chamber Orchestra (Musopen)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8b/The_Modena_Chamber_Orchestra_-_Vivaldi%27s_Winter,_RV_297_-_II._Largo.ogg/The_Modena_Chamber_Orchestra_-_Vivaldi%27s_Winter,_RV_297_-_II._Largo.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/8/8b/The_Modena_Chamber_Orchestra_-_Vivaldi%27s_Winter,_RV_297_-_II._Largo.ogg"], "page": "https://commons.wikimedia.org/wiki/File:The_Modena_Chamber_Orchestra_-_Vivaldi%27s_Winter,_RV_297_-_II._Largo.ogg", "sec": 0}, {"id": "mozart-clarinet", "c": "모차르트", "t": "클라리넷 협주곡 A장조 K.622 2악장 〈아다지오〉", "p": "Bruce Edwards, Fulda Symphonic Orchestra", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8b/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_2._Adagio.ogg/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_2._Adagio.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/8/8b/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_2._Adagio.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_2._Adagio.ogg", "sec": 419}, {"id": "mozart-figaro", "c": "모차르트", "t": "피가로의 결혼 중 〈저녁 바람 부드럽게〉 (Sull'aria)", "p": "Ferenc Fricsay, RIAS 교향악단, Irmgard Seefried, Maria Stader (1961)", "lic": "1961년 음반 · 저작인접권 보호기간 지남 (퍼블릭 도메인)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d8/Mozart_-_Le_Nozze_di_Figaro_(Fricsay)_-_Act_3_-_53._Che_soave_zeffiretto.ogg/Mozart_-_Le_Nozze_di_Figaro_(Fricsay)_-_Act_3_-_53._Che_soave_zeffiretto.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/d8/Mozart_-_Le_Nozze_di_Figaro_(Fricsay)_-_Act_3_-_53._Che_soave_zeffiretto.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Mozart_-_Le_Nozze_di_Figaro_(Fricsay)_-_Act_3_-_53._Che_soave_zeffiretto.ogg", "sec": 187}, {"id": "beet-moonlight", "c": "베토벤", "t": "피아노 소나타 14번 〈월광〉 1악장", "p": "Paul Pitman (Musopen)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/4/48/Ludwig_van_Beethoven_-_sonata_no._14_in_c_sharp_minor_%27moonlight%27,_op._27_no._2_-_i._adagio_sostenuto.ogg/Ludwig_van_Beethoven_-_sonata_no._14_in_c_sharp_minor_%27moonlight%27,_op._27_no._2_-_i._adagio_sostenuto.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/4/48/Ludwig_van_Beethoven_-_sonata_no._14_in_c_sharp_minor_%27moonlight%27,_op._27_no._2_-_i._adagio_sostenuto.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_sonata_no._14_in_c_sharp_minor_%27moonlight%27,_op._27_no._2_-_i._adagio_sostenuto.ogg", "sec": 336}, {"id": "beet-pathetique", "c": "베토벤", "t": "피아노 소나타 8번 〈비창〉 2악장", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/6/63/Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_II._Adagio_cantabile.ogg/Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_II._Adagio_cantabile.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/6/63/Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_II._Adagio_cantabile.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Beethoven,_Sonata_No._8_in_C_Minor_Pathetique,_Op._13_-_II._Adagio_cantabile.ogg", "sec": 300}, {"id": "beet-pastorale-son", "c": "베토벤", "t": "피아노 소나타 15번 〈전원〉 2악장 안단테", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/4/49/Ludwig_van_Beethoven_-_sonata_no._15_in_d_major,_op._28_%27pastorale%27_-_ii._andante.ogg/Ludwig_van_Beethoven_-_sonata_no._15_in_d_major,_op._28_%27pastorale%27_-_ii._andante.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/4/49/Ludwig_van_Beethoven_-_sonata_no._15_in_d_major,_op._28_%27pastorale%27_-_ii._andante.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_sonata_no._15_in_d_major,_op._28_%27pastorale%27_-_ii._andante.ogg", "sec": 438}, {"id": "schubert", "c": "슈베르트", "t": "피아노 소나타 B♭장조 D.960 2악장 〈안단테 소스테누토〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e3/Franz_Schubert_-_sonata_in_b_flat,_d._960_-_ii._andante_sostenuto.ogg/Franz_Schubert_-_sonata_in_b_flat,_d._960_-_ii._andante_sostenuto.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/e/e3/Franz_Schubert_-_sonata_in_b_flat,_d._960_-_ii._andante_sostenuto.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Franz_Schubert_-_sonata_in_b_flat,_d._960_-_ii._andante_sostenuto.ogg", "sec": 0}, {"id": "schumann-dream", "c": "슈만", "t": "어린이 정경 중 〈트로이메라이(꿈)〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/0/06/Robert_Schumann_-_scenes_from_childhood,_op._15_-_vii._dreaming.ogg/Robert_Schumann_-_scenes_from_childhood,_op._15_-_vii._dreaming.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/0/06/Robert_Schumann_-_scenes_from_childhood,_op._15_-_vii._dreaming.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Robert_Schumann_-_scenes_from_childhood,_op._15_-_vii._dreaming.ogg", "sec": 203}, {"id": "schumann-lands", "c": "슈만", "t": "어린이 정경 중 〈낯선 나라와 사람들〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/c/ce/Robert_Schumann_-_scenes_from_childhood,_op._15_-_i._of_foreign_lands_and_peoples.ogg/Robert_Schumann_-_scenes_from_childhood,_op._15_-_i._of_foreign_lands_and_peoples.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/c/ce/Robert_Schumann_-_scenes_from_childhood,_op._15_-_i._of_foreign_lands_and_peoples.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Robert_Schumann_-_scenes_from_childhood,_op._15_-_i._of_foreign_lands_and_peoples.ogg", "sec": 100}, {"id": "schumann-asleep", "c": "슈만", "t": "어린이 정경 중 〈잠드는 아이〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/f/fa/Robert_Schumann_-_scenes_from_childhood,_op._15_-_xii._child_falling_asleep.ogg/Robert_Schumann_-_scenes_from_childhood,_op._15_-_xii._child_falling_asleep.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/f/fa/Robert_Schumann_-_scenes_from_childhood,_op._15_-_xii._child_falling_asleep.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Robert_Schumann_-_scenes_from_childhood,_op._15_-_xii._child_falling_asleep.ogg", "sec": 121}, {"id": "brahms", "c": "브람스", "t": "피아노 소품 Op.118 중 〈인터메초 2번〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/Johannes_Brahms_-_klavierstucke,_op._118_-_ii._intermezzo.ogg/Johannes_Brahms_-_klavierstucke,_op._118_-_ii._intermezzo.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/7/7e/Johannes_Brahms_-_klavierstucke,_op._118_-_ii._intermezzo.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Johannes_Brahms_-_klavierstucke,_op._118_-_ii._intermezzo.ogg", "sec": 0}, {"id": "smetana", "c": "스메타나", "t": "나의 조국 중 〈몰다우(블타바)〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/0/08/Bedrich_Smetana_-_ma_vlast_-_i._vltava_%27the_moldau%27.ogg/Bedrich_Smetana_-_ma_vlast_-_i._vltava_%27the_moldau%27.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/0/08/Bedrich_Smetana_-_ma_vlast_-_i._vltava_%27the_moldau%27.ogg", "https://upload.wikimedia.org/wikipedia/commons/3/39/Smetana,_M%C3%A1_vlast_-_Vltava_-_The_Moldau.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Bedrich_Smetana_-_ma_vlast_-_i._vltava_%27the_moldau%27.ogg", "sec": 891}, {"id": "dvorak", "c": "드보르자크", "t": "교향곡 9번 〈신세계로부터〉 2악장 라르고", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Antonin_Dvorak_-_symphony_no._9_in_e_minor_%27from_the_new_world%27,_op._95_-_ii._largo.ogg/Antonin_Dvorak_-_symphony_no._9_in_e_minor_%27from_the_new_world%27,_op._95_-_ii._largo.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/c/c3/Antonin_Dvorak_-_symphony_no._9_in_e_minor_%27from_the_new_world%27,_op._95_-_ii._largo.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Antonin_Dvorak_-_symphony_no._9_in_e_minor_%27from_the_new_world%27,_op._95_-_ii._largo.ogg", "sec": 0}, {"id": "grieg", "c": "그리그", "t": "페르 귄트 모음곡 중 〈아침〉", "p": "체코 국립 교향악단 (Musopen)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1a/Musopen_-_Morning.ogg/Musopen_-_Morning.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/1/1a/Musopen_-_Morning.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Musopen_-_Morning.ogg", "sec": 229}, {"id": "mascagni", "c": "마스카니", "t": "카발레리아 루스티카나 중 〈간주곡〉", "p": "Fulda Symphonic Orchestra, Simon Schindler", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a8/Pietro_Mascagni_-_Cavalleria_Rusticana_-_Intermezzo_Sinfonico.ogg/Pietro_Mascagni_-_Cavalleria_Rusticana_-_Intermezzo_Sinfonico.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/a/a8/Pietro_Mascagni_-_Cavalleria_Rusticana_-_Intermezzo_Sinfonico.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Pietro_Mascagni_-_Cavalleria_Rusticana_-_Intermezzo_Sinfonico.ogg", "sec": 181}, {"id": "satie", "c": "사티", "t": "〈짐노페디 1번〉", "p": "Robin Alciatore (Musopen)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/9/90/Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg/Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/9/90/Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg", "sec": 0}, {"id": "debussy", "c": "드뷔시", "t": "베르가마스크 모음곡 중 〈달빛〉", "p": "Laurens Goedhart", "lic": "CC BY 3.0 (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/b/be/Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg/Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/b/be/Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg", "sec": 304}, {"id": "rach", "c": "라흐마니노프", "t": "피아노 협주곡 2번 2악장 〈아다지오 소스테누토〉", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a5/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_ii._adagio_sostenuto.ogg/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_ii._adagio_sostenuto.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/a/a5/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_ii._adagio_sostenuto.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_ii._adagio_sostenuto.ogg", "sec": 660}, {"id": "elgar-nimrod", "c": "엘가", "t": "수수께끼 변주곡 중 〈님로드〉", "p": "John Barbirolli, 할레 오케스트라 (1947)", "lic": "1947년 음반 · 저작인접권 보호기간 지남 (퍼블릭 도메인)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e7/Elgar%3B_Enigma_variations,_Theme_IX._Nimrod.ogg/Elgar%3B_Enigma_variations,_Theme_IX._Nimrod.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/e/e7/Elgar%3B_Enigma_variations,_Theme_IX._Nimrod.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Elgar%3B_Enigma_variations,_Theme_IX._Nimrod.ogg", "sec": 174}, {"id": "schubert-ave", "c": "슈베르트", "t": "〈아베 마리아〉", "p": "Free Tim", "lic": "CC0 / 퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d7/Free_Tim_-_Schuberts_Ave_Maria.ogg/Free_Tim_-_Schuberts_Ave_Maria.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/d7/Free_Tim_-_Schuberts_Ave_Maria.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Free_Tim_-_Schuberts_Ave_Maria.ogg", "sec": 326}, {"id": "schubert-unf2", "c": "슈베르트", "t": "교향곡 〈미완성〉 2악장 안단테 콘 모토", "p": "Fulda Symphonic Orchestra, Simon Schindler", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/2/25/Schubert%27s_8th_Symphony,_2nd_movement_Andante_con_moto_in_E_major.ogg/Schubert%27s_8th_Symphony,_2nd_movement_Andante_con_moto_in_E_major.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/2/25/Schubert%27s_8th_Symphony,_2nd_movement_Andante_con_moto_in_E_major.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Schubert%27s_8th_Symphony,_2nd_movement_Andante_con_moto_in_E_major.ogg", "sec": 645}, {"id": "tchai-swan2", "c": "차이콥스키", "t": "백조의 호수 2막 (Musopen)", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/8/82/Tchaikovsky_-_Swan_Lake_Op.20_-_Act_II_Pt.1.ogg/Tchaikovsky_-_Swan_Lake_Op.20_-_Act_II_Pt.1.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/8/82/Tchaikovsky_-_Swan_Lake_Op.20_-_Act_II_Pt.1.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Tchaikovsky_-_Swan_Lake_Op.20_-_Act_II_Pt.1.ogg", "sec": 0}, {"id": "tchai-swan-x2", "c": "차이콥스키", "t": "백조의 호수 2막 중 〈백조의 주제〉", "p": "Ballet Française Symphony Orchestra (1958)", "lic": "1958년 음반 · 퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2b/Peter_Ilyich_Tchaikovsky-_Swan_Lake-_Extract_from_Act_2.ogg/Peter_Ilyich_Tchaikovsky-_Swan_Lake-_Extract_from_Act_2.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/2/2b/Peter_Ilyich_Tchaikovsky-_Swan_Lake-_Extract_from_Act_2.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Peter_Ilyich_Tchaikovsky-_Swan_Lake-_Extract_from_Act_2.ogg", "sec": 392}, {"id": "beet5-2", "c": "베토벤", "t": "교향곡 5번 2악장 안단테 콘 모토", "p": "Fulda Symphonic Orchestra, Simon Schindler", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6b/Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_2._Andante_con_moto.ogg/Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_2._Andante_con_moto.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/6/6b/Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_2._Andante_con_moto.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_2._Andante_con_moto.ogg", "sec": 597}, {"id": "chopin-csharp", "c": "쇼팽", "t": "녹턴 20번 C#단조 (유작)", "p": "Aaron Dunn (Musopen)", "lic": "CC0 / 퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/1/12/Chopin,_Nocturne_in_C-sharp_minor,_Op._Posth.ogg/Chopin,_Nocturne_in_C-sharp_minor,_Op._Posth.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/1/12/Chopin,_Nocturne_in_C-sharp_minor,_Op._Posth.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Chopin,_Nocturne_in_C-sharp_minor,_Op._Posth.ogg", "sec": 252}, {"id": "chopin-55-2", "c": "쇼팽", "t": "녹턴 E♭장조 Op.55-2", "p": "Musopen", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/3/37/Frederic_Chopin_-_nocturne_no._2_in_e_flat_major,_op._55.ogg/Frederic_Chopin_-_nocturne_no._2_in_e_flat_major,_op._55.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/3/37/Frederic_Chopin_-_nocturne_no._2_in_e_flat_major,_op._55.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Frederic_Chopin_-_nocturne_no._2_in_e_flat_major,_op._55.ogg", "sec": 357}, {"id": "liszt-liebe", "c": "리스트", "t": "〈사랑의 꿈〉 3번", "p": "Martha Goldstein (Al Goldstein 컬렉션)", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/0/02/Franz_Liszt_-_Liebestraum,_Ab_Major.ogg/Franz_Liszt_-_Liebestraum,_Ab_Major.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/0/02/Franz_Liszt_-_Liebestraum,_Ab_Major.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Franz_Liszt_-_Liebestraum,_Ab_Major.ogg", "sec": 283}, {"id": "rach-prelude", "c": "라흐마니노프", "t": "전주곡 C#단조 Op.3-2 (작곡가 본인 연주, 1920)", "p": "Sergei Rachmaninoff (1920년 녹음)", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b9/Sergei_Rachmaninoff_performs_Rachmaninoff%27s_Prelude_in_C_sharp_minor,_Op._3.ogg/Sergei_Rachmaninoff_performs_Rachmaninoff%27s_Prelude_in_C_sharp_minor,_Op._3.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/b/b9/Sergei_Rachmaninoff_performs_Rachmaninoff%27s_Prelude_in_C_sharp_minor,_Op._3.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Sergei_Rachmaninoff_performs_Rachmaninoff%27s_Prelude_in_C_sharp_minor,_Op._3.ogg", "sec": 228}, {"id": "saintsaens-swan", "c": "생상스", "t": "동물의 사육제 중 〈백조〉 (첼로)", "p": "Alisa Weilerstein (첼로), Jason Yoder (피아노) · 2009 백악관 연주", "lic": "퍼블릭 도메인 (미국 정부 저작물)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2a/20091104_Alisa_Weilerstein_and_Jason_Yoder_-_Saint_Sa%C3%ABns%27_The_Swan.ogg/20091104_Alisa_Weilerstein_and_Jason_Yoder_-_Saint_Sa%C3%ABns%27_The_Swan.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/2/2a/20091104_Alisa_Weilerstein_and_Jason_Yoder_-_Saint_Sa%C3%ABns%27_The_Swan.ogg", "https://upload.wikimedia.org/wikipedia/commons/d/db/JOHN_MICHEL_CELLO-SAINT_SAENS_CARNIVAL_OF_ANIMALS_THE_SWAN.ogg"], "page": "https://commons.wikimedia.org/wiki/File:20091104_Alisa_Weilerstein_and_Jason_Yoder_-_Saint_Sa%C3%ABns%27_The_Swan.ogg", "sec": 176}, {"id": "bach-cello1", "c": "바흐", "t": "무반주 첼로 모음곡 1번 〈전주곡〉 (첼로)", "p": "Chris", "lic": "CC0 / 퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a7/Bach_Cello_Suite_1_Prelude_(BWV_1007)_Played_by_Chris.ogg/Bach_Cello_Suite_1_Prelude_(BWV_1007)_Played_by_Chris.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/a/a7/Bach_Cello_Suite_1_Prelude_(BWV_1007)_Played_by_Chris.ogg", "https://upload.wikimedia.org/wikipedia/commons/9/9d/Bach_-_Cello_Suite_no._1_in_G_major,_BWV_1007_-_I._Pr%C3%A9lude.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Bach_Cello_Suite_1_Prelude_(BWV_1007)_Played_by_Chris.ogg", "sec": 155}, {"id": "massenet-med", "c": "마스네", "t": "타이스 중 〈명상곡〉 (바이올린)", "p": "Mischa Elman (바이올린), Josef Bonime (피아노) · 1919년 녹음", "lic": "퍼블릭 도메인 (1919년 음반)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/0/07/Elman_74341_NR.ogg/Elman_74341_NR.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/0/07/Elman_74341_NR.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Elman_74341_NR.ogg", "sec": 267}, {"id": "b-nacht", "c": "모차르트", "t": "〈아이네 클라이네 나흐트무지크〉 1악장", "p": "Advent Chamber Orchestra", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/2/24/Mozart_-_Eine_kleine_Nachtmusik_-_1._Allegro.ogg/Mozart_-_Eine_kleine_Nachtmusik_-_1._Allegro.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/2/24/Mozart_-_Eine_kleine_Nachtmusik_-_1._Allegro.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Mozart_-_Eine_kleine_Nachtmusik_-_1._Allegro.ogg", "sec": 355, "m": "bright"}, {"id": "b-spring", "c": "비발디", "t": "사계 중 〈봄〉 1악장", "p": "John Harrison (바이올린), Wichita State University", "lic": "CC BY-SA (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/f/ff/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga.mp3", "https://upload.wikimedia.org/wikipedia/commons/f/ff/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga"], "page": "https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga", "sec": 215, "m": "bright"}, {"id": "b-turkish", "c": "모차르트", "t": "〈터키 행진곡〉 (피아노 소나타 11번 3악장)", "p": "Romuald Greiss", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4e/Mozart-Marsz_turecki-(Romuald_Greiss).ogg/Mozart-Marsz_turecki-(Romuald_Greiss).ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/4/4e/Mozart-Marsz_turecki-(Romuald_Greiss).ogg"], "page": "https://commons.wikimedia.org/wiki/File:Mozart-Marsz_turecki-(Romuald_Greiss).ogg", "sec": 181, "m": "bright"}, {"id": "b-danube", "c": "요한 슈트라우스 2세", "t": "〈아름답고 푸른 도나우〉", "p": "Musopen", "lic": "CC0 / 퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/9/91/Strauss,_An_der_sch%C3%B6nen_blauen_Donau.ogg/Strauss,_An_der_sch%C3%B6nen_blauen_Donau.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/9/91/Strauss,_An_der_sch%C3%B6nen_blauen_Donau.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Strauss,_An_der_sch%C3%B6nen_blauen_Donau.ogg", "sec": 178, "m": "bright"}, {"id": "b-minuet", "c": "베토벤", "t": "〈미뉴에트 G장조〉", "p": "Peter Johnston", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/Minuet_in_G_(Beethoven),_piano.ogg/Minuet_in_G_(Beethoven),_piano.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/db/Minuet_in_G_(Beethoven),_piano.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Minuet_in_G_(Beethoven),_piano.ogg", "sec": 144, "m": "bright"}, {"id": "b-k545", "c": "모차르트", "t": "피아노 소나타 16번 K.545 3악장 〈론도〉", "p": "위키미디어 공용 기여자", "lic": "퍼블릭 도메인", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/1/11/K545_rondo.ogg/K545_rondo.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/1/11/K545_rondo.ogg"], "page": "https://commons.wikimedia.org/wiki/File:K545_rondo.ogg", "sec": 82, "m": "bright"}, {"id": "b-hungary", "c": "브람스", "t": "〈헝가리 무곡 6번〉", "p": "출처 페이지 참고 (EFF 자유 음원)", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/d/df/Johannes_Brahms_-_Ungarischer_Tanz_6_D-Dur.ogg/Johannes_Brahms_-_Ungarischer_Tanz_6_D-Dur.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/d/df/Johannes_Brahms_-_Ungarischer_Tanz_6_D-Dur.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Johannes_Brahms_-_Ungarischer_Tanz_6_D-Dur.ogg", "sec": 231, "m": "bright"}, {"id": "b-clar3", "c": "모차르트", "t": "클라리넷 협주곡 3악장 〈론도〉", "p": "Bruce Edwards, Fulda Symphonic Orchestra", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ae/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_3._Rondo_(Allegro).ogg/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_3._Rondo_(Allegro).ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/a/ae/Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_3._Rondo_(Allegro).ogg"], "page": "https://commons.wikimedia.org/wiki/File:Wolfgang_Amadeus_Mozart_-_Klarinettenkonzert_A-Dur_-_3._Rondo_(Allegro).ogg", "sec": 546, "m": "bright"}, {"id": "b-mendel", "c": "멘델스존", "t": "바이올린 협주곡 E단조 3악장", "p": "출처 페이지 참고 (EFF 자유 음원)", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/6/67/Felix_Mendelssohn_-_Violinkonzert_e-moll_-_3._Allegro_molto_vivace.ogg/Felix_Mendelssohn_-_Violinkonzert_e-moll_-_3._Allegro_molto_vivace.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/6/67/Felix_Mendelssohn_-_Violinkonzert_e-moll_-_3._Allegro_molto_vivace.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Felix_Mendelssohn_-_Violinkonzert_e-moll_-_3._Allegro_molto_vivace.ogg", "sec": 413, "m": "bright"}, {"id": "b-beet5", "c": "베토벤", "t": "교향곡 5번 〈운명〉 4악장", "p": "Fulda Symphonic Orchestra, Simon Schindler", "lic": "EFF Open Audio License (출처 표시)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3b/Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_4._Allegro.ogg/Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_4._Allegro.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/3/3b/Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_4._Allegro.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_4._Allegro.ogg", "sec": 0, "m": "bright"}, {"id": "beet4-1", "c": "베토벤", "t": "교향곡 4번 1악장", "p": "Musopen", "lic": "퍼블릭 도메인 (Public Domain Mark)", "srcs": ["https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Ludwig_van_Beethoven_-_symphony_no._4_in_b_flat_major,_op._60_-_i._adagio_-_allegro_vivace.ogg/Ludwig_van_Beethoven_-_symphony_no._4_in_b_flat_major,_op._60_-_i._adagio_-_allegro_vivace.ogg.mp3", "https://upload.wikimedia.org/wikipedia/commons/6/6c/Ludwig_van_Beethoven_-_symphony_no._4_in_b_flat_major,_op._60_-_i._adagio_-_allegro_vivace.ogg"], "page": "https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_symphony_no._4_in_b_flat_major,_op._60_-_i._adagio_-_allegro_vivace.ogg", "sec": 583, "m": "bright"}];
 
 /* ===================== 학급 생활 · 바른 글씨 ===================== */
 
@@ -6336,7 +6495,7 @@ tool({
 // ---------- 명상 ----------
 tool({
   key: 'meditate', name: '명상', icon: '🧘', group: 'class', kind: 'screen',
-  desc: '숨쉬기 안내에 맞춰 마음을 가라앉혀요. 녹음까지 저작권 걱정 없는 클래식 35곡(잔잔한 곡 25 · 밝고 경쾌한 곡 10)이 함께 흘러요.',
+  desc: '숨쉬기 안내에 맞춰 마음을 가라앉혀요. 녹음까지 저작권 걱정 없는 클래식 49곡(잔잔한 곡 38 · 밝고 경쾌한 곡 11)이 함께 흘러요.',
   build: function (el, ctx) {
     var PATTERNS = { calm: { name: '편안한 호흡 (4-2-6)', ph: [['들이쉬어요', 4], ['잠깐 멈춰요', 2], ['내쉬어요', 6]] },
       box: { name: '네모 호흡 (4-4-4-4)', ph: [['들이쉬어요', 4], ['멈춰요', 4], ['내쉬어요', 4], ['멈춰요', 4]] },
@@ -6354,9 +6513,9 @@ tool({
     var stage = h('div', { class: 'mstage' }, circle, guide, remain);
     // 음악
     var audio = new Audio(); audio.preload = 'none'; audio.crossOrigin = null;
-    var idx = -1, srcTry = 0, playing = false;
+    var idx = -1, srcTry = 0, playing = false, single = false;
     var nowEl = h('div', { class: 'mnow' }, '🎵 음악을 고르거나 ▶ 를 눌러요');
-    var playBtn = h('button', { class: 'btn', onclick: function () { if (playing) pauseMusic(); else playMusic(idx < 0 ? firstIdx() : idx); } }, '▶ 음악');
+    var playBtn = h('button', { class: 'btn', title: '고른 곡들을 차례로 이어서 들려줘요', onclick: function () { if (playing) pauseMusic(); else playMusic(idx < 0 ? firstIdx() : idx, false); } }, '▶ 목록 이어 듣기');
     var volIn = h('input', { type: 'range', min: 0, max: 1, step: 0.05, value: vol, style: { width: '110px' } });
     var shuf = h('input', { type: 'checkbox' });
     var listEl = h('div', { class: 'mlist' });
@@ -6384,10 +6543,10 @@ tool({
       h('div', { class: 'mmusic' },
         h('div', { class: 'row' }, nowEl),
         h('div', { class: 'mbarrow' }, bar, barTime),
-        h('div', { class: 'row' }, playBtn, h('button', { class: 'btn', onclick: function () { next(); } }, '⏭ 다음'),
+        h('div', { class: 'row' }, playBtn, h('button', { class: 'btn', onclick: function () { single = false; next(); } }, '⏭ 다음'),
           h('label', { class: 'hint', style: { display: 'flex', alignItems: 'center', gap: '6px', margin: 0 } }, '🔈', volIn, '🔊'),
           h('label', { class: 'hint', style: { display: 'flex', alignItems: 'center', gap: '5px', margin: 0 } }, shuf, '섞어 듣기')),
-        selRow, listEl,
+        selRow, h('p', { class: 'hint', style: { margin: '6px 0 0' } }, '🎵 곡 이름을 누르면 그 곡만 한 번 들려주고 끝나요. ‘▶ 목록 이어 듣기’는 체크한 곡들을 차례로 들려줘요.'), listEl,
         h('details', { class: 'mcredit' }, h('summary', {}, '음원 출처와 이용 허락'),
           h('p', { class: 'hint' }, '모든 곡은 작곡자가 세상을 떠난 지 오래되어 작품 저작권이 끝났어요. 녹음도 위키미디어 공용(Wikimedia Commons)에 퍼블릭 도메인·CC0 또는 출처만 밝히면 되는 자유 이용 허락(CC BY, EFF Open Audio License)으로 공개된 것만 골랐어요. 출처 표시가 필요한 곡은 아래에 연주자와 허락 조건을 적어 두었어요.'),
           h('ul', {}, TRACKS.map(function (t) { return h('li', {}, t.c + ' – ' + t.t + ' / 연주: ' + t.p + ' / ' + t.lic + ' · ', h('a', { href: t.page, target: '_blank', rel: 'noopener' }, '출처')); })))));
@@ -6406,28 +6565,31 @@ tool({
         var cb = h('input', { type: 'checkbox', title: '목록에 넣기' }); cb.checked = inc(i);
         cb.addEventListener('change', function () { if (cb.checked) delete include[t.id]; else include[t.id] = false; renderList(); ctx.dirty(); });
         listEl.append(h('div', { class: 'mrow' + (i === idx ? ' on' : '') }, cb,
-          h('button', { class: 'mplay', onclick: function () { playMusic(i); } },
+          h('button', { class: 'mplay', title: '이 곡만 한 번 들어요', onclick: function () { playMusic(i, true); } },
             h('b', {}, (i === idx && playing ? '🔊 ' : '') + t.c + ' · ' + t.t), h('small', {}, t.p + (t.sec ? ' · ' + mmss(t.sec) : '')))));
       });
     }
     function firstIdx() { for (var i = 0; i < TRACKS.length; i++) if (inc(i)) return i; return 0; }
-    function playMusic(i) {
-      idx = i; srcTry = 0; var t = TRACKS[i];
+    function playMusic(i, one) {
+      single = !!one; idx = i; srcTry = 0; var t = TRACKS[i];
       audio.src = t.srcs[0]; audio.volume = vol; paintBar();
       var p = audio.play(); if (p && p.catch) p.catch(function () {});
-      playing = true; nowEl.textContent = '🎵 ' + t.c + ' – ' + t.t; playBtn.textContent = '⏸ 멈춤'; renderList();
+      playing = true; nowEl.textContent = '🎵 ' + t.c + ' – ' + t.t + (single ? '  (이 곡만)' : ''); playBtn.textContent = '⏸ 멈춤'; renderList();
     }
-    function pauseMusic() { audio.pause(); playing = false; playBtn.textContent = '▶ 음악'; renderList(); }
+    function pauseMusic() { audio.pause(); playing = false; playBtn.textContent = '▶ 목록 이어 듣기'; renderList(); }
     function next() {
       var cand = []; for (var i = 0; i < TRACKS.length; i++) if (inc(i)) cand.push(i);
       if (!cand.length) { pauseMusic(); return; }
       var n;
       if (shuffleOn) { var others = cand.filter(function (x) { return x !== idx; }); n = (others.length ? others : cand)[Math.floor(Math.random() * (others.length || cand.length))]; }
       else { n = cand.filter(function (x) { return x > idx; })[0]; if (n == null) n = cand[0]; }
-      playMusic(n);
+      playMusic(n, false);
     }
     var fails = 0;
-    audio.addEventListener('ended', next);
+    audio.addEventListener('ended', function () {
+      if (single) { pauseMusic(); audio.currentTime = 0; paintBar(); nowEl.textContent = '✅ ' + TRACKS[idx].c + ' – ' + TRACKS[idx].t + ' 듣기를 마쳤어요'; return; }
+      next();
+    });
     audio.addEventListener('timeupdate', paintBar);
     audio.addEventListener('loadedmetadata', paintBar);
     audio.addEventListener('playing', function () { fails = 0; });
@@ -6437,6 +6599,7 @@ tool({
       fails++;
       var n = TRACKS.filter(function (_, i) { return inc(i); }).length || 1;
       if (fails >= Math.min(n, 3)) { pauseMusic(); nowEl.textContent = '⚠️ 음악을 불러오지 못했어요. 인터넷 연결을 확인해 주세요. (숨쉬기 안내는 그대로 할 수 있어요)'; fails = 0; return; }
+      if (single) { pauseMusic(); nowEl.textContent = '⚠️ 이 곡을 불러오지 못했어요. 다른 곡을 골라 주세요.'; return; }
       ctx.toast('이 곡을 불러오지 못해 다음 곡으로 넘어가요'); setTimeout(next, 600);
     });
     // 숨쉬기 세션
@@ -6445,7 +6608,7 @@ tool({
     function startSession() {
       running = true; t0 = performance.now(); endAt = t0 + minutes * 60000; gi = 0; gT = 0;
       startBtn.textContent = '■ 그만하기'; stage.classList.add('on');
-      if (!playing) playMusic(idx < 0 ? firstIdx() : idx);
+      if (!playing) playMusic(idx < 0 ? firstIdx() : idx, false);
       loop();
     }
     function stopSession(manual) {
@@ -6497,6 +6660,507 @@ tool({
       get: function () { return { pattern: pattern, minutes: minutes, include: include, vol: vol, shuffle: shuffleOn }; },
       set: setD, reset: function () { setD({}); },
       destroy: function () { running = false; cancelAnimationFrame(raf); audio.pause(); audio.src = ''; }
+    };
+  }
+});
+
+/* ===================== 선생님 도구: 관찰 기록 · 과제 체크표 · 성장 기록 · 퀴즈 대회 ===================== */
+
+// ---------- 공통: 반 명단 ----------
+function normName(s) { return String(s || '').replace(/^\s*\d+\s*(번|\.|\))?\s*/, '').replace(/\s+/g, '').trim(); }
+function rosterList(text) { var seen = {}; return splitList(text).filter(function (n) { var k = normName(n); if (!k || seen[k]) return false; seen[k] = 1; return true; }); }
+function today() { var d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+// 저장소의 활동 목록을 한 번만 받아요
+function onceActs(B, tool) {
+  return new Promise(function (res) {
+    var done = false, un = null;
+    un = B.listActivities(tool, function (l) { if (done) return; done = true; setTimeout(function () { if (un) un(); }, 0); res(l || []); });
+    setTimeout(function () { if (!done) { done = true; res([]); } }, 6000);
+  });
+}
+function onceEntries(B, aid) {
+  return new Promise(function (res) {
+    var done = false, un = null;
+    un = B.entries(aid, {}, function (l) { if (done) return; done = true; setTimeout(function () { if (un) un(); }, 0); res(l || []); });
+    setTimeout(function () { if (!done) { done = true; res([]); } }, 6000);
+  });
+}
+// 다른 도구에 적어 둔 명단을 가져와요 (가장 최근 것)
+function pullRoster(cb) {
+  var B = TB();
+  Promise.all(['observe', 'checklist', 'portfolio', 'picker'].map(function (t) { return onceActs(B, t); })).then(function (lists) {
+    var best = null;
+    lists.forEach(function (l) { l.forEach(function (a) { var d = a.data || {}, txt = d.roster || d.names; if (txt && rosterList(txt).length && (!best || (a.updated || 0) > (best.updated || 0))) best = { updated: a.updated, txt: txt, title: a.title }; }); });
+    cb(best);
+  });
+}
+function rosterBox(ctx, onChange) {
+  var t = ta('', '우리 반 명단: 한 줄에 한 명씩 "번호 이름" (예: 3 김민지)', 4);
+  var cnt = h('span', { class: 'hint', style: { margin: 0 } });
+  var box = h('details', { class: 'roster' }, h('summary', {}, '👥 우리 반 명단 ', cnt), t,
+    h('div', { class: 'row', style: { marginTop: '6px' } },
+      h('button', { class: 'btn sm', onclick: function () {
+        toast('저장된 명단을 찾고 있어요…');
+        pullRoster(function (r) {
+          if (!r) { toast('불러올 명단이 없어요. 직접 적어 주세요.'); return; }
+          setTa(t, r.txt); paint(); ctx.dirty(); onChange(); toast('‘' + (r.title || '') + '’의 명단 ' + rosterList(r.txt).length + '명을 불러왔어요');
+        });
+      } }, '📋 다른 도구의 명단 불러오기'),
+      h('span', { class: 'hint', style: { margin: 0 } }, '학생이 적는 이름과 같게 적으면 기록이 잘 모여요.')));
+  t.addEventListener('input', function () { paint(); ctx.dirty(); onChange(); });
+  function paint() { var n = rosterList(t.value).length; cnt.textContent = '(' + n + '명)'; if (!n) box.open = true; }
+  return { el: box, ta: t, list: function () { return rosterList(t.value); }, set: function (v) { setTa(t, v || ''); paint(); }, paint: paint };
+}
+
+// ---------- 관찰 기록 ----------
+tool({
+  key: 'observe', name: '관찰 기록', icon: '👀', group: 'record', kind: 'screen',
+  desc: '수업 중 눈에 띈 학생 모습을 날짜별로 짧게 적어요. 학생별로 모아 보고, 평가·생활기록부 자료로 엑셀로 내려받아요.',
+  build: function (el, ctx) {
+    var CATS = ['수업 참여·발표', '협력·모둠', '생활·태도', '성취·성장', '기타'];
+    var TONES = [['good', '👍 칭찬'], ['see', '👀 관찰'], ['help', '🤝 도움 필요']];
+    var QUICK = ['자신 있게 발표함', '친구를 도와줌', '끝까지 집중함', '질문을 잘 만듦', '모둠 의견을 잘 정리함', '어려워함 → 다시 설명 필요'];
+    var notes = [], sel = {}, cat = CATS[0], tone = 'good', fWho = '', fCat = '';
+    var R = rosterBox(ctx, function () { paintChips(); render(); });
+    var date = h('input', { type: 'date', class: 'fld', style: { width: 'auto' } }); date.value = today();
+    var chips = h('div', { class: 'obchips' }), catSeg = h('div', { class: 'seg' }), toneSeg = h('div', { class: 'seg' });
+    var text = ta('', '무엇을 보았나요? (예: 모둠 토의에서 친구 의견을 정리해 발표함)', 2);
+    var quick = h('div', { class: 'chips', style: { margin: '6px 0' } }, QUICK.map(function (q) { return h('button', { class: 'chip', style: { cursor: 'pointer' }, onclick: function () { text.value = (text.value ? text.value.replace(/\s*$/, ' ') : '') + q; text.focus(); } }, q); }));
+    CATS.forEach(function (c) { catSeg.append(h('button', { onclick: function () { cat = c; paintSegs(); } }, c)); });
+    TONES.forEach(function (t) { toneSeg.append(h('button', { onclick: function () { tone = t[0]; paintSegs(); } }, t[1])); });
+    var whoSel = h('select', { class: 'fld', style: { width: 'auto' } }), catSel = h('select', { class: 'fld', style: { width: 'auto' } });
+    whoSel.addEventListener('change', function () { fWho = whoSel.value; render(); }); catSel.addEventListener('change', function () { fCat = catSel.value; render(); });
+    var stats = h('div', { class: 'obstats' }), listEl = h('div', { class: 'oblist' });
+    el.append(R.el,
+      h('div', { class: 'wlform' },
+        h('div', { class: 'row' }, h('b', {}, '✏️ 새 기록'), date, h('span', { class: 'hint', style: { margin: 0 } }, '학생을 하나 또는 여럿 골라요')),
+        chips, h('div', { class: 'row', style: { margin: '6px 0' } }, catSeg), h('div', { class: 'row', style: { marginBottom: '6px' } }, toneSeg),
+        text, quick,
+        h('div', { class: 'row', style: { justifyContent: 'flex-end' } }, h('button', { class: 'btn pri', onclick: addNote }, '기록하기'))),
+      h('span', { class: 'lbl' }, '학생별 기록 수 ', h('small', { class: 'hint' }, '— 기록이 적은 학생을 눈여겨봐요')), stats,
+      h('div', { class: 'row', style: { margin: '12px 0 6px' } }, h('span', { class: 'lbl', style: { margin: 0 } }, '기록 모아 보기'), whoSel, catSel,
+        h('button', { class: 'btn sm', onclick: exportCSV }, '📥 엑셀로 내려받기')), listEl);
+    function paintSegs() {
+      $$('button', catSeg).forEach(function (b, i) { b.classList.toggle('on', CATS[i] === cat); });
+      $$('button', toneSeg).forEach(function (b, i) { b.classList.toggle('on', TONES[i][0] === tone); });
+    }
+    function paintChips() {
+      chips.innerHTML = ''; var L = R.list();
+      if (!L.length) chips.append(h('span', { class: 'hint' }, '위 ‘우리 반 명단’에 이름을 적으면 여기에 이름 단추가 생겨요.'));
+      L.forEach(function (n) { var k = normName(n); chips.append(h('button', { class: 'obchip' + (sel[k] ? ' on' : ''), onclick: function () { if (sel[k]) delete sel[k]; else sel[k] = n; paintChips(); } }, n)); });
+      var cur = whoSel.value; whoSel.innerHTML = ''; whoSel.append(h('option', { value: '' }, '모든 학생'), L.map(function (n) { return h('option', { value: normName(n) }, n); })); whoSel.value = cur;
+      catSel.innerHTML = ''; catSel.append(h('option', { value: '' }, '모든 영역'), CATS.map(function (c) { return h('option', { value: c }, c); })); catSel.value = fCat;
+    }
+    function addNote() {
+      var who = Object.keys(sel).map(function (k) { return sel[k]; });
+      if (!who.length) { toast('학생을 먼저 골라 주세요'); return; }
+      if (!text.value.trim()) { toast('무엇을 보았는지 적어 주세요'); text.focus(); return; }
+      notes.push({ id: rid(), d: date.value || today(), who: who, cat: cat, tone: tone, text: text.value.trim().slice(0, 500), ts: Date.now() });
+      text.value = ''; sel = {}; paintChips(); render(); ctx.dirty(); ctx.save().then(function () { toast('기록했어요 ✏️'); }, function () {});
+    }
+    function render() {
+      var L = R.list(), cnt = {};
+      notes.forEach(function (n) { n.who.forEach(function (w) { var k = normName(w); cnt[k] = (cnt[k] || 0) + 1; }); });
+      stats.innerHTML = '';
+      L.forEach(function (n) { var c = cnt[normName(n)] || 0; stats.append(h('button', { class: 'obstat' + (c === 0 ? ' zero' : c < 2 ? ' low' : ''), title: '이 학생 기록만 보기', onclick: function () { fWho = normName(n); whoSel.value = fWho; render(); } }, n, h('b', {}, c))); });
+      var show = notes.filter(function (n) { return (!fWho || n.who.some(function (w) { return normName(w) === fWho; })) && (!fCat || n.cat === fCat); })
+        .sort(function (a, b) { return (b.d || '').localeCompare(a.d || '') || (b.ts || 0) - (a.ts || 0); });
+      listEl.innerHTML = '';
+      if (!show.length) listEl.append(h('div', { class: 'empty-note' }, notes.length ? '고른 조건에 맞는 기록이 없어요.' : '아직 기록이 없어요. 위에서 학생을 고르고 적어 보세요.'));
+      show.forEach(function (n) {
+        var t = TONES.filter(function (x) { return x[0] === n.tone; })[0] || TONES[1];
+        listEl.append(h('div', { class: 'obnote ' + n.tone },
+          h('div', { class: 'obh' }, h('b', {}, n.who.join(', ')), h('span', {}, n.d + ' · ' + n.cat + ' · ' + t[1]),
+            twoTap(h('button', { class: 'btn sm' }, '지우기'), '지우기', '정말 지울까요?', function () { notes = notes.filter(function (x) { return x !== n; }); render(); ctx.dirty(); ctx.save().catch(function () {}); })),
+          h('p', {}, n.text)));
+      });
+    }
+    function exportCSV() {
+      if (!notes.length) { toast('내려받을 기록이 없어요'); return; }
+      var rows = [['날짜', '학생', '영역', '구분', '기록']];
+      notes.slice().sort(function (a, b) { return (a.d || '').localeCompare(b.d || ''); }).forEach(function (n) {
+        n.who.forEach(function (w) { rows.push([n.d, w, n.cat, (TONES.filter(function (x) { return x[0] === n.tone; })[0] || ['', ''])[1], n.text]); });
+      });
+      downloadCSV('관찰 기록 - ' + today(), rows);
+    }
+    function setD(d) {
+      R.set(d.roster); notes = arr(d.notes).filter(function (n) { return n && n.text; }).map(function (n) { return { id: n.id || rid(), d: str(n.d, 10), who: arr(n.who).map(function (w) { return str(w, 40); }), cat: str(n.cat, 20), tone: n.tone || 'see', text: str(n.text, 500), ts: n.ts || 0 }; });
+      sel = {}; fWho = ''; fCat = ''; paintSegs(); paintChips(); render();
+    }
+    setD({});
+    return {
+      title: function () { return '관찰 기록 · ' + notes.length + '개'; },
+      get: function () { return { roster: R.ta.value, notes: notes }; },
+      set: setD, reset: function () { setD({}); }
+    };
+  }
+});
+
+// ---------- 과제 · 준비물 체크표 ----------
+tool({
+  key: 'checklist', name: '과제 · 준비물 체크표', icon: '✅', group: 'record', kind: 'screen',
+  desc: '과제와 준비물을 학생별로 눌러 체크해요. 아직 안 낸 학생을 한눈에 모아 보고 엑셀로 내려받아요.',
+  build: function (el, ctx) {
+    var ST = { '': ['', '아직'], o: ['✅', '냈어요'], x: ['❌', '안 냄'], l: ['⏰', '늦게 냄'] }, CYCLE = ['', 'o', 'x', 'l'];
+    var items = [], marks = {}, saveT = null;
+    var R = rosterBox(ctx, function () { render(); });
+    var nm = inp('', '과제·준비물 이름 (예: 수학익힘 34쪽, 리코더)'), dt = h('input', { type: 'date', class: 'fld', style: { width: 'auto' } }); dt.value = today();
+    var typ = h('select', { class: 'fld', style: { width: 'auto' } }, ['과제', '준비물', '가정통신문 회신', '기타'].map(function (t) { return h('option', { value: t }, t); }));
+    var grid = h('div', { class: 'ckwrap' }), missing = h('div', { class: 'ckmiss' });
+    nm.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); addItem(); } });
+    el.append(R.el,
+      h('div', { class: 'wlform' }, h('div', { class: 'row' }, nm, typ, dt, h('button', { class: 'btn pri', onclick: addItem }, '＋ 추가'))),
+      h('div', { class: 'row', style: { justifyContent: 'space-between', margin: '6px 0' } },
+        h('span', { class: 'hint', style: { margin: 0 } }, '칸을 누를 때마다 ✅ 냈어요 → ❌ 안 냄 → ⏰ 늦게 냄 → 빈칸 순서로 바뀌어요. 바뀐 내용은 저절로 저장돼요.'),
+        h('button', { class: 'btn sm', onclick: exportCSV }, '📥 엑셀로 내려받기')),
+      grid, h('span', { class: 'lbl' }, '🔔 아직 안 낸 학생'), missing);
+    function key(n) { return normName(n); }
+    function addItem() {
+      var v = nm.value.trim(); if (!v) { nm.focus(); return; }
+      items.push({ id: rid(), name: v.slice(0, 40), d: dt.value || today(), type: typ.value }); nm.value = '';
+      render(); changed();
+    }
+    function changed() { ctx.dirty(); clearTimeout(saveT); saveT = setTimeout(function () { ctx.save().catch(function () {}); }, 1200); }
+    function render() {
+      var L = R.list(); grid.innerHTML = ''; missing.innerHTML = '';
+      if (!L.length || !items.length) { grid.append(h('div', { class: 'empty-note' }, !L.length ? '먼저 ‘우리 반 명단’을 적어 주세요.' : '위에서 과제나 준비물을 추가해 주세요.')); return; }
+      var its = items.slice().sort(function (a, b) { return (a.d || '').localeCompare(b.d || ''); });
+      var head = h('tr', {}, h('th', { class: 'ckname' }, '이름'), its.map(function (it) {
+        var m = marks[it.id] || {}, done = L.filter(function (n) { return m[key(n)] === 'o' || m[key(n)] === 'l'; }).length;
+        return h('th', {}, h('div', { class: 'ckth' }, h('small', {}, it.type + ' · ' + it.d.slice(5).replace('-', '/')), h('b', {}, it.name), h('span', { class: 'ckcnt' + (done === L.length ? ' all' : '') }, done + '/' + L.length),
+          h('div', { class: 'ckbtns' }, h('button', { class: 'btn sm', title: '빈칸을 모두 ✅로', onclick: function () { marks[it.id] = marks[it.id] || {}; L.forEach(function (n) { if (!marks[it.id][key(n)]) marks[it.id][key(n)] = 'o'; }); render(); changed(); } }, '모두 ✅'),
+            twoTap(h('button', { class: 'btn sm' }, '빼기'), '빼기', '정말?', function () { items = items.filter(function (x) { return x !== it; }); delete marks[it.id]; render(); changed(); }))));
+      }), h('th', {}, '안 낸 수'));
+      var body = L.map(function (n) {
+        var miss = 0;
+        var tds = its.map(function (it) {
+          var v = (marks[it.id] || {})[key(n)] || ''; if (v === 'x') miss++;
+          return h('td', { class: 'ckc ' + (v || 'e'), title: ST[v][1], onclick: function () {
+            marks[it.id] = marks[it.id] || {}; var nv = CYCLE[(CYCLE.indexOf(v) + 1) % CYCLE.length];
+            if (nv) marks[it.id][key(n)] = nv; else delete marks[it.id][key(n)];
+            render(); changed();
+          } }, ST[v][0]);
+        });
+        return h('tr', {}, h('td', { class: 'ckname' }, n), tds, h('td', { class: 'ckmisscnt' + (miss ? ' on' : '') }, miss || ''));
+      });
+      grid.append(h('table', { class: 'cktable' }, h('thead', {}, head), h('tbody', {}, body)));
+      its.slice().reverse().forEach(function (it) {
+        var m = marks[it.id] || {}, who = L.filter(function (n) { var v = m[key(n)]; return v === 'x' || !v; });
+        if (!who.length) return;
+        missing.append(h('div', { class: 'ckm' }, h('b', {}, it.name + ' (' + it.d.slice(5).replace('-', '/') + ')'), ' ', who.map(function (n) { var v = m[key(n)]; return h('span', { class: 'ckmn' + (v === 'x' ? ' x' : '') }, n); })));
+      });
+      if (!missing.childNodes.length) missing.append(h('div', { class: 'hint' }, '모두 냈어요! 🎉'));
+    }
+    function exportCSV() {
+      var L = R.list(); if (!L.length || !items.length) { toast('내려받을 내용이 없어요'); return; }
+      var its = items.slice().sort(function (a, b) { return (a.d || '').localeCompare(b.d || ''); });
+      var rows = [['이름'].concat(its.map(function (it) { return it.d + ' ' + it.type + ': ' + it.name; }), ['안 낸 수'])];
+      L.forEach(function (n) { var miss = 0; rows.push([n].concat(its.map(function (it) { var v = (marks[it.id] || {})[key(n)] || ''; if (v === 'x') miss++; return ST[v][1]; }), [miss])); });
+      downloadCSV('과제 준비물 체크표 - ' + today(), rows);
+    }
+    function setD(d) {
+      R.set(d.roster);
+      items = arr(d.items).map(function (it) { return { id: it.id || rid(), name: str(it.name, 40), d: str(it.d, 10) || today(), type: str(it.type, 20) || '과제' }; });
+      marks = {}; var m = d.marks && typeof d.marks === 'object' ? d.marks : {};
+      Object.keys(m).forEach(function (id) { if (m[id] && typeof m[id] === 'object') { marks[id] = {}; Object.keys(m[id]).forEach(function (k) { if (ST[m[id][k]] && m[id][k]) marks[id][k] = m[id][k]; }); } });
+      render();
+    }
+    setD({});
+    return {
+      title: function () { return '과제·준비물 체크표 · ' + items.length + '개'; },
+      get: function () { return { roster: R.ta.value, items: items, marks: marks }; },
+      set: setD, reset: function () { setD({}); },
+      destroy: function () { clearTimeout(saveT); }
+    };
+  }
+});
+
+// ---------- 학생 성장 기록 (포트폴리오) ----------
+var ENTRY_KO = { submit: '제출', vote: '투표', card: '출구 카드', level: '이해도', word: '낱말', post: '담벼락 글', reply: '댓글', stance: '토론 입장', arg: '토론 근거', ans: '퀴즈 답' };
+function entrySummary(e) {
+  var src = e.kind === 'submit' ? (e.data || {}) : e, skip = { name: 1, kind: 1, ts: 1, uid: 1, id: 1, data: 1, color: 1, to: 1, x: 1, y: 1, strokes: 1, srcs: 1, prompts: 1 };
+  var parts = [];
+  Object.keys(src).forEach(function (k) { if (skip[k]) return; var v = flatVal(src[k]); if (v !== '') parts.push((KEY_KO[k] ? KEY_KO[k] + ': ' : '') + v); });
+  var s = parts.join(' | '); return s.length > 260 ? s.slice(0, 260) + '…' : s;
+}
+tool({
+  key: 'portfolio', name: '학생 성장 기록', icon: '🌱', group: 'record', kind: 'screen',
+  desc: '한 학생이 여러 도구에 제출하고 응답한 기록, 관찰 기록, 과제 기록을 한 화면에 모아 봐요. 선생님 메모를 붙이고 상담·평가 자료로 내려받아요.',
+  build: function (el, ctx) {
+    var memos = {}, cur = '', idx = null, busy = false;
+    var R = rosterBox(ctx, function () { renderList(); renderOne(); });
+    var gatherBtn = h('button', { class: 'btn pri', onclick: gather }, '🔄 모든 활동에서 기록 모으기');
+    var gst = h('span', { class: 'hint', style: { margin: 0 } }, '선생님이 저장한 모든 활동의 학생 기록을 이름으로 모아요.');
+    var side = h('div', { class: 'pfside' }), main = h('div', { class: 'pfmain' });
+    el.append(R.el, h('div', { class: 'row noprint', style: { margin: '8px 0' } }, gatherBtn, gst,
+      h('button', { class: 'btn sm', onclick: exportAll }, '📥 전체 내려받기')), h('div', { class: 'pfgrid' }, side, main));
+    function gather() {
+      if (busy) return; busy = true; gatherBtn.disabled = true; gst.textContent = '모으는 중… (활동이 많으면 조금 걸려요)';
+      var B = TB(), out = {}, acts = 0;
+      function push(name, rec) { var k = normName(name); if (!k) return; (out[k] = out[k] || []).push(rec); }
+      Promise.all(TOOLS.map(function (def) {
+        if (def.key === 'portfolio') return Promise.resolve();
+        return onceActs(B, def.key).then(function (list) {
+          return Promise.all(list.map(function (a) {
+            acts++;
+            var d = a.data || {}, base = { tool: def.name, icon: def.icon, act: a.title || def.name };
+            if (def.key === 'observe') { arr(d.notes).forEach(function (n) { arr(n.who).forEach(function (w) { push(w, Object.assign({ kind: '관찰', ts: n.ts || Date.parse(n.d) || 0, d: n.d, text: (n.tone === 'good' ? '👍 ' : n.tone === 'help' ? '🤝 ' : '👀 ') + n.cat + ' · ' + n.text }, base)); }); }); return; }
+            if (def.key === 'checklist') {
+              var L = rosterList(d.roster), m = d.marks || {};
+              arr(d.items).forEach(function (it) { L.forEach(function (n) { var v = (m[it.id] || {})[normName(n)]; push(n, Object.assign({ kind: '과제', ts: Date.parse(it.d) || 0, d: it.d, text: it.type + ' ‘' + it.name + '’: ' + (v === 'o' ? '✅ 냄' : v === 'l' ? '⏰ 늦게 냄' : v === 'x' ? '❌ 안 냄' : '— 기록 없음'), miss: v === 'x' }, base)); }); });
+              return;
+            }
+            if (def.kind === 'screen') return;
+            return onceEntries(B, a.id).then(function (ents) {
+              ents.forEach(function (e) { if (!e.name || e.kind === 'pos' || e.kind === 'join') return; push(e.name, Object.assign({ kind: ENTRY_KO[e.kind] || e.kind, ts: e.ts || 0, text: entrySummary(e) }, base)); });
+            });
+          }));
+        });
+      })).then(function () {
+        Object.keys(out).forEach(function (k) { out[k].sort(function (a, b) { return (b.ts || 0) - (a.ts || 0); }); });
+        idx = out; busy = false; gatherBtn.disabled = false; gst.textContent = '활동 ' + acts + '개에서 모았어요 · ' + fmt(Date.now());
+        renderList(); renderOne();
+      });
+    }
+    function names() {
+      var L = R.list(), seen = {}; L.forEach(function (n) { seen[normName(n)] = 1; });
+      if (idx) Object.keys(idx).forEach(function (k) { if (!seen[k]) { L.push(k); seen[k] = 1; } });
+      return L;
+    }
+    function recs(n) { return (idx && idx[normName(n)]) || []; }
+    function renderList() {
+      side.innerHTML = ''; var L = names();
+      if (!L.length) { side.append(h('div', { class: 'hint' }, '명단을 적거나 ‘기록 모으기’를 눌러요.')); return; }
+      L.forEach(function (n) {
+        var r = recs(n), inRoster = R.list().some(function (x) { return normName(x) === normName(n); });
+        side.append(h('button', { class: 'pfname' + (normName(n) === normName(cur) ? ' on' : '') + (inRoster ? '' : ' extra'), title: inRoster ? '' : '명단에 없는 이름이에요 (학생이 다르게 적었을 수 있어요)', onclick: function () { cur = n; renderList(); renderOne(); } },
+          h('span', {}, n), h('b', {}, idx ? r.length : ''), memos[normName(n)] ? h('i', { title: '메모 있음' }, '📝') : null));
+      });
+    }
+    function renderOne() {
+      main.innerHTML = '';
+      if (!cur) { main.append(h('div', { class: 'empty-note' }, idx ? '왼쪽에서 학생을 골라요.' : '‘🔄 모든 활동에서 기록 모으기’를 누른 뒤 왼쪽에서 학생을 골라요.')); return; }
+      var r = recs(cur), k = normName(cur);
+      var cnt = function (kind) { return r.filter(function (x) { return x.kind === kind; }).length; };
+      var subN = r.filter(function (x) { return x.kind !== '관찰' && x.kind !== '과제'; }).length, miss = r.filter(function (x) { return x.miss; }).length;
+      var memo = ta('', '선생님 메모: 강점, 성장한 점, 도움이 필요한 점, 상담 내용 (저장돼요)', 4); memo.value = memos[k] || '';
+      memo.addEventListener('input', function () { if (memo.value.trim()) memos[k] = memo.value.slice(0, 3000); else delete memos[k]; ctx.dirty(); });
+      main.append(h('div', { class: 'pfhead' }, h('h3', {}, '🌱 ' + cur),
+        h('div', { class: 'row noprint' }, h('button', { class: 'btn sm', onclick: function () { exportOne(cur); } }, '📥 이 학생 내려받기'),
+          h('button', { class: 'btn sm', onclick: function () { document.body.classList.add('print-pf'); setTimeout(function () { window.print(); document.body.classList.remove('print-pf'); }, 60); } }, '🖨️ 인쇄'))),
+        h('div', { class: 'statrow' },
+          h('div', { class: 'stat' }, h('b', {}, subN), h('span', {}, '활동 참여·제출')),
+          h('div', { class: 'stat' }, h('b', {}, cnt('관찰')), h('span', {}, '관찰 기록')),
+          h('div', { class: 'stat' + (miss ? ' down' : '') }, h('b', {}, miss), h('span', {}, '과제·준비물 안 냄'))),
+        h('span', { class: 'lbl' }, '📝 선생님 메모'), memo,
+        h('span', { class: 'lbl' }, '🗂️ 기록 (최근 순)'));
+      if (!idx) { main.append(h('div', { class: 'hint' }, '‘기록 모으기’를 누르면 이 학생의 기록이 여기에 모여요.')); return; }
+      if (!r.length) { main.append(h('div', { class: 'empty-note' }, '모인 기록이 없어요. 학생이 이름을 다르게 적었는지 왼쪽 목록(회색 이름)을 확인해 보세요.')); return; }
+      var tl = h('div', { class: 'pftl' });
+      r.forEach(function (x) { tl.append(h('div', { class: 'pfrec k-' + (x.kind === '관찰' ? 'ob' : x.kind === '과제' ? 'ck' : 'act') + (x.miss ? ' miss' : '') },
+        h('div', { class: 'pfrh' }, h('span', {}, x.icon + ' ' + x.tool + ' · ' + x.act), h('small', {}, (x.d || (x.ts ? fmt(x.ts) : '')) + ' · ' + x.kind)), h('p', {}, x.text || '—'))); });
+      main.append(tl);
+    }
+    function rowsFor(n) { return recs(n).map(function (x) { return [n, x.d || (x.ts ? new Date(x.ts).toLocaleString('ko-KR') : ''), x.tool, x.act, x.kind, x.text]; }); }
+    function exportOne(n) { var rows = [['학생', '날짜', '도구', '활동', '종류', '내용']].concat(rowsFor(n)); rows.push([n, '', '', '', '선생님 메모', memos[normName(n)] || '']); downloadCSV('성장 기록 - ' + n + ' - ' + today(), rows); }
+    function exportAll() {
+      if (!idx) { toast('먼저 ‘기록 모으기’를 눌러 주세요'); return; }
+      var rows = [['학생', '날짜', '도구', '활동', '종류', '내용']];
+      names().forEach(function (n) { rows = rows.concat(rowsFor(n)); if (memos[normName(n)]) rows.push([n, '', '', '', '선생님 메모', memos[normName(n)]]); });
+      downloadCSV('학생 성장 기록 전체 - ' + today(), rows);
+    }
+    function setD(d) { R.set(d.roster); memos = {}; var m = d.memos && typeof d.memos === 'object' ? d.memos : {}; Object.keys(m).forEach(function (k) { memos[k] = str(m[k], 3000); }); renderList(); renderOne(); }
+    setD({});
+    return {
+      title: function () { return '학생 성장 기록 · ' + R.list().length + '명'; },
+      get: function () { return { roster: R.ta.value, memos: memos }; },
+      set: setD, reset: function () { cur = ''; idx = null; setD({}); }
+    };
+  }
+});
+
+// ---------- 실시간 퀴즈 대회 ----------
+function qzEnc(ans) { return ans.map(function (a, i) { return String.fromCharCode(97 + ((a | 0) + i * 7) % 26); }).join(''); }
+function qzDec(s, i) { if (!s || s.length <= i) return null; return ((s.charCodeAt(i) - 97 - i * 7) % 26 + 26) % 26; }
+tool({
+  key: 'quiz', name: '실시간 퀴즈 대회', icon: '🏆', group: 'live', kind: 'live',
+  desc: 'OX·객관식 문제를 내면 학생들이 각자 기기로 풀어요. 빨리 맞힐수록 점수가 높고, 문제마다 정답률과 순위가 나와요.',
+  shared: function () { return true; },
+  build: function (el, ctx) {
+    var MK = ['①', '②', '③', '④'], OXL = ['⭕ O', '❌ X'], COL = ['#e0603a', '#2f6f9f', '#c99a12', '#2f8f5b'];
+    var qs = [], key = '', st = { i: -1, phase: 'wait', at: 0 }, list = [], seenAt = {}, myPick = {}, tick = null, snd = sfxToggle(ctx), lastBeep = -1, revealedFx = -1;
+    var title = inp('cfg', '퀴즈 이름 (예: 3단원 복습 퀴즈)');
+    var qBox = h('div', { class: 'qzlist' });
+    var editor = h('div', { class: 'tonly qzedit' }, h('span', { class: 'lbl' }, '퀴즈 이름'), title, h('span', { class: 'lbl' }, '문제'), qBox,
+      h('div', { class: 'row' }, h('button', { class: 'btn sm', onclick: function () { qs.push({ t: 'mc', q: '', o: ['', '', '', ''], a: 0, s: 20 }); renderEdit(); ctx.dirty(); } }, '＋ 객관식 문제'),
+        h('button', { class: 'btn sm', onclick: function () { qs.push({ t: 'ox', q: '', o: [], a: 0, s: 15 }); renderEdit(); ctx.dirty(); } }, '＋ OX 문제')));
+    var ctrl = h('div', { class: 'tonly qzctrl' }), stage = h('div', { class: 'qzstage' });
+    el.append(editor, ctrl, stage);
+    title.addEventListener('input', function () { ctx.dirty(); });
+    function answers() { return qs.map(function (q) { return q.a | 0; }); }
+    function ansOf(i) { return ctx.student ? qzDec(key, i) : (qs[i] ? qs[i].a | 0 : null); }
+    function renderEdit() {
+      qBox.innerHTML = '';
+      if (!qs.length) qBox.append(h('div', { class: 'hint' }, '아래 단추로 문제를 더해요.'));
+      qs.forEach(function (q, i) {
+        var qi = inp('', 'Q' + (i + 1) + '. 문제를 적어요'); qi.value = q.q;
+        qi.addEventListener('input', function () { q.q = qi.value.slice(0, 200); ctx.dirty(); });
+        var secSel = h('select', { class: 'fld', style: { width: 'auto' } }, [10, 15, 20, 30, 45, 60].map(function (s) { return h('option', { value: s }, s + '초'); }));
+        secSel.value = q.s; secSel.addEventListener('change', function () { q.s = +secSel.value; ctx.dirty(); });
+        var aSel = h('select', { class: 'fld', style: { width: 'auto' } }, (q.t === 'ox' ? OXL : MK).map(function (l, k) { return h('option', { value: k }, '정답 ' + l); }));
+        aSel.value = q.a; aSel.addEventListener('change', function () { q.a = +aSel.value; ctx.dirty(); });
+        var opts = q.t === 'mc' ? h('div', { class: 'qzopts' }, [0, 1, 2, 3].map(function (k) { var o = inp('', MK[k] + ' 보기'); o.value = q.o[k] || ''; o.addEventListener('input', function () { q.o[k] = o.value.slice(0, 80); ctx.dirty(); }); return o; })) : null;
+        qBox.append(h('div', { class: 'qzq' + (st.i === i && st.phase !== 'wait' ? ' live' : '') },
+          h('div', { class: 'row' }, h('b', {}, (q.t === 'ox' ? 'OX' : '객관식')), qi),
+          opts, h('div', { class: 'row' }, aSel, secSel,
+            h('button', { class: 'btn sm', disabled: !i, onclick: function () { qs.splice(i - 1, 0, qs.splice(i, 1)[0]); renderEdit(); ctx.dirty(); } }, '▲'),
+            h('button', { class: 'btn sm', disabled: i === qs.length - 1, onclick: function () { qs.splice(i + 1, 0, qs.splice(i, 1)[0]); renderEdit(); ctx.dirty(); } }, '▼'),
+            twoTap(h('button', { class: 'btn sm' }, '빼기'), '빼기', '정말?', function () { qs.splice(i, 1); renderEdit(); ctx.dirty(); }))));
+      });
+    }
+    // ---- 진행 (선생님)
+    function go(phase, i) {
+      if (phase === 'open') {
+        var bad = qs.filter(function (q) { return !q.q.trim() || (q.t === 'mc' && q.o.filter(function (o) { return (o || '').trim(); }).length < 2); });
+        if (!qs.length) { toast('문제를 먼저 만들어 주세요'); return; }
+        if (bad.length) { toast('문제나 보기가 빈 곳이 있어요. 채워 주세요.'); return; }
+      }
+      st = { i: i == null ? st.i : i, phase: phase, at: Date.now() }; lastBeep = -1;
+      ctx.dirty(); ctx.save().catch(function () {}); render();
+    }
+    function restart() { list.filter(function (e) { return e.kind === 'ans'; }).forEach(function (e) { ctx.del(e.id); }); st = { i: -1, phase: 'wait', at: 0 }; ctx.dirty(); ctx.save().catch(function () {}); render(); }
+    function remain() { var q = qs[st.i]; if (!q) return 0; return Math.max(0, q.s - (Date.now() - st.at) / 1000); }
+    // ---- 점수
+    function answersOf(i) {
+      var first = {}; list.filter(function (e) { return e.kind === 'ans' && e.q === i; }).sort(function (a, b) { return (a.ts || 0) - (b.ts || 0); })
+        .forEach(function (e) { if (!first[e.uid]) first[e.uid] = e; });
+      return Object.keys(first).map(function (u) { return first[u]; });
+    }
+    function points(e, i) { var q = qs[i], a = ansOf(i); if (!q || a == null || e.c !== a) return 0; var lim = (q.s || 20) * 1000; return 100 + Math.round(50 * Math.max(0, 1 - (e.ms || lim) / lim)); }
+    function board(upto) {
+      var S = {};
+      for (var i = 0; i <= upto; i++) {
+        if (ansOf(i) == null) continue;
+        answersOf(i).forEach(function (e) { var p = points(e, i); var s = S[e.uid] = S[e.uid] || { uid: e.uid, name: e.name || '익명', pts: 0, ok: 0 }; s.name = e.name || s.name; s.pts += p; if (p) s.ok++; });
+      }
+      return Object.keys(S).map(function (u) { return S[u]; }).sort(function (a, b) { return b.pts - a.pts || b.ok - a.ok; });
+    }
+    function revealedUpto() { return st.phase === 'end' ? qs.length - 1 : st.phase === 'reveal' ? st.i : st.i - 1; }
+    // ---- 화면
+    function render() {
+      renderCtrl(); stage.innerHTML = '';
+      var q = qs[st.i];
+      if (st.phase === 'wait' || !q) {
+        stage.append(h('div', { class: 'qzwait' }, h('div', { class: 'qzbig' }, '🏆 ' + (title.value || '퀴즈 대회')),
+          h('p', {}, ctx.student ? '이름을 적고 기다려요. 선생님이 시작하면 문제가 나와요!' : '문제 ' + qs.length + '개 · 학생들이 ‘📱 학생과 함께하기’ 주소로 들어오면 시작해요.'),
+          !ctx.student ? h('p', { class: 'hint' }, '들어온 학생: ' + joined().length + '명' + (joined().length ? ' (' + joined().join(', ') + ')' : '')) : null));
+        return;
+      }
+      if (st.phase === 'end') { renderEnd(); return; }
+      var a = ansOf(st.i), showAns = st.phase === 'reveal', open = st.phase === 'open';
+      if (ctx.student && !seenAt[st.i] && open) seenAt[st.i] = Date.now();
+      var mine = ctx.student ? answersOf(st.i).filter(function (e) { return e.uid === ctx.uid(); })[0] : null;
+      var picked = mine ? mine.c : myPick[st.i];
+      var labels = q.t === 'ox' ? OXL : q.o.map(function (o, k) { return MK[k] + ' ' + (o || ''); }).filter(function (_, k) { return (q.o[k] || '').trim(); });
+      var head = h('div', { class: 'qzhead' }, h('span', {}, 'Q' + (st.i + 1) + ' / ' + qs.length), h('span', { class: 'qzclock' + (open && remain() <= 5 ? ' hurry' : '') }, open ? Math.ceil(remain()) + '초' : showAns ? '정답 공개' : '시간 끝!'));
+      stage.append(head, h('div', { class: 'qzqtext' }, q.q));
+      var ch = h('div', { class: 'qzch ' + q.t });
+      labels.forEach(function (l, k) {
+        var cls = 'qzc' + (picked === k ? ' picked' : '') + (showAns && k === a ? ' right' : '') + (showAns && picked === k && k !== a ? ' wrong' : '');
+        var bt = h('button', { class: cls, disabled: !ctx.student || !open || picked != null, onclick: function () { answer(k); } }, l);
+        bt.style.setProperty('--c', q.t === 'ox' ? ['#2f6f9f', '#e0603a'][k] : COL[k % 4]); ch.append(bt);
+      });
+      stage.append(ch);
+      if (ctx.student) {
+        var msg = picked != null && open ? '✔ 냈어요! 친구들을 기다려요.' : open ? '빨리 맞힐수록 점수가 높아요!' : !showAns ? '정답이 곧 공개돼요.' : picked == null ? '이번 문제는 답을 내지 못했어요.' : picked === a ? '🎉 정답! +' + points(mine || { c: picked, ms: 0 }, st.i) + '점' : '아쉬워요! 정답은 ' + labels[a] + ' 이에요.';
+        stage.append(h('div', { class: 'qzmsg' + (showAns && picked === a ? ' ok' : '') }, msg));
+        if (showAns) { var b = board(st.i), me = b.findIndex(function (s) { return s.uid === ctx.uid(); }); stage.append(h('div', { class: 'qzme' }, me >= 0 ? '지금 ' + (me + 1) + '등 · ' + b[me].pts + '점' : '')); }
+      } else {
+        var ans = answersOf(st.i), counts = labels.map(function () { return 0; });
+        ans.forEach(function (e) { if (counts[e.c] != null) counts[e.c]++; });
+        stage.append(h('div', { class: 'hint center' }, '답한 학생 ' + ans.length + '명 / 들어온 학생 ' + joined().length + '명'));
+        if (showAns) {
+          var c = h('div', {}); drawChart(c, labels.map(function (l, k) { return { label: (k === a ? '✔ ' : '') + l, n: counts[k], color: k === a ? '#2f8f5b' : '#c4ccd8' }; }), ans.length, 'vbar');
+          var okN = ans.filter(function (e) { return e.c === a; }).length;
+          stage.append(h('div', { class: 'qzrate' }, '정답률 ', h('b', {}, ans.length ? Math.round(okN * 100 / ans.length) + '%' : '—'), ' (' + okN + '/' + ans.length + '명)'), c, leader(board(st.i), 5));
+        }
+      }
+    }
+    function leader(b, n) {
+      return h('div', { class: 'qzlead' }, h('span', { class: 'lbl' }, '🏅 순위'), b.slice(0, n).map(function (s, i) { return h('div', { class: 'qzrow r' + i }, h('b', {}, (i + 1) + '등'), h('span', {}, s.name), h('em', {}, s.pts + '점 · ' + s.ok + '문제')); }));
+    }
+    function renderEnd() {
+      var b = board(qs.length - 1);
+      stage.append(h('div', { class: 'qzbig' }, '🏆 결과 발표'));
+      var pod = h('div', { class: 'qzpod' });
+      [1, 0, 2].forEach(function (k) { var s = b[k]; if (!s) return; pod.append(h('div', { class: 'pod p' + k }, h('div', { class: 'pmed' }, ['🥇', '🥈', '🥉'][k]), h('b', {}, s.name), h('span', {}, s.pts + '점'), h('div', { class: 'pbar' }))); });
+      stage.append(pod);
+      if (ctx.student) { var me = b.findIndex(function (s) { return s.uid === ctx.uid(); }); stage.append(h('div', { class: 'qzmsg ok' }, me >= 0 ? '나는 ' + (me + 1) + '등 · ' + b[me].pts + '점 · ' + b[me].ok + '문제 정답! 수고했어요 👏' : '수고했어요 👏')); }
+      else {
+        stage.append(leader(b, 100));
+        var c = h('div', {}); drawChart(c, qs.map(function (q, i) { var ans = answersOf(i), a = ansOf(i); return { label: 'Q' + (i + 1), n: ans.length ? Math.round(ans.filter(function (e) { return e.c === a; }).length * 100 / ans.length) : 0, color: '#2f6f9f' }; }), 0, 'vbar');
+        $$('.vl', c).forEach(function (t) { t.textContent = t.textContent.replace('명', '%'); });
+        stage.append(h('span', { class: 'lbl' }, '문제별 정답률 — 낮은 문제는 다시 짚어 봐요'), c);
+      }
+      if (revealedFx !== 999 && snd.cb.checked && !ctx.student) { revealedFx = 999; SFX.finale(); }
+    }
+    function renderCtrl() {
+      ctrl.innerHTML = ''; if (ctx.student) return;
+      var last = st.i >= qs.length - 1, ph = st.phase;
+      ctrl.append(h('div', { class: 'row qzbtns' },
+        ph === 'wait' ? h('button', { class: 'btn pri big', onclick: function () { go('open', 0); } }, '▶ 퀴즈 시작') : null,
+        ph === 'open' ? h('button', { class: 'btn', onclick: function () { go('closed'); } }, '⏹ 답 그만 받기') : null,
+        (ph === 'open' || ph === 'closed') ? h('button', { class: 'btn pri', onclick: function () { go('reveal'); } }, '💡 정답 공개') : null,
+        ph === 'reveal' && !last ? h('button', { class: 'btn pri big', onclick: function () { go('open', st.i + 1); } }, '▶ 다음 문제') : null,
+        ph === 'reveal' && last ? h('button', { class: 'btn pri big', onclick: function () { go('end'); } }, '🏆 결과 발표') : null,
+        ph !== 'wait' ? twoTap(h('button', { class: 'btn sm' }, '처음부터 다시'), '처음부터 다시', '모든 답이 지워져요 · 한 번 더', restart) : null,
+        snd.el));
+      editor.hidden = ph !== 'wait';
+    }
+    function joined() { var s = {}; list.forEach(function (e) { if (e.kind === 'join' || e.kind === 'ans') s[e.uid] = e.name || '익명'; }); return Object.keys(s).map(function (u) { return s[u]; }); }
+    function answer(k) {
+      if (myPick[st.i] != null || st.phase !== 'open') return;
+      myPick[st.i] = k; render();
+      var ms = Date.now() - (seenAt[st.i] || Date.now());
+      ctx.post({ kind: 'ans', q: st.i, c: k, ms: ms });
+    }
+    // 학생이 들어오면 '참가' 기록을 한 번 남겨요 (선생님 화면의 참가자 수)
+    var joinedOnce = false;
+    function maybeJoin() { if (ctx.student && !joinedOnce && ctx.aid() && ctx.name() && ctx.name() !== '익명') { joinedOnce = true; ctx.post({ kind: 'join' }); } }
+    function loop() {
+      if (ctx.student && !joinedOnce) maybeJoin();
+      if (st.phase === 'open') {
+        var r = remain(), c = $('.qzclock', stage);
+        if (c) { c.textContent = Math.ceil(r) + '초'; c.classList.toggle('hurry', r <= 5); }
+        if (!ctx.student && snd.cb.checked && r <= 5 && r > 0 && Math.ceil(r) !== lastBeep) { lastBeep = Math.ceil(r); SFX.tick(0.6); }
+        if (!ctx.student && r <= 0) go('closed');
+      }
+    }
+    tick = setInterval(loop, 250);
+    function setD(d) {
+      title.value = str(d.title, 80);
+      if (!ctx.student || !qs.length || JSON.stringify(arr(d.qs)) !== JSON.stringify(qs.map(function (q) { return { t: q.t, q: q.q, o: q.o, s: q.s }; }))) {
+        qs = arr(d.qs).map(function (q, i) { return { t: q.t === 'ox' ? 'ox' : 'mc', q: str(q.q, 200), o: arr(q.o).slice(0, 4).map(function (o) { return str(o, 80); }), a: ctx.student ? 0 : (q.a != null ? q.a | 0 : qzDec(d.k, i) || 0), s: [10, 15, 20, 30, 45, 60].indexOf(+q.s) >= 0 ? +q.s : 20 }; });
+        qs.forEach(function (q) { while (q.t === 'mc' && q.o.length < 4) q.o.push(''); });
+      }
+      key = str(d.k, 400);
+      var s = d.state && typeof d.state === 'object' ? d.state : {};
+      var prev = st; st = { i: s.i | 0, phase: ['wait', 'open', 'closed', 'reveal', 'end'].indexOf(s.phase) >= 0 ? s.phase : 'wait', at: +s.at || 0 };
+      if (st.phase === 'wait') st.i = -1;
+      if (ctx.student && st.phase === 'reveal' && revealedFx !== st.i && prev.phase !== 'reveal') { revealedFx = st.i; }
+      if (!ctx.student) renderEdit();
+      maybeJoin(); render();
+    }
+    setD({});
+    return {
+      title: function () { return title.value || '퀴즈 대회 · ' + qs.length + '문제'; },
+      get: function () {
+        // 정답은 학생이 쉽게 볼 수 없도록 바꿔서 저장해요
+        return { title: title.value, qs: qs.map(function (q) { return { t: q.t, q: q.q, o: q.t === 'mc' ? q.o : [], s: q.s }; }), k: qzEnc(answers()), state: st };
+      },
+      set: setD, reset: function () { setD({}); },
+      onEntries: function (l) { list = l; maybeJoin(); render(); },
+      destroy: function () { clearInterval(tick); }
     };
   }
 });
