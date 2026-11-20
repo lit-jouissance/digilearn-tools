@@ -4217,7 +4217,7 @@ function share(V) {
         h('button', { class: 'btn', onclick: function () { copy(url, '주소를 복사했어요'); } }, '주소 복사'),
         h('a', { class: 'btn', href: url, target: '_blank', rel: 'noopener', style: { textDecoration: 'none' } }, '학생 화면 열어 보기')),
       App.fire ? null : h('p', { class: 'hint' }, '⚠️ 지금은 Firebase가 연결되지 않아 이 기기(같은 브라우저)에서만 열려요. 설정 방법은 README를 봐 주세요.'),
-      V.dirty ? null : h('p', { class: 'hint' }, '활동을 고친 뒤에는 저장해야 학생 화면에도 반영돼요.')]);
+      h('p', { class: 'hint' }, '학생 화면은 새 탭으로 열려요. 학생이 다른 도구로 옮겨 가지 않도록 학생 화면에는 도구 서랍이 없어요. 둘러본 뒤 그 탭을 닫으면 선생님 화면으로 돌아와요. 고친 내용은 자동 저장되면 학생 화면에도 바로 반영돼요.')]);
   }).catch(function () {});
 }
 function bigQr(url, title) {
@@ -9344,7 +9344,7 @@ writeTool({
     { k: 'pub', l: '🏢 출판사', ph: '출판사', pre: true },
     { k: 'year', l: '📆 출판년도', ph: '예: 2021', t: 'num', pre: true },
     { k: 'date', l: '📅 책 읽은 날', t: 'date' },
-    { k: 'wx', l: '🌤️ 날씨', t: 'wx' },
+    { k: 'wx', l: '🌤️ 날씨', t: 'wx', words: true },
     { k: 'p1', l: '📖 읽은 쪽 (부터)', ph: '예: 1', t: 'num' },
     { k: 'p2', l: '📖 읽은 쪽 (까지)', ph: '예: 48', t: 'num' },
     { k: 'way', l: '🧭 쓰는 방법', t: 'sel', opts: READ_WAYS }],
