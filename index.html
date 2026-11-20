@@ -1012,7 +1012,7 @@ button.pline{cursor:pointer}button.pline:hover{background:#fff1c9}.pline.on{back
 @media (max-width:760px){.lwgrid{grid-template-columns:1fr}}
 /* ===== 첫 화면 · 묶음 · 도구 서랍 (정사각 타일) ===== */
 .svgi{display:inline-flex;width:1em;height:1em;line-height:0}.svgi svg{width:100%;height:100%}
-.chip{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:40px;height:40px;border-radius:30%;font-size:22px;color:var(--gc,#2f6f9f);
+.ichip{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:40px;height:40px;border-radius:30%;font-size:22px;color:var(--gc,#2f6f9f);
   background:linear-gradient(145deg,color-mix(in srgb,var(--gc,#2f6f9f) 16%,#fff),color-mix(in srgb,var(--gc,#2f6f9f) 7%,#fff));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--gc,#2f6f9f) 14%,transparent)}
 .hlbl{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:800;color:#8a97a3;letter-spacing:.3px}.hlbl .svgi{font-size:14px}
 .ghome{width:38px;height:38px;border-radius:12px;border:0;background:#fff;box-shadow:0 1px 2px #0000000d,inset 0 0 0 1px #e3e8ee;display:inline-flex;align-items:center;justify-content:center;font-size:19px;color:#4a5865;cursor:pointer;flex:0 0 auto}
@@ -1021,15 +1021,15 @@ button.pline{cursor:pointer}button.pline:hover{background:#fff1c9}.pline.on{back
 .tile,.ttile{position:relative;aspect-ratio:1/1;border:0;border-radius:22px;background:#fff;box-shadow:0 1px 2px #00000008,0 4px 14px #0000000b;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:10px;cursor:pointer;overflow:hidden;transition:transform .15s,box-shadow .15s;min-width:0}
 .tile::after,.ttile::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--gc);opacity:.85}
 .tile:hover,.ttile:hover{transform:translateY(-3px);box-shadow:0 10px 24px #00000014}.tile:active,.ttile:active{transform:scale(.97)}
-.tile .chip,.ttile .chip{width:44%;max-width:76px;height:auto;aspect-ratio:1/1;font-size:clamp(22px,4vmin,36px)}
+.tile .ichip,.ttile .ichip{width:44%;max-width:76px;height:auto;aspect-ratio:1/1;font-size:clamp(22px,4vmin,36px)}
 .tile b,.ttile b{font-size:clamp(13.5px,2vmin,17px);font-weight:900;letter-spacing:-.4px;color:#22303d;line-height:1.25;word-break:keep-all}
 .tile small{font-size:11.5px;color:#9aa6b1;font-weight:700}
 .ttile small{font-size:11.5px;color:#7d8a96;line-height:1.35;word-break:keep-all;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;padding:0 4px}
-.ttile .chip{width:38%;max-width:62px}
+.ttile .ichip{width:38%;max-width:62px}
 /* 작은 타일 (오른쪽 묶음 · 서랍) */
 .tile.sm,.ttile.sm{border-radius:16px;gap:5px;padding:6px;box-shadow:0 1px 2px #00000008,0 2px 8px #00000009}
 .tile.sm::after,.ttile.sm::after{height:3px}
-.tile.sm .chip,.ttile.sm .chip{width:46%;max-width:44px;font-size:20px}
+.tile.sm .ichip,.ttile.sm .ichip{width:46%;max-width:44px;font-size:20px}
 .tile.sm b,.ttile.sm b{font-size:12px;letter-spacing:-.5px;font-weight:800}
 .tile.on,.ttile.on{box-shadow:0 0 0 2.5px var(--gc),0 4px 14px #0000000f}
 /* 첫 화면 */
@@ -1037,7 +1037,7 @@ button.pline{cursor:pointer}button.pline:hover{background:#fff1c9}.pline.on{back
 .home9 .hrecent{display:flex;flex-direction:column;gap:6px}
 .home9 .rchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px}
 .rchip{flex:0 0 auto;border:0;background:#fff;box-shadow:0 1px 3px #0000000f,inset 0 0 0 1px #e6ebf0;border-radius:999px;padding:5px 12px 5px 5px;font-weight:700;font-size:13px;display:flex;align-items:center;gap:7px;cursor:pointer;color:#2c3a47}
-.rchip .chip{width:26px;height:26px;font-size:15px;border-radius:50%}.rchip:hover{box-shadow:0 2px 8px #0000001a,inset 0 0 0 1.5px var(--gc)}
+.rchip .ichip{width:26px;height:26px;font-size:15px;border-radius:50%}.rchip:hover{box-shadow:0 2px 8px #0000001a,inset 0 0 0 1.5px var(--gc)}
 .home9 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .hfind{display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:4px 6px 4px 16px;box-shadow:0 1px 2px #00000008,inset 0 0 0 1px #e6ebf0}
 .hfind:focus-within{box-shadow:0 0 0 3px #2f6f9f33,inset 0 0 0 1.5px #2f6f9f}
@@ -1047,21 +1047,21 @@ body.hsearching .home9 .tiles{display:none}
 /* 묶음 화면 */
 .gview{display:grid;grid-template-columns:minmax(0,600px) 236px;gap:22px;justify-content:center;align-items:start;margin-top:6px}
 .ghd{display:flex;align-items:center;gap:12px;margin-bottom:14px}.ghd h2{margin:0;font-size:22px;font-weight:900;letter-spacing:-.5px;color:#22303d}.ghd small{color:#7d8a96;font-size:13px}
-.chip.big{width:48px;height:48px;font-size:26px}
+.ichip.big{width:48px;height:48px;font-size:26px}
 .gsub h3{margin:16px 0 8px;font-size:14px;font-weight:900;color:var(--gc);letter-spacing:-.2px}.gsub:first-child h3{margin-top:0}
 .grail{position:sticky;top:64px;background:#ffffffb3;backdrop-filter:blur(6px);border-radius:20px;padding:12px;box-shadow:inset 0 0 0 1px #e6ebf0}
 .grgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}
 /* 도구 화면 머리 */
-.thd{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.thd h2{margin:0}.thd .chip{width:38px;height:38px;font-size:21px}
+.thd{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.thd h2{margin:0}.thd .ichip{width:38px;height:38px;font-size:21px}
 .gback{display:inline-flex;align-items:center;gap:6px;border:0;background:#fff;border-radius:999px;padding:7px 12px;font-weight:800;font-size:13px;color:var(--gc);cursor:pointer;box-shadow:0 1px 2px #0000000d,inset 0 0 0 1px #e3e8ee}.gback .svgi{font-size:15px}
 /* 도구 서랍 */
 body.has-drawer .drawer{width:min(340px,88vw);background:#f6f8fa;padding:14px 14px 30px}
 .dr-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.dr-head b{font-size:16px}
 .dr-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .dr-cats .tile.sm b{font-size:11px}
-.dr-ttl{display:flex;align-items:center;gap:8px;font-weight:900;font-size:15px;color:var(--gc);margin:16px 0 8px}.dr-ttl .chip{width:28px;height:28px;font-size:16px}
+.dr-ttl{display:flex;align-items:center;gap:8px;font-weight:900;font-size:15px;color:var(--gc);margin:16px 0 8px}.dr-ttl .ichip{width:28px;height:28px;font-size:16px}
 @media (max-width:960px){.gview{grid-template-columns:minmax(0,1fr)}.gmain,.grail{min-width:0}.grail{position:static;padding:8px}.grgrid{display:flex;overflow-x:auto;scrollbar-width:none;gap:8px}.grgrid .tile.sm{flex:0 0 84px}}
-@media (max-width:700px){.home9{--side:100%}.home9 .tiles,.tgrid{gap:8px}.tile,.ttile{border-radius:18px}.home9 .tile small{display:none}.tile .chip,.ttile .chip{font-size:27px}.ttile small{display:none}.ttile b{font-size:13px}}
+@media (max-width:700px){.home9{--side:100%}.home9 .tiles,.tgrid{gap:8px}.tile,.ttile{border-radius:18px}.home9 .tile small{display:none}.tile .ichip,.ttile .ichip{font-size:27px}.ttile small{display:none}.ttile b{font-size:13px}}
 .gpanel{padding:22px}.gpanel .tgrid{grid-template-columns:repeat(3,minmax(0,210px));justify-content:center;gap:14px}
 .gpanel .gsub{max-width:658px;margin:0 auto}.gpanel .gsub .tgrid{justify-content:start}
 @media (max-width:700px){.gpanel{padding:12px}.gpanel .tgrid{grid-template-columns:repeat(3,1fr);gap:8px}}
@@ -1073,7 +1073,7 @@ body.has-drawer .drawer{width:min(340px,88vw);background:#f6f8fa;padding:14px 14
 .mgbulk{align-items:center;gap:10px;margin:8px 0;min-height:30px}
 .mglist{display:flex;flex-direction:column;gap:6px}
 .mgrow{display:flex;align-items:center;gap:10px;background:#fafbfc;border:1px solid #edf0f3;border-radius:14px;padding:8px 10px}
-.mgrow .chip{width:34px;height:34px;font-size:18px}.mgrow .mgt{flex:1;min-width:0}.mgrow .mgt b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mgrow .mgt small{color:#7d8a96}
+.mgrow .ichip{width:34px;height:34px;font-size:18px}.mgrow .mgt{flex:1;min-width:0}.mgrow .mgt b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mgrow .mgt small{color:#7d8a96}
 .mgrow .btn .svgi,.mgdev .btn .svgi,.mgstep .btn .svgi{font-size:14px;vertical-align:-2px}
 .mgstep{border:1px solid #e6ebf0;border-radius:16px;padding:14px 16px;margin-bottom:12px;background:#fff}
 .mgstep h3,.mgstep summary{display:flex;align-items:center;gap:8px;margin:0 0 6px;font-size:16px;font-weight:900;cursor:default}.mgstep summary{cursor:pointer;margin:0}
@@ -1095,7 +1095,7 @@ body.has-drawer .drawer{width:min(340px,88vw);background:#f6f8fa;padding:14px 14
 .bar .st.saved{color:#2f8f5b;font-weight:700}
 /* 오늘 수업 */
 .today{background:#fff;border-radius:20px;padding:12px 14px;box-shadow:0 1px 2px #00000008,0 4px 14px #0000000a;display:flex;flex-direction:column;gap:8px}
-.tdh{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.tdh .chip{width:30px;height:30px;font-size:17px}.tdh b{font-size:15.5px;font-weight:900;color:#22303d}
+.tdh{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.tdh .ichip{width:30px;height:30px;font-size:17px}.tdh b{font-size:15.5px;font-weight:900;color:#22303d}
 .tdm{font-size:13px;color:#7a5a00;font-weight:700;white-space:pre-wrap}
 .tdp{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;align-items:center;padding:1px}
 .tdc{flex:0 0 auto;display:flex;align-items:center;gap:6px;background:color-mix(in srgb,var(--gc) 9%,#fff);border-radius:12px;padding:5px 10px 5px 6px;max-width:220px}
@@ -1105,19 +1105,19 @@ body.has-drawer .drawer{width:min(340px,88vw);background:#f6f8fa;padding:14px 14
 .tda{display:flex;flex-direction:column;gap:5px}.tda:empty{display:none}
 body.has-today .home9{--side:min(560px,calc(100vh - 395px),100%)}
 @media (max-width:700px){body.has-today .home9{--side:100%}}
-.rchip .chip .svgi,.tda .chip .svgi{width:16px;height:16px}
+.rchip .ichip .svgi,.tda .ichip .svgi{width:16px;height:16px}
 /* 도구 서랍 시안 B */
 .drfind{display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:2px 10px;box-shadow:inset 0 0 0 1px #e3e8ee;color:#8a97a3;margin-bottom:10px}.drfind .svgi{font-size:15px}
 .drq{flex:1;border:0;outline:0;background:none;font-size:14px;padding:8px 2px;min-width:0}
 .drsec{display:flex;flex-direction:column;gap:2px;margin-bottom:6px}.drsec .hlbl{margin:2px 0 4px}
 .drrow{display:flex;align-items:center;gap:9px;border:0;background:none;border-radius:10px;padding:5px 8px;cursor:pointer;text-align:left;color:#2c3a47;font-size:14px;font-weight:700;width:100%}
-.drrow .chip{width:26px;height:26px;font-size:15px;border-radius:8px}.drrow:hover{background:#fff}
+.drrow .ichip{width:26px;height:26px;font-size:15px;border-radius:8px}.drrow:hover{background:#fff}
 .drrow.on{background:#fff;box-shadow:inset 3px 0 0 var(--gc);color:var(--gc)}
 .drg{display:flex;align-items:center;gap:9px;width:100%;border:0;background:#fff;border-radius:12px;padding:7px 10px;margin-top:5px;cursor:pointer;box-shadow:0 1px 2px #00000008;text-align:left}
-.drg .chip{width:28px;height:28px;font-size:16px;border-radius:9px}.drg b{flex:1;font-size:14.5px;color:#22303d}.drg small{color:#9aa6b1;font-weight:800}.drg .cv{color:#9aa6b1;width:14px}
+.drg .ichip{width:28px;height:28px;font-size:16px;border-radius:9px}.drg b{flex:1;font-size:14.5px;color:#22303d}.drg small{color:#9aa6b1;font-weight:800}.drg .cv{color:#9aa6b1;width:14px}
 .drg.cur b{color:var(--gc)}.drg.open{border-radius:12px 12px 4px 4px}
 .drgl{display:flex;flex-direction:column;gap:1px;background:#fff;border-radius:4px 4px 12px 12px;padding:4px 4px 6px 14px;margin-top:1px;box-shadow:0 1px 2px #00000008}
-.drrow .chip .svgi{width:16px;height:16px}.drg .chip .svgi{width:17px;height:17px}.rchip .chip .svgi{width:16px;height:16px}
+.drrow .ichip .svgi{width:16px;height:16px}.drg .ichip .svgi{width:17px;height:17px}.rchip .ichip .svgi{width:16px;height:16px}
 
 </style>
 <script>
@@ -3911,13 +3911,13 @@ function gc(el, col) { el.style.setProperty('--gc', col); return el; }
 function toolTile(t, small) {
   var g = groupOf(t);
   return gc(h('button', { class: 'ttile' + (small ? ' sm' : ''), title: t.name + (SHORT[t.key] ? ' — ' + SHORT[t.key] : ''), onclick: function () { location.hash = t.key; } },
-    h('span', { class: 'chip' }, toolIco(t)), h('b', {}, t.name), small ? null : h('small', {}, SHORT[t.key] || '')), g[3]);
+    h('span', { class: 'ichip' }, toolIco(t)), h('b', {}, t.name), small ? null : h('small', {}, SHORT[t.key] || '')), g[3]);
 }
 // 정사각 묶음 타일
 function groupTile(g, small, onclick) {
   var n = TOOLS.filter(function (t) { return t.group === g[0]; }).length;
   return gc(h('button', { class: 'tile' + (small ? ' sm' : ''), title: g[1] + ' · ' + g[4], onclick: onclick || function () { location.hash = '@' + g[0]; } },
-    h('span', { class: 'chip' }, groupIco(g)), h('b', {}, g[1]), small ? null : h('small', {}, n + '개')), g[3]);
+    h('span', { class: 'ichip' }, groupIco(g)), h('b', {}, g[1]), small ? null : h('small', {}, n + '개')), g[3]);
 }
 function groupToolsEl(g, small) {
   var list = TOOLS.filter(function (t) { return t.group === g[0]; });
@@ -3937,7 +3937,7 @@ function renderHome(gkey) {
   if (gkey === 'manage') { renderManage(m); window.scrollTo(0, 0); return; }
   var rc = (App.local.get('recent', []) || []).map(function (k) { return TOOLS.filter(function (t) { return t.key === k; })[0]; }).filter(Boolean).slice(0, 6);
   var recent = h('div', { class: 'hrecent' }, h('span', { class: 'hlbl' }, ico('_clock'), '최근 쓴 도구'),
-    rc.length ? h('div', { class: 'rchips' }, rc.map(function (t) { return gc(h('button', { class: 'rchip', onclick: function () { location.hash = t.key; } }, h('span', { class: 'chip' }, toolIco(t)), t.name), groupOf(t)[3]); }))
+    rc.length ? h('div', { class: 'rchips' }, rc.map(function (t) { return gc(h('button', { class: 'rchip', onclick: function () { location.hash = t.key; } }, h('span', { class: 'ichip' }, toolIco(t)), t.name), groupOf(t)[3]); }))
       : h('span', { class: 'hint', style: { margin: 0 } }, '도구를 쓰면 여기에 모여요.'));
   var q = h('input', { class: 'hsearch', type: 'search', placeholder: '도구 찾기 — 자리, 투표, 받아쓰기…', autocomplete: 'off' });
   var res = h('div', { class: 'hres' });
@@ -3959,7 +3959,7 @@ function renderHome(gkey) {
 function paintToday(box) {
   if (App.fire && !App.fire.isTeacher()) { box.remove(); return; }
   var B = TB(), t = todayISO(), wd = (dOf(t).getDay() + 6) % 7;
-  box.append(h('div', { class: 'tdh' }, gc(h('span', { class: 'chip' }, ico('_today')), '#2f6f9f'), h('b', {}, '오늘 · ' + koDate(t)), h('span', { class: 'tdm' })));
+  box.append(h('div', { class: 'tdh' }, gc(h('span', { class: 'ichip' }, ico('_today')), '#2f6f9f'), h('b', {}, '오늘 · ' + koDate(t)), h('span', { class: 'tdm' })));
   B.allActivities().then(function (acts) {
     if (App.V || !box.isConnected) return;
     var meta = $('.tdm', box), rows = h('div', { class: 'tdp' }), mine = h('div', { class: 'tda' });
@@ -3987,7 +3987,7 @@ function paintToday(box) {
     var todays = acts.filter(function (a) { return a.tool !== 'weekly' && a.tool !== 'classroster' && a.updated && t === isoDay(a.updated); }).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); }).slice(0, 8);
     if (todays.length) mine.append(h('span', { class: 'hlbl' }, '오늘 만든 활동'), h('div', { class: 'rchips' }, todays.map(function (a) {
       var d = TOOLS.filter(function (x) { return x.key === a.tool; })[0]; if (!d) return null;
-      return gc(h('button', { class: 'rchip', title: d.name, onclick: function () { openActivity(a); } }, h('span', { class: 'chip' }, toolIco(d)), str(a.title, 24) || d.name), groupOf(d)[3]);
+      return gc(h('button', { class: 'rchip', title: d.name, onclick: function () { openActivity(a); } }, h('span', { class: 'ichip' }, toolIco(d)), str(a.title, 24) || d.name), groupOf(d)[3]);
     })));
     box.append(rows, mine);
     document.body.classList.add('has-today');
@@ -4002,7 +4002,7 @@ function openActivity(a) {
 // 묶음 화면: 도구 화면과 같은 틀 · 다른 묶음은 오른쪽 도구 서랍
 function renderGroup(m, g) {
   m.append(h('div', { class: 'thead' },
-    h('div', { class: 'thd' }, homeBtn(), gc(h('span', { class: 'chip' }, groupIco(g)), g[3]), h('h2', {}, g[1])), h('p', {}, g[4])),
+    h('div', { class: 'thd' }, homeBtn(), gc(h('span', { class: 'ichip' }, groupIco(g)), g[3]), h('h2', {}, g[1])), h('p', {}, g[4])),
     gc(h('div', { class: 'panel gpanel' }, groupToolsEl(g)), g[3]));
   Drawer.enable(true, null, null, g[0]);
   window.scrollTo(0, 0);
@@ -4012,7 +4012,7 @@ function frame(def, student) {
   var m = App.main; m.innerHTML = '';
   var head = h('div', { class: 'thead' },
     h('div', { class: 'thd' }, student ? null : homeBtn(), student ? null : gc(h('button', { class: 'gback', title: groupOf(def)[1] + ' 묶음으로', onclick: function () { location.hash = '@' + def.group; } }, groupIco(groupOf(def)), groupOf(def)[1]), groupOf(def)[3]),
-      gc(h('span', { class: 'chip' }, toolIco(def)), groupOf(def)[3]), h('h2', {}, def.name)), h('p', {}, def.desc));
+      gc(h('span', { class: 'ichip' }, toolIco(def)), groupOf(def)[3]), h('h2', {}, def.name)), h('p', {}, def.desc));
   var bar = h('div', { class: 'bar' });
   var banner = h('div', { class: 'banner', hidden: true });
   var body = h('div', { class: 'panel tool-' + def.key + (student ? ' student' : ' teacher') });
@@ -4445,7 +4445,7 @@ var Drawer = (function () {
     function row(t) {
       var g = groupOf(t);
       return gc(h('button', { class: 'drrow' + (t.key === curKey ? ' on' : ''), onclick: function () { if (t.key === curKey) { show(false); return; } go(t.key); } },
-        h('span', { class: 'chip' }, toolIco(t)), h('span', { class: 'nm' }, t.name)), g[3]);
+        h('span', { class: 'ichip' }, toolIco(t)), h('span', { class: 'nm' }, t.name)), g[3]);
     }
     function paint() {
       body.innerHTML = '';
@@ -4462,7 +4462,7 @@ var Drawer = (function () {
         var list = TOOLS.filter(function (t) { return t.group === g[0]; }); if (!list.length) return;
         var opened = !!openG[g[0]];
         var head = gc(h('button', { class: 'drg' + (opened ? ' open' : '') + (g[0] === curG ? ' cur' : ''), onclick: function () { openG[g[0]] = !opened; paint(); } },
-          h('span', { class: 'chip' }, groupIco(g)), h('b', {}, g[1]), h('small', {}, list.length), h('span', { class: 'cv' }, opened ? '▾' : '▸')), g[3]);
+          h('span', { class: 'ichip' }, groupIco(g)), h('b', {}, g[1]), h('small', {}, list.length), h('span', { class: 'cv' }, opened ? '▾' : '▸')), g[3]);
         body.append(head);
         if (opened) body.append(h('div', { class: 'drgl' }, list.map(row)));
       });
@@ -4481,7 +4481,7 @@ var Drawer = (function () {
         var b = groupTile(x, true, function () { if (gpage) { show(false); location.hash = '@' + x[0]; return; } dgroup = x[0]; render(curKey, isDirty); });
         if (x === g) b.classList.add('on'); return b;
       })),
-      gc(h('div', { class: 'dr-ttl' }, h('span', { class: 'chip' }, groupIco(g)), g[1]), g[3]));
+      gc(h('div', { class: 'dr-ttl' }, h('span', { class: 'ichip' }, groupIco(g)), g[1]), g[3]));
     var list = TOOLS.filter(function (t) { return t.group === g[0]; });
     var grid = h('div', { class: 'tgrid sm' });
     list.forEach(function (t) {
@@ -9385,7 +9385,7 @@ function kb(n) { return n > 1048576 ? (n / 1048576).toFixed(1) + 'MB' : Math.max
 function renderManage(m) {
   var B = TB(), canTeach = !App.fire || App.fire.isTeacher();
   m.append(h('div', { class: 'thead' },
-    h('div', { class: 'thd' }, homeBtn(), gc(h('span', { class: 'chip' }, ico('_settings')), '#5b6b7a'), h('h2', {}, '정리 · 백업')),
+    h('div', { class: 'thd' }, homeBtn(), gc(h('span', { class: 'ichip' }, ico('_settings')), '#5b6b7a'), h('h2', {}, '정리 · 백업')),
     h('p', {}, '쓰던 활동을 비워 다시 쓰고, 새 학년도를 맞아 기록을 백업하고 정리하고, 이 기기에 남은 내용을 지워요.')));
   var nav = h('div', { class: 'seg mgseg' }), body = h('div', { class: 'panel mgpanel' });
   var TABS = [['reuse', '_recycle', '활동 다시 쓰기'], ['year', '_backup', '새 학년도 정리'], ['device', '_device', '이 기기 정리']];
@@ -9435,7 +9435,7 @@ function renderManage(m) {
         var del = twoTap(h('button', { class: 'btn sm' }, ico('_trash')), '지우기', '활동과 응답을 모두 지울까요?', function () {
           B.deleteActivity(a.id).then(function () { acts = acts.filter(function (x) { return x !== a; }); delete sel[a.id]; draw(); toast('지웠어요'); }, errToast);
         });
-        listEl.append(gc(h('div', { class: 'mgrow' }, cb, h('span', { class: 'chip' }, toolIco(d)),
+        listEl.append(gc(h('div', { class: 'mgrow' }, cb, h('span', { class: 'ichip' }, toolIco(d)),
           h('div', { class: 'mgt' }, h('b', {}, a.title || '제목 없음'), h('small', {}, d.name + ' · ' + fmt(a.updated) + ' · '), cnt), cp, clr, del), groupOf(d)[3]));
       });
       paintBulk();
