@@ -951,6 +951,90 @@ button.pline{cursor:pointer}button.pline:hover{background:#fff1c9}.pline.on{back
 .wkmh{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}.wkmh b{font-size:calc(var(--wz) * 19px)}.wkmh small{color:#6b7c8c;font-weight:700}.wkmh .tg{background:#ffd43b;border-radius:8px;padding:0 8px;font-weight:900;font-size:13px}
 .wkmr{display:flex;gap:10px;border-left:4px solid;padding:4px 8px;margin-top:6px;background:#fff;border-radius:6px;font-size:calc(var(--wz) * 15px)}.wkmr .pn{color:#7a8896;font-weight:800;min-width:14px}.wkmr .wcx{white-space:pre-wrap}
 .wkmp{margin-top:6px;color:#2b6d3a;font-weight:800;font-size:calc(var(--wz) * 15px)}
+/* 첫 화면 A·B안 */
+.htop{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:10px 16px;align-items:center;background:#fff;border-radius:16px;padding:12px 14px;margin-bottom:12px}
+.hsearch{font-size:15px}.hrecent{display:flex;align-items:center;gap:8px;min-width:0}.hlbl{font-weight:800;font-size:13px;color:var(--sub);white-space:nowrap}
+.rchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}.rchip{white-space:nowrap;border:1.5px solid;background:#fff;border-radius:999px;padding:6px 12px;font-weight:700;font-size:13.5px;cursor:pointer;display:flex;gap:5px;align-items:center}
+.hres{margin-bottom:12px}body.hsearching .hmain{display:none}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tile{position:relative;background:#fff;border:1px solid #e1e7ec;border-top:6px solid var(--gc);border-radius:16px;padding:18px 16px 16px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:6px;min-height:150px;transition:transform .12s,box-shadow .12s}
+.tile:hover{transform:translateY(-2px);box-shadow:0 6px 18px #0001}
+.tile .ti{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px}
+.tile b{font-size:19px;font-weight:900;letter-spacing:-.3px}.tile small{color:var(--sub);font-size:12.5px;line-height:1.45}
+.tile .tn{position:absolute;top:14px;right:14px;color:#fff;font-size:12px;font-weight:800;border-radius:999px;padding:2px 9px}
+.hsplit{display:grid;grid-template-columns:210px 1fr;gap:14px;align-items:start}
+.hnav{position:sticky;top:64px;display:flex;flex-direction:column;gap:4px;background:#fff;border-radius:16px;padding:8px}
+.hnb{display:flex;align-items:center;gap:8px;border:0;background:none;border-radius:10px;padding:10px;text-align:left;cursor:pointer;font-weight:700;font-size:14.5px;color:#33404f}
+.hnb .ni{font-size:19px}.hnb .nt{flex:1}.hnb small{color:#8a97a3;font-weight:800}
+.hnb:hover{background:#f3f6f9}.hnb.on{background:var(--gc);color:#fff}.hnb.on small{color:#ffffffcc}
+.hpane{background:#fff;border-radius:16px;padding:14px 16px;min-height:420px}.hpane .ghead{border-bottom-color:var(--gc)}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){.htop{grid-template-columns:1fr}.hsplit{grid-template-columns:1fr}.hnav{flex-direction:row;overflow-x:auto;top:52px;z-index:5;scrollbar-width:none}.hnb{flex:0 0 auto;padding:8px 12px}.hnb small{display:none}
+ .tile{min-height:120px;padding:14px 12px 12px}.tile .ti{width:42px;height:42px;font-size:22px}.tile b{font-size:16px}.tile small{font-size:11.5px}.tile .tn{top:10px;right:10px}}
+/* 글쓰기 */
+.wrcfg{background:#fffaf5;border:1px solid #f1dcc8;border-radius:14px;padding:10px 14px;margin-bottom:12px}
+.wrpre{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}.wrpre label small{display:block;font-weight:700;color:var(--sub);margin-bottom:2px}
+.wrhide{gap:6px 14px}.wrdet{margin-top:8px}.wrdet summary{cursor:pointer;font-weight:800}
+.wrguide{background:#fff4ea;border-left:6px solid #c0582b;border-radius:12px;padding:10px 14px;margin-bottom:10px}.wrguide b{font-size:17px}.wrguide p{margin:4px 0 0;white-space:pre-wrap;line-height:1.6}
+.wrmodel{background:#fff;border:1px dashed #e0b48f;border-radius:12px;padding:8px 12px;margin-bottom:10px}.wrmodel summary{cursor:pointer;font-weight:800;color:#a2491f}
+.wrtext{white-space:pre-wrap;line-height:1.9;font-size:16.5px;word-break:keep-all}
+.wrfields{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 10px;background:#fff;border-radius:14px;padding:10px 12px;margin-bottom:10px;border:1px solid #eee3d8}
+.wrf .lbl{margin:0 0 3px}.wrf.wide{grid-column:1/-1}
+.wrwx{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:5px}.wrwx button{border:1.5px solid #e1e7ec;background:#fff;border-radius:12px;padding:4px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;min-width:58px}
+.wrwx button span{font-size:22px}.wrwx button small{font-size:11px;color:var(--sub)}.wrwx button.on{border-color:#c0582b;background:#fff1e6;box-shadow:0 0 0 2px #c0582b33}
+.wrsteps{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:10px}
+.wrst{border:0;background:#f1ece6;border-radius:12px;padding:8px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;color:#7a6a5c;font-weight:700;font-size:12.5px;line-height:1.25;text-align:center}
+.wrst .n{width:26px;height:26px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
+.wrst.ok{background:#e6f4ea;color:#2b6d3a}.wrst.ok .n{background:#2f8f5b;color:#fff}.wrst.on{background:#c0582b;color:#fff}.wrst.on .n{color:#c0582b}
+.wrbox{background:#fff;border:2px solid #eee3d8;border-radius:16px;padding:14px}.wrbox.done{border-color:#bfe3c9}
+.wrsth b{font-size:18px}.wrsth p{margin:4px 0 10px;color:#5d5045;line-height:1.55}
+.wrta{font-size:17px;line-height:1.9;min-height:260px;background:repeating-linear-gradient(#fff 0,#fff 31px,#f0e6dc 31px,#f0e6dc 32px);background-attachment:local}
+.wrcnt{margin:0}.wrnav{margin-top:12px;border-top:1px dashed #eee3d8;padding-top:10px}
+.wrmarks{background:#fff8d6;border-radius:10px;padding:8px 12px;margin-bottom:8px;font-size:14.5px}.wrmarks ul{margin:4px 0 0;padding-left:1.2em;line-height:1.6}
+.wrread{background:#fffdf8;border:1px solid #f0e6dc;border-radius:12px;padding:14px 16px;font-size:clamp(18px,2.4vw,22px);line-height:2;margin:8px 0;word-break:keep-all}
+.wrread p{margin:0 0 .6em}.wrread .sen{cursor:pointer;border-radius:4px;padding:1px 0}.wrread .sen:hover{background:#fff1c7}
+.wrread .sen.mk{background:linear-gradient(transparent 45%,#ffe066 45%);}
+.wrchk{display:flex;flex-direction:column;gap:4px;background:#f8fafc;border-radius:10px;padding:8px 12px;margin-top:8px;font-size:14.5px}
+.wrread-ok{display:flex;gap:8px;align-items:center;font-weight:800;font-size:16px;margin-top:10px;background:#e7f5ec;border-radius:10px;padding:10px 12px;cursor:pointer}.wrread-ok input{width:22px;height:22px}
+.wrpaper{background:#fffdf8;border:1px solid #eadfce;border-radius:12px;padding:16px 20px;margin:8px 0}
+.wrpaper h3{margin:0;font-size:21px;text-align:center}.wrpaper .by{text-align:right;font-weight:800;color:#6b5a4b;margin-top:4px}.wrpaper .meta{color:#8a7a6b;font-size:13px;text-align:center;margin:4px 0 10px}
+.wrpaper .goal{background:#eef6ff;border-radius:8px;padding:6px 10px;margin-bottom:8px;white-space:pre-wrap}
+.wrdiff{white-space:pre-wrap;line-height:1.9;font-size:16px;background:#fff;border:1px solid #e1e7ec;border-radius:10px;padding:12px;margin-top:6px}
+.wrdiff ins{background:#d3f9d8;color:#1b6b2a;text-decoration:none;border-radius:3px}.wrdiff del{color:#c92a2a;background:#fff0f0;border-radius:3px}
+.wrsec{margin-bottom:10px}.wrsec .lbl em{font-style:normal;color:#c0582b;font-size:12px}.wrsec .lbl small{color:var(--sub)}.wrsec.req textarea{border-color:#f0c8a8}
+.wrsecv{margin-top:8px}.wrsecv b{display:block;font-size:14px;color:#a2491f;margin-bottom:2px}.wrsecv .wrtext{font-size:15.5px;line-height:1.7;background:#fafafa;border-radius:8px;padding:6px 10px}
+.wrfb{background:#fff4f6;border:2px solid #f6c6d2;border-radius:14px;padding:10px 14px;margin-top:12px}.wrfb p{margin:6px 0 0;white-space:pre-wrap}
+.wrstamp{display:inline-block;margin-left:8px;background:#fff;border:2px solid #e8590c;color:#e8590c;border-radius:999px;padding:2px 10px;font-weight:900;transform:rotate(-3deg)}
+.wrstamp.pr{margin:12px 0 0 auto;display:table}
+.wrprog{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}.wrprog span{background:#f1ece6;border-radius:999px;padding:3px 10px;font-size:13px}.wrprog span.ok{background:#e6f4ea}.wrprog b{margin-left:2px}
+.wrasks{background:#fff8e6;border-radius:12px;padding:10px 14px;margin:6px 0 10px}.wrasks ul{margin:4px 0 0;padding-left:1.2em;line-height:1.7}.wrasks small{color:var(--sub)}
+.wrgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.wrcard{background:#fff;border:1px solid #eadfce;border-radius:12px;padding:10px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:5px}.wrcard.done{border-color:#9fd6b1;background:#f6fcf8}
+.wrcard .top{display:flex;justify-content:space-between;align-items:center}.wrcard .ttl{font-size:13.5px;color:#4a3d32;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.wrcard small{color:var(--sub);font-size:12px}
+.bdg{font-size:11.5px;font-weight:800;border-radius:999px;padding:1px 8px;background:#f1ece6;color:#7a6a5c}.bdg.ok{background:#2f8f5b;color:#fff}
+.dots{display:flex;gap:4px}.dots i{flex:1;height:6px;border-radius:3px;background:#eee}.dots i.ok{background:#2f8f5b}.dots i.on{background:#c0582b}
+.wrstamps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}.wrstamps button{border:1.5px solid #e1e7ec;background:#fff;border-radius:999px;padding:4px 10px;cursor:pointer;font-weight:700}.wrstamps button.on{border-color:#e8590c;background:#fff1e6;color:#c2410c}
+.wrfbedit{margin-top:12px;border-top:1px dashed #eadfce;padding-top:10px}
+.wrbookopt{display:grid;gap:8px}
+.wrprint{display:none}
+@media print{body.print-wr>*:not(.wrprint){display:none !important}body.print-wr .wrprint{display:block}
+ .wrcover{text-align:center;padding-top:60mm;page-break-after:always}.wrcover .ic{font-size:60px}.wrcover h1{font-size:30px}.wrcover .toc{text-align:left;display:inline-block;margin-top:20mm;line-height:1.9;font-size:14px}
+ .wrpage{page-break-after:always}.wrpage .wrpaper{border:0;padding:0;background:none}.wrpage .wrtext{font-size:15px}}
+@media (max-width:600px){.wrsteps{grid-template-columns:repeat(5,1fr)}.wrst .t{font-size:10.5px}.wrfields{grid-template-columns:1fr 1fr}}
+.wrsteps.three{grid-template-columns:repeat(3,1fr)}
+.lwgrid{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:14px;align-items:start}
+.lwnotes{background:#fff8e6;border-radius:12px;padding:10px 12px;margin-bottom:10px}.lwn{background:#fff;border-radius:8px;padding:5px 8px;margin-top:6px;white-space:pre-wrap;font-size:14.5px}.lwn small{display:block;color:#a2491f;font-weight:800;font-size:12px}
+.lwguide{background:#f4f8fc;border-radius:12px;padding:10px 12px;font-size:13.5px}.lwguide ol{margin:4px 0 8px;padding-left:1.3em;line-height:1.6}
+.lwlinks{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}.lwlinks button{border:1px solid #d0dbe6;background:#fff;border-radius:999px;padding:3px 10px;font-size:13px;cursor:pointer}.lwlinks button:hover{background:#eef4ff}
+.lwrev{margin-top:14px;border-top:2px dashed #eee3d8;padding-top:10px}
+.wrpaper.mini{padding:8px 12px;margin:6px 0 0}.wrpaper.mini h3{font-size:18px}
+@media (max-width:760px){.lwgrid{grid-template-columns:1fr}}
+/* 첫 화면 3×3 */
+.tiles{grid-template-columns:repeat(3,1fr) !important;gap:14px}
+.tile{align-items:center;text-align:center;justify-content:center;min-height:170px;border-top-width:6px;border-top-color:var(--gc,#ccc)}
+.tile .ti{width:84px;height:84px;border-radius:24px;font-size:48px}
+.tile b{font-size:21px}.tile small{font-size:12.5px}
+@media (max-width:700px){.tiles{gap:8px}.tile{min-height:118px;padding:12px 6px}.tile .ti{width:56px;height:56px;font-size:32px;border-radius:16px}.tile b{font-size:14.5px;line-height:1.25;word-break:keep-all}.tile small{display:none}}
 
 </style>
 <script>
@@ -960,7 +1044,7 @@ button.pline{cursor:pointer}button.pline:hover{background:#fff1c9}.pline.on{back
    비워 두면(apiKey가 없으면) 이 기기(브라우저)에만 저장되는 모드로 열려요.
    ===================================================================== */
 window.FIREBASE_CONFIG = {
-  apiKey: "AIzaSyB0tD4Hh_L_XQbIgg0jsYJWZHlVGbRksIc",
+    apiKey: "AIzaSyB0tD4Hh_L_XQbIgg0jsYJWZHlVGbRksIc",
   authDomain: "digilearn-tools.firebaseapp.com",
   projectId: "digilearn-tools",
   storageBucket: "digilearn-tools.firebasestorage.app",
@@ -3593,9 +3677,10 @@ function tool(def) { TOOLS.push(def); }
 var GROUPS = [
   ['think', '생각 정리', '🧩', '#2f6f9f', '학생이 각자 채워서 제출해요'],
   ['deep', '깊이 생각하기', '💡', '#8a4fb3', '글의 갈래별로 깊이 읽고 생각해요 (학생 참여)'],
+  ['write', '글쓰기', '✍️', '#c0582b', '쓰고 · 소리 내어 읽고 · 고쳐 쓰며 글을 완성해요'],
   ['live', '수업 참여', '📡', '#e0603a', '학생 응답이 실시간으로 모여요'],
   ['group', '모둠 활동', '👥', '#2f8f5b', '교사 화면에 띄워요'],
-  ['dict', '받아쓰기 · 글씨 · 낭독', '📝', '#b07d00', '불러주기 · 따라 쓰기 · 읽기와 말하기 녹음'],
+  ['dict', '받아쓰기 · 낭독', '📝', '#b07d00', '불러주기 · 따라 쓰기 · 읽기와 말하기 녹음'],
   ['review', '정리 · 복습', '🔁', '#1f8a8a', '외우고 풀어 보며 다지기'],
   ['record', '기록 · 평가', '📒', '#d0457a', '스스로 평가 · 선생님 관찰 · 성장 기록'],
   ['class', '학급 생활', '🏫', '#3b5bdb', '알림장 · 주간학습 · 명상 · 발표 · 역할 · 자리']];
@@ -3612,7 +3697,7 @@ var SHORT = {
   structure: '문단별 중심 문장과 글의 짜임', qladder: '사실 → 추론 → 평가 질문 만들기', moodgraph: '사건마다 인물의 마음 그래프', interview: '인물에게 묻고 인물이 되어 답하기',
   ifhero: '갈림길에서 나의 선택과 까닭', poemcard: '감각 · 표현 · 마음 날씨 찾기', poemart: '시 그림 그려 반 전시회',
   speak: '발표 횟수 세고 고르게 뽑기', roles: '한 주마다 돌아가는 역할표', seats: '조건 맞춰 무작위 자리 배치', peer: '모둠 친구 별점과 한마디',
-  records: '관찰 기록으로 문장 초안 다듬기', readaloud: '읽기 · 발표 녹음 내고 피드백'
+  records: '관찰 기록으로 문장 초안 다듬기', lifewrite: '겪은 일을 쓰고 읽고 고쳐 쓰기', readlog: '책 읽고 쓰고 고쳐 쓰기', learnwrite: '오늘 배운 것과 궁금한 것 쓰기', readaloud: '읽기 · 발표 녹음 내고 피드백'
 };
 
 var App = { fire: null, local: LocalBackend(), main: null, V: null };
@@ -3684,37 +3769,57 @@ function closeView() {
 }
 
 // ---------- 홈 (도구 목록) ----------
-function renderHome() {
-  closeView(); renderTop(); Drawer.enable(false);
-  var m = App.main; m.innerHTML = '';
-  m.append(h('div', { class: 'hero' },
-    h('h1', {}, '우리 반 학습도구'),
-    h('p', {}, '도구를 골라 쓰고 ', h('b', {}, '저장'), '해 두세요. ', h('b', {}, '📱 학생과 함께하기'), '로 QR을 띄우면 학생이 각자 기기로 참여해요.')));
-  GROUPS.forEach(function (g) {
-    var list = TOOLS.filter(function (t) { return t.group === g[0]; });
-    if (!list.length) return;
-    var col = g[3];
-    var sec = h('section', { class: 'gsec', style: { '--gc': col } });
-    sec.style.setProperty('--gc', col);
-    sec.append(h('div', { class: 'ghead' },
-      h('span', { class: 'gi', style: { background: col + '1f' } }, g[2]),
-      h('div', {}, h('h2', { style: { color: col } }, g[1]), h('small', {}, g[4]))));
-    function card(t) {
-      return h('button', { class: 'card', style: { borderTopColor: col }, onclick: function () { location.hash = t.key; } },
-        h('span', { class: 'ic', style: { background: col + '14' } }, t.icon),
-        h('span', { class: 'ct' }, h('b', {}, t.name), h('small', {}, SHORT[t.key] || '')));
-    }
-    if (g[0] === 'deep') {
-      GENRES.forEach(function (gn) {
-        var sub = list.filter(function (t) { return (t.genre || 'all') === gn[0]; }); if (!sub.length) return;
-        sec.append(h('div', { class: 'genre' }, h('h3', { style: { color: col } }, gn[1]), h('div', { class: 'cards' }, sub.map(card))));
-      });
-    } else sec.append(h('div', { class: 'cards' }, list.map(card)));
-    m.append(sec);
+function toolCard(t, col) {
+  return h('button', { class: 'card', style: { borderTopColor: col }, onclick: function () { location.hash = t.key; } },
+    h('span', { class: 'ic', style: { background: col + '14' } }, t.icon),
+    h('span', { class: 'ct' }, h('b', {}, t.name), h('small', {}, SHORT[t.key] || '')));
+}
+function groupOf(t) { return GROUPS.filter(function (g) { return g[0] === t.group; })[0] || GROUPS[0]; }
+function groupTools(g, col) {
+  var list = TOOLS.filter(function (t) { return t.group === g[0]; });
+  if (g[0] !== 'deep') return [h('div', { class: 'cards' }, list.map(function (t) { return toolCard(t, col); }))];
+  return GENRES.map(function (gn) {
+    var sub = list.filter(function (t) { return (t.genre || 'all') === gn[0]; }); if (!sub.length) return null;
+    return h('div', { class: 'genre' }, h('h3', { style: { color: col } }, gn[1]), h('div', { class: 'cards' }, sub.map(function (t) { return toolCard(t, col); })));
   });
+}
+function homeTop(m, onSearch) {
+  var q = h('input', { class: 'fld hsearch', type: 'search', placeholder: '🔍 도구 찾기 (예: 자리, 투표, 받아쓰기)', autocomplete: 'off' });
+  var res = h('div', { class: 'hres' });
+  q.addEventListener('input', function () {
+    var v = q.value.trim().replace(/\s+/g, ''); res.innerHTML = '';
+    document.body.classList.toggle('hsearching', !!v);
+    if (!v) return;
+    var hit = TOOLS.filter(function (t) { return (t.name + (SHORT[t.key] || '') + groupOf(t)[1]).replace(/\s+/g, '').indexOf(v) >= 0; });
+    res.append(hit.length ? h('div', { class: 'cards' }, hit.map(function (t) { return toolCard(t, groupOf(t)[3]); })) : h('div', { class: 'empty-note' }, '맞는 도구가 없어요.'));
+  });
+  var rc = (App.local.get('recent', []) || []).map(function (k) { return TOOLS.filter(function (t) { return t.key === k; })[0]; }).filter(Boolean).slice(0, 6);
+  var recent = h('div', { class: 'hrecent' }, h('span', { class: 'hlbl' }, '🕘 최근 쓴 도구'),
+    rc.length ? h('div', { class: 'rchips' }, rc.map(function (t) { var g = groupOf(t); return h('button', { class: 'rchip', style: { borderColor: g[3] + '55' }, onclick: function () { location.hash = t.key; } }, h('span', {}, t.icon), t.name); }))
+      : h('span', { class: 'hint', style: { margin: 0 } }, '도구를 쓰면 여기에 모여요.'));
+  m.append(h('div', { class: 'htop' }, q, recent), res);
+}
+// 첫 화면: 최근 쓴 도구 · 도구 찾기 · 묶음 타일 9개 → 누르면 그 묶음 도구
+function renderHome(gkey) {
+  closeView(); renderTop(); Drawer.enable(false);
+  var m = App.main; m.innerHTML = ''; document.body.classList.remove('hsearching');
+  var g = GROUPS.filter(function (x) { return x[0] === gkey; })[0];
+  if (g) {
+    var col = g[3], sec = h('section', { class: 'gsec' }); sec.style.setProperty('--gc', col);
+    m.append(h('button', { class: 'btn sm', onclick: function () { location.hash = ''; } }, '← 모든 묶음'));
+    sec.append(h('div', { class: 'ghead' }, h('span', { class: 'gi', style: { background: col + '1f' } }, g[2]), h('div', {}, h('h2', { style: { color: col } }, g[1]), h('small', {}, g[4]))));
+    add(sec, groupTools(g, col)); m.append(sec); window.scrollTo(0, 0); return;
+  }
+  homeTop(m);
+  m.append(h('div', { class: 'tiles hmain' }, GROUPS.map(function (g) {
+    var list = TOOLS.filter(function (t) { return t.group === g[0]; });
+    return h('button', { class: 'tile', title: list.map(function (t) { return t.name; }).join(', '), onclick: function () { location.hash = '@' + g[0]; } },
+      h('span', { class: 'ti', style: { background: g[3] + '1c' } }, g[2]),
+      h('b', { style: { color: g[3] } }, g[1]), h('small', {}, '도구 ' + list.length + '개'));
+  })));
+  $$('.tile', m).forEach(function (b, i) { b.style.setProperty('--gc', GROUPS[i][3]); });
   window.scrollTo(0, 0);
 }
-
 // ---------- 공통: 도구 화면 틀 ----------
 function frame(def, student) {
   var m = App.main; m.innerHTML = '';
@@ -3760,6 +3865,7 @@ function openTool(key, keep) {
   closeView();
   var def = TOOLS.filter(function (t) { return t.key === key; })[0];
   if (!def) { renderHome(); return; }
+  try { var rc = (App.local.get('recent', []) || []).filter(function (k) { return k !== key; }); rc.unshift(key); App.local.put('recent', rc.slice(0, 8)); } catch (e) {}
   var V = App.V = { def: def, B: TB(), aid: null, dirty: false, entries: [], acts: [], unsubs: [], busy: false, savedAt: 0 };
   renderTop();
   var f = frame(def, false); V.bar = f.bar; V.banner = f.banner; V.body = f.body;
@@ -3928,12 +4034,14 @@ function exportRecords(V) {
   var title = (V.inst.title && V.inst.title()) || V.def.name, list = V.entries.filter(function (e) { return e.kind !== 'pos'; });
   if (!list.length) { toast('아직 내려받을 학생 기록이 없어요'); return; }
   var keys = [];
-  list.forEach(function (e) { var src = e.kind === 'submit' ? (e.data || {}) : e; Object.keys(src).forEach(function (k) { if (['name', 'kind', 'ts', 'data'].indexOf(k) < 0 && !SKIP_KEYS[k] && keys.indexOf(k) < 0) keys.push(k); }); });
+  list.forEach(function (e) { var src = e.kind === 'submit' ? (e.data || {}) : e; Object.keys(src).forEach(function (k) {
+    if (k === 'f' && src.f && typeof src.f === 'object' && !Array.isArray(src.f)) { Object.keys(src.f).forEach(function (j) { if (keys.indexOf('f.' + j) < 0) keys.push('f.' + j); }); return; }
+    if (['name', 'kind', 'ts', 'data'].indexOf(k) < 0 && !SKIP_KEYS[k] && keys.indexOf(k) < 0) keys.push(k); }); });
   var opts = V.def.key === 'vote' ? (V.inst.get().options || []) : null;
-  var rows = [['이름', '종류', '시각'].concat(keys.map(function (k) { return KEY_KO[k] || k; }))];
+  var rows = [['이름', '종류', '시각'].concat(keys.map(function (k) { return KEY_KO[k] || KEY_KO[k.replace(/^f\./, '')] || k.replace(/^f\./, ''); }))];
   list.slice().sort(function (a, b) { return String(a.name).localeCompare(String(b.name), 'ko') || (a.ts || 0) - (b.ts || 0); }).forEach(function (e) {
     var src = e.kind === 'submit' ? (e.data || {}) : e;
-    rows.push([e.name || '익명', KIND_KO[e.kind] || e.kind || '', e.ts ? new Date(e.ts).toLocaleString('ko-KR') : ''].concat(keys.map(function (k) { if (opts && k === 'choice' && opts[src[k]] != null) return (src[k] + 1) + '. ' + (opts[src[k]] || '보기 ' + (src[k] + 1)); return flatVal(src[k]); })));
+    rows.push([e.name || '익명', KIND_KO[e.kind] || e.kind || '', e.ts ? new Date(e.ts).toLocaleString('ko-KR') : ''].concat(keys.map(function (k) { if (opts && k === 'choice' && opts[src[k]] != null) return (src[k] + 1) + '. ' + (opts[src[k]] || '보기 ' + (src[k] + 1)); if (k.indexOf('f.') === 0) return flatVal((src.f || {})[k.slice(2)]); return flatVal(src[k]); })));
   });
   downloadCSV(V.def.name + ' - ' + title + ' - ' + new Date().toISOString().slice(0, 10), rows);
 }
@@ -4121,7 +4229,8 @@ function route() {
   var a = new URLSearchParams(location.search).get('a');
   if (a) { if (!App.V || App.V.aid !== a || !App.V.student) openStudent(a); return; }
   var key = location.hash.slice(1);
-  if (key) openTool(key); else renderHome();
+  if (key && key.charAt(0) === '@') renderHome(key.slice(1));
+  else if (key) openTool(key); else renderHome();
 }
 
 function boot() {
@@ -8429,6 +8538,545 @@ tool({
       destroy: function () { clearInterval(iv); clearTimeout(saveT); if (rec) try { rec.stop(); } catch (e) {} }
     };
   }
+});
+
+/* ===================== 글쓰기: 살아 있는 글쓰기 · 독서기록장 · 배움이 깃드는 글쓰기 ===================== */
+
+var WR_WX = [['☀️', '맑음'], ['🌤️', '구름 조금'], ['☁️', '흐림'], ['🌧️', '비'], ['⛈️', '천둥 번개'], ['❄️', '눈'], ['🌬️', '바람'], ['🌫️', '안개']];
+// 글쓰기 과정 (살아 있는 글쓰기 · 독서기록장)
+var WR_STEPS = [
+  ['✏️', '처음 쓰기', '생각나는 대로 끝까지 써요. 고치는 건 나중에 해요.'],
+  ['🗣️', '소리 내어 읽기', '내 글을 소리 내어 읽어요. 읽다가 걸리거나 어색한 문장을 눌러 🖍️ 표시해요.'],
+  ['🖍️', '고쳐 쓰기', '표시한 곳을 고쳐요. 빠진 내용은 없는지, 더 자세히 쓸 곳은 없는지, 순서는 알맞은지 살펴요.'],
+  ['🗣️', '다시 소리 내어 읽기', '고친 글을 다시 소리 내어 읽어요. 아직 어색한 문장을 눌러 표시해요.'],
+  ['✅', '다시 고쳐 써 완성하기', '문장, 맞춤법, 띄어쓰기, 문단을 다듬어 글을 완성해요.']];
+// 배움이 깃드는 글쓰기 과정
+var LW_STEPS = [
+  ['🧺', '생각 모으기', '글의 재료를 모아요. 문장이 아니어도 괜찮아요. 낱말이나 짧은 메모로 적어요.'],
+  ['🧵', '한 편의 글로 엮기', '모은 생각을 보며 문단을 이어 한 편의 글로 써요. 제목도 붙여요.'],
+  ['🗣️', '읽고 고쳐 쓰기', '내 글을 소리 내어 읽으며 어색한 문장을 눌러 표시하고, 아래에서 고쳐 써 완성해요.']];
+var LW_PARAS = [['열기', '오늘 무엇을 배웠는지, 수업 전에 나는 어떻게 알고 있었는지'], ['수업 이야기', '어떤 활동을 했는지 순서대로'], ['깨달음', '새로 알게 된 것을 내 말로 설명하기'], ['닫기', '아직 궁금한 것, 삶에서 만난 장면']];
+var LW_LINKS = ['처음에는 ~라고 생각했는데', '그런데 오늘', '먼저', '그다음에', '마지막으로', '왜냐하면', '그래서', '예를 들어', '이제는', '아직 ~이 궁금하다', '앞으로'];
+var WR_READCHK = ['숨이 찰 만큼 긴 문장은 없나요?', '같은 낱말이 자꾸 나오지 않나요?', '읽는 사람이 알아듣기 어려운 곳은 없나요?', '더 자세히 쓰고 싶은 장면이 있나요?', '문장의 끝이 어색하지 않나요?'];
+var WR_FINCHK = ['문장 끝에 마침표(.)를 찍었어요', '띄어쓰기를 살폈어요', '헷갈리는 맞춤법을 확인했어요', '내용이 바뀌는 곳에서 문단을 나눴어요'];
+var WR_STAMP = ['', '🌟 마음이 담긴 글', '👀 자세히 본 글', '💪 끝까지 고친 글', '💡 생각이 깊은 글', '😊 읽는 재미가 있는 글'];
+var READ_WAYS = [['free', '자유롭게', '책을 읽고 떠오른 생각과 느낌을 자유롭게 써요.'], ['feel', '느낀 점 중심', '가장 기억에 남는 장면과 그 까닭, 그때 내 마음을 써요.'],
+  ['letter', '인물에게 편지', '책 속 인물에게 하고 싶은 말을 편지로 써요. (○○에게 … ○○가)'], ['after', '뒷이야기 상상하기', '이야기가 끝난 뒤 어떻게 되었을지 이어서 써요.'],
+  ['line', '마음에 남은 문장', '마음에 남은 문장을 옮겨 적고, 왜 마음에 남았는지 써요.']];
+Object.assign(KEY_KO, { 'f.date': '날짜', 'f.topic': '주제', 'f.wx': '날씨', 'f.wxt': '날씨 (내 말로)', 'f.title': '제목', 'f.book': '책 제목', 'f.author': '지은이', 'f.pub': '출판사', 'f.year': '출판년도',
+  'f.p1': '읽은 쪽 (부터)', 'f.p2': '읽은 쪽 (까지)', 'f.way': '쓰는 방법', 'f.subject': '교과', 'f.period': '교시', 'f.goal': '학습 목표', 'f.before': '수업 전 알고 있던 것', 'f.flow': '수업의 흐름',
+  'f.learned': '새롭게 알게 된 것', 'f.explain': '내 말로 설명하기', 'f.ask': '궁금하거나 헷갈리는 것', 'f.life': '삶과 잇기', draft: '처음 쓴 글', rev: '고쳐 쓴 글', fin: '완성한 글', step: '단계', done: '완성' });
+
+function wrSentences(t) {
+  return String(t || '').split(/\n/).map(function (p) { return (p.match(/[^.!?…]+[.!?…]*["'”’」)]*\s*/g) || []).map(function (s) { return s.trim(); }).filter(Boolean); });
+}
+function wrCount(t) { return String(t || '').replace(/\s/g, '').length; }
+// 낱말 단위로 바뀐 곳 찾기
+function wrDiff(a, b) {
+  var A = String(a || '').split(/(\s+)/), B = String(b || '').split(/(\s+)/), n = A.length, m = B.length;
+  if (n * m > 4e6) return null;
+  var L = new Uint16Array((n + 1) * (m + 1)), W = m + 1;
+  for (var i = n - 1; i >= 0; i--) for (var j = m - 1; j >= 0; j--) L[i * W + j] = A[i] === B[j] ? L[(i + 1) * W + j + 1] + 1 : Math.max(L[(i + 1) * W + j], L[i * W + j + 1]);
+  var out = [], x = 0, y = 0;
+  function push(t, s) { var l = out[out.length - 1]; if (l && l[0] === t) l[1] += s; else out.push([t, s]); }
+  while (x < n && y < m) {
+    if (A[x] === B[y]) { push('=', A[x]); x++; y++; } else if (L[(x + 1) * W + y] >= L[x * W + y + 1]) { push('-', A[x]); x++; } else { push('+', B[y]); y++; }
+  }
+  while (x < n) push('-', A[x++]); while (y < m) push('+', B[y++]);
+  return out;
+}
+function wrDiffView(a, b) {
+  var d = wrDiff(a, b), box = h('div', { class: 'wrdiff' });
+  if (!d) { box.append(h('div', { class: 'hint' }, '글이 길어서 고친 곳을 비교하지 못했어요.')); return box; }
+  var n = 0; d.forEach(function (x) { if (x[0] === '=') box.append(document.createTextNode(x[1])); else { if (x[1].trim()) n++; box.append(h(x[0] === '+' ? 'ins' : 'del', {}, x[1])); } });
+  return h('div', {}, h('div', { class: 'hint' }, '초록색은 새로 쓰거나 바꾼 말, 빨간 줄은 지운 말이에요. 고친 곳 ' + n + '군데'), box);
+}
+function wxPick(onPick) {
+  var cur = -1, box = h('div', { class: 'wrwx' }, WR_WX.map(function (w, i) { return h('button', { type: 'button', title: w[1], onclick: function () { if (box.classList.contains('ro')) return; cur = cur === i ? -1 : i; paint(); onPick(cur); } }, h('span', {}, w[0]), h('small', {}, w[1])); }));
+  function paint() { $$('button', box).forEach(function (b, i) { b.classList.toggle('on', i === cur); }); }
+  return { el: box, set: function (i) { cur = i == null || i === '' ? -1 : +i; paint(); } };
+}
+function wrSpeak(text) {
+  if (!window.speechSynthesis) { toast('이 기기에서는 읽어 주기를 할 수 없어요'); return; }
+  speechSynthesis.cancel(); var u = new SpeechSynthesisUtterance(text); u.lang = 'ko-KR'; u.rate = 0.9; speechSynthesis.speak(u);
+}
+
+/* o: { key, name, icon, desc, process, fields:[{k,l,ph,t,pre,w}], body:{l,ph}, sections:[{k,l,ph,req,opt}] } */
+function writeTool(o) {
+  tool({
+    key: o.key, name: o.name, icon: o.icon, group: 'write', kind: 'live', desc: o.desc,
+    shared: function () { return false; },
+    build: function (el, ctx) {
+      var ST = ctx.student, AID = ctx.aid && ctx.aid(), STEPS = o.process === 'learn' ? LW_STEPS : WR_STEPS;
+      // ---------- 선생님이 정하는 것 ----------
+      var C = { guide: '', pre: {}, model: '', hide: [], fb: {} };
+      var guideTa = ta('cfg', o.guidePh || '학생에게 보여 줄 안내 (예: 이번 주에 있었던 일 가운데 한 장면을 골라 자세히 써요)', 2);
+      var modelTa = ta('cfg', '선생님 예시 글 (쓰면 학생 화면에 ‘📖 선생님 예시 글’로 보여요)', 3);
+      var preIn = {};
+      (o.fields || []).filter(function (f) { return f.pre; }).forEach(function (f) {
+        var x = f.t === 'date' ? h('input', { class: 'fld cfg', type: 'date' }) : f.t === 'ta' ? ta('cfg', f.ph, 2) : inp('cfg', f.ph); preIn[f.k] = x;
+      });
+      var hideBox = h('div', { class: 'row wrhide' });
+      (o.sections || []).filter(function (s) { return s.opt; }).forEach(function (s) {
+        var cb = h('input', { type: 'checkbox', class: 'cfg' }); cb.dataset.k = s.k;
+        cb.addEventListener('change', function () { C.hide = $$('input', hideBox).filter(function (c) { return !c.checked; }).map(function (c) { return c.dataset.k; }); ctx.dirty(); paintStudent(); });
+        hideBox.append(h('label', { class: 'chk' }, cb, ' ' + s.l.replace(/^\S+\s/, '')));
+      });
+      var tlist = h('div', { class: 'tonly wrtlist' });
+      var cfgBox = h('div', { class: 'tonly wrcfg' },
+        h('span', { class: 'lbl' }, '📣 안내'), guideTa,
+        Object.keys(preIn).length ? h('div', {}, h('span', { class: 'lbl' }, '✍️ 미리 채워 둘 칸 (학생 화면에 처음부터 들어가 있고, 학생이 고칠 수 있어요)'),
+          h('div', { class: 'wrpre' }, (o.fields || []).filter(function (f) { return f.pre; }).map(function (f) { return h('label', {}, h('small', {}, f.l), preIn[f.k]); }))) : null,
+        o.weekly ? h('button', { class: 'btn sm', onclick: fromWeekly }, '🗓️ 주간학습 안내에서 교과·학습 내용 가져오기') : null,
+        hideBox.children.length ? h('div', {}, h('span', { class: 'lbl' }, '🧩 쓰게 할 칸 (선택 칸)'), hideBox) : null,
+        h('details', { class: 'wrdet' }, h('summary', {}, '📖 선생님 예시 글 (선택)'), modelTa),
+        h('div', { class: 'row', style: { marginTop: '8px' } },
+          h('button', { class: 'btn sm', onclick: function () { openBook(false); } }, '📚 문집 만들기 (이 활동)'),
+          h('button', { class: 'btn sm', onclick: function () { openBook(true); } }, '📚 문집 만들기 (' + o.name + ' 전체)')));
+      el.addEventListener('input', function (e) { if (e.target.classList.contains('cfg')) { readCfg(); ctx.dirty(); paintStudent(); } });
+      function readCfg() { C.guide = guideTa.value; C.model = modelTa.value; C.pre = {}; Object.keys(preIn).forEach(function (k) { C.pre[k] = preIn[k].value; }); }
+      function fromWeekly() {
+        var d = preIn.date && preIn.date.value || todayISO(), per = parseInt(preIn.period && preIn.period.value, 10) || 0;
+        toast('주간학습 안내를 찾고 있어요…');
+        onceActs(TB(), 'weekly').then(function (acts) {
+          var mon = mondayOf(d), wd = (dOf(d).getDay() + 6) % 7;
+          var a = acts.filter(function (x) { return x.data && mondayOf(x.data.mon || '') === mon; }).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); })[0];
+          if (!a) { toast(wkMD(mon) + ' 주의 주간학습 안내가 없어요'); return; }
+          if (wd > 4) { toast('주말이에요. 날짜를 확인해 주세요'); return; }
+          var S = a.data.subj || {}, Cn = a.data.cont || {}, k = per ? wd + '-' + per : null;
+          if (!k) { for (var p = 1; p <= 7; p++) if (S[wd + '-' + p]) { k = wd + '-' + p; per = p; break; } }
+          if (!k || !S[k]) { toast('그날 ' + (per ? per + '교시 ' : '') + '시간표가 비어 있어요'); return; }
+          if (preIn.subject) preIn.subject.value = S[k]; if (preIn.period) preIn.period.value = per + '교시';
+          if (preIn.goal && Cn[k] && !preIn.goal.value.trim()) setTa(preIn.goal, Cn[k]);
+          readCfg(); ctx.dirty(); paintStudent(); toast(S[k] + ' ' + per + '교시 내용을 가져왔어요');
+        });
+      }
+
+      // ---------- 학생이 쓰는 것 ----------
+      var W = blankW(), restored = false, list = [], saveT = null;
+      function blankW() { return { f: {}, step: 0, done: false, v: ['', '', ''], m: [[], []], rd: [false, false], ck: [] }; }
+      var LK = AID ? 'wr-' + AID + '-' + (ctx.uid && ctx.uid() || '') : null;
+      if (ST && LK) { var lw = App.local.get(LK, null); if (lw && lw.v) { W = Object.assign(blankW(), lw); restored = true; } }
+      var stu = h('div', { class: 'sonly wrstu' }), myFb = h('div', { class: 'wrmyfb' });
+      el.append(cfgBox, h('div', { class: 'wrhead' }), stu, tlist);
+      var head = $('.wrhead', el);
+
+      function keep() { if (!ST || !LK) return; App.local.put(LK, W); clearTimeout(saveT); saveT = setTimeout(function () { send(false, true); }, 4000); }
+      function send(done, quiet) {
+        if (!ST) return Promise.resolve();
+        if (!studentName()) { if (!quiet) toast('위에 이름을 먼저 적어 주세요'); return Promise.resolve(); }
+        clearTimeout(saveT);
+        if (done) W.done = true;
+        App.local.put(LK, W);
+        var rec = { kind: 'write', step: o.process ? W.step + 1 : 0, done: !!W.done, f: W.f };
+        if (o.process === 'learn') { rec.draft = W.v[0]; rec.fin = W.v[1]; } else if (o.process) { rec.draft = W.v[0]; rec.rev = W.v[1]; rec.fin = W.v[2]; }
+        return ctx.setMine(rec).then(function () { if (!quiet) toast(done ? '선생님께 냈어요 ✍️' : '저장했어요'); });
+      }
+
+      function field(f) {
+        var v = W.f[f.k];
+        if (f.t === 'wx') {
+          var p = wxPick(function (i) { W.f.wx = i < 0 ? '' : WR_WX[i][0] + ' ' + WR_WX[i][1]; keep(); }); p.set(WR_WX.map(function (w) { return w[0] + ' ' + w[1]; }).indexOf(W.f.wx));
+          var wt = f.words ? inp('', '날씨를 내 말로 (예: 바람이 차서 귀가 시렸다)') : null; if (wt) { wt.value = str(W.f.wxt, 80); wt.addEventListener('input', function () { W.f.wxt = wt.value; keep(); }); }
+          return h('div', { class: 'wrf wide' }, h('span', { class: 'lbl' }, f.l), p.el, wt);
+        }
+        var x;
+        if (f.t === 'date') { x = h('input', { class: 'fld', type: 'date' }); x.value = v || todayISO(); W.f[f.k] = x.value; }
+        else if (f.t === 'sel') { x = h('select', { class: 'fld' }, f.opts.map(function (op) { return h('option', { value: op[0] }, op[1]); })); x.value = v || f.opts[0][0]; W.f[f.k] = x.value; }
+        else if (f.t === 'ta') { x = ta('', f.ph, 2); setTa(x, v); }
+        else { x = inp('', f.ph); if (f.t === 'num') { x.inputMode = 'numeric'; } x.value = str(v, 200); }
+        x.addEventListener('input', function () { W.f[f.k] = x.value; keep(); if (f.k === 'way' || f.k === 'title' || f.k === 'book') paintBodyHints(); });
+        x.addEventListener('change', function () { W.f[f.k] = x.value; keep(); if (f.k === 'way') paintStudent(); });
+        return h('div', { class: 'wrf' + (f.w ? ' ' + f.w : '') }, h('span', { class: 'lbl' }, f.l), x);
+      }
+      function prefill() { Object.keys(C.pre || {}).forEach(function (k) { if (C.pre[k] && !str(W.f[k]).trim()) W.f[k] = C.pre[k]; }); }
+      function paintBodyHints() { }
+
+      function paintStudent() {
+        head.innerHTML = '';
+        if (C.guide.trim() || (!ST && !Object.keys(C.pre).length)) head.append(h('div', { class: 'wrguide' }, h('b', {}, o.icon + ' ' + o.name), C.guide.trim() ? h('p', {}, C.guide.trim()) : h('p', { class: 'hint' }, o.desc)));
+        if (C.model.trim()) head.append(h('details', { class: 'wrmodel' }, h('summary', {}, '📖 선생님 예시 글'), h('div', { class: 'wrtext' }, C.model.trim())));
+        if (!ST) { stu.innerHTML = ''; stu.append(h('div', {}, '')); }
+        if (!ST) return;
+        prefill();
+        stu.innerHTML = '';
+        stu.append(h('div', { class: 'wrfields' }, (o.fields || []).map(field)));
+        if (o.process === 'learn') paintLearn(); else if (o.process) paintProcess(); else paintSections();
+        stu.append(myFb); paintMyFb();
+      }
+
+      // ---------- 과정이 있는 글 (살아 있는 글쓰기 · 독서기록장) ----------
+      function paintProcess() {
+        var s = W.step;
+        var bar = h('div', { class: 'wrsteps' }, WR_STEPS.map(function (S, i) {
+          var b = h('button', { class: 'wrst' + (i === s && !W.done ? ' on' : '') + (i < s || W.done ? ' ok' : ''), onclick: function () { if (i <= maxStep()) { W.step = i; W.done = false; keep(); paintStudent(); } } },
+            h('span', { class: 'n' }, i < s || W.done ? '✓' : i + 1), h('span', { class: 't' }, S[0] + ' ' + S[1]));
+          return b;
+        }));
+        stu.append(bar);
+        if (W.done) { paintDone(); return; }
+        var S = WR_STEPS[s], box = h('div', { class: 'wrbox' });
+        box.append(h('div', { class: 'wrsth' }, h('b', {}, (s + 1) + '단계 · ' + S[0] + ' ' + S[1]), h('p', {}, S[2])));
+        if (s === 0 || s === 2 || s === 4) {
+          var vi = s / 2;
+          if (!W.v[vi] && vi > 0) W.v[vi] = W.v[vi - 1];
+          if (o.titleField && s === 0 && !str(W.f.title).trim()) box.append(h('div', { class: 'hint' }, '💡 제목은 다 쓰고 나서 붙여도 좋아요.'));
+          var marks = s === 2 ? W.m[0] : s === 4 ? W.m[1] : [];
+          if (marks.length) {
+            var sents = flat(wrSentences(W.v[vi - 1]));
+            box.append(h('div', { class: 'wrmarks' }, h('b', {}, '🖍️ 내가 표시한 곳 ' + marks.length + '군데'), h('ul', {}, marks.map(function (k) { return sents[k] ? h('li', {}, sents[k]) : null; }))));
+          }
+          var t = ta('wrta', s === 0 ? bodyPh() : '', 10); setTa(t, W.v[vi]);
+          var cnt = h('span', { class: 'hint wrcnt' }, wrCount(W.v[vi]) + '자');
+          t.addEventListener('input', function () { W.v[vi] = t.value; cnt.textContent = wrCount(t.value) + '자'; keep(); });
+          box.append(t, h('div', { class: 'row', style: { alignItems: 'center' } }, cnt, h('span', { style: { flex: 1 } }),
+            vi > 0 ? twoTap(h('button', { class: 'btn sm' }, '↶ 고치기 전 글로'), '↶ 고치기 전 글로', '지금 고친 것이 사라져요 · 한 번 더', function () { W.v[vi] = W.v[vi - 1]; keep(); paintStudent(); }) : null));
+          if (s === 4) box.append(h('div', { class: 'wrchk' }, WR_FINCHK.map(function (c, i) { return chk('f' + i, c); })));
+        } else {
+          var ri = (s - 1) / 2, src = W.v[ri], P = wrSentences(src), idx = 0, mk = W.m[ri];
+          var view = h('div', { class: 'wrread' }, P.map(function (para) {
+            return h('p', {}, para.map(function (sen) {
+              var k = idx++;
+              var sp = h('span', { class: 'sen' + (mk.indexOf(k) >= 0 ? ' mk' : ''), onclick: function () { var j = mk.indexOf(k); if (j >= 0) mk.splice(j, 1); else mk.push(k); mk.sort(function (a, b) { return a - b; }); sp.classList.toggle('mk'); keep(); } }, sen + ' ');
+              return sp;
+            }));
+          }));
+          box.append(h('div', { class: 'row', style: { alignItems: 'center' } }, h('span', { class: 'hint', style: { margin: 0 } }, '문장을 누르면 🖍️ 표시돼요. 다시 누르면 지워져요.'), h('span', { style: { flex: 1 } }),
+            h('button', { class: 'btn sm', onclick: function () { wrSpeak(src); } }, '🔊 컴퓨터가 읽어 주기')), view,
+            h('div', { class: 'wrchk' }, h('b', {}, '읽으며 살펴봐요'), WR_READCHK.map(function (c, i) { return chk('r' + ri + i, c); })));
+          var rd = h('input', { type: 'checkbox' }); rd.checked = !!W.rd[ri];
+          rd.addEventListener('change', function () { W.rd[ri] = rd.checked; keep(); nx.disabled = !rd.checked; });
+          box.append(h('label', { class: 'wrread-ok' }, rd, ' 🗣️ 내 글을 소리 내어 끝까지 읽었어요'));
+        }
+        var nx = h('button', { class: 'btn pri', onclick: next }, s === 4 ? '📤 완성한 글 내기' : '다음 단계 ▶');
+        if (s === 1 || s === 3) nx.disabled = !W.rd[(s - 1) / 2];
+        box.append(h('div', { class: 'row wrnav' }, s > 0 ? h('button', { class: 'btn', onclick: function () { W.step--; keep(); paintStudent(); } }, '◀ 앞 단계') : null,
+          h('button', { class: 'btn', onclick: function () { send(false); } }, '💾 저장'), h('span', { style: { flex: 1 } }), nx));
+        stu.append(box);
+      }
+      function chk(k, label) {
+        var cb = h('input', { type: 'checkbox' }); cb.checked = W.ck.indexOf(k) >= 0;
+        cb.addEventListener('change', function () { var j = W.ck.indexOf(k); if (cb.checked && j < 0) W.ck.push(k); if (!cb.checked && j >= 0) W.ck.splice(j, 1); keep(); });
+        return h('label', { class: 'chk' }, cb, ' ' + label);
+      }
+      function flat(P) { return [].concat.apply([], P); }
+      function maxStep() { return W.done ? STEPS.length - 1 : W.step; }
+      function bodyPh() {
+        if (o.key === 'readlog') { var w = READ_WAYS.filter(function (x) { return x[0] === W.f.way; })[0] || READ_WAYS[0]; return w[2]; }
+        return o.body && o.body.ph || '';
+      }
+      function next() {
+        var s = W.step;
+        if (s === 0 && wrCount(W.v[0]) < 10) { toast('조금 더 써 볼까요? (10자 이상)'); return; }
+        if (s === 4) {
+          var miss = (o.fields || []).filter(function (f) { return f.req && !str(W.f[f.k]).trim(); });
+          if (miss.length) { toast(miss.map(function (f) { return f.l.replace(/^\S+\s/, ''); }).join(', ') + '을(를) 채워 주세요'); return; }
+          if (!studentName()) { toast('위에 이름을 먼저 적어 주세요'); return; }
+          send(true).then(function () { paintStudent(); window.scrollTo(0, 0); }); return;
+        }
+        W.step++; if (W.step === 2 && !W.v[1]) W.v[1] = W.v[0]; if (W.step === 4 && !W.v[2]) W.v[2] = W.v[1];
+        keep(); send(false, true); paintStudent(); window.scrollTo(0, stu.offsetTop - 70);
+      }
+      function paintDone() {
+        var box = h('div', { class: 'wrbox done' });
+        box.append(h('div', { class: 'wrsth' }, h('b', {}, '🎉 글을 완성했어요!'), h('p', {}, '선생님께 냈어요. 더 고치고 싶으면 ‘다시 고치기’를 눌러요.')),
+          paper(W.f, o.process === 'learn' ? W.v[1] || W.v[0] : W.v[2] || W.v[1] || W.v[0], studentName()));
+        var diffBox = h('div');
+        box.append(h('div', { class: 'row' }, h('button', { class: 'btn sm', onclick: function () { diffBox.innerHTML = ''; diffBox.append(wrDiffView(W.v[0], o.process === 'learn' ? W.v[1] : W.v[2] || W.v[1])); } }, o.process === 'learn' ? '🔍 엮은 글과 비교해 고친 곳 보기' : '🔍 처음 쓴 글과 비교해 고친 곳 보기'),
+          h('button', { class: 'btn sm', onclick: function () { W.done = false; W.step = STEPS.length - 1; keep(); paintStudent(); } }, '✏️ 다시 고치기')), diffBox);
+        stu.append(box);
+      }
+
+      // ---------- 배움이 깃드는 글쓰기: 생각 모으기 → 엮기 → 읽고 고쳐 쓰기 ----------
+      function paintLearn() {
+        var s = W.step;
+        stu.append(h('div', { class: 'wrsteps three' }, LW_STEPS.map(function (S, i) {
+          return h('button', { class: 'wrst' + (i === s && !W.done ? ' on' : '') + (i < s || W.done ? ' ok' : ''), onclick: function () { if (i <= maxStep()) { W.step = i; W.done = false; keep(); paintStudent(); } } },
+            h('span', { class: 'n' }, i < s || W.done ? '✓' : i + 1), h('span', { class: 't' }, S[0] + ' ' + S[1]));
+        })));
+        if (W.done) { paintDone(); return; }
+        var S = LW_STEPS[s], box = h('div', { class: 'wrbox' });
+        box.append(h('div', { class: 'wrsth' }, h('b', {}, (s + 1) + '단계 · ' + S[0] + ' ' + S[1]), h('p', {}, S[2])));
+        var nx;
+        if (s === 0) {
+          (o.sections || []).forEach(function (sc) {
+            if (sc.opt && C.hide.indexOf(sc.k) >= 0) return;
+            var t = ta('', sc.ph, 2); setTa(t, W.f[sc.k]);
+            t.addEventListener('input', function () { W.f[sc.k] = t.value; keep(); });
+            box.append(h('div', { class: 'wrsec' + (sc.req ? ' req' : '') }, h('span', { class: 'lbl' }, sc.l, sc.req ? h('em', {}, ' 꼭 써요') : sc.opt ? h('small', {}, ' (선택)') : null), sc.hint ? h('div', { class: 'hint' }, sc.hint) : null, t));
+          });
+          nx = h('button', { class: 'btn pri', onclick: function () {
+            var miss = (o.sections || []).filter(function (sc) { return sc.req && !(sc.opt && C.hide.indexOf(sc.k) >= 0) && !str(W.f[sc.k]).trim(); });
+            if (miss.length) { toast(miss.map(function (sc) { return sc.l.replace(/^\S+\s/, ''); }).join(', ') + '을(를) 메모해 주세요'); return; }
+            W.step = 1; keep(); send(false, true); paintStudent(); window.scrollTo(0, stu.offsetTop - 70);
+          } }, '다음 단계 ▶');
+        } else if (s === 1) {
+          var notes = h('div', { class: 'lwnotes' }, h('b', {}, '🧺 내가 모은 생각'), (o.sections || []).map(function (sc) { var v = str(W.f[sc.k]).trim(); return v && !(sc.opt && C.hide.indexOf(sc.k) >= 0) ? h('div', { class: 'lwn' }, h('small', {}, sc.l.replace(/^\S+\s/, '')), v) : null; }));
+          var tt = inp('', '제목 (예: 구름이 떨어지지 않는 까닭이 궁금해진 날)'); tt.value = str(W.f.title, 80);
+          tt.addEventListener('input', function () { W.f.title = tt.value; keep(); });
+          var t = ta('wrta', '모은 생각을 이어 한 편의 글로 써요. 문단이 바뀌면 줄을 바꿔요.', 10); setTa(t, W.v[0]);
+          var cnt = h('span', { class: 'hint wrcnt' }, wrCount(W.v[0]) + '자');
+          t.addEventListener('input', function () { W.v[0] = t.value; cnt.textContent = wrCount(t.value) + '자'; keep(); });
+          var guide = h('div', { class: 'lwguide' }, h('b', {}, '🦴 글의 뼈대'), h('ol', {}, LW_PARAS.map(function (p) { return h('li', {}, h('b', {}, p[0]), ' — ' + p[1]); })),
+            h('b', {}, '🔗 이어 주는 말 (누르면 글에 들어가요)'), h('div', { class: 'lwlinks' }, LW_LINKS.map(function (w) { return h('button', { type: 'button', onclick: function () { insertAt(t, w.split('~')[0].trim() + ' '); } }, w); })));
+          box.append(h('div', { class: 'lwgrid' }, h('div', {}, notes, guide), h('div', {}, h('span', { class: 'lbl' }, '📝 제목'), tt, h('span', { class: 'lbl' }, '🧵 한 편의 글'), t, cnt)));
+          nx = h('button', { class: 'btn pri', onclick: function () {
+            if (wrCount(W.v[0]) < 30) { toast('모은 생각을 이어 조금 더 써 볼까요? (30자 이상)'); return; }
+            if (!str(W.f.title).trim()) { toast('제목을 붙여 주세요'); tt.focus(); return; }
+            W.step = 2; if (!W.v[1]) W.v[1] = W.v[0]; keep(); send(false, true); paintStudent(); window.scrollTo(0, stu.offsetTop - 70);
+          } }, '다음 단계 ▶');
+        } else {
+          var P = wrSentences(W.v[0]), idx = 0, mk = W.m[0], sents = flat(P);
+          var markList = h('div', { class: 'wrmarks' });
+          var paintMarks = function () { markList.innerHTML = ''; markList.hidden = !mk.length; markList.append(h('b', {}, '🖍️ 표시한 곳 ' + mk.length + '군데'), h('ul', {}, mk.map(function (k) { return sents[k] ? h('li', {}, sents[k]) : null; }))); };
+          var view = h('div', { class: 'wrread' }, P.map(function (para) {
+            return h('p', {}, para.map(function (sen) {
+              var k = idx++;
+              var sp = h('span', { class: 'sen' + (mk.indexOf(k) >= 0 ? ' mk' : ''), onclick: function () { var j = mk.indexOf(k); if (j >= 0) mk.splice(j, 1); else mk.push(k); mk.sort(function (a, b) { return a - b; }); sp.classList.toggle('mk'); keep(); paintMarks(); } }, sen + ' ');
+              return sp;
+            }));
+          }));
+          var rd = h('input', { type: 'checkbox' }); rd.checked = !!W.rd[0];
+          rd.addEventListener('change', function () { W.rd[0] = rd.checked; keep(); nx.disabled = !rd.checked; });
+          var t2 = ta('wrta', '', 10); setTa(t2, W.v[1]);
+          var cnt2 = h('span', { class: 'hint wrcnt' }, wrCount(W.v[1]) + '자');
+          t2.addEventListener('input', function () { W.v[1] = t2.value; cnt2.textContent = wrCount(t2.value) + '자'; keep(); });
+          box.append(h('div', { class: 'row', style: { alignItems: 'center' } }, h('b', {}, '① 소리 내어 읽기'), h('span', { class: 'hint', style: { margin: 0 } }, ' 어색한 문장을 누르면 🖍️ 표시돼요.'), h('span', { style: { flex: 1 } }),
+            h('button', { class: 'btn sm', onclick: function () { wrSpeak(W.v[0]); } }, '🔊 컴퓨터가 읽어 주기')),
+            h('div', { class: 'wrpaper mini' }, h('h3', {}, str(W.f.title) || '(제목 없음)')), view,
+            h('div', { class: 'wrchk' }, h('b', {}, '읽으며 살펴봐요'), WR_READCHK.map(function (c, i) { return chk('r0' + i, c); }), chk('lwflow', '문단과 문단이 자연스럽게 이어지나요?')),
+            h('label', { class: 'wrread-ok' }, rd, ' 🗣️ 내 글을 소리 내어 끝까지 읽었어요'),
+            h('div', { class: 'lwrev' }, h('b', {}, '② 고쳐 쓰기'), markList, h('div', { class: 'lwlinks' }, LW_LINKS.map(function (w) { return h('button', { type: 'button', onclick: function () { insertAt(t2, w.split('~')[0].trim() + ' '); } }, w); })), t2,
+              h('div', { class: 'row', style: { alignItems: 'center' } }, cnt2, h('span', { style: { flex: 1 } }), twoTap(h('button', { class: 'btn sm' }, '↶ 고치기 전 글로'), '↶ 고치기 전 글로', '지금 고친 것이 사라져요 · 한 번 더', function () { W.v[1] = W.v[0]; keep(); paintStudent(); })),
+              h('div', { class: 'wrchk' }, WR_FINCHK.map(function (c, i) { return chk('f' + i, c); }))));
+          paintMarks();
+          nx = h('button', { class: 'btn pri', onclick: function () {
+            if (!studentName()) { toast('위에 이름을 먼저 적어 주세요'); return; }
+            send(true).then(function () { paintStudent(); window.scrollTo(0, 0); });
+          } }, '📤 완성한 글 내기');
+          nx.disabled = !W.rd[0];
+        }
+        box.append(h('div', { class: 'row wrnav' }, s > 0 ? h('button', { class: 'btn', onclick: function () { W.step--; keep(); paintStudent(); } }, '◀ 앞 단계') : null,
+          h('button', { class: 'btn', onclick: function () { send(false); } }, '💾 저장'), h('span', { style: { flex: 1 } }), nx));
+        stu.append(box);
+      }
+      function insertAt(t, txt) {
+        var a = t.selectionStart == null ? t.value.length : t.selectionStart, b = t.selectionEnd == null ? a : t.selectionEnd;
+        var pre = t.value.slice(0, a); if (pre && !/[\s]$/.test(pre)) txt = ' ' + txt;
+        t.value = pre + txt + t.value.slice(b); t.focus(); t.selectionStart = t.selectionEnd = a + txt.length; t.dispatchEvent(new Event('input'));
+      }
+
+      // ---------- 칸을 채우는 글 ----------
+      function paintSections() {
+        var box = h('div', { class: 'wrbox' });
+        (o.sections || []).forEach(function (sc) {
+          if (sc.opt && C.hide.indexOf(sc.k) >= 0) return;
+          var t = ta('', sc.ph, sc.rows || 3); setTa(t, W.f[sc.k]);
+          t.addEventListener('input', function () { W.f[sc.k] = t.value; keep(); });
+          box.append(h('div', { class: 'wrsec' + (sc.req ? ' req' : '') }, h('span', { class: 'lbl' }, sc.l, sc.req ? h('em', {}, ' 꼭 써요') : sc.opt ? h('small', {}, ' (선택)') : null), sc.hint ? h('div', { class: 'hint' }, sc.hint) : null, t));
+        });
+        box.append(h('div', { class: 'row wrnav' }, h('button', { class: 'btn', onclick: function () { send(false); } }, '💾 저장'), h('span', { style: { flex: 1 } }),
+          h('button', { class: 'btn pri', onclick: function () {
+            var miss = (o.sections || []).filter(function (sc) { return sc.req && !(sc.opt && C.hide.indexOf(sc.k) >= 0) && !str(W.f[sc.k]).trim(); });
+            if (miss.length) { toast(miss.map(function (sc) { return sc.l.replace(/^\S+\s/, ''); }).join(', ') + '을(를) 써 주세요'); return; }
+            send(true).then(function () { paintStudent(); });
+          } }, W.done ? '📤 고친 글 다시 내기' : '📤 선생님께 내기')),
+          W.done ? h('div', { class: 'hint' }, '✅ 냈어요. 고쳐서 다시 낼 수 있어요.') : null);
+        stu.append(box);
+      }
+
+      function paintMyFb() {
+        myFb.innerHTML = '';
+        var me = ctx.uid && ctx.uid(), f = C.fb[me];
+        if (!f || !(f.t || f.s)) return;
+        myFb.append(h('div', { class: 'wrfb' }, h('b', {}, '💌 선생님이 남긴 말'), f.s ? h('span', { class: 'wrstamp' }, WR_STAMP[f.s]) : null, f.t ? h('p', {}, f.t) : null));
+      }
+
+      // 원고지처럼 보여 주기 (완성 글 · 문집)
+      function paper(f, body, name) {
+        var meta = [];
+        (o.fields || []).forEach(function (x) {
+          if (x.k === 'title' || x.k === 'book' || !str(f[x.k]).trim()) return;
+          if (x.k === 'way') { var w = READ_WAYS.filter(function (r) { return r[0] === f.way; })[0]; if (w && w[0] !== 'free') meta.push(x.l.replace(/^\S+\s/, '') + ': ' + w[1]); return; }
+          if (x.k === 'p2') return;
+          if (x.k === 'p1') { meta.push('읽은 쪽: ' + f.p1 + (f.p2 ? '~' + f.p2 : '') + '쪽'); return; }
+          if (x.k === 'date') { meta.push(koDate(f.date) || f.date); return; }
+          if (o.key === 'learnwrite' && x.k === 'goal') return;
+          meta.push(x.l.replace(/^\S+\s/, '') + ': ' + f[x.k] + (x.k === 'wx' && f.wxt ? ' — ' + f.wxt : ''));
+        });
+        var title = o.key === 'readlog' ? (f.book ? '『' + f.book + '』' : '') + (f.author ? ' ' + f.author : '') : o.key === 'learnwrite' ? str(f.title) || [str(f.subject), str(f.period)].filter(Boolean).join(' ') + ' 배움 글' : (f.title || '');
+        return h('div', { class: 'wrpaper' }, h('h3', {}, title || '(제목 없음)'), name ? h('div', { class: 'by' }, name) : null,
+          h('div', { class: 'meta' }, meta.join(' · ')), o.key === 'learnwrite' && str(f.goal).trim() ? h('div', { class: 'goal' }, '🎯 ' + str(f.goal).trim()) : null, body ? h('div', { class: 'wrtext' }, body) : null);
+      }
+
+      // ---------- 선생님 화면: 학생 글 목록 ----------
+      function renderT() {
+        tlist.innerHTML = ''; if (ST) return;
+        var R = list.filter(function (e) { return e.kind === 'write'; }).sort(function (a, b) { return String(a.name).localeCompare(String(b.name), 'ko', { numeric: true }); });
+        tlist.append(h('span', { class: 'lbl' }, '🗂️ 학생 글 ' + R.length + '편'));
+        if (!R.length) { tlist.append(h('div', { class: 'empty-note' }, '📱 학생과 함께하기로 QR을 띄우면 학생들이 쓰는 글이 여기에 모여요. 단계가 바뀔 때마다 저절로 들어와요.')); return; }
+        if (o.process) {
+          var NS = STEPS.length, cnt = STEPS.map(function () { return 0; }).concat([0]); R.forEach(function (e) { cnt[e.done ? NS : Math.max(0, Math.min(NS - 1, (e.step | 0) - 1))]++; });
+          tlist.append(h('div', { class: 'wrprog' }, STEPS.map(function (S, i) { return h('span', {}, S[0] + ' ' + S[1] + ' ', h('b', {}, cnt[i])); }), h('span', { class: 'ok' }, '🎉 완성 ', h('b', {}, cnt[NS]))));
+        }
+        if (o.key === 'learnwrite') {
+          var asks = R.filter(function (e) { return e.f && str(e.f.ask).trim(); });
+          if (asks.length) tlist.append(h('div', { class: 'wrasks' }, h('b', {}, '❓ 아이들이 아직 궁금하거나 헷갈려하는 것 (' + asks.length + ')'), h('ul', {}, asks.map(function (e) { return h('li', {}, str(e.f.ask, 300), h('small', {}, ' — ' + e.name)); }))));
+        }
+        tlist.append(h('div', { class: 'wrgrid' }, R.map(function (e) {
+          var f = e.fb_ = C.fb[e.uid] || {}, body = e.fin || e.rev || e.draft || '';
+          var ttl = o.key === 'readlog' ? str(e.f && e.f.book) : o.key === 'learnwrite' ? str(e.f && e.f.title) || [str(e.f && e.f.subject), str(e.f && e.f.period)].filter(Boolean).join(' ') : str(e.f && e.f.title);
+          return h('button', { class: 'wrcard' + (e.done ? ' done' : ''), onclick: function () { openOne(e); } },
+            h('div', { class: 'top' }, h('b', {}, e.name || '익명'), e.done ? h('span', { class: 'bdg ok' }, '완성') : o.process ? h('span', { class: 'bdg' }, (e.step || 1) + '단계') : h('span', { class: 'bdg' }, '쓰는 중')),
+            h('div', { class: 'ttl' }, ttl || ' '),
+            o.process ? h('div', { class: 'dots' }, STEPS.map(function (x, k) { k++; return h('i', { class: e.done || k < (e.step | 0) ? 'ok' : k === (e.step | 0) ? 'on' : '' }); })) : null,
+            h('small', {}, (o.process ? wrCount(body) + '자 · ' : '') + fmt(e.ts) + (f.t || f.s ? ' · 💌' : '')));
+        })));
+      }
+      function openOne(e) {
+        var md = modal((e.name || '익명') + ' · ' + o.name); md.box.classList.add('wide');
+        var f = C.fb[e.uid] = C.fb[e.uid] || { t: '', s: 0 };
+        if (o.process) {
+          var tabs = o.process === 'learn' ? [['fin', '완성한 글'], ['draft', '엮은 글'], ['memo', '🧺 생각 메모'], ['diff', '🔍 고친 곳']] : [['fin', '완성한 글'], ['rev', '고쳐 쓴 글'], ['draft', '처음 쓴 글'], ['diff', '🔍 고친 곳']], cur = e.fin ? 'fin' : e.rev ? 'rev' : e.draft ? 'draft' : o.sections ? 'memo' : 'draft';
+          var seg = h('div', { class: 'seg' }), view = h('div');
+          tabs.forEach(function (t) { seg.append(h('button', { onclick: function () { cur = t[0]; paint(); } }, t[1])); });
+          var paint = function () {
+            $$('button', seg).forEach(function (b, i) { b.classList.toggle('on', tabs[i][0] === cur); });
+            view.innerHTML = '';
+            if (cur === 'diff') view.append(e.draft && (e.fin || e.rev) ? wrDiffView(e.draft, e.fin || e.rev) : h('div', { class: 'empty-note' }, '아직 고쳐 쓴 글이 없어요.'));
+            else if (cur === 'memo') { (o.sections || []).forEach(function (sc) { var v = str(e.f && e.f[sc.k]).trim(); if (v) view.append(h('div', { class: 'wrsecv' }, h('b', {}, sc.l), h('div', { class: 'wrtext' }, v))); }); if (!view.children.length) view.append(h('div', { class: 'empty-note' }, '아직 모은 생각이 없어요.')); }
+            else view.append(paper(e.f || {}, e[cur] || '', e.name));
+          };
+          md.box.append(seg, view); paint();
+        } else {
+          md.box.append(paper(e.f || {}, '', e.name));
+          (o.sections || []).forEach(function (sc) { var v = str(e.f && e.f[sc.k]).trim(); if (v) md.box.append(h('div', { class: 'wrsecv' }, h('b', {}, sc.l), h('div', { class: 'wrtext' }, v))); });
+        }
+        var t = ta('', '학생에게 남길 말 (예: 동생 표정을 쓴 부분이 생생해. 그다음엔 어떻게 됐어?)', 2); setTa(t, f.t);
+        t.addEventListener('input', function () { f.t = t.value.slice(0, 300); fbChanged(); });
+        var stamps = h('div', { class: 'wrstamps' }, WR_STAMP.map(function (s, i) { return i ? h('button', { class: f.s === i ? 'on' : '', onclick: function () { f.s = f.s === i ? 0 : i; fbChanged(); $$('button', stamps).forEach(function (b, j) { b.classList.toggle('on', j + 1 === f.s); }); } }, s) : null; }));
+        md.box.append(h('div', { class: 'wrfbedit' }, h('span', { class: 'lbl' }, '💌 선생님 도장과 한마디 (그 학생에게만 보여요)'), stamps, t),
+          h('div', { class: 'row', style: { marginTop: '8px' } }, twoTap(h('button', { class: 'btn sm' }, '이 글 지우기'), '이 글 지우기', '정말 지울까요?', function () { ctx.del(e.id); md.close(); })));
+      }
+      var fbT = null;
+      function fbChanged() { ctx.dirty(); clearTimeout(fbT); fbT = setTimeout(function () { ctx.save().catch(function () {}); renderT(); }, 1200); }
+
+      // ---------- 문집 ----------
+      function openBook(all) {
+        var get = all ? onceActs(TB(), o.key).then(function (acts) { return Promise.all(acts.map(function (a) { return onceEntries(TB(), a.id).then(function (es) { return es.map(function (e) { e._act = a; return e; }); }); })); }).then(function (L) { return [].concat.apply([], L); })
+          : Promise.resolve(list.map(function (e) { e._act = { title: '' }; return e; }));
+        toast('글을 모으고 있어요…');
+        get.then(function (L) {
+          var R = L.filter(function (e) { return e.kind === 'write' && (e.done || !o.process || e.fin || e.rev || e.draft); });
+          if (!R.length) { toast('모을 글이 아직 없어요'); return; }
+          var md = modal('📚 ' + o.name + ' 문집'); md.box.classList.add('wide');
+          var only = h('input', { type: 'checkbox' }); only.checked = true;
+          var by = h('select', { class: 'fld', style: { width: 'auto' } }, h('option', { value: 'name' }, '학생별로 모으기'), h('option', { value: 'date' }, '날짜 순서로'));
+          var bt = inp('', '문집 이름 (예: 2027 우리 반 살아 있는 글 모음)'); bt.value = new Date().getFullYear() + ' 우리 반 ' + o.name;
+          var info = h('div', { class: 'hint' });
+          function pick() {
+            var X = R.filter(function (e) { return !only.checked || e.done; });
+            X.sort(function (a, b) { var da = str(a.f && a.f.date) || '', db = str(b.f && b.f.date) || ''; return by.value === 'name' ? String(a.name).localeCompare(String(b.name), 'ko', { numeric: true }) || (da < db ? -1 : 1) : (da < db ? -1 : da > db ? 1 : String(a.name).localeCompare(String(b.name), 'ko', { numeric: true })); });
+            info.textContent = '글 ' + X.length + '편 · 학생 ' + Object.keys(X.reduce(function (m, e) { m[e.name] = 1; return m; }, {})).length + '명';
+            return X;
+          }
+          only.addEventListener('change', pick); by.addEventListener('change', pick); pick();
+          md.box.append(h('div', { class: 'wrbookopt' }, bt, h('div', { class: 'row', style: { alignItems: 'center' } }, by, h('label', { class: 'chk' }, only, ' 완성한 글만'), info)),
+            h('p', { class: 'hint' }, '인쇄 창에서 ‘PDF로 저장’을 고르면 문집 파일로 남길 수 있어요. 글 한 편이 한 쪽에 들어가요.'),
+            h('button', { class: 'btn pri', onclick: function () { printBook(bt.value, pick()); } }, '🖨️ 문집 인쇄 · PDF로 저장'));
+        });
+      }
+      function printBook(title, X) {
+        var pr = h('div', { class: 'wrprint' });
+        pr.append(h('div', { class: 'wrcover' }, h('div', { class: 'ic' }, o.icon), h('h1', {}, title || o.name), h('p', {}, '글 ' + X.length + '편'),
+          h('ol', { class: 'toc' }, X.map(function (e) { var f = e.f || {}; return h('li', {}, (o.key === 'readlog' ? '『' + str(f.book) + '』' : str(f.title) || str(f.subject) || '(제목 없음)') + ' — ' + (e.name || '')); }))));
+        X.forEach(function (e) {
+          var pg = h('div', { class: 'wrpage' });
+          if (o.process) pg.append(paper(e.f || {}, e.fin || e.rev || e.draft || '', e.name));
+          else { pg.append(paper(e.f || {}, '', e.name)); (o.sections || []).forEach(function (sc) { var v = str(e.f && e.f[sc.k]).trim(); if (v) pg.append(h('div', { class: 'wrsecv' }, h('b', {}, sc.l), h('div', { class: 'wrtext' }, v))); }); }
+          var fb = (e._act && e._act.data && e._act.data.fb || C.fb)[e.uid];
+          if (fb && fb.s) pg.append(h('div', { class: 'wrstamp pr' }, WR_STAMP[fb.s]));
+          pr.append(pg);
+        });
+        document.body.append(pr); document.body.classList.add('print-wr');
+        setTimeout(function () { window.print(); document.body.classList.remove('print-wr'); pr.remove(); }, 120);
+      }
+
+      function setD(d) {
+        C.guide = str(d.guide, 500); C.model = str(d.model, 4000); C.pre = d.pre && typeof d.pre === 'object' ? d.pre : {}; C.hide = arr(d.hide).map(String);
+        var fb = d.fb && typeof d.fb === 'object' ? d.fb : {}; C.fb = {}; Object.keys(fb).forEach(function (k) { C.fb[k] = { t: str(fb[k].t, 300), s: Math.min(WR_STAMP.length - 1, fb[k].s | 0) }; });
+        var act = document.activeElement, typing = act && act.closest && act.closest('.wrstu, .modal');
+        if (!ST) {
+          setTa(guideTa, C.guide); setTa(modelTa, C.model);
+          Object.keys(preIn).forEach(function (k) { if (preIn[k].tagName === 'TEXTAREA') setTa(preIn[k], C.pre[k]); else preIn[k].value = str(C.pre[k], 200) || (preIn[k].type === 'date' ? '' : ''); });
+          $$('input', hideBox).forEach(function (c) { c.checked = C.hide.indexOf(c.dataset.k) < 0; });
+        }
+        if (typing && ST) { paintMyFb(); return; }
+        paintStudent(); renderT();
+      }
+      setD({});
+      return {
+        title: function () { var p = C.pre || {}; return o.name + (C.guide ? ' · ' + C.guide.split('\n')[0].slice(0, 30) : p.subject ? ' · ' + p.subject + (p.period ? ' ' + p.period : '') : '') + (p.date ? ' (' + p.date.slice(5).replace('-', '/') + ')' : ''); },
+        get: function () { readCfg(); var f = {}; Object.keys(C.fb).forEach(function (k) { if (C.fb[k].s || C.fb[k].t) f[k] = C.fb[k]; }); return { guide: C.guide, model: C.model, pre: C.pre, hide: C.hide, fb: f }; },
+        set: setD, reset: function () { setD({}); },
+        onEntries: function (l) {
+          list = l;
+          if (ST && !restored) { var mine = l.filter(function (e) { return e.kind === 'write' && e.uid === ctx.uid(); })[0]; restored = true;
+            if (mine) { W = blankW(); W.f = Object.assign({}, mine.f || {}); W.done = !!mine.done; W.step = Math.max(0, Math.min(STEPS.length - 1, (mine.step | 0) - 1)); W.v = o.process === 'learn' ? [str(mine.draft), str(mine.fin), ''] : [str(mine.draft), str(mine.rev), str(mine.fin)]; W.rd = o.process === 'learn' ? [W.step >= 2, false] : [W.step > 1, W.step > 3]; App.local.put(LK, W); paintStudent(); } }
+          if (!ST) { var a = document.activeElement; if (!(a && a.closest && a.closest('.modal'))) renderT(); }
+        },
+        destroy: function () { clearTimeout(saveT); clearTimeout(fbT); if (window.speechSynthesis) speechSynthesis.cancel(); }
+      };
+    }
+  });
+}
+
+writeTool({
+  key: 'lifewrite', name: '살아 있는 글쓰기', icon: '🌱', process: true, titleField: true,
+  desc: '학교와 집에서 겪은 일 가운데 한 장면을 골라 쓰고, 소리 내어 읽고, 고쳐 쓰며 글을 완성해요.',
+  guidePh: '학생에게 보여 줄 안내 (예: 이번 주에 겪은 일 가운데 한 장면을 골라, 본 것·들은 말·그때 마음을 자세히 써요)',
+  fields: [
+    { k: 'date', l: '📅 날짜', t: 'date' },
+    { k: 'topic', l: '💭 주제 (글감)', ph: '무엇에 대해 쓸까요? (예: 동생과 다툰 일)', pre: true, req: true, w: 'wide' },
+    { k: 'wx', l: '🌤️ 날씨', t: 'wx', words: true },
+    { k: 'title', l: '📝 제목', ph: '제목 (다 쓰고 붙여도 좋아요)', req: true, w: 'wide' }],
+  body: { ph: '언제, 어디서, 누구와 무엇을 했나요? 한 장면을 골라 본 것, 들은 말, 그때 내 마음을 있는 그대로 써요.' }
+});
+
+writeTool({
+  key: 'readlog', name: '독서기록장', icon: '📚', process: true,
+  desc: '읽은 책의 정보를 적고, 생각과 느낌을 쓴 뒤 소리 내어 읽고 고쳐 쓰며 독서록을 완성해요.',
+  guidePh: '학생에게 보여 줄 안내 (예: 이번 주에 읽은 책 한 권을 골라 써요. 쓰는 방법을 바꿔 가며 써 봐요)',
+  fields: [
+    { k: 'book', l: '📕 책 제목', ph: '책 제목', pre: true, req: true, w: 'wide' },
+    { k: 'author', l: '✒️ 지은이', ph: '지은이 (글쓴이)', pre: true },
+    { k: 'pub', l: '🏢 출판사', ph: '출판사', pre: true },
+    { k: 'year', l: '📆 출판년도', ph: '예: 2021', t: 'num', pre: true },
+    { k: 'date', l: '📅 책 읽은 날', t: 'date' },
+    { k: 'wx', l: '🌤️ 날씨', t: 'wx' },
+    { k: 'p1', l: '📖 읽은 쪽 (부터)', ph: '예: 1', t: 'num' },
+    { k: 'p2', l: '📖 읽은 쪽 (까지)', ph: '예: 48', t: 'num' },
+    { k: 'way', l: '🧭 쓰는 방법', t: 'sel', opts: READ_WAYS }],
+  body: { ph: '' }
+});
+
+writeTool({
+  key: 'learnwrite', name: '배움이 깃드는 글쓰기', icon: '🌿', process: 'learn', weekly: true,
+  desc: '수업에서 배운 것을 생각 모으기 → 한 편의 글로 엮기 → 읽고 고쳐 쓰기로 내 이야기처럼 써요.',
+  guidePh: '학생에게 보여 줄 안내 (예: 수업 시작에 ‘이미 알고 있던 것’을 먼저 쓰고, 끝나기 5분 전에 나머지를 써요)',
+  fields: [
+    { k: 'date', l: '📅 날짜', t: 'date', pre: true },
+    { k: 'wx', l: '🌤️ 날씨', t: 'wx' },
+    { k: 'subject', l: '📘 교과', ph: '예: 과학', pre: true },
+    { k: 'period', l: '⏰ 교시', ph: '예: 3교시', pre: true },
+    { k: 'goal', l: '🎯 학습 목표', t: 'ta', ph: '오늘의 학습 목표', pre: true, w: 'wide' }],
+  sections: [
+    { k: 'before', l: '🌱 수업 전, 오늘 배울 내용 가운데 이미 알고 있던 것', ph: '수업을 시작할 때 메모해요. 잘 모르면 ‘처음 들어 봐요’', rows: 2, opt: true },
+    { k: 'flow', l: '🧭 수업의 흐름', ph: '예: 영상 → 실험 → 모둠 발표', hint: '우리가 한 활동을 순서대로 메모해요.', rows: 2, opt: true },
+    { k: 'learned', l: '💡 새롭게 알게 된 것', ph: '예: 증발 → 구름 → 비', rows: 2, req: true },
+    { k: 'explain', l: '🗣️ 내 말로 설명하기', ph: '친구에게 설명하듯 한두 마디로', rows: 2, req: true },
+    { k: 'ask', l: '❓ 아직 궁금하거나 헷갈리는 것', ph: '더 알고 싶은 것, 아직 헷갈리는 것 (없으면 ‘없어요’)', rows: 2, req: true },
+    { k: 'life', l: '🌍 삶과 잇기', ph: '오늘 배운 것을 어디에서 보거나 쓸 수 있을까요?', rows: 2, opt: true }]
 });
 
 boot();
