@@ -1062,6 +1062,9 @@ body.has-drawer .drawer{width:min(340px,88vw);background:#f6f8fa;padding:14px 14
 .dr-ttl{display:flex;align-items:center;gap:8px;font-weight:900;font-size:15px;color:var(--gc);margin:16px 0 8px}.dr-ttl .chip{width:28px;height:28px;font-size:16px}
 @media (max-width:960px){.gview{grid-template-columns:minmax(0,1fr)}.gmain,.grail{min-width:0}.grail{position:static;padding:8px}.grgrid{display:flex;overflow-x:auto;scrollbar-width:none;gap:8px}.grgrid .tile.sm{flex:0 0 84px}}
 @media (max-width:700px){.home9{--side:100%}.home9 .tiles,.tgrid{gap:8px}.tile,.ttile{border-radius:18px}.home9 .tile small{display:none}.tile .chip,.ttile .chip{font-size:27px}.ttile small{display:none}.ttile b{font-size:13px}}
+.gpanel{padding:22px}.gpanel .tgrid{grid-template-columns:repeat(3,minmax(0,210px));justify-content:center;gap:14px}
+.gpanel .gsub{max-width:658px;margin:0 auto}.gpanel .gsub .tgrid{justify-content:start}
+@media (max-width:700px){.gpanel{padding:12px}.gpanel .tgrid{grid-template-columns:repeat(3,1fr);gap:8px}}
 
 </style>
 <script>
@@ -3855,14 +3858,12 @@ function renderHome(gkey) {
     h('label', { class: 'hfind' }, h('span', { class: 'hfi' }, ico('_search')), q), res));
   window.scrollTo(0, 0);
 }
-// 묶음 화면: 왼쪽은 그 묶음 도구, 오른쪽은 다른 묶음
+// 묶음 화면: 도구 화면과 같은 틀 · 다른 묶음은 오른쪽 도구 서랍
 function renderGroup(m, g) {
-  var main = gc(h('section', { class: 'gmain' },
-    h('div', { class: 'ghd' }, homeBtn(), h('span', { class: 'chip big' }, groupIco(g)), h('div', {}, h('h2', {}, g[1]), h('small', {}, g[4]))),
-    groupToolsEl(g)), g[3]);
-  var rail = h('aside', { class: 'grail' }, h('span', { class: 'hlbl' }, '다른 묶음'),
-    h('div', { class: 'grgrid' }, GROUPS.filter(function (x) { return x !== g; }).map(function (x) { return groupTile(x, true, function () { history.replaceState(null, '', '#@' + x[0]); renderHome(x[0]); }); })));
-  m.append(h('div', { class: 'gview' }, main, rail));
+  m.append(h('div', { class: 'thead' },
+    h('div', { class: 'thd' }, homeBtn(), gc(h('span', { class: 'chip' }, groupIco(g)), g[3]), h('h2', {}, g[1])), h('p', {}, g[4])),
+    gc(h('div', { class: 'panel gpanel' }, groupToolsEl(g)), g[3]));
+  Drawer.enable(true, null, null, g[0]);
   window.scrollTo(0, 0);
 }
 // ---------- 공통: 도구 화면 틀 ----------
@@ -4230,16 +4231,16 @@ var Drawer = (function () {
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) show(false); });
   }
   function show(on) { open = !!on && document.body.classList.contains('has-drawer'); document.body.classList.toggle('dr-open', open); }
-  var dgroup = null;
+  var dgroup = null, gpage = null;
   function render(curKey, isDirty) {
     if (!dr) build();
     dr.innerHTML = '';
     var cur = TOOLS.filter(function (t) { return t.key === curKey; })[0];
-    var g = GROUPS.filter(function (x) { return x[0] === dgroup; })[0] || (cur ? groupOf(cur) : GROUPS[0]);
+    var g = GROUPS.filter(function (x) { return x[0] === dgroup; })[0] || (cur ? groupOf(cur) : GROUPS.filter(function (x) { return x[0] === gpage; })[0] || GROUPS[0]);
     function goT(t, b) { if (t.key === curKey) { show(false); return; } twoTap(b, b.textContent, '저장 안 한 내용이 있어요 · 한 번 더', function () { dgroup = null; go(t.key); }, isDirty); }
     dr.append(h('div', { class: 'dr-head' }, h('b', {}, '도구 서랍'), h('button', { class: 'ghome', title: '처음 화면', onclick: function () { dgroup = null; go(''); } }, ico('_home'))),
       h('div', { class: 'dr-cats' }, GROUPS.map(function (x) {
-        var b = groupTile(x, true, function () { dgroup = x[0]; render(curKey, isDirty); });
+        var b = groupTile(x, true, function () { if (gpage) { show(false); location.hash = '@' + x[0]; return; } dgroup = x[0]; render(curKey, isDirty); });
         if (x === g) b.classList.add('on'); return b;
       })),
       gc(h('div', { class: 'dr-ttl' }, h('span', { class: 'chip' }, groupIco(g)), g[1]), g[3]));
@@ -4252,7 +4253,7 @@ var Drawer = (function () {
     dr.append(grid);
   }
   function go(k) { show(false); location.hash = k; if (!k) renderHome(); }
-  function enable(on, curKey, isDirty) { if (!dr) build(); dgroup = null; document.body.classList.toggle('has-drawer', !!on); if (on) render(curKey, isDirty); else show(false); }
+  function enable(on, curKey, isDirty, gp) { if (!dr) build(); dgroup = null; gpage = gp || null; document.body.classList.toggle('has-drawer', !!on); if (on) render(curKey, isDirty); else show(false); }
   return { enable: enable, show: show };
 })();
 
