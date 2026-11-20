@@ -1035,6 +1035,29 @@ button.pline{cursor:pointer}button.pline:hover{background:#fff1c9}.pline.on{back
 .tile .ti{width:84px;height:84px;border-radius:24px;font-size:48px}
 .tile b{font-size:21px}.tile small{font-size:12.5px}
 @media (max-width:700px){.tiles{gap:8px}.tile{min-height:118px;padding:12px 6px}.tile .ti{width:56px;height:56px;font-size:32px;border-radius:16px}.tile b{font-size:14.5px;line-height:1.25;word-break:keep-all}.tile small{display:none}}
+/* 첫 화면 v3: 최근 → 3×3 정사각 → 찾기 */
+.home9{--side:min(560px,calc(100vh - 250px),100%);width:var(--side);min-width:min(300px,100%);margin:6px auto 0;display:flex;flex-direction:column;gap:14px}
+.home9 .hrecent{display:flex;flex-direction:column;align-items:stretch;gap:6px}
+.home9 .hlbl{font-size:12px;font-weight:800;letter-spacing:.5px;color:#8a97a3;text-transform:none}
+.home9 .rchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.home9 .rchip{flex:0 0 auto;border:0;background:#fff;box-shadow:0 1px 3px #0000000f,inset 0 0 0 1px #e6ebf0;border-radius:999px;padding:6px 12px 6px 6px;font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px;cursor:pointer;color:#2c3a47}
+.home9 .rchip .ri{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;background:color-mix(in srgb,var(--gc) 14%,#fff)}
+.home9 .rchip:hover{box-shadow:0 2px 8px #0000001a,inset 0 0 0 1.5px var(--gc)}
+.home9 .tiles{display:grid;grid-template-columns:repeat(3,1fr) !important;gap:10px}
+.home9 .tile{aspect-ratio:1/1;min-height:0 !important;padding:8px;border:0;border-radius:22px;background:#fff;box-shadow:0 1px 2px #00000008,0 4px 14px #0000000a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s}
+.home9 .tile::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--gc);opacity:.85}
+.home9 .tile:hover{transform:translateY(-3px);box-shadow:0 10px 24px #00000014}
+.home9 .tile:active{transform:scale(.97)}
+.home9 .tile .ti{width:42%;max-width:72px;aspect-ratio:1/1;height:auto;border-radius:30%;display:flex;align-items:center;justify-content:center;font-size:clamp(22px,4.2vmin,36px);background:color-mix(in srgb,var(--gc) 13%,#fff)}
+.home9 .tile b{font-size:clamp(13px,2.1vmin,17px);font-weight:900;letter-spacing:-.4px;color:#22303d;line-height:1.25;word-break:keep-all}
+.home9 .tile small{font-size:11.5px;color:#9aa6b1;font-weight:700}
+.home9 .hfind{display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:4px 6px 4px 16px;box-shadow:0 1px 2px #00000008,inset 0 0 0 1px #e6ebf0}
+.home9 .hfind:focus-within{box-shadow:0 0 0 3px #2f6f9f33,inset 0 0 0 1.5px #2f6f9f}
+.home9 .hsearch{flex:1;border:0;outline:0;background:none;font-size:15px;padding:9px 4px;min-width:0}
+.home9 .hfi{font-size:15px;opacity:.6}
+body.hsearching .home9 .tiles{display:none}
+.home9 .hres{margin:0}
+@media (max-width:700px){.home9{--side:100%}.home9 .tile .ti{font-size:27px}.home9 .tiles{gap:8px}.home9 .tile{border-radius:18px}.home9 .tile small{display:none}}
 
 </style>
 <script>
@@ -1044,7 +1067,7 @@ button.pline{cursor:pointer}button.pline:hover{background:#fff1c9}.pline.on{back
    비워 두면(apiKey가 없으면) 이 기기(브라우저)에만 저장되는 모드로 열려요.
    ===================================================================== */
 window.FIREBASE_CONFIG = {
-    apiKey: "AIzaSyB0tD4Hh_L_XQbIgg0jsYJWZHlVGbRksIc",
+   apiKey: "AIzaSyB0tD4Hh_L_XQbIgg0jsYJWZHlVGbRksIc",
   authDomain: "digilearn-tools.firebaseapp.com",
   projectId: "digilearn-tools",
   storageBucket: "digilearn-tools.firebasestorage.app",
@@ -3783,8 +3806,12 @@ function groupTools(g, col) {
     return h('div', { class: 'genre' }, h('h3', { style: { color: col } }, gn[1]), h('div', { class: 'cards' }, sub.map(function (t) { return toolCard(t, col); })));
   });
 }
-function homeTop(m, onSearch) {
-  var q = h('input', { class: 'fld hsearch', type: 'search', placeholder: '🔍 도구 찾기 (예: 자리, 투표, 받아쓰기)', autocomplete: 'off' });
+function homeTop(m) {
+  var rc = (App.local.get('recent', []) || []).map(function (k) { return TOOLS.filter(function (t) { return t.key === k; })[0]; }).filter(Boolean).slice(0, 6);
+  var recent = h('div', { class: 'hrecent' }, h('span', { class: 'hlbl' }, '최근 쓴 도구'),
+    rc.length ? h('div', { class: 'rchips' }, rc.map(function (t) { var g = groupOf(t); var b = h('button', { class: 'rchip', onclick: function () { location.hash = t.key; } }, h('span', { class: 'ri' }, t.icon), t.name); b.style.setProperty('--gc', g[3]); return b; }))
+      : h('span', { class: 'hint', style: { margin: 0 } }, '도구를 쓰면 여기에 모여요.'));
+  var q = h('input', { class: 'hsearch', type: 'search', placeholder: '도구 찾기 — 자리, 투표, 받아쓰기…', autocomplete: 'off' });
   var res = h('div', { class: 'hres' });
   q.addEventListener('input', function () {
     var v = q.value.trim().replace(/\s+/g, ''); res.innerHTML = '';
@@ -3793,11 +3820,13 @@ function homeTop(m, onSearch) {
     var hit = TOOLS.filter(function (t) { return (t.name + (SHORT[t.key] || '') + groupOf(t)[1]).replace(/\s+/g, '').indexOf(v) >= 0; });
     res.append(hit.length ? h('div', { class: 'cards' }, hit.map(function (t) { return toolCard(t, groupOf(t)[3]); })) : h('div', { class: 'empty-note' }, '맞는 도구가 없어요.'));
   });
-  var rc = (App.local.get('recent', []) || []).map(function (k) { return TOOLS.filter(function (t) { return t.key === k; })[0]; }).filter(Boolean).slice(0, 6);
-  var recent = h('div', { class: 'hrecent' }, h('span', { class: 'hlbl' }, '🕘 최근 쓴 도구'),
-    rc.length ? h('div', { class: 'rchips' }, rc.map(function (t) { var g = groupOf(t); return h('button', { class: 'rchip', style: { borderColor: g[3] + '55' }, onclick: function () { location.hash = t.key; } }, h('span', {}, t.icon), t.name); }))
-      : h('span', { class: 'hint', style: { margin: 0 } }, '도구를 쓰면 여기에 모여요.'));
-  m.append(h('div', { class: 'htop' }, q, recent), res);
+  var tiles = h('div', { class: 'tiles hmain' }, GROUPS.map(function (g) {
+    var list = TOOLS.filter(function (t) { return t.group === g[0]; });
+    var b = h('button', { class: 'tile', title: list.map(function (t) { return t.name; }).join(', '), onclick: function () { location.hash = '@' + g[0]; } },
+      h('span', { class: 'ti' }, g[2]), h('b', {}, g[1]), h('small', {}, list.length + '개'));
+    b.style.setProperty('--gc', g[3]); return b;
+  }));
+  m.append(h('div', { class: 'home9' }, recent, tiles, h('label', { class: 'hfind' }, h('span', { class: 'hfi' }, '🔍'), q), res));
 }
 // 첫 화면: 최근 쓴 도구 · 도구 찾기 · 묶음 타일 9개 → 누르면 그 묶음 도구
 function renderHome(gkey) {
@@ -3811,13 +3840,6 @@ function renderHome(gkey) {
     add(sec, groupTools(g, col)); m.append(sec); window.scrollTo(0, 0); return;
   }
   homeTop(m);
-  m.append(h('div', { class: 'tiles hmain' }, GROUPS.map(function (g) {
-    var list = TOOLS.filter(function (t) { return t.group === g[0]; });
-    return h('button', { class: 'tile', title: list.map(function (t) { return t.name; }).join(', '), onclick: function () { location.hash = '@' + g[0]; } },
-      h('span', { class: 'ti', style: { background: g[3] + '1c' } }, g[2]),
-      h('b', { style: { color: g[3] } }, g[1]), h('small', {}, '도구 ' + list.length + '개'));
-  })));
-  $$('.tile', m).forEach(function (b, i) { b.style.setProperty('--gc', GROUPS[i][3]); });
   window.scrollTo(0, 0);
 }
 // ---------- 공통: 도구 화면 틀 ----------
