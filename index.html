@@ -1119,6 +1119,18 @@ body.has-today .home9{--side:min(560px,calc(100vh - 395px),100%)}
 .drgl{display:flex;flex-direction:column;gap:1px;background:#fff;border-radius:4px 4px 12px 12px;padding:4px 4px 6px 14px;margin-top:1px;box-shadow:0 1px 2px #00000008}
 .drrow .ichip .svgi{width:16px;height:16px}.drg .ichip .svgi{width:17px;height:17px}.rchip .ichip .svgi{width:16px;height:16px}
 .srsubj{gap:6px}.srframe button{background:#fff8e6;border-style:dashed}
+/* 학사력 */
+.calcfg{background:#f6f9fd;border:1px solid #e1e8f0;border-radius:14px;padding:10px 14px}
+.calsem{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:6px 0}.calsem label{font-size:12.5px;font-weight:700;color:#5b6b7a}
+.calstat{font-weight:800;color:#2f6f9f;font-size:13.5px}
+.calev{display:inline-block;border-radius:6px;padding:1px 6px;font-size:12px;font-weight:700;line-height:1.35;margin:1px 2px 1px 0;word-break:keep-all}
+.calev.k-off{background:#e9ecef;color:#495057}.calev.k-school{background:#e7f1ff;color:#1864ab}.calev.k-eval{background:#fff0e1;color:#c2410c}.calev.k-act{background:#e6f6ea;color:#2b8a3e}.calev.k-class{background:#fde8ef;color:#a61e4d}
+.calg .cd{min-height:84px}.calg .cd .calev{display:block;font-size:11.5px}
+.callegend{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.calmh{margin:14px 0 4px;font-size:15px;color:#2f6f9f}
+.calrow{display:flex;align-items:center;gap:8px;padding:4px 6px;border-bottom:1px dashed #edf0f3}.calrow .cd2{min-width:120px;font-weight:700;color:#4a5865;font-size:13.5px}
+.calk{border:1px solid #e1e7ec;border-radius:8px;font-size:12px;padding:2px 4px;background:#fff}
+.caldays{border-collapse:collapse;width:100%;max-width:560px}.caldays th,.caldays td{border:1px solid #e3e8ee;padding:8px 10px;text-align:center}.caldays tr.sum{background:#f6f9fd}
 
 </style>
 <script>
@@ -3447,9 +3459,9 @@ var qrcode = function() {
 </script>
 <script>
 /* 아이콘: Lucide (ISC License, https://lucide.dev) */
-var ICON_PATHS = {"pen-line": "<path d=\"M13 21h8\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "smartphone": "<rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\" /> <path d=\"M12 18h.01\" />", "megaphone": "<path d=\"M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z\" /> <path d=\"M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14\" /> <path d=\"M8 6v8\" />", "sticky-note": "<path d=\"M21 9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z\" /> <path d=\"M15 3v5a1 1 0 0 0 1 1h5\" />", "notebook-pen": "<path d=\"M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4\" /> <path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <path d=\"M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z\" />", "user-round-check": "<path d=\"M2 21a8 8 0 0 1 13.292-6\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"m16 19 2 2 4-4\" />", "cloud": "<path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\" />", "download": "<path d=\"M12 15V3\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" /> <path d=\"m7 10 5 5 5-5\" />", "timer": "<line x1=\"10\" x2=\"14\" y1=\"2\" y2=\"2\" /> <line x1=\"12\" x2=\"15\" y1=\"14\" y2=\"11\" /> <circle cx=\"12\" cy=\"14\" r=\"8\" />", "pencil-line": "<path d=\"M13 21h8\" /> <path d=\"m15 5 4 4\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "feather": "<path d=\"M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z\" /> <path d=\"M16 8 2 22\" /> <path d=\"M17.488 15H9\" />", "thermometer": "<path d=\"M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\" />", "map": "<path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /> <path d=\"M15 5.764v15\" /> <path d=\"M9 3.236v15\" />", "brain": "<path d=\"M12 18V5\" /> <path d=\"M15 13a4.17 4.17 0 01-3-4 4.17 4.17 0 01-3 4\" /> <path d=\"M17.707 6.294A3 3 0 1012 5a3 3 0 10-5.707 1.294\" /> <path d=\"M17.996 5.125a4 4 0 012.526 5.77\" /> <path d=\"M18 18a4 4 0 002-7.465\" /> <path d=\"M19.967 17.482a4 4 0 11-7.967.517 4 4 0 11-7.967-.517\" /> <path d=\"M6 18a4 4 0 01-2-7.465\" /> <path d=\"M6.004 5.125a4 4 0 00-2.526 5.77\" />", "sprout": "<path d=\"M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3\" /> <path d=\"M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4\" /> <path d=\"M5 21h14\" />", "sun": "<circle cx=\"12\" cy=\"12\" r=\"4\" /> <path d=\"M12 2v2\" /> <path d=\"M12 20v2\" /> <path d=\"m4.93 4.93 1.41 1.41\" /> <path d=\"m17.66 17.66 1.41 1.41\" /> <path d=\"M2 12h2\" /> <path d=\"M20 12h2\" /> <path d=\"m6.34 17.66-1.41 1.41\" /> <path d=\"m19.07 4.93-1.41 1.41\" />", "mic-vocal": "<path d=\"m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12\" /> <path d=\"M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5\" /> <circle cx=\"16\" cy=\"7\" r=\"5\" />", "grid-2x2-check": "<path d=\"M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3\" /> <path d=\"m16 19 2 2 4-4\" />", "hand": "<path d=\"M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2\" /> <path d=\"M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2\" /> <path d=\"M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8\" /> <path d=\"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15\" />", "door-open": "<path d=\"M10 21H2\" /> <path d=\"M10 3H7a2 2 0 00-2 2v16\" /> <path d=\"M14 12h.01\" /> <path d=\"M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z\" /> <path d=\"M22 21h-3\" />", "handshake": "<path d=\"m11 17 2 2a1 1 0 1 0 3-3\" /> <path d=\"m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4\" /> <path d=\"m21 3 1 11h-2\" /> <path d=\"M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3\" /> <path d=\"M3 4h8\" />", "school": "<path d=\"M14 21v-3a2 2 0 0 0-4 0v3\" /> <path d=\"M18 4.933V21\" /> <path d=\"m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6\" /> <path d=\"m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11\" /> <path d=\"M6 4.933V21\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" />", "id-card": "<path d=\"M13 19a4 4 0 00-8 0\" /> <path d=\"M16 10h2\" /> <path d=\"M16 14h2\" /> <circle cx=\"9\" cy=\"12\" r=\"3\" /> <rect x=\"2\" y=\"5\" width=\"20\" height=\"14\" rx=\"2\" />", "signature": "<path d=\"m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284\" /> <path d=\"M3 21h18\" />", "columns-3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "lightbulb": "<path d=\"M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5\" /> <path d=\"M9 18h6\" /> <path d=\"M10 22h4\" />", "radio-tower": "<path d=\"M4.9 16.1C1 12.2 1 5.8 4.9 1.9\" /> <path d=\"M7.8 4.7a6.14 6.14 0 0 0-.8 7.5\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" /> <path d=\"M16.2 4.8c2 2 2.26 5.11.8 7.47\" /> <path d=\"M19.1 1.9a9.96 9.96 0 0 1 0 14.1\" /> <path d=\"M9.5 18h5\" /> <path d=\"m8 22 4-11 4 11\" />", "grid-3x3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M3 15h18\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "palette": "<path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /> <circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" />", "square-check-big": "<path d=\"M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344\" /> <path d=\"m9 11 3 3L22 4\" />", "chart-spline": "<path d=\"M3 3v16a2 2 0 0 0 2 2h16\" /> <path d=\"M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7\" />", "file-pen-line": "<path d=\"M14.364 13.634a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506l4.013-4.009a1 1 0 0 0-3.004-3.004z\" /> <path d=\"M14.487 7.858A1 1 0 0 1 14 7V2\" /> <path d=\"M20 19.645V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l2.516 2.516\" /> <path d=\"M8 18h1\" />", "calendar-days": "<path d=\"M8 2v3\" /> <path d=\"M16 2v3\" /> <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M8 13h.01\" /> <path d=\"M12 13h.01\" /> <path d=\"M16 13h.01\" /> <path d=\"M8 17h.01\" /> <path d=\"M12 17h.01\" /> <path d=\"M16 17h.01\" />", "calendar-clock": "<path d=\"M16 2v3\" /> <path d=\"M17 15.5v1.7l1 .625\" /> <path d=\"M21 8.936V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h3.935\" /> <path d=\"M3 9h9.873\" /> <path d=\"M8 2v3\" /> <circle cx=\"17\" cy=\"17\" r=\"5\" />", "network": "<rect x=\"16\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"2\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\" /> <path d=\"M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3\" /> <path d=\"M12 12V8\" />", "list-checks": "<path d=\"M13 5h8\" /> <path d=\"M13 12h8\" /> <path d=\"M13 19h8\" /> <path d=\"m3 17 2 2 4-4\" /> <path d=\"m3 7 2 2 4-4\" />", "blend": "<circle cx=\"15\" cy=\"9\" r=\"7\" /> <circle cx=\"9\" cy=\"15\" r=\"7\" />", "search": "<path d=\"m21 21-4.34-4.34\" /> <circle cx=\"11\" cy=\"11\" r=\"8\" />", "chart-no-axes-column-increasing": "<path d=\"M5 21v-6\" /> <path d=\"M12 21V9\" /> <path d=\"M19 21V3\" />", "languages": "<path d=\"m5 8 6 6\" /> <path d=\"m4 14 6-6 2-3\" /> <path d=\"M2 5h12\" /> <path d=\"M7 2h1\" /> <path d=\"m22 22-5-10-5 10\" /> <path d=\"M14 18h6\" />", "vote": "<path d=\"m9 12 2 2 4-4\" /> <path d=\"M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z\" /> <path d=\"M22 19H2\" />", "scan-search": "<path d=\"M3 7V5a2 2 0 0 1 2-2h2\" /> <path d=\"M17 3h2a2 2 0 0 1 2 2v2\" /> <path d=\"M21 17v2a2 2 0 0 1-2 2h-2\" /> <path d=\"M7 21H5a2 2 0 0 1-2-2v-2\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" /> <path d=\"m16 16-1.9-1.9\" />", "list-ordered": "<path d=\"M11 5h10\" /> <path d=\"M11 12h10\" /> <path d=\"M11 19h10\" /> <path d=\"M4 4h1v5\" /> <path d=\"M4 9h2\" /> <path d=\"M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02\" />", "history": "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\" /> <path d=\"M3 3v5h5\" /> <path d=\"M12 7v5l4 2\" />", "layers": "<path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\" /> <path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\" /> <path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\" />", "trash-2": "<path d=\"M10 11v6\" /> <path d=\"M14 11v6\" /> <path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\" /> <path d=\"M3 6h18\" /> <path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\" />", "armchair": "<path d=\"M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3\" /> <path d=\"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z\" /> <path d=\"M5 18v2\" /> <path d=\"M19 18v2\" />", "trophy": "<path d=\"M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2\" /> <path d=\"M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2\" /> <path d=\"M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3\" /> <path d=\"M4 22h16\" /> <path d=\"M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z\" /> <path d=\"M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3\" />", "signpost": "<path d=\"M12 13v8\" /> <path d=\"M12 3v3\" /> <path d=\"M2.354 10.354a1.207 1.207 0 0 1 0-1.708l2.06-2.06A2 2 0 0 1 5.828 6h12.344a2 2 0 0 1 1.414.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1-1.414.586H5.828a2 2 0 0 1-1.414-.586z\" />", "settings": "<path d=\"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "notebook-text": "<path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\" /> <path d=\"M9.5 8h5\" /> <path d=\"M9.5 12H16\" /> <path d=\"M9.5 16H14\" />", "blocks": "<path d=\"M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2\" /> <rect x=\"14\" y=\"2\" width=\"8\" height=\"8\" rx=\"1\" />", "messages-square": "<path d=\"M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z\" /> <path d=\"M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1\" />", "audio-lines": "<path d=\"M2 10v3\" /> <path d=\"M6 6v11\" /> <path d=\"M10 3v18\" /> <path d=\"M14 8v7\" /> <path d=\"M18 5v13\" /> <path d=\"M22 10v3\" />", "mic": "<path d=\"M12 19v3\" /> <path d=\"M19 10v2a7 7 0 0 1-14 0v-2\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"13\" rx=\"3\" />", "copy": "<rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\" /> <path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\" />", "upload": "<path d=\"M12 3v12\" /> <path d=\"m17 8-5-5-5 5\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" />", "folder-heart": "<path d=\"M10.638 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v3.417\" /> <path d=\"M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z\" />", "flower-2": "<path d=\"M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1\" /> <circle cx=\"12\" cy=\"8\" r=\"2\" /> <path d=\"M12 10v12\" /> <path d=\"M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z\" /> <path d=\"M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z\" />", "refresh-cw": "<path d=\"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8\" /> <path d=\"M21 3v5h-5\" /> <path d=\"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16\" /> <path d=\"M8 16H3v5\" />", "book-open-text": "<path d=\"M12 5v16\" /> <path d=\"M16 13h2\" /> <path d=\"M16 9h2\" /> <path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\" /> <path d=\"M6 13h2\" /> <path d=\"M6 9h2\" />", "recycle": "<path d=\"M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5\" /> <path d=\"M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12\" /> <path d=\"m14 16-3 3 3 3\" /> <path d=\"M8.293 13.596 7.196 9.5 3.1 10.598\" /> <path d=\"m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843\" /> <path d=\"m13.378 9.633 4.096 1.098 1.097-4.096\" />", "scale": "<path d=\"M12 3v18\" /> <path d=\"m19 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1\" /> <path d=\"m5 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M7 21h10\" />", "archive-restore": "<rect width=\"20\" height=\"5\" x=\"2\" y=\"3\" rx=\"1\" /> <path d=\"M4 8v11a2 2 0 0 0 2 2h2\" /> <path d=\"M20 8v11a2 2 0 0 1-2 2h-2\" /> <path d=\"m9 15 3-3 3 3\" /> <path d=\"M12 12v9\" />", "eye": "<path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "house": "<path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\" /> <path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />", "cloud-check": "<path d=\"m17 15-5.5 5.5L9 18\" /> <path d=\"M5.516 16.07A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 3.501 7.327\" />", "repeat": "<path d=\"m17 2 4 4-4 4\" /> <path d=\"M3 11v-1a4 4 0 0 1 4-4h14\" /> <path d=\"m7 22-4-4 4-4\" /> <path d=\"M21 13v1a4 4 0 0 1-4 4H3\" />", "users-round": "<path d=\"M18 21a8 8 0 0 0-16 0\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3\" />", "ferris-wheel": "<circle cx=\"12\" cy=\"12\" r=\"2\" /> <path d=\"M12 2v4\" /> <path d=\"m6.8 15-3.5 2\" /> <path d=\"m20.7 7-3.5 2\" /> <path d=\"M6.8 9 3.3 7\" /> <path d=\"m20.7 17-3.5-2\" /> <path d=\"m9 22 3-8 3 8\" /> <path d=\"M8 22h8\" /> <path d=\"M18 18.7a9 9 0 1 0-12 0\" />", "clipboard-list": "<rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\" /> <path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" /> <path d=\"M12 11h4\" /> <path d=\"M12 16h4\" /> <path d=\"M8 11h.01\" /> <path d=\"M8 16h.01\" />", "shuffle": "<path d=\"m18 14 4 4-4 4\" /> <path d=\"m18 2 4 4-4 4\" /> <path d=\"M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22\" /> <path d=\"M2 6h1.972a4 4 0 0 1 3.6 2.2\" /> <path d=\"M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45\" />", "fish": "<path d=\"M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z\" /> <path d=\"M18 12v.5\" /> <path d=\"M16 17.93a9.77 9.77 0 0 1 0-11.86\" /> <path d=\"M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33\" /> <path d=\"M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4\" /> <path d=\"m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98\" />"};
+var ICON_PATHS = {"folder-heart": "<path d=\"M10.638 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v3.417\" /> <path d=\"M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z\" />", "file-pen-line": "<path d=\"M14.364 13.634a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506l4.013-4.009a1 1 0 0 0-3.004-3.004z\" /> <path d=\"M14.487 7.858A1 1 0 0 1 14 7V2\" /> <path d=\"M20 19.645V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l2.516 2.516\" /> <path d=\"M8 18h1\" />", "chart-spline": "<path d=\"M3 3v16a2 2 0 0 0 2 2h16\" /> <path d=\"M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7\" />", "list-checks": "<path d=\"M13 5h8\" /> <path d=\"M13 12h8\" /> <path d=\"M13 19h8\" /> <path d=\"m3 17 2 2 4-4\" /> <path d=\"m3 7 2 2 4-4\" />", "cloud": "<path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\" />", "radio-tower": "<path d=\"M4.9 16.1C1 12.2 1 5.8 4.9 1.9\" /> <path d=\"M7.8 4.7a6.14 6.14 0 0 0-.8 7.5\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" /> <path d=\"M16.2 4.8c2 2 2.26 5.11.8 7.47\" /> <path d=\"M19.1 1.9a9.96 9.96 0 0 1 0 14.1\" /> <path d=\"M9.5 18h5\" /> <path d=\"m8 22 4-11 4 11\" />", "messages-square": "<path d=\"M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z\" /> <path d=\"M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1\" />", "grid-3x3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M3 15h18\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "refresh-cw": "<path d=\"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8\" /> <path d=\"M21 3v5h-5\" /> <path d=\"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16\" /> <path d=\"M8 16H3v5\" />", "fish": "<path d=\"M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z\" /> <path d=\"M18 12v.5\" /> <path d=\"M16 17.93a9.77 9.77 0 0 1 0-11.86\" /> <path d=\"M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33\" /> <path d=\"M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4\" /> <path d=\"m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98\" />", "megaphone": "<path d=\"M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z\" /> <path d=\"M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14\" /> <path d=\"M8 6v8\" />", "copy": "<rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\" /> <path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\" />", "shuffle": "<path d=\"m18 14 4 4-4 4\" /> <path d=\"m18 2 4 4-4 4\" /> <path d=\"M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22\" /> <path d=\"M2 6h1.972a4 4 0 0 1 3.6 2.2\" /> <path d=\"M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45\" />", "map": "<path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /> <path d=\"M15 5.764v15\" /> <path d=\"M9 3.236v15\" />", "sprout": "<path d=\"M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3\" /> <path d=\"M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4\" /> <path d=\"M5 21h14\" />", "pencil-line": "<path d=\"M13 21h8\" /> <path d=\"m15 5 4 4\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "signature": "<path d=\"m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284\" /> <path d=\"M3 21h18\" />", "handshake": "<path d=\"m11 17 2 2a1 1 0 1 0 3-3\" /> <path d=\"m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4\" /> <path d=\"m21 3 1 11h-2\" /> <path d=\"M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3\" /> <path d=\"M3 4h8\" />", "cloud-check": "<path d=\"m17 15-5.5 5.5L9 18\" /> <path d=\"M5.516 16.07A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 3.501 7.327\" />", "timer": "<line x1=\"10\" x2=\"14\" y1=\"2\" y2=\"2\" /> <line x1=\"12\" x2=\"15\" y1=\"14\" y2=\"11\" /> <circle cx=\"12\" cy=\"14\" r=\"8\" />", "house": "<path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\" /> <path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />", "eye": "<path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "calendar-days": "<path d=\"M8 2v3\" /> <path d=\"M16 2v3\" /> <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M8 13h.01\" /> <path d=\"M12 13h.01\" /> <path d=\"M16 13h.01\" /> <path d=\"M8 17h.01\" /> <path d=\"M12 17h.01\" /> <path d=\"M16 17h.01\" />", "hand": "<path d=\"M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2\" /> <path d=\"M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2\" /> <path d=\"M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8\" /> <path d=\"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15\" />", "id-card": "<path d=\"M13 19a4 4 0 00-8 0\" /> <path d=\"M16 10h2\" /> <path d=\"M16 14h2\" /> <circle cx=\"9\" cy=\"12\" r=\"3\" /> <rect x=\"2\" y=\"5\" width=\"20\" height=\"14\" rx=\"2\" />", "columns-3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "layers": "<path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\" /> <path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\" /> <path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\" />", "chart-no-axes-column-increasing": "<path d=\"M5 21v-6\" /> <path d=\"M12 21V9\" /> <path d=\"M19 21V3\" />", "download": "<path d=\"M12 15V3\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" /> <path d=\"m7 10 5 5 5-5\" />", "trophy": "<path d=\"M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2\" /> <path d=\"M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2\" /> <path d=\"M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3\" /> <path d=\"M4 22h16\" /> <path d=\"M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z\" /> <path d=\"M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3\" />", "signpost": "<path d=\"M12 13v8\" /> <path d=\"M12 3v3\" /> <path d=\"M2.354 10.354a1.207 1.207 0 0 1 0-1.708l2.06-2.06A2 2 0 0 1 5.828 6h12.344a2 2 0 0 1 1.414.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1-1.414.586H5.828a2 2 0 0 1-1.414-.586z\" />", "scan-search": "<path d=\"M3 7V5a2 2 0 0 1 2-2h2\" /> <path d=\"M17 3h2a2 2 0 0 1 2 2v2\" /> <path d=\"M21 17v2a2 2 0 0 1-2 2h-2\" /> <path d=\"M7 21H5a2 2 0 0 1-2-2v-2\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" /> <path d=\"m16 16-1.9-1.9\" />", "lightbulb": "<path d=\"M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5\" /> <path d=\"M9 18h6\" /> <path d=\"M10 22h4\" />", "pen-line": "<path d=\"M13 21h8\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "upload": "<path d=\"M12 3v12\" /> <path d=\"m17 8-5-5-5 5\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" />", "book-open-text": "<path d=\"M12 5v16\" /> <path d=\"M16 13h2\" /> <path d=\"M16 9h2\" /> <path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\" /> <path d=\"M6 13h2\" /> <path d=\"M6 9h2\" />", "network": "<rect x=\"16\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"2\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\" /> <path d=\"M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3\" /> <path d=\"M12 12V8\" />", "history": "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\" /> <path d=\"M3 3v5h5\" /> <path d=\"M12 7v5l4 2\" />", "calendar-clock": "<path d=\"M16 2v3\" /> <path d=\"M17 15.5v1.7l1 .625\" /> <path d=\"M21 8.936V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h3.935\" /> <path d=\"M3 9h9.873\" /> <path d=\"M8 2v3\" /> <circle cx=\"17\" cy=\"17\" r=\"5\" />", "languages": "<path d=\"m5 8 6 6\" /> <path d=\"m4 14 6-6 2-3\" /> <path d=\"M2 5h12\" /> <path d=\"M7 2h1\" /> <path d=\"m22 22-5-10-5 10\" /> <path d=\"M14 18h6\" />", "door-open": "<path d=\"M10 21H2\" /> <path d=\"M10 3H7a2 2 0 00-2 2v16\" /> <path d=\"M14 12h.01\" /> <path d=\"M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z\" /> <path d=\"M22 21h-3\" />", "grid-2x2-check": "<path d=\"M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3\" /> <path d=\"m16 19 2 2 4-4\" />", "notebook-text": "<path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\" /> <path d=\"M9.5 8h5\" /> <path d=\"M9.5 12H16\" /> <path d=\"M9.5 16H14\" />", "smartphone": "<rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\" /> <path d=\"M12 18h.01\" />", "sun": "<circle cx=\"12\" cy=\"12\" r=\"4\" /> <path d=\"M12 2v2\" /> <path d=\"M12 20v2\" /> <path d=\"m4.93 4.93 1.41 1.41\" /> <path d=\"m17.66 17.66 1.41 1.41\" /> <path d=\"M2 12h2\" /> <path d=\"M20 12h2\" /> <path d=\"m6.34 17.66-1.41 1.41\" /> <path d=\"m19.07 4.93-1.41 1.41\" />", "recycle": "<path d=\"M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5\" /> <path d=\"M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12\" /> <path d=\"m14 16-3 3 3 3\" /> <path d=\"M8.293 13.596 7.196 9.5 3.1 10.598\" /> <path d=\"m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843\" /> <path d=\"m13.378 9.633 4.096 1.098 1.097-4.096\" />", "palette": "<path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /> <circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" />", "repeat": "<path d=\"m17 2 4 4-4 4\" /> <path d=\"M3 11v-1a4 4 0 0 1 4-4h14\" /> <path d=\"m7 22-4-4 4-4\" /> <path d=\"M21 13v1a4 4 0 0 1-4 4H3\" />", "user-round-check": "<path d=\"M2 21a8 8 0 0 1 13.292-6\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"m16 19 2 2 4-4\" />", "clipboard-list": "<rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\" /> <path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" /> <path d=\"M12 11h4\" /> <path d=\"M12 16h4\" /> <path d=\"M8 11h.01\" /> <path d=\"M8 16h.01\" />", "ferris-wheel": "<circle cx=\"12\" cy=\"12\" r=\"2\" /> <path d=\"M12 2v4\" /> <path d=\"m6.8 15-3.5 2\" /> <path d=\"m20.7 7-3.5 2\" /> <path d=\"M6.8 9 3.3 7\" /> <path d=\"m20.7 17-3.5-2\" /> <path d=\"m9 22 3-8 3 8\" /> <path d=\"M8 22h8\" /> <path d=\"M18 18.7a9 9 0 1 0-12 0\" />", "settings": "<path d=\"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "audio-lines": "<path d=\"M2 10v3\" /> <path d=\"M6 6v11\" /> <path d=\"M10 3v18\" /> <path d=\"M14 8v7\" /> <path d=\"M18 5v13\" /> <path d=\"M22 10v3\" />", "armchair": "<path d=\"M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3\" /> <path d=\"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z\" /> <path d=\"M5 18v2\" /> <path d=\"M19 18v2\" />", "calendar-range": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /> <path d=\"M16 2v3\" /> <path d=\"M3 9h18\" /> <path d=\"M8 2v3\" /> <path d=\"M17 13h-6\" /> <path d=\"M13 17H7\" /> <path d=\"M7 13h.01\" /> <path d=\"M17 17h.01\" />", "list-ordered": "<path d=\"M11 5h10\" /> <path d=\"M11 12h10\" /> <path d=\"M11 19h10\" /> <path d=\"M4 4h1v5\" /> <path d=\"M4 9h2\" /> <path d=\"M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02\" />", "vote": "<path d=\"m9 12 2 2 4-4\" /> <path d=\"M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z\" /> <path d=\"M22 19H2\" />", "blend": "<circle cx=\"15\" cy=\"9\" r=\"7\" /> <circle cx=\"9\" cy=\"15\" r=\"7\" />", "notebook-pen": "<path d=\"M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4\" /> <path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <path d=\"M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z\" />", "feather": "<path d=\"M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z\" /> <path d=\"M16 8 2 22\" /> <path d=\"M17.488 15H9\" />", "scale": "<path d=\"M12 3v18\" /> <path d=\"m19 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1\" /> <path d=\"m5 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M7 21h10\" />", "mic-vocal": "<path d=\"m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12\" /> <path d=\"M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5\" /> <circle cx=\"16\" cy=\"7\" r=\"5\" />", "school": "<path d=\"M14 21v-3a2 2 0 0 0-4 0v3\" /> <path d=\"M18 4.933V21\" /> <path d=\"m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6\" /> <path d=\"m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11\" /> <path d=\"M6 4.933V21\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" />", "users-round": "<path d=\"M18 21a8 8 0 0 0-16 0\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3\" />", "brain": "<path d=\"M12 18V5\" /> <path d=\"M15 13a4.17 4.17 0 01-3-4 4.17 4.17 0 01-3 4\" /> <path d=\"M17.707 6.294A3 3 0 1012 5a3 3 0 10-5.707 1.294\" /> <path d=\"M17.996 5.125a4 4 0 012.526 5.77\" /> <path d=\"M18 18a4 4 0 002-7.465\" /> <path d=\"M19.967 17.482a4 4 0 11-7.967.517 4 4 0 11-7.967-.517\" /> <path d=\"M6 18a4 4 0 01-2-7.465\" /> <path d=\"M6.004 5.125a4 4 0 00-2.526 5.77\" />", "trash-2": "<path d=\"M10 11v6\" /> <path d=\"M14 11v6\" /> <path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\" /> <path d=\"M3 6h18\" /> <path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\" />", "sticky-note": "<path d=\"M21 9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z\" /> <path d=\"M15 3v5a1 1 0 0 0 1 1h5\" />", "thermometer": "<path d=\"M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\" />", "blocks": "<path d=\"M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2\" /> <rect x=\"14\" y=\"2\" width=\"8\" height=\"8\" rx=\"1\" />", "mic": "<path d=\"M12 19v3\" /> <path d=\"M19 10v2a7 7 0 0 1-14 0v-2\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"13\" rx=\"3\" />", "archive-restore": "<rect width=\"20\" height=\"5\" x=\"2\" y=\"3\" rx=\"1\" /> <path d=\"M4 8v11a2 2 0 0 0 2 2h2\" /> <path d=\"M20 8v11a2 2 0 0 1-2 2h-2\" /> <path d=\"m9 15 3-3 3 3\" /> <path d=\"M12 12v9\" />", "square-check-big": "<path d=\"M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344\" /> <path d=\"m9 11 3 3L22 4\" />", "search": "<path d=\"m21 21-4.34-4.34\" /> <circle cx=\"11\" cy=\"11\" r=\"8\" />", "flower-2": "<path d=\"M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1\" /> <circle cx=\"12\" cy=\"8\" r=\"2\" /> <path d=\"M12 10v12\" /> <path d=\"M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z\" /> <path d=\"M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z\" />"};
 var GROUP_ICON = {"think": "brain", "deep": "lightbulb", "write": "pen-line", "live": "radio-tower", "group": "users-round", "dict": "audio-lines", "review": "repeat", "record": "clipboard-list", "class": "school", "_home": "house", "_search": "search", "_clock": "history", "_settings": "settings", "_backup": "archive-restore", "_recycle": "recycle", "_device": "smartphone", "_copy": "copy", "_trash": "trash-2", "_down": "download", "_up": "upload", "_today": "calendar-clock", "_sun": "sun", "_save": "cloud-check", "_user": "user-round-check"};
-var TOOL_ICON = {"mandalart": "grid-3x3", "mindmap": "network", "venn": "blend", "kwl": "columns-3", "fishbone": "fish", "storymap": "map", "picker": "shuffle", "wheel": "ferris-wheel", "timer": "timer", "flashcards": "layers", "bingo": "grid-2x2-check", "sequence": "list-ordered", "journal": "notebook-text", "rubric": "list-checks", "vote": "vote", "exitcard": "door-open", "thermo": "thermometer", "wordcloud": "cloud", "wall": "sticky-note", "dictation": "pencil-line", "engwords": "languages", "cer": "scale", "seethink": "scan-search", "changed": "refresh-cw", "debate": "messages-square", "observe": "eye", "checklist": "square-check-big", "portfolio": "folder-heart", "quiz": "trophy", "notice": "megaphone", "weekly": "calendar-days", "handwriting": "signature", "meditate": "flower-2", "speak": "hand", "roles": "id-card", "seats": "armchair", "peer": "handshake", "records": "file-pen-line", "readaloud": "mic", "structure": "blocks", "qladder": "chart-no-axes-column-increasing", "moodgraph": "chart-spline", "interview": "mic-vocal", "ifhero": "signpost", "poemcard": "feather", "poemart": "palette", "lifewrite": "sprout", "readlog": "book-open-text", "learnwrite": "notebook-pen"};
+var TOOL_ICON = {"mandalart": "grid-3x3", "mindmap": "network", "venn": "blend", "kwl": "columns-3", "fishbone": "fish", "storymap": "map", "picker": "shuffle", "wheel": "ferris-wheel", "timer": "timer", "flashcards": "layers", "bingo": "grid-2x2-check", "sequence": "list-ordered", "journal": "notebook-text", "rubric": "list-checks", "vote": "vote", "exitcard": "door-open", "thermo": "thermometer", "wordcloud": "cloud", "wall": "sticky-note", "dictation": "pencil-line", "engwords": "languages", "cer": "scale", "seethink": "scan-search", "changed": "refresh-cw", "debate": "messages-square", "observe": "eye", "checklist": "square-check-big", "portfolio": "folder-heart", "quiz": "trophy", "notice": "megaphone", "weekly": "calendar-days", "handwriting": "signature", "meditate": "flower-2", "speak": "hand", "roles": "id-card", "seats": "armchair", "peer": "handshake", "records": "file-pen-line", "readaloud": "mic", "structure": "blocks", "qladder": "chart-no-axes-column-increasing", "moodgraph": "chart-spline", "interview": "mic-vocal", "ifhero": "signpost", "poemcard": "feather", "poemart": "palette", "lifewrite": "sprout", "readlog": "book-open-text", "learnwrite": "notebook-pen", "calendar": "calendar-range"};
 function ico(name, cls) {
   var p = ICON_PATHS[name] || ICON_PATHS[GROUP_ICON[name]] || ICON_PATHS[TOOL_ICON[name]] || ICON_PATHS.house;
   var w = document.createElement('span'); w.className = 'svgi' + (cls ? ' ' + cls : '');
@@ -3789,7 +3801,7 @@ var GROUPS = [
   ['dict', '받아쓰기 · 낭독', '📝', '#b07d00', '불러주기 · 따라 쓰기 · 읽기와 말하기 녹음'],
   ['review', '정리 · 복습', '🔁', '#1f8a8a', '외우고 풀어 보며 다지기'],
   ['record', '기록 · 평가', '📒', '#d0457a', '스스로 평가 · 선생님 관찰 · 성장 기록'],
-  ['class', '학급 생활', '🏫', '#3b5bdb', '알림장 · 주간학습 · 명상 · 발표 · 역할 · 자리']];
+  ['class', '학급 생활', '🏫', '#3b5bdb', '알림장 · 주간학습 · 학사력 · 명상 · 발표 · 역할 · 자리']];
 var GENRES = [['expl', '📘 설명하는 글'], ['pers', '🗣️ 설득하는 글'], ['story', '📖 이야기'], ['poem', '🌸 시'], ['all', '🔎 어떤 글에도']];
 var SHORT = {
   mandalart: '칸칸이 생각 채우기', mindmap: '가지 뻗어 생각 넓히기', venn: '같은 점 · 다른 점 비교', kwl: '아는 것 · 궁금한 것 · 배운 것',
@@ -3798,7 +3810,7 @@ var SHORT = {
   thermo: '이해도 다섯 단계', wordcloud: '낱말 모아 구름 만들기', wall: '생각 붙이고 댓글 달기', picker: '발표자 뽑기 · 모둠 짜기',
   wheel: '역할 · 순서 정하기', timer: '활동 시간 알림', dictation: '국어 10문제 회차별', engwords: '영어 15개 회차별',
   flashcards: '뒤집으며 외우기', bingo: '배운 낱말로 빙고', sequence: '순서대로 맞추기', journal: '오늘 배움 돌아보기', rubric: '기준표로 스스로 평가',
-  notice: '알림 · 숙제 · 준비물', weekly: '시간표 · 준비물 · 학급 일정', handwriting: '띄어쓰기 보며 따라 쓰기', meditate: '숨쉬기와 클래식 49곡',
+  notice: '알림 · 숙제 · 준비물', weekly: '시간표 · 준비물 · 학급 일정', calendar: '연간 학교 일정 · 수업일수', handwriting: '띄어쓰기 보며 따라 쓰기', meditate: '숨쉬기와 클래식 49곡',
   observe: '수업 중 학생 모습 기록', checklist: '과제 · 준비물 냈는지 체크', portfolio: '학생별 기록 한곳에 모아 보기', quiz: 'OX · 객관식 실시간 퀴즈',
   structure: '문단별 중심 문장과 글의 짜임', qladder: '사실 → 추론 → 평가 질문 만들기', moodgraph: '사건마다 인물의 마음 그래프', interview: '인물에게 묻고 인물이 되어 답하기',
   ifhero: '갈림길에서 나의 선택과 까닭', poemcard: '감각 · 표현 · 마음 날씨 찾기', poemart: '시 그림 그려 반 전시회',
@@ -3966,7 +3978,9 @@ function paintToday(box) {
     var meta = $('.tdm', box), rows = h('div', { class: 'tdp' }), mine = h('div', { class: 'tda' });
     var wk = acts.filter(function (a) { return a.tool === 'weekly' && a.data && mondayOf(a.data.mon || '') === mondayOf(t); }).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); })[0];
     var allWk = acts.filter(function (a) { return a.tool === 'weekly' && a.data; }).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); })[0];
-    var ev = allWk ? parseEvents(allWk.data.events, t) : [], es = evOn(ev, t);
+    var calA = acts.filter(function (a) { return a.tool === 'calendar' && a.data; }).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); })[0];
+    var ev = (allWk ? parseEvents(allWk.data.events, t) : []).concat(calA ? calAsEvents(calA.data.ev) : []), es = evOn(ev, t);
+    var nextBig = (calA ? calClean(calA.data.ev) : []).filter(function (e) { return e.a > t && e.a <= addD(t, 21) && e.k !== 'act'; })[0];
     var bits = es.map(function (e) { return (e.off ? '🏖️ ' : '📌 ') + e.t; });
     if (wk && wd < 5) {
       var d = wk.data, P = +d.P || 6, prep = str(arr(d.prep)[wd]).trim();
@@ -3984,8 +3998,9 @@ function paintToday(box) {
     } else {
       rows.append(h('span', { class: 'hint', style: { margin: 0 } }, '이번 주 주간학습 안내를 만들면 오늘 시간표가 여기에 보여요.'), h('button', { class: 'tdlink', onclick: function () { location.hash = 'weekly'; } }, '주간학습 안내 만들기 ›'));
     }
+    if (nextBig) { var dd = Math.round((dOf(nextBig.a) - dOf(t)) / 864e5); bits.push('📅 D-' + dd + ' ' + nextBig.t); }
     meta.textContent = bits.join('  ');
-    var todays = acts.filter(function (a) { return a.tool !== 'weekly' && a.tool !== 'classroster' && a.updated && t === isoDay(a.updated); }).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); }).slice(0, 8);
+    var todays = acts.filter(function (a) { return a.tool !== 'weekly' && a.tool !== 'classroster' && a.tool !== 'calendar' && a.updated && t === isoDay(a.updated); }).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); }).slice(0, 8);
     if (todays.length) mine.append(h('span', { class: 'hlbl' }, '오늘 만든 활동'), h('div', { class: 'rchips' }, todays.map(function (a) {
       var d = TOOLS.filter(function (x) { return x.key === a.tool; })[0]; if (!d) return null;
       return gc(h('button', { class: 'rchip', title: d.name, onclick: function () { openActivity(a); } }, h('span', { class: 'ichip' }, toolIco(d)), str(a.title, 24) || d.name), groupOf(d)[3]);
@@ -4535,9 +4550,9 @@ function boot() {
   if (cfg && cfg.apiKey) {
     App.main.append(h('div', { class: 'empty-note' }, '연결하는 중…'));
     FireBackend(cfg).then(function (fb) {
-      App.fire = fb; loadClassRoster();
+      App.fire = fb; loadClassRoster(); loadCalendar();
       fb.onAuth(function () {
-        renderTop(); loadClassRoster();
+        renderTop(); loadClassRoster(); loadCalendar();
         var V = App.V;
         if (V && !V.student) { var keep = V.dirty ? clean(V.inst.get()) : null; openTool(V.def.key, keep); }
       });
@@ -4547,7 +4562,7 @@ function boot() {
       toast('Firebase에 연결하지 못해 이 기기 저장으로 열었어요.');
       route();
     });
-  } else { loadClassRoster(); route(); }
+  } else { loadClassRoster(); loadCalendar(); route(); }
 }
 
 /* ===================== 생각 정리 ===================== */
@@ -6891,7 +6906,10 @@ tool({
   shared: function () { return false; },
   build: function (el, ctx) {
     var DN = ['월', '화', '수', '목', '금'];
-    var mon = wkStart(), P = 6, subj = {}, cont = {}, prep = ['', '', '', '', ''], zoom = 1, calM = null, list = [];
+    var mon = wkStart(), P = 6, subj = {}, cont = {}, prep = ['', '', '', '', ''], zoom = 1, calM = null, list = [], calSnap = [];
+    // 학사력 일정 + 이 안내에 적은 학급 일정
+    function allEv() { var own = parseEvents(evTa.value, mon), cal = ctx.student ? calAsEvents(calSnap) : calAsEvents(CAL.events), seen = {}; own.forEach(function (e) { seen[e.a + '|' + e.t] = 1; }); return own.concat(cal.filter(function (e) { return !seen[e.a + '|' + e.t]; })).sort(function (x, y) { return x.a < y.a ? -1 : x.a > y.a ? 1 : 0; }); }
+    if (!ctx.student && typeof CAL !== 'undefined' && !CAL.loaded) loadCalendar(function () { render(); });
     var monIn = h('input', { class: 'fld cfg', type: 'date', style: { width: 'auto' } });
     var pSel = h('select', { class: 'fld cfg', style: { width: 'auto' } }, [4, 5, 6, 7].map(function (n) { return h('option', { value: n }, n + '교시'); }));
     var goalL = inp('cfg', '이번 주 공부 목표 (예: 시를 읽고 떠오르는 장면을 말할 수 있어요)');
@@ -6927,7 +6945,7 @@ tool({
             h('span', { class: 'hint', style: { margin: 0 } }, '과목 칸은 누르면 목록이 나와요. 학습 내용에는 단원·쪽수를 적어요.')),
           grid),
         h('details', { class: 'wkdet', open: true }, h('summary', {}, '📆 학급 일정 (다음 주로 이어져요)'), evTa,
-          h('p', { class: 'hint' }, '‘11/25 | 내용’, 여러 날은 ‘12/22~12/24 | 내용’처럼 적어요. ‘쉬는 날·휴업일·재량휴업·방학’이 들어가면 그날 칸이 회색이 돼요.')),
+          h('p', { class: 'hint' }, '📅 학사력에 넣은 학교 일정은 저절로 들어와요. 여기에는 우리 반 일정만 더 적어요. ‘11/25 | 내용’, 여러 날은 ‘12/22~12/24 | 내용’처럼 적어요. ‘쉬는 날·휴업일·재량휴업·방학’이 들어가면 그날 칸이 회색이 돼요.')),
         h('details', { class: 'wkdet' }, h('summary', {}, '📢 가정 알림 · 선생님 한마디'), h('span', { class: 'lbl' }, '📢 가정 알림'), notes, h('span', { class: 'lbl' }, '💬 선생님 한마디'), msg),
         h('div', { class: 'row', style: { margin: '6px 0' } },
           h('button', { class: 'btn sm', onclick: copyText }, '📋 글로 복사 (반 SNS·알림장 앱에 붙여 넣기)'),
@@ -6972,7 +6990,7 @@ tool({
     }
 
     function render() {
-      var ev = parseEvents(evTa.value, mon), today = todayISO();
+      var ev = allEv(), today = todayISO();
       board.innerHTML = '';
       board.append(h('div', { class: 'wkhd' },
         h('div', {}, h('b', {}, wkLabel(mon) + ' 주간학습 안내'), h('span', {}, wkMD(mon) + ' ~ ' + wkMD(addD(mon, 4)))),
@@ -7049,7 +7067,7 @@ tool({
     }
 
     function copyText() {
-      var ev = parseEvents(evTa.value, mon);
+      var ev = allEv();
       var t = '[' + wkLabel(mon) + ' 주간학습 안내 (' + wkMD(mon) + '~' + wkMD(addD(mon, 4)) + ')]\n';
       if (goalL.value.trim()) t += '📖 공부 목표: ' + goalL.value.trim() + '\n';
       if (goalS.value.trim()) t += '🌱 생활 목표: ' + goalS.value.trim() + '\n';
@@ -7077,13 +7095,14 @@ tool({
       var S = {}, C = {};
       for (var k in subj) if (str(subj[k]).trim() && +k.split('-')[1] <= P) S[k] = str(subj[k], 20);
       for (var k2 in cont) if (str(cont[k2]).trim() && +k2.split('-')[1] <= P) C[k2] = str(cont[k2], 200);
-      return { mon: mon, P: P, subj: S, cont: C, prep: prep.map(function (x) { return str(x, 100); }), goalL: goalL.value, goalS: goalS.value, notes: notes.value, msg: msg.value, events: evTa.value, zoom: zoom };
+      return { cal: calAsEvents(CAL.events, addD(mon, -7), addD(mon, 70)).map(function (e) { return { a: e.a, b: e.b, t: e.t, k: e.off ? 'off' : 'school' }; }).slice(0, 80), mon: mon, P: P, subj: S, cont: C, prep: prep.map(function (x) { return str(x, 100); }), goalL: goalL.value, goalS: goalS.value, notes: notes.value, msg: msg.value, events: evTa.value, zoom: zoom };
     }
     function setD(d) {
       mon = /^\d{4}-\d\d-\d\d$/.test(d.mon || '') ? mondayOf(d.mon) : wkStart(); monIn.value = mon; calM = null;
       P = [4, 5, 6, 7].indexOf(+d.P) >= 0 ? +d.P : 6; pSel.value = P;
       subj = Object.assign({}, d.subj || {}); cont = Object.assign({}, d.cont || {});
       prep = [0, 1, 2, 3, 4].map(function (i) { return str(arr(d.prep)[i]); });
+      calSnap = arr(d.cal);
       goalL.value = str(d.goalL); goalS.value = str(d.goalS); setTa(notes, d.notes); setTa(msg, d.msg); setTa(evTa, d.events);
       zoom = [1, 1.25, 1.5].indexOf(+d.zoom) >= 0 ? +d.zoom : 1; paintZoom();
       if (!d.subj && !d.mon) { var b = App.local.get('wk-base', null); if (b && b.subj) { subj = Object.assign({}, b.subj); if (b.P) { P = b.P; pSel.value = P; } } }
@@ -9510,6 +9529,300 @@ writeTool({
     { k: 'life', l: '🌍 삶과 잇기', ph: '오늘 배운 것을 어디에서 보거나 쓸 수 있을까요?', rows: 2, opt: true },
     { k: 'self', l: '🪞 나를 돌아보기', ph: '오늘 내 기분, 잘한 점, 아쉬운 점, 다음 다짐 (예: 😊 발표해서 뿌듯 / 실험 정리가 늦음 / 다음엔 시간 지키기)', hint: '기분 · 잘한 점 · 아쉬운 점 · 다음 다짐을 짧게 메모해요.', rows: 2, opt: true }]
 });
+
+/* ===================== 학사력 (연간 학교 일정) ===================== */
+var CAL_KINDS = { off: ['쉬는 날', '#868e96'], school: ['학교 행사', '#1971c2'], eval: ['평가', '#e8590c'], act: ['교육 활동', '#2f9e44'], class: ['우리 반', '#c2255c'] };
+var CAL_OFF = /휴업|공휴일|방학(?!식)|대체|연휴|추석|설날|설 연휴|성탄절|개천절|한글날|삼일절|3\.1절|광복절|현충일|어린이날|부처님|석가탄신|새해 첫날|신정|선거일|쉬는 ?날|개교기념일/;
+var CAL_EVAL = /평가|진단|시험|학업성취/;
+var CAL_SCHOOL = /입학|졸업|수료|종업|개학|방학식|시업|운동회|축제|발표회|학예회|체험학습|수학여행|설명회|교육과정|상담|공개수업|기념행사|선거(?!일)|회의|캠프|교육$|예방교육/;
+function calKind(t) { return CAL_OFF.test(t) ? 'off' : CAL_EVAL.test(t) ? 'eval' : CAL_SCHOOL.test(t) ? 'school' : 'act'; }
+var CAL = { events: [], year: 0, aid: null, loaded: false, sem: null, src: [], syncAt: 0 };
+function loadCalendar(cb) {
+  var B = TB(); if (App.fire && !App.fire.isTeacher()) return;
+  var done = false, done2 = false, un = B.listActivities('calendar', function (l) {
+    var a = (l || []).sort(function (x, y) { return (y.updated || 0) - (x.updated || 0); })[0];
+    CAL.aid = a ? a.id : null; CAL.events = a && a.data ? calClean(a.data.ev) : []; CAL.year = a && a.data ? +a.data.year || 0 : 0; CAL.sem = a && a.data ? a.data.sem || null : null; CAL.src = a && a.data ? arr(a.data.src) : []; CAL.syncAt = a && a.data && a.data.sync ? +a.data.sync.at || 0 : 0; CAL.loaded = true;
+    if (!done) { done = true; setTimeout(function () { if (un) un(); }, 0); }
+    if (cb) cb();
+    if (!done2) { done2 = true; setTimeout(autoSyncCalendar, 1500); }
+  });
+}
+function calClean(L) { return arr(L).filter(function (e) { return e && /^\d{4}-\d\d-\d\d$/.test(e.a); }).map(function (e) { var o = { a: e.a, b: /^\d{4}-\d\d-\d\d$/.test(e.b) && e.b >= e.a ? e.b : e.a, t: str(e.t, 80), k: CAL_KINDS[e.k] ? e.k : calKind(e.t || '') }; if (e.s) o.s = 1; return o; }); }
+// 주간학습 안내 · 오늘 수업에서 쓰는 모양으로 바꿔요
+function calAsEvents(L, from, to) { return calClean(L).filter(function (e) { return (!to || e.a <= to) && (!from || e.b >= from); }).map(function (e) { return { a: e.a, b: e.b, t: e.t, off: e.k === 'off', cal: true }; }); }
+function calSchoolYear(d) { var m = d.getMonth() + 1; return m >= 3 ? d.getFullYear() : d.getFullYear() - 1; }
+
+// ---------- 붙여 넣은 학사력 읽기 ----------
+function parseTSV(text, sep) {
+  sep = sep || '\t';
+  var rows = [], row = [], cell = '', q = false, s = String(text || '').replace(/\r\n?/g, '\n');
+  for (var i = 0; i < s.length; i++) {
+    var c = s[i];
+    if (q) { if (c === '"') { if (s[i + 1] === '"') { cell += '"'; i++; } else q = false; } else cell += c; continue; }
+    if (c === '"' && cell === '') { q = true; continue; }
+    if (c === sep) { row.push(cell); cell = ''; continue; }
+    if (c === '\n') { row.push(cell); rows.push(row); row = []; cell = ''; continue; }
+    cell += c;
+  }
+  row.push(cell); rows.push(row);
+  return rows.map(function (r) { return r.map(function (x) { return x.trim(); }); });
+}
+function calEventNames(cell) {
+  return String(cell || '').split(/\n/).map(function (x) { return x.replace(/\s+/g, ' ').trim(); }).filter(function (x) { return x && !/^[-–—·]+$/.test(x); });
+}
+// 결과: [{a,b,t,k}]. 표(달마다 요일·주요일정 칸) 모양과 '날짜 | 내용' 줄 모양을 모두 읽어요.
+function parseCalendarPaste(text, fallbackYear, rowsIn) {
+  var rows = rowsIn || parseTSV(text), out = [], Y = fallbackYear || calSchoolYear(new Date());
+  if (rowsIn) text = rows.map(function (r) { return r.join(' '); }).join('\n');
+  var tm = /(\d{4})\s*학년도/.exec(text); if (tm) Y = +tm[1];
+  function iso(m, d) { var y = m >= 3 ? Y : Y + 1; var dt = new Date(y, m - 1, d); return dt.getMonth() === m - 1 ? isoOf(dt) : null; }
+  function push(a, t) {
+    var r = /\(\s*~\s*(?:(\d{1,2})\s*[월./]\s*)?(\d{1,2})\s*일?\s*\)/.exec(t), b = a;
+    if (r) { var A = dOf(a), m2 = r[1] ? +r[1] : A.getMonth() + 1; var bb = iso(m2, +r[2]); if (bb && bb >= a) b = bb; }
+    out.push({ a: a, b: b, t: t.slice(0, 80), k: calKind(t) });
+  }
+  // 1) 표 모양: '요일' 머리칸을 찾아요
+  var hdr = -1;
+  for (var i = 0; i < Math.min(rows.length, 12); i++) if (rows[i].filter(function (c) { return c === '요일'; }).length >= 1) { hdr = i; break; }
+  if (hdr >= 0) {
+    var H = rows[hdr], groups = [];
+    H.forEach(function (c, j) { if (c === '요일') groups.push({ wd: j, ev: H[j + 1] !== undefined && H[j + 1] !== '요일' && H[j + 1] !== '날짜' ? j + 1 : -1, dt: H[j - 1] === '날짜' ? j - 1 : -1 }); });
+    var dateCol0 = H.indexOf('날짜');
+    // 달: 머리칸 위 줄들에서 '8월' 같은 칸
+    var mrow = null; for (var k = hdr - 1; k >= 0 && k >= hdr - 3; k--) if (rows[k].some(function (c) { return /^\d{1,2}\s*월$/.test(c); })) { mrow = rows[k]; break; }
+    var lastM = 0;
+    groups.forEach(function (g, gi) {
+      var m = 0;
+      if (mrow) for (var c = g.wd + 1; c >= Math.max(0, g.wd - 2); c--) { var mm = /^(\d{1,2})\s*월$/.exec(mrow[c] || ''); if (mm) { m = +mm[1]; break; } }
+      if (g.dt < 0) { for (var c2 = g.wd - 1; c2 >= 0; c2--) if (H[c2] === '날짜') { g.dt = c2; break; } if (g.dt < 0) g.dt = dateCol0; }
+      if (g.dt < 0) {
+        for (var c3 = g.wd - 1; c3 >= 0 && g.dt < 0; c3--) { var nn = 0; for (var rr = hdr + 1; rr < Math.min(rows.length, hdr + 32); rr++) if (/^\d{1,2}$/.test(rows[rr][c3] || '')) nn++; if (nn >= 20) g.dt = c3; }
+      }
+      // 요일이 맞는 달로 확인해요 (3월과 11월처럼 요일이 같은 달은 머리칸·차례를 따라요)
+      var cand = weekdayMonths(g), nextM = lastM ? lastM % 12 + 1 : 0;
+      if (cand.length && cand.indexOf(m) < 0) m = nextM && cand.indexOf(nextM) >= 0 ? nextM : cand.length === 1 ? cand[0] : m;
+      if (!m && nextM) m = nextM;
+      g.m = m; lastM = m;
+    });
+    function weekdayMonths(g) {
+      if (g.dt < 0) return []; var ok = [];
+      for (var mm = 1; mm <= 12; mm++) {
+        var n = 0, tot = 0;
+        for (var r2 = hdr + 1; r2 < rows.length; r2++) { var dn = parseInt(rows[r2][g.dt], 10), w = rows[r2][g.wd] || ''; if (!(dn >= 1 && dn <= 31) || !/^[월화수목금토일]$/.test(w)) continue; var a = iso(mm, dn); if (!a) { tot = -999; break; } tot++; if (DAYS[dOf(a).getDay()] === w) n++; }
+        if (tot >= 5 && n === tot) ok.push(mm);
+      }
+      return ok;
+    }
+    for (var r = hdr + 1; r < rows.length; r++) {
+      var R = rows[r];
+      groups.forEach(function (g) {
+        if (!g.m || g.ev < 0) return;
+        var dn = parseInt(R[g.dt], 10); if (!(dn >= 1 && dn <= 31)) return;
+        var a = iso(g.m, dn); if (!a) return;
+        calEventNames(R[g.ev]).forEach(function (t) { push(a, t); });
+      });
+    }
+    return dedupe(out);
+  }
+  // 2) 줄 모양: 날짜가 들어 있는 칸 + 내용 칸
+  rows.forEach(function (R) {
+    var line = R.join(' | ');
+    var m = /(?:(\d{4})[-./년]\s*)?(\d{1,2})\s*[-./월]\s*(\d{1,2})\s*일?(?:\s*\([월화수목금토일]\))?(?:\s*[~∼–]\s*(?:(\d{1,2})\s*[-./월]\s*)?(\d{1,2})\s*일?(?:\s*\([월화수목금토일]\))?)?/.exec(line);
+    if (!m) return;
+    var rest = line.slice(m.index + m[0].length).replace(/^[\s|:,·]+/, '').replace(/\s*\|\s*/g, ' ').trim();
+    if (!rest) return;
+    var a = m[1] ? isoOf(new Date(+m[1], +m[2] - 1, +m[3])) : iso(+m[2], +m[3]); if (!a) return;
+    var b = a; if (m[5]) { var bm = m[4] ? +m[4] : +m[2]; var bb = m[1] ? isoOf(new Date(+m[1] + (bm < +m[2] ? 1 : 0), bm - 1, +m[5])) : iso(bm, +m[5]); if (bb && bb >= a) b = bb; }
+    calEventNames(rest).forEach(function (t) { out.push({ a: a, b: b, t: t.slice(0, 80), k: calKind(t) }); });
+  });
+  return dedupe(out);
+  function dedupe(L) { var seen = {}; return L.filter(function (e) { var k = e.a + '|' + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (x, y) { return x.a < y.a ? -1 : x.a > y.a ? 1 : 0; }); }
+}
+// 수업일수: 학기 기간 안의 월~금 가운데 쉬는 날이 아닌 날
+function schoolDays(ev, from, to) {
+  if (!from || !to || to < from) return { total: 0, left: 0 };
+  var off = {}; ev.forEach(function (e) { if (e.k !== 'off') return; for (var d = e.a; d <= e.b; d = addD(d, 1)) off[d] = 1; });
+  var n = 0, left = 0, t = todayISO();
+  for (var d = from; d <= to; d = addD(d, 1)) { var w = dOf(d).getDay(); if (w === 0 || w === 6 || off[d]) continue; n++; if (d >= t) left++; }
+  return { total: n, left: left };
+}
+function guessSem(ev, Y) {
+  function find(re, from, to) { return ev.filter(function (e) { return re.test(e.t) && e.a >= from && e.a <= to; }).map(function (e) { return e.a; })[0]; }
+  var s1 = find(/입학|시업|개학/, Y + '-02-25', Y + '-03-31') || Y + '-03-02';
+  var e1 = find(/방학식|1학기\s*(종업|마침)/, Y + '-06-15', Y + '-08-31'); if (!e1) { var vb = ev.filter(function (e) { return /여름\s*방학|방학/.test(e.t) && e.a >= Y + '-07-01' && e.a <= Y + '-08-15'; })[0]; e1 = vb ? addD(vb.a, -1) : Y + '-07-20'; }
+  var s2 = find(/개학/, Y + '-08-01', Y + '-09-15') || Y + '-08-20';
+  var e2 = ev.filter(function (e) { return /수료|종업|졸업|학년말\s*방학|방학식/.test(e.t) && e.a >= Y + '-12-01' && e.a <= (Y + 1) + '-02-28'; }).map(function (e) { return /학년말\s*방학/.test(e.t) && !/식/.test(e.t) ? addD(e.a, -1) : e.a; }).sort().pop() || (Y + 1) + '-02-10';
+  return { s1: s1, e1: e1, s2: s2, e2: e2 };
+}
+
+tool({
+  key: 'calendar', name: '학사력', icon: '📅', group: 'class', kind: 'live',
+  desc: '학교의 연간 일정을 한 번 붙여 넣으면 주간학습 안내, 첫 화면의 오늘 수업, 달력에 저절로 나타나요. 학기별 수업일수도 세어 줘요.',
+  shared: function () { return false; },
+  build: function (el, ctx) {
+    var Y = calSchoolYear(new Date()), ev = [], sem = null, view = 'month', calM = todayISO().slice(0, 7), filt = '', src = [], sync = null;
+    var srcTa = ta('cfg', '학사일정 구글 시트 주소를 한 줄에 하나씩 (1학기 탭, 2학기 탭)\nhttps://docs.google.com/spreadsheets/d/…/edit?gid=…', 2), syncInfo = h('span', { class: 'hint', style: { margin: 0 } });
+    srcTa.addEventListener('input', function () { src = srcTa.value.split('\n').map(function (x) { return x.trim(); }).filter(Boolean); ctx.dirty(); });
+    function doSync(quiet) {
+      if (!src.length) { if (!quiet) toast('구글 시트 주소를 먼저 넣어 주세요'); return; }
+      syncInfo.textContent = '시트를 읽는 중…';
+      fetchSheetEvents(src, Y).then(function (fresh) {
+        if (!fresh.length) throw new Error('시트에서 일정을 찾지 못했어요. 탭 주소(gid)가 맞는지 확인해 주세요.');
+        var m = mergeSheet(ev, fresh); ev = m.ev; if (!sem) sem = guessSem(ev, Y); fillSem();
+        sync = { at: Date.now(), msg: syncMsg(m) }; paintSync(); ctx.dirty(); paint();
+        if (!quiet || m.added || m.removed) toast('📅 시트와 맞췄어요 · ' + sync.msg);
+      }).catch(function (e) { syncInfo.textContent = '⚠️ ' + (e && e.message || '시트를 읽지 못했어요') + ' (복사해서 붙여 넣기로도 넣을 수 있어요)'; });
+    }
+    function paintSync() { syncInfo.textContent = sync && sync.at ? '마지막으로 맞춘 때: ' + fmt(sync.at) + ' · ' + (sync.msg || '') : (src.length ? '아직 시트를 읽지 않았어요' : ''); }
+
+    var yIn = h('input', { class: 'fld cfg', type: 'number', min: 2020, max: 2100, style: { width: '110px', flex: '0 0 110px' } });
+    var paste = ta('cfg', '학교 학사일정 표(구글 시트·엑셀·한글 표)를 통째로 복사해 여기에 붙여 넣어요.\n줄 모양도 돼요: 2026-11-25 | 현장체험학습   또는   12/22~12/24 학예회', 5);
+    var pinfo = h('div', { class: 'hint' });
+    var addD1 = h('input', { class: 'fld cfg', type: 'date' }), addD2 = h('input', { class: 'fld cfg', type: 'date' }), addT = inp('cfg', '일정 (예: 학부모 공개수업)'), addK = h('select', { class: 'fld cfg', style: { width: 'auto' } }, Object.keys(CAL_KINDS).map(function (k) { return h('option', { value: k }, CAL_KINDS[k][0]); }));
+    var S = {}; ['s1', 'e1', 's2', 'e2'].forEach(function (k) { S[k] = h('input', { class: 'fld cfg', type: 'date' }); S[k].addEventListener('change', function () { sem = sem || {}; sem[k] = S[k].value; ctx.dirty(); paint(); }); });
+    var pasteBox;
+    var seg = h('div', { class: 'seg' }), body = h('div', { class: 'calbody' }), stat = h('div', { class: 'calstat' });
+    [['month', '월 달력'], ['list', '일정 목록'], ['days', '수업일수']].forEach(function (v) { seg.append(h('button', { onclick: function () { view = v[0]; paint(); } }, v[1])); });
+    el.append(
+      h('div', { class: 'tonly calcfg' },
+        h('div', { class: 'row', style: { alignItems: 'center' } }, h('span', { class: 'lbl', style: { margin: 0 } }, '학년도'), yIn, h('span', { class: 'hint', style: { margin: 0 } }, '3월~이듬해 2월')),
+        h('details', { class: 'wrdet calsync', open: true }, h('summary', {}, '🔗 구글 시트와 자동으로 맞추기'), srcTa,
+          h('div', { class: 'row', style: { alignItems: 'center', marginTop: '6px' } }, h('button', { class: 'btn pri', onclick: function () { doSync(false); } }, '🔄 지금 다시 불러오기'), syncInfo),
+          h('p', { class: 'hint' }, '시트의 공유를 ‘링크가 있는 모든 사용자 – 뷰어’로 해 두면, 학사력을 열 때와 앱을 열 때(3시간마다) 시트를 다시 읽어 바뀐 일정을 맞춰요. 시트에서 온 일정은 시트 내용으로 바뀌고, 직접 더한 일정과 고친 종류는 그대로 남아요. 학교 계정에서만 열리는 시트라 읽지 못하면 시트의 [파일 → 공유 → 웹에 게시 → 쉼표로 구분된 값(.csv)] 주소를 넣어도 돼요.')),
+        pasteBox = h('details', { class: 'wrdet', open: true }, h('summary', {}, '📋 학교 학사일정 붙여 넣기'), paste,
+          h('div', { class: 'row', style: { alignItems: 'center', marginTop: '6px' } },
+            h('button', { class: 'btn pri', onclick: function () { doImport(false); } }, '불러와 더하기'),
+            twoTap(h('button', { class: 'btn' }, '지금 일정을 바꾸기'), '지금 일정을 바꾸기', '있던 일정이 모두 바뀌어요 · 한 번 더', function () { doImport(true); }),
+            pinfo),
+          h('p', { class: 'hint' }, '구글 시트에서 학사일정 칸 전체를 고르고(Ctrl+A) 복사(Ctrl+C)해 붙여 넣으면 달·날짜·일정을 저절로 나눠 읽어요. 1학기·2학기 탭을 하나씩 붙여 넣어 더해도 돼요. 쉬는 날·평가·학교 행사는 낱말을 보고 저절로 나눠요.')),
+        h('details', { class: 'wrdet' }, h('summary', {}, '✏️ 일정 하나 더하기'),
+          h('div', { class: 'row', style: { alignItems: 'center' } }, addD1, h('span', {}, '~'), addD2, addT, addK,
+            h('button', { class: 'btn', onclick: addOne }, '더하기'))),
+        h('details', { class: 'wrdet' }, h('summary', {}, '🗓️ 학기 기간 (수업일수 계산)'),
+          h('div', { class: 'calsem' }, h('label', {}, '1학기 시작', S.s1), h('label', {}, '1학기 끝', S.e1), h('label', {}, '2학기 시작', S.s2), h('label', {}, '2학기 끝', S.e2)),
+          h('button', { class: 'btn sm', onclick: function () { sem = guessSem(ev, Y); fillSem(); ctx.dirty(); paint(); } }, '일정에서 다시 짐작하기'))),
+      h('div', { class: 'row', style: { alignItems: 'center', margin: '10px 0 6px' } }, seg, h('span', { style: { flex: 1 } }), stat), body);
+    yIn.addEventListener('input', function () { Y = +yIn.value || Y; ctx.dirty(); });
+    function fillSem() { var s = sem || guessSem(ev, Y); ['s1', 'e1', 's2', 'e2'].forEach(function (k) { S[k].value = s[k] || ''; }); }
+    function doImport(replace) {
+      var L = parseCalendarPaste(paste.value, Y);
+      if (!L.length) { pinfo.textContent = '읽을 수 있는 일정이 없어요. 표 전체(달·날짜·요일·주요일정 칸)를 복사했는지 확인해 주세요.'; return; }
+      var tm = /(\d{4})\s*학년도/.exec(paste.value); if (tm) { Y = +tm[1]; yIn.value = Y; }
+      var before = ev.length;
+      if (replace) ev = L; else { var seen = {}; ev.forEach(function (e) { seen[e.a + '|' + e.t] = 1; }); L.forEach(function (e) { if (!seen[e.a + '|' + e.t]) ev.push(e); }); }
+      ev.sort(function (x, y) { return x.a < y.a ? -1 : x.a > y.a ? 1 : 0; });
+      var byK = {}; L.forEach(function (e) { byK[e.k] = (byK[e.k] || 0) + 1; });
+      pinfo.textContent = '✅ ' + L.length + '개를 읽었어요 (' + Object.keys(byK).map(function (k) { return CAL_KINDS[k][0] + ' ' + byK[k]; }).join(', ') + ') · 지금 일정 ' + ev.length + '개' + (replace ? '' : ' (새로 ' + (ev.length - before) + '개)');
+      paste.value = ''; paste.style.height = ''; if (!sem) sem = guessSem(ev, Y); fillSem(); ctx.dirty(); paint();
+    }
+    function addOne() {
+      if (!addD1.value || !addT.value.trim()) { toast('날짜와 일정을 적어 주세요'); return; }
+      ev.push({ a: addD1.value, b: addD2.value && addD2.value >= addD1.value ? addD2.value : addD1.value, t: addT.value.trim().slice(0, 80), k: addK.value });
+      ev.sort(function (x, y) { return x.a < y.a ? -1 : 1; }); addT.value = ''; addD2.value = ''; ctx.dirty(); paint(); toast('더했어요');
+    }
+    function chip(e) { return h('span', { class: 'calev k-' + e.k, title: CAL_KINDS[e.k][0] }, e.t); }
+    function paint() {
+      $$('button', seg).forEach(function (b, i) { b.classList.toggle('on', ['month', 'list', 'days'][i] === view); });
+      var s = sem || guessSem(ev, Y), d1 = schoolDays(ev, s.s1, s.e1), d2 = schoolDays(ev, s.s2, s.e2);
+      stat.textContent = ev.length ? '일정 ' + ev.length + '개 · 수업일수 ' + (d1.total + d2.total) + '일' : '';
+      body.innerHTML = '';
+      if (!ev.length) { body.append(h('div', { class: 'empty-note' }, ctx.student ? '선생님이 아직 학사일정을 넣지 않았어요.' : '위에 학교 학사일정 표를 붙여 넣어 시작해요.')); return; }
+      if (view === 'month') {
+        var y = +calM.slice(0, 4), m = +calM.slice(5, 7), first = new Date(y, m - 1, 1), days = new Date(y, m, 0).getDate(), t = todayISO();
+        var g = h('div', { class: 'wkcg calg' }, DAYS.map(function (d, i) { return h('div', { class: 'cw' + (i === 0 ? ' sun' : i === 6 ? ' sat' : '') }, d); }));
+        for (var i = 0; i < first.getDay(); i++) g.append(h('div', { class: 'cd empty' }));
+        for (var d = 1; d <= days; d++) {
+          var iso2 = isoOf(new Date(y, m - 1, d)), es = ev.filter(function (e) { return e.a <= iso2 && iso2 <= e.b; }), wd = new Date(y, m - 1, d).getDay();
+          var off = wd === 0 || es.some(function (e) { return e.k === 'off'; });
+          g.append(h('div', { class: 'cd' + (iso2 === t ? ' today' : '') + (off ? ' sun' : wd === 6 ? ' sat' : '') }, h('span', { class: 'n' }, d), es.map(chip)));
+        }
+        body.append(h('div', { class: 'wkch' },
+          h('button', { class: 'btn sm', onclick: function () { calM = isoOf(new Date(y, m - 2, 1)).slice(0, 7); paint(); } }, '◀'),
+          h('b', {}, y + '년 ' + m + '월'),
+          h('button', { class: 'btn sm', onclick: function () { calM = isoOf(new Date(y, m, 1)).slice(0, 7); paint(); } }, '▶'),
+          h('button', { class: 'btn sm', onclick: function () { calM = todayISO().slice(0, 7); paint(); } }, '이번 달')), g,
+          h('div', { class: 'callegend' }, Object.keys(CAL_KINDS).map(function (k) { return h('span', { class: 'calev k-' + k }, CAL_KINDS[k][0]); })));
+      } else if (view === 'list') {
+        var fsel = h('select', { class: 'fld', style: { width: 'auto' } }, h('option', { value: '' }, '모든 일정'), Object.keys(CAL_KINDS).map(function (k) { return h('option', { value: k }, CAL_KINDS[k][0]); }));
+        fsel.value = filt; fsel.addEventListener('change', function () { filt = fsel.value; paint(); });
+        body.append(h('div', { class: 'row' }, fsel));
+        var cur = '';
+        ev.forEach(function (e, idx) {
+          if (filt && e.k !== filt) return;
+          var mo = e.a.slice(0, 7); if (mo !== cur) { cur = mo; body.append(h('h4', { class: 'calmh' }, (+mo.slice(5)) + '월')); }
+          var A = dOf(e.a);
+          var ks = h('select', { class: 'calk tonly' }, Object.keys(CAL_KINDS).map(function (k) { return h('option', { value: k }, CAL_KINDS[k][0]); })); ks.value = e.k;
+          ks.addEventListener('change', function () { e.k = ks.value; ctx.dirty(); paint(); });
+          body.append(h('div', { class: 'calrow' }, h('span', { class: 'cd2' }, wkMD(e.a) + '(' + DAYS[A.getDay()] + ')' + (e.b !== e.a ? ' ~ ' + wkMD(e.b) : '')), chip(e), h('span', { style: { flex: 1 } }), ks,
+            ctx.student ? null : h('button', { class: 'btn sm tonly', onclick: function () { ev.splice(idx, 1); ctx.dirty(); paint(); } }, '빼기')));
+        });
+      } else {
+        var row = function (name, a, b, r) { return h('tr', {}, h('th', {}, name), h('td', {}, a ? wkMD(a) + ' ~ ' + wkMD(b) : '-'), h('td', {}, h('b', {}, r.total + '일')), h('td', {}, r.left + '일')); };
+        body.append(h('table', { class: 'caldays' }, h('tr', {}, h('th', {}, ''), h('th', {}, '기간'), h('th', {}, '수업일수'), h('th', {}, '오늘부터 남은 날')),
+          row('1학기', s.s1, s.e1, d1), row('2학기', s.s2, s.e2, d2), h('tr', { class: 'sum' }, h('th', {}, '모두'), h('td', {}, ''), h('td', {}, h('b', {}, (d1.total + d2.total) + '일')), h('td', {}, (d1.left + d2.left) + '일'))),
+          h('p', { class: 'hint' }, '월~금 가운데 쉬는 날(공휴일·방학·재량휴업일 등)을 뺀 날을 셌어요. 학교에서 정한 수업일수와 다르면 학기 기간이나 일정의 종류(쉬는 날)를 고쳐 주세요.'));
+      }
+    }
+    function setD(d) {
+      Y = +d.year || calSchoolYear(new Date()); yIn.value = Y; ev = calClean(d.ev); src = arr(d.src).map(String); setTa(srcTa, src.join('\n')); sync = d.sync && typeof d.sync === 'object' ? d.sync : null; paintSync(); sem = d.sem && typeof d.sem === 'object' ? d.sem : null; fillSem();
+      if (!ctx.student) { CAL.events = ev; CAL.year = Y; CAL.sem = sem; CAL.src = src; }
+      if (pasteBox) pasteBox.open = !ev.length && !src.length;
+      paint();
+      if (!ctx.student && src.length && (!sync || Date.now() - (sync.at || 0) > 10 * 60 * 1000)) setTimeout(function () { doSync(true); }, 400);
+    }
+    setD({});
+    return {
+      title: function () { return Y + '학년도 학사력'; },
+      get: function () { if (!ctx.student) { CAL.events = ev; CAL.year = Y; CAL.sem = sem; CAL.src = src; if (sync) CAL.syncAt = sync.at; } return { year: Y, ev: ev, sem: sem, src: src, sync: sync }; },
+      set: setD, reset: function () { setD({}); }
+    };
+  }
+});
+
+// 학급 생활 묶음에서 학사력을 주간학습 안내 바로 뒤에 놓아요
+(function () { var i = TOOLS.findIndex(function (t) { return t.key === 'calendar'; }), j = TOOLS.findIndex(function (t) { return t.key === 'weekly'; }); if (i > j && j >= 0) { var c = TOOLS.splice(i, 1)[0]; TOOLS.splice(j + 1, 0, c); } })();
+
+// ---------- 구글 시트 자동 연동 ----------
+function sheetCsvUrl(u) {
+  u = String(u || '').trim(); if (!/^https:\/\/docs\.google\.com\/spreadsheets\//.test(u)) return null;
+  if (/\/pub(\?|$|html)/.test(u)) { var g0 = /[?&#]gid=(\d+)/.exec(u); return u.replace(/\/pubhtml.*$/, '/pub').replace(/\?.*$/, '') + '?output=csv' + (g0 ? '&gid=' + g0[1] + '&single=true' : ''); }
+  var id = /\/d\/([a-zA-Z0-9_-]{20,})/.exec(u); if (!id) return null;
+  var g = /[?&#]gid=(\d+)/.exec(u);
+  return 'https://docs.google.com/spreadsheets/d/' + id[1] + '/gviz/tq?tqx=out:csv&headers=0' + (g ? '&gid=' + g[1] : '');
+}
+function fetchSheetEvents(urls, Y) {
+  var L = arr(urls).map(function (x) { return String(x).trim(); }).filter(Boolean);
+  return Promise.all(L.map(function (u) {
+    var cu = sheetCsvUrl(u); if (!cu) return Promise.reject(new Error('구글 시트 주소가 아니에요: ' + u.slice(0, 40)));
+    return fetch(cu, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('시트를 읽지 못했어요 (' + r.status + ')'); return r.text(); }, function () { throw new Error('시트에 연결하지 못했어요. 공유 설정이나 인터넷 연결을 확인해 주세요.'); }).then(function (t) {
+      if (/^\s*</.test(t)) throw new Error('시트가 공개되어 있지 않아요. 공유를 ‘링크가 있는 모든 사용자’로 바꿔 주세요.');
+      var rows = parseTSV(t, ',');
+      return parseCalendarPaste('', Y, rows);
+    });
+  })).then(function (lists) { var seen = {}, out = []; lists.forEach(function (l) { l.forEach(function (e) { var k = e.a + '|' + e.t; if (!seen[k]) { seen[k] = 1; e.s = 1; out.push(e); } }); }); return out; });
+}
+// 시트 일정은 통째로 바꾸고, 선생님이 직접 더한 일정과 고친 종류는 남겨요
+function mergeSheet(ev, fresh) {
+  var mine = ev.filter(function (e) { return !e.s; }), keep = {}, old = {};
+  ev.filter(function (e) { return e.s; }).forEach(function (e) { old[e.a + '|' + e.t] = e; });
+  fresh.forEach(function (e) { var o = old[e.a + '|' + e.t]; if (o && o.k) e.k = o.k; keep[e.a + '|' + e.t] = 1; });
+  var added = fresh.filter(function (e) { return !old[e.a + '|' + e.t]; }).length, removed = Object.keys(old).filter(function (k) { return !keep[k]; }).length;
+  var all = mine.concat(fresh.filter(function (e) { return !mine.some(function (m) { return m.a === e.a && m.t === e.t; }); }));
+  all.sort(function (x, y) { return x.a < y.a ? -1 : x.a > y.a ? 1 : 0; });
+  return { ev: all, added: added, removed: removed };
+}
+function syncMsg(m) { return m.added || m.removed ? (m.added ? m.added + '개 더함' : '') + (m.added && m.removed ? ' · ' : '') + (m.removed ? m.removed + '개 빠짐' : '') : '바뀐 일정 없음'; }
+// 앱을 열 때: 3시간이 지났으면 시트를 다시 읽어 저장해요 (학사력 화면이 열려 있지 않을 때)
+function autoSyncCalendar() {
+  if ((App.fire && !App.fire.isTeacher()) || !CAL.aid || !CAL.src || !CAL.src.length) return;
+  if (App.V && App.V.def && App.V.def.key === 'calendar') return;
+  if (Date.now() - (CAL.syncAt || 0) < 3 * 3600 * 1000) return;
+  fetchSheetEvents(CAL.src, CAL.year).then(function (fresh) {
+    if (!fresh.length) return;
+    var m = mergeSheet(CAL.events, fresh), msg = syncMsg(m); CAL.events = m.ev; CAL.syncAt = Date.now();
+    return TB().saveActivity(CAL.aid, { tool: 'calendar', title: CAL.year + '학년도 학사력', data: { year: CAL.year, ev: CAL.events, sem: CAL.sem, src: CAL.src, sync: { at: CAL.syncAt, msg: msg } }, shared: false }).then(function () { if (m.added || m.removed) toast('📅 학사력을 시트와 맞췄어요 · ' + msg); });
+  }).catch(function (e) { console.warn('[학사력 연동]', e && e.message); });
+}
 
 /* ===================== 정리 · 백업 (활동 다시 쓰기 · 새 학년도 정리 · 이 기기 정리) ===================== */
 // 학생 이름이 담긴 선생님 기록 도구
