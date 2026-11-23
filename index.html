@@ -1186,6 +1186,106 @@ body.present .enote .ent{font-size:clamp(50px,12vh,170px)}
 .peekbtn{background:#fff7d6;border-color:#f0d36b}
 @media (max-width:700px){.sbsgrid{grid-template-columns:1fr !important}}
 .modal .box.pkmodal{width:min(1100px,96vw) !important;max-width:96vw !important}
+/* 분류판 */
+.sbtray{min-height:58px;background:#f7f9fb;border:2px dashed #cfd8e0;border-radius:12px}
+.sbzone{display:flex;flex-wrap:wrap;gap:8px;padding:10px;align-content:flex-start;min-height:90px}
+.sbbins{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:6px}
+.sbbin{border:2px solid var(--gc,#cfd8e0);border-radius:14px;background:#fff;overflow:hidden}
+.sbbh{display:flex;align-items:center;gap:4px;padding:6px 8px;background:color-mix(in srgb,var(--gc,#cfd8e0) 14%,#fff)}
+.sbname{flex:1;border:0;background:transparent;font-weight:800;font-size:16px;padding:4px;min-width:0}
+.sbcard{position:relative;background:#fffdf3;border:1.5px solid #e6d89c;border-radius:10px;padding:8px 12px;font-weight:700;font-size:16px;cursor:pointer;user-select:none;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.sbcard.own{background:#eef6ff;border-color:#9cc2ea}
+.sbcard.sel{outline:3px solid var(--accent);transform:translateY(-2px)}
+.sbx{border:0;background:none;color:#8a96a6;font-size:16px;cursor:pointer;padding:0 4px;line-height:1}
+/* 흐름도 · 순환도 */
+.fmmap.line{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+.fmarr{align-self:center;font-size:26px;color:#8a96a6}
+.fmbox{border:2px solid var(--gc,#cfd8e0);border-radius:12px;background:#fff;padding:8px;width:180px;display:flex;flex-direction:column;gap:6px}
+.fmh{display:flex;align-items:center}.fmh b{width:24px;height:24px;border-radius:50%;background:var(--gc,#8a96a6);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px}.fmh .sbx{margin-left:auto}
+.fmt{border:0;border-bottom:1.5px solid #e3e8ec;font-weight:800;font-size:16px;padding:4px 2px;background:transparent}
+.fmd{border:1px solid #e3e8ec;border-radius:8px;padding:6px;font:inherit;font-size:14px;resize:vertical}
+.fmmap.cycle{position:relative;width:min(100%,760px);aspect-ratio:1/1;margin:0 auto}
+.fmring{position:absolute;inset:13%;border:3px dashed #cfd8e0;border-radius:50%}
+.fmmap.cycle .fmbox{position:absolute;transform:translate(-50%,-50%);width:min(30%,190px);z-index:1}
+.fmcarr{position:absolute;font-size:24px;color:#8a96a6;z-index:0}
+.fmcenter{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:900;font-size:20px;color:#33404f;text-align:center;max-width:30%}
+@media (max-width:700px){.fmbox{width:100%}.fmarr{transform:rotate(90deg);width:100%;text-align:center}.fmmap.cycle .fmbox{width:34%}.fmmap.cycle .fmd{display:none}}
+/* 다이아몬드 순위 */
+.dmd{display:flex;flex-direction:column;align-items:center;gap:8px;margin:6px 0 10px}
+.dmrow{display:flex;gap:8px;justify-content:center;width:100%}
+.dmcard{position:relative;width:min(31%,210px);min-height:62px;border-radius:12px;border:2px solid #d7dee4;background:#fff;display:flex;align-items:center;gap:6px;padding:6px 8px;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.dmcard.t0{background:#fff4d6;border-color:#f0c64a}.dmcard.t1{background:#fff9ea}.dmcard.t4{background:#f3f5f7}
+.dmcard.sel{outline:3px solid var(--accent);transform:translateY(-2px)}
+.dmn{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:#33404f;color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.dmin{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-weight:700;font-size:16px;cursor:inherit}
+.dmin[readonly]{pointer-events:none}
+/* 신호등 */
+.sgtask{font-size:clamp(20px,3.4vw,30px)}
+.sgbtns{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0}
+.sgbtn{border:3px solid var(--gc);background:#fff;border-radius:18px;padding:18px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;font-size:17px}
+.sgbtn span{font-size:52px;line-height:1}.sgbtn.on{background:color-mix(in srgb,var(--gc) 18%,#fff);box-shadow:0 0 0 4px color-mix(in srgb,var(--gc) 35%,transparent)}
+.sgmsg{display:flex;gap:6px}.sgst{font-weight:700;font-size:17px;min-height:24px}
+.sgcount{display:flex;gap:14px;flex-wrap:wrap;font-size:22px;font-weight:800;margin:6px 0 10px}.sgcount .hot{color:#d64545}
+.sggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.sgtile{border:2.5px solid var(--gc);border-radius:12px;padding:8px 10px;background:color-mix(in srgb,var(--gc) 10%,#fff);display:flex;flex-direction:column;gap:2px}
+.sgtile b{font-size:16px}.sgtile small{font-size:13px;color:#33404f}.sgtile i{font-size:12px;color:var(--sub);font-style:normal}
+.sgtile.v2{cursor:pointer;animation:sgp 1.6s infinite}.sgtile.done{animation:none;opacity:.6}
+.sgtile.v-1{background:#f6f8fa}
+@keyframes sgp{50%{box-shadow:0 0 0 5px rgba(214,69,69,.25)}}
+/* 생각 수직선 */
+.spph{font-weight:800;color:var(--sub);margin:-4px 0 8px}
+.spends{display:flex;justify-content:space-between;font-size:15px;margin:6px 2px}
+.sptrack{position:relative;height:56px;border-radius:999px;background:linear-gradient(90deg,#2f6f9f22,#9aa5b122,#e0603a22);border:2px solid #cfd8e0;cursor:pointer;touch-action:none}
+.sptrack::after{content:'';position:absolute;left:50%;top:6px;bottom:6px;border-left:2px dashed #b8c3cc}
+.sptrack.big{height:96px;border-radius:18px;cursor:default}
+.spknob{position:absolute;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:#fff;border:4px solid var(--accent);box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.spknob.sent{background:var(--accent)}
+.spdot{position:absolute;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#33404fcc;border:2px solid #fff;z-index:2}
+.spdot.old{top:auto;bottom:6px;background:#9aa5b1;opacity:.55;width:12px;height:12px;margin-left:-6px;z-index:1}
+.spdot.me{background:var(--accent);width:22px;height:22px;margin-left:-11px}
+.spdot span{position:absolute;left:50%;top:-18px;transform:translateX(-50%);font-size:11px;font-weight:700;white-space:nowrap;background:#fffc;padding:0 3px;border-radius:4px}
+.spavg{position:absolute;top:0;bottom:0;border-left:3px solid #33404f;z-index:3}.spavg span{position:absolute;bottom:-20px;left:-24px;font-size:11px;font-weight:800;white-space:nowrap}
+.spavg.after{border-left-color:#e0603a}.spavg.after span{color:#e0603a;top:-18px;bottom:auto}
+.spstats{display:flex;gap:16px;justify-content:center;font-weight:800;margin:26px 0 6px;flex-wrap:wrap}
+.spwhy .spr{position:relative;padding:5px 8px;border-bottom:1px solid #eef1f4;font-size:15px}.spwhy .spr b{color:var(--sub);font-size:13px}
+/* 그림 응답판 */
+.dbbg img{height:44px;border-radius:6px;border:1px solid #d7dee4}
+.dbgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.dbtile{border:2px solid #dde3e8;border-radius:12px;overflow:hidden;background:#fff}.dbtile.on{border-color:#f2c200}.dbtile.me{border-color:var(--accent)}
+.dbtile img{width:100%;display:block;aspect-ratio:900/620;object-fit:contain;background:#fff;cursor:zoom-in}
+.dbname{display:flex;align-items:center;gap:6px;padding:5px 8px;border-top:1px solid #eef1f4}.dbname b{flex:1}.dbname small{color:var(--sub);font-size:11px}
+.dbspot{margin-bottom:10px}.dbspot img{width:100%;max-height:70vh;object-fit:contain;border:3px solid #f2c200;border-radius:14px;background:#fff;cursor:zoom-in}
+.dbsph{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:18px}.dbsph b{flex:1}
+/* 짝 맞추기 */
+.mminfo{display:flex;gap:14px;align-items:center;font-weight:800;font-size:17px;flex-wrap:wrap}
+.mmboard{display:grid;gap:10px;position:relative}
+.mmcard{position:relative;aspect-ratio:4/3;border:0;border-radius:14px;cursor:pointer;font:inherit;font-weight:800;font-size:clamp(14px,2.2vw,22px);background:linear-gradient(135deg,#2f6f9f,#5b8fc4);color:#fff;box-shadow:0 2px 5px rgba(0,0,0,.12);padding:6px;word-break:keep-all;transition:transform .15s}
+.mmcard .mmface{display:none}.mmcard .mmback{font-size:2em;opacity:.6}
+.mmcard.up{background:#fff;color:#22303c;border:2.5px solid #cfd8e0}.mmcard.up .mmface{display:block}.mmcard.up .mmback{display:none}
+.mmcard.up.b{background:#fffdf3}
+.mmcard.ok{border-color:#2f8f5b;background:#ecf8f0;cursor:default}.mmcard.no{border-color:#d64545;animation:mmshake .35s}
+@keyframes mmshake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.mmdone{grid-column:1/-1;text-align:center;background:#fff7d6;border:2px solid #f0d36b;border-radius:14px;padding:14px;font-size:18px}.mmdone b{font-size:24px;display:block}
+/* 빈칸 채우기 */
+.czprev{line-height:2.1;padding:10px;background:#f7f9fb;border-radius:10px;border:1px solid #e3e8ec}
+.czw{border:0;background:none;font:inherit;padding:1px 2px;border-radius:5px;cursor:pointer}.czw:hover{background:#e6eef6}.czw.on{background:#2f6f9f;color:#fff;font-weight:700}
+.czview{font-size:clamp(17px,2.3vw,24px);line-height:2.3;padding:12px 4px;white-space:pre-wrap;word-break:keep-all}
+.czb{display:inline-flex;align-items:baseline;gap:2px;position:relative}.czb small{font-size:11px;color:var(--sub);font-weight:800}
+.czb em{position:absolute;left:14px;top:100%;margin-top:-8px;font-size:13px;font-style:normal;color:#2f8f5b;font-weight:800;white-space:nowrap;line-height:1}
+.czin{font:inherit;font-weight:800;color:#2f6f9f;border:0;border-bottom:2.5px solid #2f6f9f;background:#f2f7fc;border-radius:6px 6px 0 0;padding:0 6px;text-align:center;min-width:3em;max-width:12em}
+.czin.ok{border-color:#2f8f5b;background:#ecf8f0;color:#2f8f5b}.czin.no{border-color:#d64545;background:#fdeeee;color:#b03030}
+.czbank{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0}.czchip{border:1.5px solid #c7d2db;background:#fff;border-radius:999px;padding:5px 12px;font-weight:700;cursor:pointer;font:inherit}
+.czscore{font-weight:800;font-size:18px}
+/* 오답 다시 풀기 */
+.rtbar{height:12px;background:#eef1f4;border-radius:999px;overflow:hidden;margin:6px 0}.rtbar i{display:block;height:100%;background:#2f8f5b;transition:width .4s}
+.rtcard{background:#fff;border:2px solid #dde3e8;border-radius:16px;padding:16px;max-width:760px;margin:0 auto}
+.rtcard small{color:var(--sub);font-weight:800}.rtqq{font-size:clamp(19px,2.6vw,26px);font-weight:800;margin:6px 0 12px;word-break:keep-all}
+.rtopts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.rtopt{border:2px solid #cfd8e0;background:#fff;border-radius:12px;padding:12px;font:inherit;font-size:18px;font-weight:700;text-align:left;cursor:pointer}
+.rtopt.ok{border-color:#2f8f5b;background:#ecf8f0}.rtopt.no{border-color:#d64545;background:#fdeeee}
+.rtfb{min-height:26px;margin-top:10px;font-weight:800;font-size:17px;text-align:center}
+.rtq{padding:5px 0;border-bottom:1px solid #eef1f4}
+.mmboard{max-width:980px;margin:0 auto}
 
 </style>
 <script>
@@ -3514,9 +3614,9 @@ var qrcode = function() {
 </script>
 <script>
 /* 아이콘: Lucide (ISC License, https://lucide.dev) */
-var ICON_PATHS = {"sun": "<circle cx=\"12\" cy=\"12\" r=\"4\" /> <path d=\"M12 2v2\" /> <path d=\"M12 20v2\" /> <path d=\"m4.93 4.93 1.41 1.41\" /> <path d=\"m17.66 17.66 1.41 1.41\" /> <path d=\"M2 12h2\" /> <path d=\"M20 12h2\" /> <path d=\"m6.34 17.66-1.41 1.41\" /> <path d=\"m19.07 4.93-1.41 1.41\" />", "flower-2": "<path d=\"M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1\" /> <circle cx=\"12\" cy=\"8\" r=\"2\" /> <path d=\"M12 10v12\" /> <path d=\"M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z\" /> <path d=\"M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z\" />", "calendar-days": "<path d=\"M8 2v3\" /> <path d=\"M16 2v3\" /> <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M8 13h.01\" /> <path d=\"M12 13h.01\" /> <path d=\"M16 13h.01\" /> <path d=\"M8 17h.01\" /> <path d=\"M12 17h.01\" /> <path d=\"M16 17h.01\" />", "clipboard-list": "<rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\" /> <path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" /> <path d=\"M12 11h4\" /> <path d=\"M12 16h4\" /> <path d=\"M8 11h.01\" /> <path d=\"M8 16h.01\" />", "door-open": "<path d=\"M10 21H2\" /> <path d=\"M10 3H7a2 2 0 00-2 2v16\" /> <path d=\"M14 12h.01\" /> <path d=\"M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z\" /> <path d=\"M22 21h-3\" />", "settings": "<path d=\"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "fish": "<path d=\"M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z\" /> <path d=\"M18 12v.5\" /> <path d=\"M16 17.93a9.77 9.77 0 0 1 0-11.86\" /> <path d=\"M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33\" /> <path d=\"M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4\" /> <path d=\"m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98\" />", "house": "<path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\" /> <path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />", "columns-3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "user-round-check": "<path d=\"M2 21a8 8 0 0 1 13.292-6\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"m16 19 2 2 4-4\" />", "download": "<path d=\"M12 15V3\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" /> <path d=\"m7 10 5 5 5-5\" />", "mic": "<path d=\"M12 19v3\" /> <path d=\"M19 10v2a7 7 0 0 1-14 0v-2\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"13\" rx=\"3\" />", "network": "<rect x=\"16\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"2\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\" /> <path d=\"M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3\" /> <path d=\"M12 12V8\" />", "search": "<path d=\"m21 21-4.34-4.34\" /> <circle cx=\"11\" cy=\"11\" r=\"8\" />", "cloud": "<path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\" />", "list-checks": "<path d=\"M13 5h8\" /> <path d=\"M13 12h8\" /> <path d=\"M13 19h8\" /> <path d=\"m3 17 2 2 4-4\" /> <path d=\"m3 7 2 2 4-4\" />", "grid-2x2-check": "<path d=\"M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3\" /> <path d=\"m16 19 2 2 4-4\" />", "sprout": "<path d=\"M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3\" /> <path d=\"M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4\" /> <path d=\"M5 21h14\" />", "timer": "<line x1=\"10\" x2=\"14\" y1=\"2\" y2=\"2\" /> <line x1=\"12\" x2=\"15\" y1=\"14\" y2=\"11\" /> <circle cx=\"12\" cy=\"14\" r=\"8\" />", "sticky-note": "<path d=\"M21 9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z\" /> <path d=\"M15 3v5a1 1 0 0 0 1 1h5\" />", "megaphone": "<path d=\"M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z\" /> <path d=\"M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14\" /> <path d=\"M8 6v8\" />", "list-ordered": "<path d=\"M11 5h10\" /> <path d=\"M11 12h10\" /> <path d=\"M11 19h10\" /> <path d=\"M4 4h1v5\" /> <path d=\"M4 9h2\" /> <path d=\"M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02\" />", "feather": "<path d=\"M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z\" /> <path d=\"M16 8 2 22\" /> <path d=\"M17.488 15H9\" />", "calendar-range": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /> <path d=\"M16 2v3\" /> <path d=\"M3 9h18\" /> <path d=\"M8 2v3\" /> <path d=\"M17 13h-6\" /> <path d=\"M13 17H7\" /> <path d=\"M7 13h.01\" /> <path d=\"M17 17h.01\" />", "scan-search": "<path d=\"M3 7V5a2 2 0 0 1 2-2h2\" /> <path d=\"M17 3h2a2 2 0 0 1 2 2v2\" /> <path d=\"M21 17v2a2 2 0 0 1-2 2h-2\" /> <path d=\"M7 21H5a2 2 0 0 1-2-2v-2\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" /> <path d=\"m16 16-1.9-1.9\" />", "brain": "<path d=\"M12 18V5\" /> <path d=\"M15 13a4.17 4.17 0 01-3-4 4.17 4.17 0 01-3 4\" /> <path d=\"M17.707 6.294A3 3 0 1012 5a3 3 0 10-5.707 1.294\" /> <path d=\"M17.996 5.125a4 4 0 012.526 5.77\" /> <path d=\"M18 18a4 4 0 002-7.465\" /> <path d=\"M19.967 17.482a4 4 0 11-7.967.517 4 4 0 11-7.967-.517\" /> <path d=\"M6 18a4 4 0 01-2-7.465\" /> <path d=\"M6.004 5.125a4 4 0 00-2.526 5.77\" />", "book-open-text": "<path d=\"M12 5v16\" /> <path d=\"M16 13h2\" /> <path d=\"M16 9h2\" /> <path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\" /> <path d=\"M6 13h2\" /> <path d=\"M6 9h2\" />", "ferris-wheel": "<circle cx=\"12\" cy=\"12\" r=\"2\" /> <path d=\"M12 2v4\" /> <path d=\"m6.8 15-3.5 2\" /> <path d=\"m20.7 7-3.5 2\" /> <path d=\"M6.8 9 3.3 7\" /> <path d=\"m20.7 17-3.5-2\" /> <path d=\"m9 22 3-8 3 8\" /> <path d=\"M8 22h8\" /> <path d=\"M18 18.7a9 9 0 1 0-12 0\" />", "trophy": "<path d=\"M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2\" /> <path d=\"M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2\" /> <path d=\"M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3\" /> <path d=\"M4 22h16\" /> <path d=\"M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z\" /> <path d=\"M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3\" />", "archive-restore": "<rect width=\"20\" height=\"5\" x=\"2\" y=\"3\" rx=\"1\" /> <path d=\"M4 8v11a2 2 0 0 0 2 2h2\" /> <path d=\"M20 8v11a2 2 0 0 1-2 2h-2\" /> <path d=\"m9 15 3-3 3 3\" /> <path d=\"M12 12v9\" />", "mic-vocal": "<path d=\"m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12\" /> <path d=\"M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5\" /> <circle cx=\"16\" cy=\"7\" r=\"5\" />", "book-user": "<path d=\"M15 13a3 3 0 1 0-6 0\" /> <path d=\"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20\" /> <circle cx=\"12\" cy=\"8\" r=\"2\" />", "grid-3x3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M3 15h18\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "refresh-cw": "<path d=\"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8\" /> <path d=\"M21 3v5h-5\" /> <path d=\"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16\" /> <path d=\"M8 16H3v5\" />", "vote": "<path d=\"m9 12 2 2 4-4\" /> <path d=\"M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z\" /> <path d=\"M22 19H2\" />", "hand": "<path d=\"M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2\" /> <path d=\"M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2\" /> <path d=\"M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8\" /> <path d=\"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15\" />", "recycle": "<path d=\"M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5\" /> <path d=\"M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12\" /> <path d=\"m14 16-3 3 3 3\" /> <path d=\"M8.293 13.596 7.196 9.5 3.1 10.598\" /> <path d=\"m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843\" /> <path d=\"m13.378 9.633 4.096 1.098 1.097-4.096\" />", "blocks": "<path d=\"M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2\" /> <rect x=\"14\" y=\"2\" width=\"8\" height=\"8\" rx=\"1\" />", "upload": "<path d=\"M12 3v12\" /> <path d=\"m17 8-5-5-5 5\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" />", "pencil-line": "<path d=\"M13 21h8\" /> <path d=\"m15 5 4 4\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "dices": "<rect width=\"12\" height=\"12\" x=\"2\" y=\"10\" rx=\"2\" ry=\"2\" /> <path d=\"m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6\" /> <path d=\"M6 18h.01\" /> <path d=\"M10 14h.01\" /> <path d=\"M15 6h.01\" /> <path d=\"M18 9h.01\" />", "users-round": "<path d=\"M18 21a8 8 0 0 0-16 0\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3\" />", "chart-no-axes-column-increasing": "<path d=\"M5 21v-6\" /> <path d=\"M12 21V9\" /> <path d=\"M19 21V3\" />", "school": "<path d=\"M14 21v-3a2 2 0 0 0-4 0v3\" /> <path d=\"M18 4.933V21\" /> <path d=\"m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6\" /> <path d=\"m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11\" /> <path d=\"M6 4.933V21\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" />", "spell-check": "<path d=\"m20 15-5.5 5.5L12 18\" /> <path d=\"m4 16 6-12 5.115 10.23\" /> <path d=\"M6 12h8\" />", "pen-line": "<path d=\"M13 21h8\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "layers": "<path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\" /> <path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\" /> <path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\" />", "armchair": "<path d=\"M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3\" /> <path d=\"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z\" /> <path d=\"M5 18v2\" /> <path d=\"M19 18v2\" />", "cloud-check": "<path d=\"m17 15-5.5 5.5L9 18\" /> <path d=\"M5.516 16.07A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 3.501 7.327\" />", "calendar-clock": "<path d=\"M16 2v3\" /> <path d=\"M17 15.5v1.7l1 .625\" /> <path d=\"M21 8.936V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h3.935\" /> <path d=\"M3 9h9.873\" /> <path d=\"M8 2v3\" /> <circle cx=\"17\" cy=\"17\" r=\"5\" />", "scale": "<path d=\"M12 3v18\" /> <path d=\"m19 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1\" /> <path d=\"m5 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M7 21h10\" />", "file-pen-line": "<path d=\"M14.364 13.634a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506l4.013-4.009a1 1 0 0 0-3.004-3.004z\" /> <path d=\"M14.487 7.858A1 1 0 0 1 14 7V2\" /> <path d=\"M20 19.645V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l2.516 2.516\" /> <path d=\"M8 18h1\" />", "bell-ring": "<path d=\"M10.268 21a2 2 0 0 0 3.464 0\" /> <path d=\"M22 8c0-2.3-.8-4.3-2-6\" /> <path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\" /> <path d=\"M4 2C2.8 3.7 2 5.7 2 8\" />", "map": "<path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /> <path d=\"M15 5.764v15\" /> <path d=\"M9 3.236v15\" />", "chart-spline": "<path d=\"M3 3v16a2 2 0 0 0 2 2h16\" /> <path d=\"M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7\" />", "repeat": "<path d=\"m17 2 4 4-4 4\" /> <path d=\"M3 11v-1a4 4 0 0 1 4-4h14\" /> <path d=\"m7 22-4-4 4-4\" /> <path d=\"M21 13v1a4 4 0 0 1-4 4H3\" />", "trash-2": "<path d=\"M10 11v6\" /> <path d=\"M14 11v6\" /> <path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\" /> <path d=\"M3 6h18\" /> <path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\" />", "lightbulb": "<path d=\"M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5\" /> <path d=\"M9 18h6\" /> <path d=\"M10 22h4\" />", "signpost": "<path d=\"M12 13v8\" /> <path d=\"M12 3v3\" /> <path d=\"M2.354 10.354a1.207 1.207 0 0 1 0-1.708l2.06-2.06A2 2 0 0 1 5.828 6h12.344a2 2 0 0 1 1.414.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1-1.414.586H5.828a2 2 0 0 1-1.414-.586z\" />", "copy": "<rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\" /> <path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\" />", "shuffle": "<path d=\"m18 14 4 4-4 4\" /> <path d=\"m18 2 4 4-4 4\" /> <path d=\"M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22\" /> <path d=\"M2 6h1.972a4 4 0 0 1 3.6 2.2\" /> <path d=\"M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45\" />", "radio-tower": "<path d=\"M4.9 16.1C1 12.2 1 5.8 4.9 1.9\" /> <path d=\"M7.8 4.7a6.14 6.14 0 0 0-.8 7.5\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" /> <path d=\"M16.2 4.8c2 2 2.26 5.11.8 7.47\" /> <path d=\"M19.1 1.9a9.96 9.96 0 0 1 0 14.1\" /> <path d=\"M9.5 18h5\" /> <path d=\"m8 22 4-11 4 11\" />", "square-check-big": "<path d=\"M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344\" /> <path d=\"m9 11 3 3L22 4\" />", "signature": "<path d=\"m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284\" /> <path d=\"M3 21h18\" />", "handshake": "<path d=\"m11 17 2 2a1 1 0 1 0 3-3\" /> <path d=\"m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4\" /> <path d=\"m21 3 1 11h-2\" /> <path d=\"M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3\" /> <path d=\"M3 4h8\" />", "palette": "<path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /> <circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" />", "id-card": "<path d=\"M13 19a4 4 0 00-8 0\" /> <path d=\"M16 10h2\" /> <path d=\"M16 14h2\" /> <circle cx=\"9\" cy=\"12\" r=\"3\" /> <rect x=\"2\" y=\"5\" width=\"20\" height=\"14\" rx=\"2\" />", "thermometer": "<path d=\"M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\" />", "folder-heart": "<path d=\"M10.638 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v3.417\" /> <path d=\"M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z\" />", "languages": "<path d=\"m5 8 6 6\" /> <path d=\"m4 14 6-6 2-3\" /> <path d=\"M2 5h12\" /> <path d=\"M7 2h1\" /> <path d=\"m22 22-5-10-5 10\" /> <path d=\"M14 18h6\" />", "eye": "<path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "history": "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\" /> <path d=\"M3 3v5h5\" /> <path d=\"M12 7v5l4 2\" />", "smartphone": "<rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\" /> <path d=\"M12 18h.01\" />", "blend": "<circle cx=\"15\" cy=\"9\" r=\"7\" /> <circle cx=\"9\" cy=\"15\" r=\"7\" />", "notebook-text": "<path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\" /> <path d=\"M9.5 8h5\" /> <path d=\"M9.5 12H16\" /> <path d=\"M9.5 16H14\" />", "messages-square": "<path d=\"M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z\" /> <path d=\"M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1\" />", "notebook-pen": "<path d=\"M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4\" /> <path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <path d=\"M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z\" />"};
+var ICON_PATHS = {"thermometer": "<path d=\"M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\" />", "refresh-cw": "<path d=\"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8\" /> <path d=\"M21 3v5h-5\" /> <path d=\"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16\" /> <path d=\"M8 16H3v5\" />", "pencil-line": "<path d=\"M13 21h8\" /> <path d=\"m15 5 4 4\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "history": "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\" /> <path d=\"M3 3v5h5\" /> <path d=\"M12 7v5l4 2\" />", "chart-no-axes-column-increasing": "<path d=\"M5 21v-6\" /> <path d=\"M12 21V9\" /> <path d=\"M19 21V3\" />", "mic": "<path d=\"M12 19v3\" /> <path d=\"M19 10v2a7 7 0 0 1-14 0v-2\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"13\" rx=\"3\" />", "cloud": "<path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\" />", "eye": "<path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "file-pen-line": "<path d=\"M14.364 13.634a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506l4.013-4.009a1 1 0 0 0-3.004-3.004z\" /> <path d=\"M14.487 7.858A1 1 0 0 1 14 7V2\" /> <path d=\"M20 19.645V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l2.516 2.516\" /> <path d=\"M8 18h1\" />", "chart-spline": "<path d=\"M3 3v16a2 2 0 0 0 2 2h16\" /> <path d=\"M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7\" />", "list-ordered": "<path d=\"M11 5h10\" /> <path d=\"M11 12h10\" /> <path d=\"M11 19h10\" /> <path d=\"M4 4h1v5\" /> <path d=\"M4 9h2\" /> <path d=\"M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02\" />", "bell-ring": "<path d=\"M10.268 21a2 2 0 0 0 3.464 0\" /> <path d=\"M22 8c0-2.3-.8-4.3-2-6\" /> <path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\" /> <path d=\"M4 2C2.8 3.7 2 5.7 2 8\" />", "calendar-range": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /> <path d=\"M16 2v3\" /> <path d=\"M3 9h18\" /> <path d=\"M8 2v3\" /> <path d=\"M17 13h-6\" /> <path d=\"M13 17H7\" /> <path d=\"M7 13h.01\" /> <path d=\"M17 17h.01\" />", "workflow": "<rect width=\"8\" height=\"8\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M7 11v4a2 2 0 0 0 2 2h4\" /> <rect width=\"8\" height=\"8\" x=\"13\" y=\"13\" rx=\"2\" />", "notebook-text": "<path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\" /> <path d=\"M9.5 8h5\" /> <path d=\"M9.5 12H16\" /> <path d=\"M9.5 16H14\" />", "mic-vocal": "<path d=\"m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12\" /> <path d=\"M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5\" /> <circle cx=\"16\" cy=\"7\" r=\"5\" />", "handshake": "<path d=\"m11 17 2 2a1 1 0 1 0 3-3\" /> <path d=\"m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4\" /> <path d=\"m21 3 1 11h-2\" /> <path d=\"M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3\" /> <path d=\"M3 4h8\" />", "pen-line": "<path d=\"M13 21h8\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />", "door-open": "<path d=\"M10 21H2\" /> <path d=\"M10 3H7a2 2 0 00-2 2v16\" /> <path d=\"M14 12h.01\" /> <path d=\"M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z\" /> <path d=\"M22 21h-3\" />", "brain": "<path d=\"M12 18V5\" /> <path d=\"M15 13a4.17 4.17 0 01-3-4 4.17 4.17 0 01-3 4\" /> <path d=\"M17.707 6.294A3 3 0 1012 5a3 3 0 10-5.707 1.294\" /> <path d=\"M17.996 5.125a4 4 0 012.526 5.77\" /> <path d=\"M18 18a4 4 0 002-7.465\" /> <path d=\"M19.967 17.482a4 4 0 11-7.967.517 4 4 0 11-7.967-.517\" /> <path d=\"M6 18a4 4 0 01-2-7.465\" /> <path d=\"M6.004 5.125a4 4 0 00-2.526 5.77\" />", "calendar-days": "<path d=\"M8 2v3\" /> <path d=\"M16 2v3\" /> <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M8 13h.01\" /> <path d=\"M12 13h.01\" /> <path d=\"M16 13h.01\" /> <path d=\"M8 17h.01\" /> <path d=\"M12 17h.01\" /> <path d=\"M16 17h.01\" />", "sprout": "<path d=\"M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3\" /> <path d=\"M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4\" /> <path d=\"M5 21h14\" />", "recycle": "<path d=\"M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5\" /> <path d=\"M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12\" /> <path d=\"m14 16-3 3 3 3\" /> <path d=\"M8.293 13.596 7.196 9.5 3.1 10.598\" /> <path d=\"m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843\" /> <path d=\"m13.378 9.633 4.096 1.098 1.097-4.096\" />", "blend": "<circle cx=\"15\" cy=\"9\" r=\"7\" /> <circle cx=\"9\" cy=\"15\" r=\"7\" />", "download": "<path d=\"M12 15V3\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" /> <path d=\"m7 10 5 5 5-5\" />", "list-checks": "<path d=\"M13 5h8\" /> <path d=\"M13 12h8\" /> <path d=\"M13 19h8\" /> <path d=\"m3 17 2 2 4-4\" /> <path d=\"m3 7 2 2 4-4\" />", "kanban": "<path d=\"M5 3v14\" /> <path d=\"M12 3v8\" /> <path d=\"M19 3v18\" />", "clipboard-list": "<rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\" /> <path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" /> <path d=\"M12 11h4\" /> <path d=\"M12 16h4\" /> <path d=\"M8 11h.01\" /> <path d=\"M8 16h.01\" />", "signature": "<path d=\"m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284\" /> <path d=\"M3 21h18\" />", "blocks": "<path d=\"M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2\" /> <rect x=\"14\" y=\"2\" width=\"8\" height=\"8\" rx=\"1\" />", "trash-2": "<path d=\"M10 11v6\" /> <path d=\"M14 11v6\" /> <path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\" /> <path d=\"M3 6h18\" /> <path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\" />", "search": "<path d=\"m21 21-4.34-4.34\" /> <circle cx=\"11\" cy=\"11\" r=\"8\" />", "settings": "<path d=\"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "ferris-wheel": "<circle cx=\"12\" cy=\"12\" r=\"2\" /> <path d=\"M12 2v4\" /> <path d=\"m6.8 15-3.5 2\" /> <path d=\"m20.7 7-3.5 2\" /> <path d=\"M6.8 9 3.3 7\" /> <path d=\"m20.7 17-3.5-2\" /> <path d=\"m9 22 3-8 3 8\" /> <path d=\"M8 22h8\" /> <path d=\"M18 18.7a9 9 0 1 0-12 0\" />", "signpost": "<path d=\"M12 13v8\" /> <path d=\"M12 3v3\" /> <path d=\"M2.354 10.354a1.207 1.207 0 0 1 0-1.708l2.06-2.06A2 2 0 0 1 5.828 6h12.344a2 2 0 0 1 1.414.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1-1.414.586H5.828a2 2 0 0 1-1.414-.586z\" />", "palette": "<path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /> <circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /> <circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" />", "languages": "<path d=\"m5 8 6 6\" /> <path d=\"m4 14 6-6 2-3\" /> <path d=\"M2 5h12\" /> <path d=\"M7 2h1\" /> <path d=\"m22 22-5-10-5 10\" /> <path d=\"M14 18h6\" />", "map": "<path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /> <path d=\"M15 5.764v15\" /> <path d=\"M9 3.236v15\" />", "shuffle": "<path d=\"m18 14 4 4-4 4\" /> <path d=\"m18 2 4 4-4 4\" /> <path d=\"M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22\" /> <path d=\"M2 6h1.972a4 4 0 0 1 3.6 2.2\" /> <path d=\"M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45\" />", "upload": "<path d=\"M12 3v12\" /> <path d=\"m17 8-5-5-5 5\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" />", "book-open-text": "<path d=\"M12 5v16\" /> <path d=\"M16 13h2\" /> <path d=\"M16 9h2\" /> <path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\" /> <path d=\"M6 13h2\" /> <path d=\"M6 9h2\" />", "hand": "<path d=\"M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2\" /> <path d=\"M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2\" /> <path d=\"M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8\" /> <path d=\"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15\" />", "lightbulb": "<path d=\"M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5\" /> <path d=\"M9 18h6\" /> <path d=\"M10 22h4\" />", "fish": "<path d=\"M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z\" /> <path d=\"M18 12v.5\" /> <path d=\"M16 17.93a9.77 9.77 0 0 1 0-11.86\" /> <path d=\"M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33\" /> <path d=\"M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4\" /> <path d=\"m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98\" />", "flower-2": "<path d=\"M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1\" /> <circle cx=\"12\" cy=\"8\" r=\"2\" /> <path d=\"M12 10v12\" /> <path d=\"M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z\" /> <path d=\"M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z\" />", "diamond": "<path d=\"M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z\" />", "timer": "<line x1=\"10\" x2=\"14\" y1=\"2\" y2=\"2\" /> <line x1=\"12\" x2=\"15\" y1=\"14\" y2=\"11\" /> <circle cx=\"12\" cy=\"14\" r=\"8\" />", "notebook-pen": "<path d=\"M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4\" /> <path d=\"M2 6h4\" /> <path d=\"M2 10h4\" /> <path d=\"M2 14h4\" /> <path d=\"M2 18h4\" /> <path d=\"M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z\" />", "network": "<rect x=\"16\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"2\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\" /> <path d=\"M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3\" /> <path d=\"M12 12V8\" />", "scan-search": "<path d=\"M3 7V5a2 2 0 0 1 2-2h2\" /> <path d=\"M17 3h2a2 2 0 0 1 2 2v2\" /> <path d=\"M21 17v2a2 2 0 0 1-2 2h-2\" /> <path d=\"M7 21H5a2 2 0 0 1-2-2v-2\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" /> <path d=\"m16 16-1.9-1.9\" />", "megaphone": "<path d=\"M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z\" /> <path d=\"M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14\" /> <path d=\"M8 6v8\" />", "scale": "<path d=\"M12 3v18\" /> <path d=\"m19 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1\" /> <path d=\"m5 8 3 8a5 5 0 0 1-6 0zV7\" /> <path d=\"M7 21h10\" />", "school": "<path d=\"M14 21v-3a2 2 0 0 0-4 0v3\" /> <path d=\"M18 4.933V21\" /> <path d=\"m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6\" /> <path d=\"m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11\" /> <path d=\"M6 4.933V21\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" />", "cloud-check": "<path d=\"m17 15-5.5 5.5L9 18\" /> <path d=\"M5.516 16.07A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 3.501 7.327\" />", "layers": "<path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\" /> <path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\" /> <path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\" />", "spell-check": "<path d=\"m20 15-5.5 5.5L12 18\" /> <path d=\"m4 16 6-12 5.115 10.23\" /> <path d=\"M6 12h8\" />", "messages-square": "<path d=\"M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z\" /> <path d=\"M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1\" />", "feather": "<path d=\"M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z\" /> <path d=\"M16 8 2 22\" /> <path d=\"M17.488 15H9\" />", "grid-3x3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M3 15h18\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "rotate-ccw": "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\" /> <path d=\"M3 3v5h5\" />", "sun": "<circle cx=\"12\" cy=\"12\" r=\"4\" /> <path d=\"M12 2v2\" /> <path d=\"M12 20v2\" /> <path d=\"m4.93 4.93 1.41 1.41\" /> <path d=\"m17.66 17.66 1.41 1.41\" /> <path d=\"M2 12h2\" /> <path d=\"M20 12h2\" /> <path d=\"m6.34 17.66-1.41 1.41\" /> <path d=\"m19.07 4.93-1.41 1.41\" />", "house": "<path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\" /> <path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />", "user-round-check": "<path d=\"M2 21a8 8 0 0 1 13.292-6\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"m16 19 2 2 4-4\" />", "archive-restore": "<rect width=\"20\" height=\"5\" x=\"2\" y=\"3\" rx=\"1\" /> <path d=\"M4 8v11a2 2 0 0 0 2 2h2\" /> <path d=\"M20 8v11a2 2 0 0 1-2 2h-2\" /> <path d=\"m9 15 3-3 3 3\" /> <path d=\"M12 12v9\" />", "columns-3": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M9 3v18\" /> <path d=\"M15 3v18\" />", "id-card": "<path d=\"M13 19a4 4 0 00-8 0\" /> <path d=\"M16 10h2\" /> <path d=\"M16 14h2\" /> <circle cx=\"9\" cy=\"12\" r=\"3\" /> <rect x=\"2\" y=\"5\" width=\"20\" height=\"14\" rx=\"2\" />", "dices": "<rect width=\"12\" height=\"12\" x=\"2\" y=\"10\" rx=\"2\" ry=\"2\" /> <path d=\"m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6\" /> <path d=\"M6 18h.01\" /> <path d=\"M10 14h.01\" /> <path d=\"M15 6h.01\" /> <path d=\"M18 9h.01\" />", "sliders-horizontal": "<path d=\"M10 5H3\" /> <path d=\"M12 19H3\" /> <path d=\"M14 3v4\" /> <path d=\"M16 17v4\" /> <path d=\"M21 12h-9\" /> <path d=\"M21 19h-5\" /> <path d=\"M21 5h-7\" /> <path d=\"M8 10v4\" /> <path d=\"M8 12H3\" />", "calendar-clock": "<path d=\"M16 2v3\" /> <path d=\"M17 15.5v1.7l1 .625\" /> <path d=\"M21 8.936V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h3.935\" /> <path d=\"M3 9h9.873\" /> <path d=\"M8 2v3\" /> <circle cx=\"17\" cy=\"17\" r=\"5\" />", "book-user": "<path d=\"M15 13a3 3 0 1 0-6 0\" /> <path d=\"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20\" /> <circle cx=\"12\" cy=\"8\" r=\"2\" />", "text-cursor-input": "<path d=\"M12 20h-1a2 2 0 0 1-2-2 2 2 0 0 1-2 2H6\" /> <path d=\"M13 8h7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-7\" /> <path d=\"M5 16H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1\" /> <path d=\"M6 4h1a2 2 0 0 1 2 2 2 2 0 0 1 2-2h1\" /> <path d=\"M9 6v12\" />", "grid-2x2-check": "<path d=\"M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3\" /> <path d=\"m16 19 2 2 4-4\" />", "armchair": "<path d=\"M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3\" /> <path d=\"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z\" /> <path d=\"M5 18v2\" /> <path d=\"M19 18v2\" />", "sticky-note": "<path d=\"M21 9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z\" /> <path d=\"M15 3v5a1 1 0 0 0 1 1h5\" />", "users-round": "<path d=\"M18 21a8 8 0 0 0-16 0\" /> <circle cx=\"10\" cy=\"8\" r=\"5\" /> <path d=\"M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3\" />", "copy": "<rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\" /> <path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\" />", "vote": "<path d=\"m9 12 2 2 4-4\" /> <path d=\"M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z\" /> <path d=\"M22 19H2\" />", "brush": "<path d=\"m11 10 3 3\" /> <path d=\"M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z\" /> <path d=\"M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031\" />", "trophy": "<path d=\"M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2\" /> <path d=\"M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2\" /> <path d=\"M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3\" /> <path d=\"M4 22h16\" /> <path d=\"M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z\" /> <path d=\"M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3\" />", "smartphone": "<rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\" /> <path d=\"M12 18h.01\" />", "traffic-cone": "<path d=\"M16.05 10.966a5 2.5 0 0 1-8.1 0\" /> <path d=\"m16.923 14.049 4.48 2.04a1 1 0 0 1 .001 1.831l-8.574 3.9a2 2 0 0 1-1.66 0l-8.574-3.91a1 1 0 0 1 0-1.83l4.484-2.04\" /> <path d=\"M16.949 14.14a5 2.5 0 1 1-9.9 0L10.063 3.5a2 2 0 0 1 3.874 0z\" /> <path d=\"M9.194 6.57a5 2.5 0 0 0 5.61 0\" />", "square-check-big": "<path d=\"M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344\" /> <path d=\"m9 11 3 3L22 4\" />", "radio-tower": "<path d=\"M4.9 16.1C1 12.2 1 5.8 4.9 1.9\" /> <path d=\"M7.8 4.7a6.14 6.14 0 0 0-.8 7.5\" /> <circle cx=\"12\" cy=\"9\" r=\"2\" /> <path d=\"M16.2 4.8c2 2 2.26 5.11.8 7.47\" /> <path d=\"M19.1 1.9a9.96 9.96 0 0 1 0 14.1\" /> <path d=\"M9.5 18h5\" /> <path d=\"m8 22 4-11 4 11\" />", "folder-heart": "<path d=\"M10.638 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v3.417\" /> <path d=\"M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z\" />", "repeat": "<path d=\"m17 2 4 4-4 4\" /> <path d=\"M3 11v-1a4 4 0 0 1 4-4h14\" /> <path d=\"m7 22-4-4 4-4\" /> <path d=\"M21 13v1a4 4 0 0 1-4 4H3\" />"};
 var GROUP_ICON = {"think": "brain", "deep": "lightbulb", "write": "pen-line", "live": "radio-tower", "group": "users-round", "dict": "spell-check", "inform": "bell-ring", "review": "repeat", "record": "clipboard-list", "class": "school", "_home": "house", "_search": "search", "_clock": "history", "_settings": "settings", "_backup": "archive-restore", "_recycle": "recycle", "_device": "smartphone", "_copy": "copy", "_trash": "trash-2", "_down": "download", "_up": "upload", "_today": "calendar-clock", "_sun": "sun", "_save": "cloud-check", "_user": "user-round-check"};
-var TOOL_ICON = {"mandalart": "grid-3x3", "mindmap": "network", "venn": "blend", "kwl": "columns-3", "fishbone": "fish", "storymap": "map", "picker": "shuffle", "wheel": "ferris-wheel", "timer": "timer", "flashcards": "layers", "bingo": "grid-2x2-check", "sequence": "list-ordered", "journal": "notebook-text", "rubric": "list-checks", "vote": "vote", "exitcard": "door-open", "thermo": "thermometer", "wordcloud": "cloud", "wall": "sticky-note", "dictation": "pencil-line", "engwords": "languages", "cer": "scale", "seethink": "scan-search", "changed": "refresh-cw", "debate": "messages-square", "observe": "eye", "checklist": "square-check-big", "portfolio": "folder-heart", "quiz": "trophy", "notice": "megaphone", "weekly": "calendar-days", "handwriting": "signature", "meditate": "flower-2", "speak": "hand", "roles": "id-card", "seats": "armchair", "peer": "handshake", "records": "file-pen-line", "readaloud": "mic", "structure": "blocks", "qladder": "chart-no-axes-column-increasing", "moodgraph": "chart-spline", "interview": "mic-vocal", "ifhero": "signpost", "poemcard": "feather", "poemart": "palette", "lifewrite": "sprout", "readlog": "book-open-text", "learnwrite": "notebook-pen", "calendar": "calendar-range", "studentrec": "book-user", "draw": "dices", "spell": "pencil-line", "wrapup": "door-open", "wrlife": "notebook-pen", "wrgenre": "file-pen-line", "explwrite": "book-open-text", "perswrite": "megaphone"};
+var TOOL_ICON = {"mandalart": "grid-3x3", "mindmap": "network", "venn": "blend", "kwl": "columns-3", "fishbone": "fish", "storymap": "map", "picker": "shuffle", "wheel": "ferris-wheel", "timer": "timer", "flashcards": "layers", "bingo": "grid-2x2-check", "sequence": "list-ordered", "journal": "notebook-text", "rubric": "list-checks", "vote": "vote", "exitcard": "door-open", "thermo": "thermometer", "wordcloud": "cloud", "wall": "sticky-note", "dictation": "pencil-line", "engwords": "languages", "cer": "scale", "seethink": "scan-search", "changed": "refresh-cw", "debate": "messages-square", "observe": "eye", "checklist": "square-check-big", "portfolio": "folder-heart", "quiz": "trophy", "notice": "megaphone", "weekly": "calendar-days", "handwriting": "signature", "meditate": "flower-2", "speak": "hand", "roles": "id-card", "seats": "armchair", "peer": "handshake", "records": "file-pen-line", "readaloud": "mic", "structure": "blocks", "qladder": "chart-no-axes-column-increasing", "moodgraph": "chart-spline", "interview": "mic-vocal", "ifhero": "signpost", "poemcard": "feather", "poemart": "palette", "lifewrite": "sprout", "readlog": "book-open-text", "learnwrite": "notebook-pen", "calendar": "calendar-range", "studentrec": "book-user", "draw": "dices", "spell": "pencil-line", "wrapup": "door-open", "wrlife": "notebook-pen", "wrgenre": "file-pen-line", "explwrite": "book-open-text", "perswrite": "megaphone", "sortboard": "kanban", "flowmap": "workflow", "diamond": "diamond", "signal": "traffic-cone", "spectrum": "sliders-horizontal", "drawboard": "brush", "memory": "copy", "cloze": "text-cursor-input", "retry": "rotate-ccw"};
 function ico(name, cls) {
   var p = ICON_PATHS[name] || ICON_PATHS[GROUP_ICON[name]] || ICON_PATHS[TOOL_ICON[name]] || ICON_PATHS.house;
   var w = document.createElement('span'); w.className = 'svgi' + (cls ? ' ' + cls : '');
@@ -8465,6 +8565,7 @@ function drawPad(opts) {
   paint(); redraw();
   return {
     el: h('div', { class: 'dpad' }, bar, h('div', { class: 'dpwrap' }, cv)),
+    setBg: function (src) { if (!src) { bg = null; redraw(); return; } var im = new Image(); im.onload = function () { bg = im; redraw(); }; im.src = src; },
     empty: function () { return !strokes.length && !bg; },
     clear: function () { strokes = []; bg = null; redraw(); },
     image: function (max, q) {   // 가벼운 JPEG로 줄여서 돌려줘요
@@ -10692,6 +10793,672 @@ function openPeekStudent(V) {
   openPeekBoard(V.def, subs, { anon: !!p.anon, key: V.pkKey, onKey: function (k) { V.pkKey = k; },
     onOpen: function (s, label) { openSideBySide(V.def, [Object.assign({}, s, { label: label, name: label, ts: 0 })], true); } }, '👀 친구 생각 모아 보기');
 }
+
+/* ===================== 새 도구: 생각 정리 · 수업 참여 · 복습 ===================== */
+function lines(t) { return String(t || '').split('\n').map(function (x) { return x.trim(); }).filter(Boolean); }
+function isRO(el) { return !!(el.closest && el.closest('.ro')); }
+
+/* ---------- 🗂️ 분류판 ---------- */
+tool({
+  key: 'sortboard', name: '분류판', icon: '🗂️', group: 'think', kind: 'ind',
+  desc: '카드를 기준에 따라 나눠요. 기준 칸 이름을 스스로 정하고, 카드를 눌러(또는 끌어) 알맞은 칸에 넣어요.',
+  summary: function (subs) {
+    return sumTable(['이름', '나눈 기준', '아직 안 나눈 카드'], subs.map(function (s) { var d = s.data || {};
+      return [s.name || '익명', arr(d.bins).map(function (b) { return str(b).trim() || '(이름 없음)'; }).join(' / '), arr(d.cards).filter(function (c) { return c && c.b < 0; }).length + '장']; }));
+  },
+  build: function (el, ctx) {
+    var tb = topicBar('무엇을 나눠 볼까요? (예: 우리 주변의 동물)', true);
+    var cardsTa = ta('cfg', '카드를 한 줄에 하나씩 (예: 개구리)', 4), binsTa = ta('cfg', '처음 기준 칸 이름 (한 줄에 하나, 비워 두면 학생이 직접 정해요)', 2);
+    var tray = h('div', { class: 'sbzone sbtray' }), binsEl = h('div', { class: 'sbbins' }), own = inp('', '내가 더할 카드');
+    var why = ta('', '어떤 기준으로 나누었나요? 나누기 어려웠던 카드는 무엇이고, 왜 그랬나요?', 3);
+    var bins = ['', ''], cards = [], sel = -1;
+    el.append(tb.el,
+      h('div', { class: 'tonly sbcfg' }, h('span', { class: 'lbl' }, '🃏 카드'), cardsTa, h('span', { class: 'lbl' }, '🗂️ 처음 기준 칸'), binsTa),
+      h('p', { class: 'hint' }, '카드를 누른 다음 넣을 칸을 눌러요. 끌어다 놓아도 돼요. 칸 이름은 직접 고칠 수 있어요.'),
+      h('span', { class: 'lbl' }, '🃏 아직 나누지 않은 카드'), tray,
+      h('div', { class: 'row', style: { margin: '6px 0' } }, own, h('button', { class: 'btn sm e', onclick: addOwn }, '＋ 카드 더하기'), h('span', { style: { flex: 1 } }),
+        h('button', { class: 'btn sm e', onclick: function () { if (bins.length >= 6) { ctx.toast('칸은 6개까지예요'); return; } bins.push(''); paint(); ctx.dirty(); } }, '＋ 칸 더하기')),
+      binsEl, h('div', { class: 'deepq' }, h('span', { class: 'lbl', style: { marginTop: 0 } }, '🧭 나눈 기준과 까닭'), why));
+    function addOwn() { var t = own.value.trim(); if (!t) return; if (cards.filter(function (c) { return c.own; }).length >= 12) { ctx.toast('카드는 12장까지 더할 수 있어요'); return; } cards.push({ t: t.slice(0, 40), b: -1, own: true }); own.value = ''; paint(); ctx.dirty(); }
+    own.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); addOwn(); } });
+    function move(i, b) { if (i < 0 || !cards[i]) return; cards[i].b = b; sel = -1; paint(); ctx.dirty(); }
+    function zone(node, b) {
+      node.addEventListener('click', function (e) { if (isRO(el) || e.target.closest('.sbcard') || e.target.closest('input,button')) return; if (sel >= 0) move(sel, b); });
+      node.addEventListener('dragover', function (e) { if (!isRO(el)) e.preventDefault(); });
+      node.addEventListener('drop', function (e) { e.preventDefault(); move(+e.dataTransfer.getData('text/plain'), b); });
+    }
+    zone(tray, -1);
+    function card(c, i) {
+      var n = h('div', { class: 'sbcard' + (i === sel ? ' sel' : '') + (c.own ? ' own' : ''), draggable: 'true' }, c.t,
+        c.own ? h('button', { class: 'sbx e', title: '지우기', onclick: function (e) { e.stopPropagation(); cards.splice(i, 1); sel = -1; paint(); ctx.dirty(); } }, '×') : '');
+      n.addEventListener('click', function (e) { if (isRO(el)) return; e.stopPropagation(); if (sel >= 0 && sel !== i && cards[i].b !== cards[sel].b) { move(sel, cards[i].b); return; } sel = sel === i ? -1 : i; paint(); });
+      n.addEventListener('dragstart', function (e) { e.dataTransfer.setData('text/plain', String(i)); });
+      return n;
+    }
+    function paint() {
+      tray.innerHTML = ''; binsEl.innerHTML = '';
+      cards.forEach(function (c, i) { if (c.b < 0 || c.b >= bins.length) { c.b = -1; tray.append(card(c, i)); } });
+      if (!tray.children.length) tray.append(h('span', { class: 'hint', style: { margin: 0 } }, cards.length ? '🎉 모두 나눴어요' : '선생님이 카드를 넣으면 여기에 나와요'));
+      bins.forEach(function (b, bi) {
+        var name = h('input', { class: 'sbname', placeholder: '기준 ' + (bi + 1) + ' (예: 물에 사는 동물)', value: b });
+        name.addEventListener('input', function () { bins[bi] = name.value.slice(0, 40); ctx.dirty(); });
+        var z = h('div', { class: 'sbzone' });
+        cards.forEach(function (c, i) { if (c.b === bi) z.append(card(c, i)); });
+        zone(z, bi);
+        binsEl.append(gc(h('div', { class: 'sbbin' }, h('div', { class: 'sbbh' }, name, bins.length > 2 ? h('button', { class: 'sbx e', title: '칸 지우기', onclick: function () { cards.forEach(function (c) { if (c.b === bi) c.b = -1; else if (c.b > bi) c.b--; }); bins.splice(bi, 1); paint(); ctx.dirty(); } }, '×') : ''), z), PAL[bi % PAL.length]));
+      });
+      if (isRO(el)) lock(el, true);
+    }
+    function syncCards() {
+      var L = lines(cardsTa.value).slice(0, 40), keep = {};
+      cards.forEach(function (c) { if (!c.own) keep[c.t] = c.b; });
+      cards = L.map(function (t) { return { t: t.slice(0, 40), b: keep[t] != null ? keep[t] : -1 }; }).concat(cards.filter(function (c) { return c.own; }));
+    }
+    cardsTa.addEventListener('input', function () { syncCards(); paint(); });
+    binsTa.addEventListener('input', function () { var L = lines(binsTa.value).slice(0, 6); if (L.length) { bins = L.concat(bins.slice(L.length).filter(function () { return false; })); while (bins.length < 2) bins.push(''); } paint(); });
+    el.addEventListener('input', function () { ctx.dirty(); });
+    function setD(d) {
+      tb.input.value = str(d.q, 120); setTa(cardsTa, d.src); setTa(binsTa, d.binSrc); setTa(why, d.why);
+      bins = arr(d.bins).length ? arr(d.bins).slice(0, 6).map(function (b) { return str(b, 40); }) : (lines(d.binSrc).length ? lines(d.binSrc).slice(0, 6) : ['', '']);
+      while (bins.length < 2) bins.push('');
+      if (arr(d.cards).length) cards = arr(d.cards).slice(0, 52).map(function (c) { return { t: str(c && c.t, 40), b: (c && c.b) | 0, own: !!(c && c.own) }; }).filter(function (c) { return c.t; }).map(function (c) { if (c.b < -1) c.b = -1; return c; });
+      else { cards = []; syncCards(); }
+      sel = -1; paint();
+    }
+    setD({});
+    return {
+      title: function () { return tb.input.value || '분류판'; },
+      get: function () { return { q: tb.input.value, src: cardsTa.value, binSrc: binsTa.value, bins: bins.slice(), cards: cards.map(function (c) { return c.own ? { t: c.t, b: c.b, own: true } : { t: c.t, b: c.b }; }), why: why.value }; },
+      set: setD, reset: function () { setD({}); }
+    };
+  }
+});
+
+/* ---------- 🔄 흐름도 · 순환도 ---------- */
+tool({
+  key: 'flowmap', name: '흐름도 · 순환도', icon: '🔄', group: 'think', kind: 'ind',
+  desc: '일의 차례는 화살표로 잇는 흐름도로, 되풀이되는 과정은 동그랗게 도는 순환도로 정리해요.',
+  summary: function (subs) {
+    return sumTable(['이름', '모양', '단계'], subs.map(function (s) { var d = s.data || {};
+      return [s.name || '익명', d.mode === 'cycle' ? '🔄 순환' : '➡️ 흐름', arr(d.steps).map(function (x) { return str(x && x.t).trim(); }).filter(Boolean).join(d.mode === 'cycle' ? ' ↻ ' : ' → ')]; }));
+  },
+  build: function (el, ctx) {
+    var tb = topicBar('무엇의 흐름인가요? (예: 물의 순환, 개구리의 한살이)', true);
+    var mode = 'line', steps = [], seg = h('div', { class: 'seg' }), map = h('div', { class: 'fmmap' });
+    var note = ta('', '이 흐름에서 가장 중요한 단계는 무엇이고, 왜 그런가요?', 2);
+    [['line', '➡️ 흐름도'], ['cycle', '🔄 순환도']].forEach(function (m) { seg.append(h('button', { 'data-m': m[0], onclick: function () { if (isRO(el)) return; mode = m[0]; paint(); ctx.dirty(); } }, m[1])); });
+    el.append(tb.el, h('div', { class: 'row', style: { alignItems: 'center', margin: '6px 0 10px' } }, seg, h('span', { style: { flex: 1 } }),
+      h('button', { class: 'btn sm e', onclick: function () { if (steps.length >= 8) { ctx.toast('8단계까지 만들 수 있어요'); return; } steps.push({ t: '', d: '' }); paint(); ctx.dirty(); } }, '＋ 단계 더하기')),
+      map, h('div', { class: 'deepq' }, h('span', { class: 'lbl', style: { marginTop: 0 } }, '💡 가장 중요한 단계와 그 까닭'), note));
+    function box(s, i) {
+      var t = h('input', { class: 'fmt', placeholder: (i + 1) + '단계 이름', value: s.t, maxlength: 30 }), d = h('textarea', { class: 'fmd', placeholder: '설명 (선택)', rows: 2 });
+      d.value = s.d || '';
+      t.addEventListener('input', function () { s.t = t.value; }); d.addEventListener('input', function () { s.d = d.value; });
+      return gc(h('div', { class: 'fmbox' }, h('div', { class: 'fmh' }, h('b', {}, i + 1),
+        steps.length > 2 ? h('button', { class: 'sbx e', title: '단계 지우기', onclick: function () { steps.splice(i, 1); paint(); ctx.dirty(); } }, '×') : ''), t, d), PAL[i % PAL.length]);
+    }
+    function paint() {
+      $$('button', seg).forEach(function (b) { b.classList.toggle('on', b.dataset.m === mode); });
+      map.innerHTML = ''; map.className = 'fmmap ' + mode;
+      if (mode === 'line') steps.forEach(function (s, i) { if (i) map.append(h('div', { class: 'fmarr' }, '➜')); map.append(box(s, i)); });
+      else {
+        var n = steps.length, ring = h('div', { class: 'fmring' });
+        map.append(ring);
+        steps.forEach(function (s, i) {
+          var a = (-90 + i * 360 / n) * Math.PI / 180, b = box(s, i);
+          b.style.left = (50 + 37 * Math.cos(a)) + '%'; b.style.top = (50 + 37 * Math.sin(a)) + '%'; map.append(b);
+          var m = (-90 + (i + 0.5) * 360 / n), mr = m * Math.PI / 180;
+          map.append(h('div', { class: 'fmcarr', style: { left: (50 + 37 * Math.cos(mr)) + '%', top: (50 + 37 * Math.sin(mr)) + '%', transform: 'translate(-50%,-50%) rotate(' + (m + 90) + 'deg)' } }, '➜'));
+        });
+        map.append(h('div', { class: 'fmcenter' }, tb.input.value || '순환'));
+      }
+      if (isRO(el)) lock(el, true);
+    }
+    tb.input.addEventListener('input', function () { if (mode === 'cycle') { var c = $('.fmcenter', map); if (c) c.textContent = tb.input.value || '순환'; } });
+    el.addEventListener('input', function () { ctx.dirty(); });
+    function setD(d) {
+      tb.input.value = str(d.q, 120); mode = d.mode === 'cycle' ? 'cycle' : 'line'; setTa(note, d.note);
+      steps = arr(d.steps).slice(0, 8).map(function (s) { return { t: str(s && s.t, 30), d: str(s && s.d, 300) }; });
+      while (steps.length < 4) steps.push({ t: '', d: '' });
+      paint();
+    }
+    setD({});
+    return {
+      title: function () { return tb.input.value || '흐름도'; },
+      get: function () { return { q: tb.input.value, mode: mode, steps: steps.map(function (s) { return { t: s.t, d: s.d }; }), note: note.value }; },
+      set: setD, reset: function () { setD({}); }
+    };
+  }
+});
+
+/* ---------- 💎 다이아몬드 순위 ---------- */
+var DM_TIER = [1, 2, 2, 3, 3, 3, 4, 4, 5];
+tool({
+  key: 'diamond', name: '다이아몬드 순위', icon: '💎', group: 'think', kind: 'ind',
+  desc: '카드 9장을 다이아몬드 모양으로 놓아 가장 중요한 것부터 순서를 정하고, 그렇게 놓은 까닭을 써요. 모둠 토의에 좋아요.',
+  summary: function (subs) {
+    var S = {}, top = {};
+    subs.forEach(function (s) { arr((s.data || {}).items).forEach(function (t, i) { t = str(t).trim(); if (!t) return; (S[t] = S[t] || []).push(DM_TIER[i] || 5); if (i === 0) top[t] = (top[t] || 0) + 1; }); });
+    var R = Object.keys(S).map(function (t) { var a = S[t]; return [t, a.reduce(function (x, y) { return x + y; }, 0) / a.length, top[t] || 0]; }).sort(function (a, b) { return a[1] - b[1]; });
+    return sumTable(['카드', '평균 단계 (1 = 가장 중요)', '1위로 고른 학생'], R.map(function (r) { return [r[0], r[1].toFixed(1), r[2] + '명']; }));
+  },
+  build: function (el, ctx) {
+    var tb = topicBar('무엇의 순위를 정할까요? (예: 우리 반에 가장 필요한 약속)', true);
+    var src = ta('cfg', '카드 9장 (한 줄에 하나). 9장보다 적으면 남은 카드는 학생이 직접 써요.', 4);
+    var items = [], fixed = [], sel = -1, dia = h('div', { class: 'dmd' });
+    var w1 = ta('', '맨 위(1위)에 놓은 까닭', 2), w9 = ta('', '맨 아래에 놓은 까닭', 2), talk = ta('', '친구와 생각이 달랐던 카드와 그 까닭 (선택)', 2);
+    el.append(tb.el, h('div', { class: 'tonly' }, h('span', { class: 'lbl' }, '💎 카드'), src),
+      h('p', { class: 'hint' }, '카드를 누른 다음 바꿀 자리의 카드를 누르면 서로 자리가 바뀌어요. 끌어다 놓아도 돼요. 위로 갈수록 더 중요해요.'),
+      dia, h('div', { class: 'deepq' }, h('span', { class: 'lbl', style: { marginTop: 0 } }, '🥇 맨 위에 놓은 까닭'), w1, h('span', { class: 'lbl' }, '⬇️ 맨 아래에 놓은 까닭'), w9, h('span', { class: 'lbl' }, '💬 친구와 생각이 달랐던 카드'), talk));
+    function swap(a, b) { if (a === b) return; var t = items[a]; items[a] = items[b]; items[b] = t; var f = fixed[a]; fixed[a] = fixed[b]; fixed[b] = f; sel = -1; paint(); ctx.dirty(); }
+    function paint() {
+      dia.innerHTML = ''; var k = 0;
+      [1, 2, 3, 2, 1].forEach(function (n, r) {
+        var row = h('div', { class: 'dmrow' });
+        for (var j = 0; j < n; j++) (function (i) {
+          var input = h('input', { class: 'dmin', placeholder: '빈 카드 — 직접 써요', value: items[i] || '', maxlength: 40 });
+          if (fixed[i]) input.readOnly = true;
+          input.addEventListener('input', function () { items[i] = input.value; ctx.dirty(); });
+          var c = h('div', { class: 'dmcard t' + r + (sel === i ? ' sel' : ''), draggable: 'true' }, h('span', { class: 'dmn' }, r + 1), input);
+          c.addEventListener('click', function (e) { if (isRO(el) || (e.target === input && !fixed[i])) return; if (sel >= 0) swap(sel, i); else { sel = i; paint(); } });
+          c.addEventListener('dragstart', function (e) { e.dataTransfer.setData('text/plain', String(i)); });
+          c.addEventListener('dragover', function (e) { if (!isRO(el)) e.preventDefault(); });
+          c.addEventListener('drop', function (e) { e.preventDefault(); swap(+e.dataTransfer.getData('text/plain'), i); });
+          row.append(c);
+        })(k++);
+        dia.append(row);
+      });
+      if (isRO(el)) lock(el, true);
+    }
+    src.addEventListener('input', function () { var L = lines(src.value).slice(0, 9); items = []; fixed = []; for (var i = 0; i < 9; i++) { items.push(L[i] || ''); fixed.push(!!L[i]); } paint(); });
+    el.addEventListener('input', function () { ctx.dirty(); });
+    function setD(d) {
+      tb.input.value = str(d.q, 120); setTa(src, d.src); setTa(w1, d.why1); setTa(w9, d.why9); setTa(talk, d.talk);
+      var L = lines(d.src).slice(0, 9), I = arr(d.items);
+      items = []; fixed = [];
+      for (var i = 0; i < 9; i++) { var t = I.length ? str(I[i], 40) : (L[i] || ''); items.push(t); fixed.push(!!t && L.indexOf(t) >= 0); }
+      sel = -1; paint();
+    }
+    setD({});
+    return {
+      title: function () { return tb.input.value || '다이아몬드 순위'; },
+      get: function () { return { q: tb.input.value, src: src.value, items: items.slice(), why1: w1.value, why9: w9.value, talk: talk.value }; },
+      set: setD, reset: function () { setD({}); }
+    };
+  }
+});
+
+Object.assign(PEEK_FIELDS, {
+  sortboard: function (d) {
+    var B = arr(d.bins), C = arr(d.cards), f = [['bins', '🗂️ 나눈 기준', B.map(function (b) { return str(b).trim() || '(이름 없음)'; }).join(' / ')]];
+    B.forEach(function (b, i) { var n = str(b).trim(); if (n) f.push(['bin:' + n, '📦 ' + n, C.filter(function (c) { return c && c.b === i; }).map(function (c) { return c.t; }).join(', '), true]); });
+    f.push(['why', '🧭 나눈 기준과 까닭', d.why]);
+    return f;
+  },
+  flowmap: function (d) {
+    var S = arr(d.steps).filter(function (s) { return s && (pkT(s.t) || pkT(s.d)); });
+    return [['chain', d.mode === 'cycle' ? '🔄 순환 단계' : '➡️ 흐름 단계', S.map(function (s) { return pkT(s.t) || '—'; }).join(d.mode === 'cycle' ? ' ↻ ' : ' → ')],
+      ['detail', '📝 단계별 설명', S.map(function (s, i) { return (i + 1) + '. ' + (pkT(s.t) || '—') + (pkT(s.d) ? ' — ' + pkT(s.d) : ''); }).join('\n')], ['note', '💡 가장 중요한 단계', d.note]];
+  },
+  diamond: function (d) {
+    var I = arr(d.items).map(pkT);
+    return [['top', '🥇 1위', I[0]], ['top3', '🔝 2 · 3위', [I[1], I[2]].filter(Boolean).join(' · ')], ['bottom', '⬇️ 맨 아래', I[8]], ['why1', '💬 맨 위에 놓은 까닭', d.why1], ['why9', '💬 맨 아래에 놓은 까닭', d.why9], ['talk', '🤝 생각이 달랐던 카드', d.talk]];
+  }
+});
+
+/* ---------- 🚦 신호등 ---------- */
+var SIG = [['🟢', '할 수 있어요', '#2f8f5b'], ['🟡', '조금 헷갈려요', '#c99a12'], ['🔴', '도와주세요', '#d64545']];
+function agoText(ts) { var m = Math.floor((Date.now() - (ts || 0)) / 60000); return m < 1 ? '방금' : m + '분 전'; }
+tool({
+  key: 'signal', name: '신호등', icon: '🚦', group: 'live', kind: 'live',
+  desc: '문제를 푸는 동안 학생이 🟢 할 수 있어요 · 🟡 조금 헷갈려요 · 🔴 도와주세요를 눌러요. 선생님은 누가 도움이 필요한지 바로 보고 찾아가요.',
+  shared: function () { return false; },
+  build: function (el, ctx) {
+    var task = inp('cfg', '지금 하는 활동 (예: 수학익힘 34쪽 3번까지 풀기)'), R = 0, helped = {}, list = [], mine = null;
+    var taskView = h('div', { class: 'qtitle center sgtask' }), btns = h('div', { class: 'sgbtns' }), msg = inp('', '어디가 막혔나요? (선택 · 예: 3번 문제)'), stMsg = h('p', { class: 'center sgst' });
+    var counts = h('div', { class: 'sgcount' }), grid = h('div', { class: 'sggrid' });
+    el.append(h('div', { class: 'tonly' }, h('span', { class: 'lbl' }, '지금 하는 활동'), task,
+        h('div', { class: 'row', style: { marginTop: '8px' } }, twoTap(h('button', { class: 'btn sm' }, '🔄 새로 시작 (모두 ⚪로)'), '🔄 새로 시작 (모두 ⚪로)', '한 번 더 누르면 모두 지워져요', function () { R++; helped = {}; ctx.dirty(); ctx.save(); render(); }))),
+      taskView,
+      h('div', { class: 'sonly' }, btns, h('div', { class: 'sgmsg' }, msg, h('button', { class: 'btn sm', onclick: function () { if (mine) send(mine.v); } }, '보내기')), stMsg),
+      h('div', { class: 'tonly' }, counts, grid));
+    function send(v) {
+      if (!ctx.name() || ctx.name() === '익명') { ctx.toast('위에 이름을 먼저 골라 주세요'); return; }
+      mine = { v: v, msg: msg.value.slice(0, 80), r: R, ts: Date.now() }; render();
+      ctx.setMine({ kind: 'sig', v: v, msg: mine.msg, r: R });
+    }
+    SIG.forEach(function (s, i) { btns.append(gc(h('button', { class: 'sgbtn', 'data-v': i, onclick: function () { send(i); } }, h('span', {}, s[0]), h('b', {}, s[1])), s[2])); });
+    task.addEventListener('input', function () { ctx.dirty(); render(); });
+    function cur() { return list.filter(function (e) { return e.kind === 'sig' && (e.r | 0) === R; }); }
+    function render() {
+      taskView.textContent = task.value || (ctx.student ? '지금 내 상태를 눌러 알려 주세요' : '');
+      taskView.hidden = !task.value && !ctx.student;
+      $$('.sgbtn', btns).forEach(function (b) { b.classList.toggle('on', !!mine && mine.r === R && +b.dataset.v === mine.v); });
+      stMsg.textContent = !mine || mine.r !== R ? '' : mine.v === 2 ? '🙋 선생님이 곧 갈게요. 기다리는 동안 막힌 곳을 다시 읽어 봐요.' : mine.v === 1 ? '조금 더 생각해 보고, 그래도 어려우면 🔴를 눌러요.' : '좋아요! 다 하면 친구를 도와줘도 좋아요.';
+      if (ctx.student) return;
+      var C = cur(), by = {}; C.forEach(function (e) { by[normName(e.name)] = e; });
+      var names = CR.list.length ? CR.list.slice() : [];
+      C.forEach(function (e) { if (names.map(normName).indexOf(normName(e.name)) < 0) names.push(e.name); });
+      var rows = names.map(function (n) { var e = by[normName(n)]; return { n: n, e: e, v: e ? e.v | 0 : -1 }; });
+      rows.sort(function (a, b) { var o = [2, 1, 0, -1]; return o.indexOf(a.v) - o.indexOf(b.v) || (a.e && b.e ? a.e.ts - b.e.ts : 0); });
+      var c = [0, 0, 0, 0]; rows.forEach(function (r) { c[r.v < 0 ? 3 : r.v]++; });
+      counts.innerHTML = ''; counts.append(h('span', {}, '🟢 ' + c[0]), h('span', {}, '🟡 ' + c[1]), h('span', { class: c[2] ? 'hot' : '' }, '🔴 ' + c[2]), h('span', {}, '⚪ 아직 ' + c[3]));
+      grid.innerHTML = '';
+      if (!rows.length) grid.append(h('div', { class: 'empty-note' }, '학생이 누르면 여기에 나와요. ‘우리 반 명단’을 만들어 두면 아직 안 누른 학생도 보여요.'));
+      rows.forEach(function (r) {
+        var hk = r.e ? r.e.uid + ':' + r.e.ts : '', done = r.v === 2 && helped[r.e.uid] === r.e.ts;
+        grid.append(gc(h('div', { class: 'sgtile v' + r.v + (done ? ' done' : ''), title: r.v === 2 ? '누르면 ‘도와줬어요’로 표시해요' : '', onclick: function () { if (r.v !== 2) return; if (done) delete helped[r.e.uid]; else helped[r.e.uid] = r.e.ts; ctx.dirty(); render(); } },
+          h('b', {}, (r.v < 0 ? '⚪' : SIG[r.v][0]) + ' ' + r.n), r.e && r.e.msg ? h('small', {}, r.e.msg) : '', r.e ? h('i', {}, done ? '✔ 도와줬어요' : agoText(r.e.ts)) : ''), r.v < 0 ? '#c7d0d8' : SIG[r.v][2]));
+        void hk;
+      });
+    }
+    var tick = setInterval(function () { if (!ctx.student) render(); }, 30000);
+    function setD(d) { task.value = str(d.task, 120); R = d.r | 0; helped = d.helped && typeof d.helped === 'object' ? d.helped : {}; render(); }
+    setD({});
+    return {
+      title: function () { return task.value || '신호등'; },
+      get: function () { return { task: task.value, r: R, helped: helped }; },
+      set: setD, reset: function () { setD({}); },
+      onEntries: function (l) { list = l; if (ctx.student && !mine) { var me = l.filter(function (e) { return e.kind === 'sig' && e.uid === ctx.uid() && (e.r | 0) === R; })[0]; if (me) { mine = { v: me.v | 0, msg: me.msg, r: R, ts: me.ts }; if (!msg.value) msg.value = me.msg || ''; } } render(); },
+      destroy: function () { clearInterval(tick); }
+    };
+  }
+});
+
+/* ---------- ↔️ 생각 수직선 ---------- */
+tool({
+  key: 'spectrum', name: '생각 수직선', icon: '↔️', group: 'live', kind: 'live',
+  desc: '“매우 찬성 ↔ 매우 반대”처럼 양 끝이 있는 선 위에 내 생각의 자리를 놓아요. 반 전체 생각의 분포를 보고, 토론 전과 후를 비교해요.',
+  shared: function (d) { return !!(d && d.show); },
+  build: function (el, ctx) {
+    var q = inp('cfg', '질문 (예: 초등학생도 휴대 전화를 학교에 가져와도 될까?)'), L = inp('cfg', '왼쪽 끝 (예: 매우 반대)'), Rr = inp('cfg', '오른쪽 끝 (예: 매우 찬성)');
+    var ph = 0, show = false, names = false, list = [], my = {};
+    var phSeg = h('div', { class: 'seg' }), showCb = h('input', { type: 'checkbox' }), nameCb = h('input', { type: 'checkbox' });
+    [['0', '💭 토론 전'], ['1', '💡 토론 후']].forEach(function (p) { phSeg.append(h('button', { 'data-p': p[0], onclick: function () { ph = +p[0]; ctx.dirty(); ctx.save(); render(); } }, p[1])); });
+    showCb.addEventListener('change', function () { show = showCb.checked; ctx.dirty(); ctx.save(); render(); });
+    nameCb.addEventListener('change', function () { names = nameCb.checked; ctx.dirty(); render(); });
+    var qView = h('div', { class: 'qtitle center' }), phView = h('div', { class: 'center spph' });
+    var track = h('div', { class: 'sptrack sonly' }), knob = h('div', { class: 'spknob' }), why = ta('', '그 자리에 놓은 까닭', 2), sendB = h('button', { class: 'btn pri', onclick: send }, '보내기');
+    var ends = function () { return h('div', { class: 'spends' }, h('b', {}, L.value || '왼쪽'), h('b', {}, Rr.value || '오른쪽')); };
+    var endsS = h('div'), endsT = h('div'), board = h('div', { class: 'sptrack big' }), stats = h('div', { class: 'spstats' }), hist = h('div'), reasons = h('div', { class: 'spwhy' }), res = h('div', {}, endsT, board, stats, hist, reasons);
+    track.append(knob);
+    el.append(h('div', { class: 'tonly' }, h('span', { class: 'lbl' }, '질문'), q, h('div', { class: 'row' }, L, Rr),
+        h('div', { class: 'row', style: { alignItems: 'center', marginTop: '8px', gap: '12px' } }, phSeg, h('label', { class: 'chk' }, showCb, ' 학생 화면에도 결과 보여 주기'), h('label', { class: 'chk' }, nameCb, ' 이름 보기 (선생님 화면만)'))),
+      qView, phView, h('div', { class: 'sonly' }, endsS, track, h('p', { class: 'hint center' }, '선 위를 눌러 내 생각의 자리를 놓아요.'), why, h('div', { class: 'center', style: { marginTop: '8px' } }, sendB)), res);
+    function setPos(e) { var r = track.getBoundingClientRect(); var v = Math.round(Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * 100); my[ph] = Object.assign({}, my[ph] || {}, { v: v, sent: false }); render(); }
+    track.addEventListener('pointerdown', function (e) { track.setPointerCapture(e.pointerId); setPos(e); track.onpointermove = setPos; });
+    track.addEventListener('pointerup', function () { track.onpointermove = null; });
+    function send() {
+      if (!my[ph] || my[ph].v == null) { ctx.toast('선 위를 눌러 자리를 먼저 정해 주세요'); return; }
+      if (!ctx.name() || ctx.name() === '익명') { ctx.toast('위에 이름을 먼저 골라 주세요'); return; }
+      my[ph].sent = true; my[ph].why = why.value;
+      ctx.setMineKey('p' + ph, { kind: 'line', v: my[ph].v, why: why.value.slice(0, 200), ph: ph }).then(function () { ctx.toast('보냈어요 👍'); }); render();
+    }
+    [q, L, Rr].forEach(function (x) { x.addEventListener('input', function () { ctx.dirty(); render(); }); });
+    function of(p) { var by = {}; list.filter(function (e) { return e.kind === 'line' && (e.ph | 0) === p; }).forEach(function (e) { var k = e.uid; if (!by[k] || by[k].ts < e.ts) by[k] = e; }); return Object.keys(by).map(function (k) { return by[k]; }); }
+    function avg(a) { return a.length ? a.reduce(function (s, e) { return s + (+e.v || 0); }, 0) / a.length : null; }
+    function render() {
+      $$('button', phSeg).forEach(function (b) { b.classList.toggle('on', +b.dataset.p === ph); });
+      showCb.checked = show; nameCb.checked = names;
+      qView.textContent = q.value || '내 생각은 어디쯤일까요?';
+      phView.textContent = ph ? '💡 토론 후 생각' : '💭 토론 전 생각';
+      endsS.innerHTML = ''; endsS.append(ends()); endsT.innerHTML = ''; endsT.append(ends());
+      var m = my[ph]; knob.hidden = !m || m.v == null; if (m && m.v != null) { knob.style.left = m.v + '%'; knob.classList.toggle('sent', !!m.sent); }
+      sendB.textContent = m && m.sent ? '다시 보내기' : '보내기';
+      res.hidden = ctx.student && !show;
+      board.innerHTML = '';
+      var A = of(0), B = of(1), now = ph ? B : A;
+      if (ph) A.forEach(function (e) { board.append(h('div', { class: 'spdot old', style: { left: e.v + '%' } })); });
+      now.forEach(function (e, i) {
+        var me = ctx.student && e.uid === ctx.uid();
+        board.append(h('div', { class: 'spdot' + (me ? ' me' : ''), style: { left: e.v + '%', top: (18 + (i % 4) * 16) + 'px' }, title: e.name || '' }, (names && !ctx.student) || me ? h('span', {}, me ? '나' : e.name) : ''));
+      });
+      var a0 = avg(A), a1 = avg(B);
+      if (a0 != null) board.append(h('div', { class: 'spavg', style: { left: a0 + '%' } }, h('span', {}, '전 평균')));
+      if (ph && a1 != null) board.append(h('div', { class: 'spavg after', style: { left: a1 + '%' } }, h('span', {}, '후 평균')));
+      stats.innerHTML = '';
+      stats.append(h('span', {}, (ph ? '토론 후 ' : '') + now.length + '명'));
+      if (ph && A.length && B.length) {
+        var byA = {}; A.forEach(function (e) { byA[e.uid] = e.v; });
+        var moved = B.filter(function (e) { return byA[e.uid] != null && Math.abs(e.v - byA[e.uid]) >= 10; }).length;
+        stats.append(h('span', {}, '평균 ' + Math.round(a0) + ' → ' + Math.round(a1)), h('span', {}, '생각이 움직인 학생 ' + moved + '명'));
+      }
+      var bins = [0, 0, 0, 0, 0]; now.forEach(function (e) { bins[Math.min(4, Math.floor((+e.v || 0) / 20))]++; });
+      drawChart(hist, ['왼쪽 끝', '왼쪽', '가운데', '오른쪽', '오른쪽 끝'].map(function (l, i) { return { label: l, n: bins[i], color: ['#2f6f9f', '#6f9fc4', '#9aa5b1', '#e09a7a', '#e0603a'][i] }; }), now.length, 'vbar');
+      reasons.innerHTML = '';
+      var W = now.filter(function (e) { return (e.why || '').trim(); }).sort(function (a, b) { return a.v - b.v; });
+      if (W.length) reasons.append.apply(reasons, [h('span', { class: 'lbl' }, '💬 까닭')].concat(W.map(function (e) { return h('div', { class: 'spr' }, h('i', { style: { left: e.v + '%' } }), h('b', {}, (ctx.student ? '' : e.name + ' · ') + e.v), ' ' + e.why); })));
+    }
+    function setD(d) { q.value = str(d.q, 200); L.value = str(d.L, 30); Rr.value = str(d.R, 30); ph = d.ph | 0; show = !!d.show; names = !!d.names; render(); }
+    setD({});
+    return {
+      title: function () { return q.value || '생각 수직선'; },
+      get: function () { return { q: q.value, L: L.value, R: Rr.value, ph: ph, show: show, names: names }; },
+      set: setD, reset: function () { my = {}; setD({}); },
+      onEntries: function (l) { list = l; if (ctx.student) [0, 1].forEach(function (p) { if (my[p]) return; var e = l.filter(function (x) { return x.kind === 'line' && (x.ph | 0) === p && x.uid === ctx.uid(); })[0]; if (e) my[p] = { v: e.v, why: e.why, sent: true }; }); if (ctx.student && my[ph] && !why.value) setTa(why, my[ph].why); render(); }
+    };
+  }
+});
+
+/* ---------- 🖌️ 그림 응답판 ---------- */
+tool({
+  key: 'drawboard', name: '그림 응답판', icon: '🖌️', group: 'live', kind: 'live',
+  desc: '학생이 각자 그리거나 쓴 답(수학 풀이, 그림, 생각)을 보내면 선생님 화면에 바둑판처럼 모여요. 한 칸을 골라 크게 보여 줘요.',
+  shared: function (d) { return !!(d && d.show); },
+  build: function (el, ctx) {
+    var q = ta('cfg', '문제나 안내 (예: 3/4을 그림으로 나타내 보세요)', 2), bg = '', show = false, anon = false, spot = '', list = [], sentAt = 0;
+    var bgPrev = h('div', { class: 'dbbg' }), showCb = h('input', { type: 'checkbox' }), anonCb = h('input', { type: 'checkbox' });
+    showCb.addEventListener('change', function () { show = showCb.checked; ctx.dirty(); ctx.save(); render(); });
+    anonCb.addEventListener('change', function () { anon = anonCb.checked; ctx.dirty(); ctx.save(); render(); });
+    var pad = drawPad({ locked: function () { return el.classList.contains('ro'); } });
+    var qView = h('div', { class: 'qtitle center' }), st = h('p', { class: 'hint center' }), spotBox = h('div', { class: 'dbspot' }), grid = h('div', { class: 'dbgrid' }), cnt = h('span', { class: 'lbl' });
+    el.append(h('div', { class: 'tonly' }, h('span', { class: 'lbl' }, '문제 · 안내'), q,
+        h('div', { class: 'row', style: { alignItems: 'center', marginTop: '6px' } },
+          h('button', { class: 'btn sm', onclick: function () { pickImage(function (u) { bg = u; ctx.dirty(); ctx.save(); render(); }); } }, '🖼️ 바탕 그림 넣기 (선택)'),
+          h('button', { class: 'btn sm', onclick: function () { bg = ''; ctx.dirty(); render(); } }, '바탕 그림 빼기'), bgPrev,
+          h('label', { class: 'chk' }, showCb, ' 학생들도 모두의 답 보기'), h('label', { class: 'chk' }, anonCb, ' 이름 숨기기'))),
+      qView,
+      h('div', { class: 'sonly' }, pad.el, h('div', { class: 'center', style: { marginTop: '8px' } }, h('button', { class: 'btn pri', onclick: send }, '📤 보내기')), st),
+      spotBox, h('div', {}, cnt, grid));
+    var lastBg = null;
+    function send() {
+      if (!ctx.name() || ctx.name() === '익명') { ctx.toast('위에 이름을 먼저 골라 주세요'); return; }
+      if (pad.empty()) { ctx.toast('그림을 먼저 그려 주세요'); return; }
+      ctx.setMine({ kind: 'draw', img: pad.image(720, 0.7) }).then(function () { sentAt = Date.now(); ctx.toast('보냈어요 🖌️'); render(); });
+    }
+    q.addEventListener('input', function () { ctx.dirty(); render(); });
+    function label(e, i) { return anon && !(ctx.student && e.uid === ctx.uid()) ? '친구 ' + (i + 1) : (ctx.student && e.uid === ctx.uid() ? '나' : e.name || '익명'); }
+    function render() {
+      showCb.checked = show; anonCb.checked = anon;
+      qView.textContent = q.value || (ctx.student ? '생각을 그림으로 그려 보내요' : '');
+      bgPrev.innerHTML = ''; if (bg) bgPrev.append(h('img', { src: bg }));
+      if (ctx.student && pad.setBg && lastBg !== bg) { lastBg = bg; pad.setBg(bg); }
+      st.textContent = sentAt ? '보냈어요 · 고쳐서 다시 보낼 수 있어요' : '';
+      var D = list.filter(function (e) { return e.kind === 'draw' && e.img; }).sort(function (a, b) { return a.ts - b.ts; });
+      var vis = !ctx.student || show;
+      grid.innerHTML = ''; spotBox.innerHTML = ''; cnt.textContent = vis ? '🖼️ 모인 답 ' + D.length + '개' : ''; grid.hidden = !vis;
+      var sp = D.filter(function (e) { return e.uid === spot; })[0];
+      if (sp && vis) { var si = D.indexOf(sp); spotBox.append(h('div', { class: 'dbsph' }, h('b', {}, '⭐ ' + label(sp, si)), ctx.student ? '' : h('button', { class: 'btn sm', onclick: function () { spot = ''; ctx.dirty(); ctx.save(); render(); } }, '크게 보기 끄기')), h('img', { src: sp.img, onclick: function () { zoomImage(sp.img); } })); }
+      if (!vis) return;
+      if (!D.length) grid.append(h('div', { class: 'empty-note' }, '학생이 보낸 그림이 여기에 모여요.'));
+      D.forEach(function (e, i) {
+        grid.append(h('div', { class: 'dbtile' + (e.uid === spot ? ' on' : '') + (ctx.student && e.uid === ctx.uid() ? ' me' : '') },
+          h('img', { src: e.img, onclick: function () { zoomImage(e.img); } }),
+          h('div', { class: 'dbname' }, h('b', {}, label(e, i)), h('small', {}, fmt(e.ts)),
+            ctx.student ? '' : h('button', { class: 'pkstar' + (e.uid === spot ? ' on' : ''), title: '모두에게 크게 보여 주기', onclick: function () { spot = spot === e.uid ? '' : e.uid; ctx.dirty(); ctx.save(); render(); } }, '⭐'))));
+      });
+    }
+    function setD(d) { q.value = str(d.q, 300); bg = str(d.bg, 700000); show = !!d.show; anon = !!d.anon; spot = str(d.spot, 80); render(); }
+    setD({});
+    return {
+      title: function () { return q.value.split('\n')[0] || '그림 응답판'; },
+      get: function () { return { q: q.value, bg: bg, show: show, anon: anon, spot: spot }; },
+      set: setD, reset: function () { pad.clear(); setD({}); },
+      onEntries: function (l) { list = l; if (ctx.student && !sentAt && l.some(function (e) { return e.kind === 'draw' && e.uid === ctx.uid(); })) sentAt = 1; render(); }
+    };
+  }
+});
+
+/* ---------- 🃏 짝 맞추기 ---------- */
+function parsePairs(t) { return lines(t).map(function (l) { var m = l.split(/\s*(?:\t| - | – | — |=|:)\s*/); return m.length >= 2 ? { a: m[0].slice(0, 40), b: m.slice(1).join(' ').slice(0, 60) } : null; }).filter(Boolean); }
+function pickFrom(tool, title, onPick) {
+  onceActs(TB(), tool).then(function (acts) {
+    acts.sort(function (a, b) { return (b.updated || 0) - (a.updated || 0); });
+    var md = modal(title);
+    if (!acts.length) { md.box.append(h('div', { class: 'empty-note' }, '저장한 활동이 없어요.')); return; }
+    acts.forEach(function (a) { md.box.append(h('div', { class: 'list-row' }, h('div', { class: 't' }, a.title || '제목 없음', h('small', {}, fmt(a.updated))), h('button', { class: 'btn sm pri', onclick: function () { md.close(); onPick(a); } }, '불러오기'))); });
+  });
+}
+tool({
+  key: 'memory', name: '짝 맞추기', icon: '🃏', group: 'dict', kind: 'ind',
+  desc: '뒤집힌 카드를 두 장씩 열어 낱말과 뜻, 문제와 답의 짝을 찾아요. 낱말 카드에서 불러올 수 있어요.',
+  summary: function (subs) {
+    return sumTable(['이름', '완성', '가장 좋은 기록'], subs.map(function (s) { var r = (s.data || {}).res || {};
+      return [s.name || '익명', r.best ? '🎉 ' + (r.games || 1) + '판' : '—', r.best ? r.best.tries + '번 · ' + r.best.secs + '초' : '—']; }));
+  },
+  build: function (el, ctx) {
+    var title = inp('cfg', '제목 (예: 3단원 낱말)'), src = ta('cfg', '한 줄에 한 짝: 앞 - 뒤 (예: apple - 사과)', 5);
+    var nSel = h('select', { class: 'fld cfg', style: { width: 'auto' } }, [4, 6, 8, 10, 12].map(function (n) { return h('option', { value: n }, n + '짝'); }));
+    var res = {}, board = h('div', { class: 'mmboard' }), info = h('div', { class: 'mminfo' }), timer = null, G = null;
+    el.append(h('div', { class: 'tonly' }, h('span', { class: 'lbl' }, '제목'), title, h('span', { class: 'lbl' }, '🃏 짝'), src,
+        h('div', { class: 'row', style: { alignItems: 'center', marginTop: '6px' } }, h('span', { class: 'hint', style: { margin: 0 } }, '한 판에'), nSel,
+          h('button', { class: 'btn sm', onclick: function () { pickFrom('flashcards', '🃏 낱말 카드에서 불러오기', function (a) { var C = arr((a.data || {}).cards); setTa(src, C.map(function (c) { return str(c.f, 40) + ' - ' + str(c.b, 60); }).join('\n')); if (!title.value) title.value = a.title || ''; ctx.dirty(); start(); }); } }, '🃏 낱말 카드에서 불러오기'))),
+      h('div', { class: 'row', style: { alignItems: 'center', margin: '8px 0' } }, h('button', { class: 'btn pri', onclick: start }, '▶ 새 게임'), info), board);
+    function start() {
+      var P = shuffle(parsePairs(src.value)).slice(0, +nSel.value || 8);
+      clearInterval(timer); board.innerHTML = '';
+      if (P.length < 2) { info.textContent = ''; board.append(h('div', { class: 'empty-note' }, '짝을 두 개 이상 적어 주세요.')); return; }
+      var C = shuffle([].concat.apply([], P.map(function (p, i) { return [{ i: i, t: p.a, s: 'a' }, { i: i, t: p.b, s: 'b' }]; })));
+      G = { open: [], done: 0, tries: 0, t0: 0, n: P.length, busy: false };
+      board.style.gridTemplateColumns = 'repeat(' + (C.length <= 8 ? 4 : C.length <= 12 ? 4 : C.length <= 16 ? 4 : C.length <= 20 ? 5 : 6) + ',1fr)';
+      C.forEach(function (c) {
+        var n = h('button', { class: 'mmcard ' + c.s }, h('span', { class: 'mmback' }, '?'), h('span', { class: 'mmface' }, c.t));
+        n.onclick = function () {
+          if (G.busy || n.classList.contains('up') || isRO(el)) return;
+          if (!G.t0) { G.t0 = Date.now(); timer = setInterval(paintInfo, 1000); }
+          n.classList.add('up'); G.open.push({ n: n, c: c });
+          if (G.open.length === 2) {
+            G.tries++; var A = G.open[0], B = G.open[1];
+            if (A.c.i === B.c.i) { A.n.classList.add('ok'); B.n.classList.add('ok'); G.open = []; G.done++; if (G.done === G.n) finish(); }
+            else { G.busy = true; A.n.classList.add('no'); B.n.classList.add('no'); setTimeout(function () { A.n.classList.remove('up', 'no'); B.n.classList.remove('up', 'no'); G.open = []; G.busy = false; }, 900); }
+          }
+          paintInfo();
+        };
+        board.append(n);
+      });
+      paintInfo();
+    }
+    function secs() { return G && G.t0 ? Math.round(((G.end || Date.now()) - G.t0) / 1000) : 0; }
+    function paintInfo() {
+      info.innerHTML = '';
+      if (G) info.append(h('span', {}, '✅ ' + G.done + ' / ' + G.n), h('span', {}, '👆 ' + G.tries + '번'), h('span', {}, '⏱️ ' + secs() + '초'));
+      if (res.best) info.append(h('span', { class: 'hint', style: { margin: 0 } }, '🏆 내 최고 ' + res.best.tries + '번 · ' + res.best.secs + '초'));
+    }
+    function finish() {
+      G.end = Date.now(); clearInterval(timer);
+      var cur = { tries: G.tries, secs: secs() };
+      var better = !res.best || cur.tries < res.best.tries || (cur.tries === res.best.tries && cur.secs < res.best.secs);
+      res = { games: (res.games || 0) + 1, last: cur, best: better ? cur : res.best };
+      ctx.dirty(); paintInfo();
+      board.append(h('div', { class: 'mmdone' }, h('b', {}, '🎉 다 찾았어요!'), h('div', {}, G.tries + '번 만에 ' + cur.secs + '초' + (better ? ' · 🏆 새 기록!' : '')), ctx.student ? h('div', { class: 'hint' }, '‘선생님께 제출하기’를 누르면 기록을 낼 수 있어요.') : ''));
+    }
+    el.addEventListener('input', function (e) { if (e.target === title || e.target === src) ctx.dirty(); });
+    nSel.addEventListener('change', function () { ctx.dirty(); start(); });
+    function setD(d) { title.value = str(d.title, 80); setTa(src, d.src); nSel.value = String([4, 6, 8, 10, 12].indexOf(+d.n) >= 0 ? +d.n : 8); res = d.res && typeof d.res === 'object' ? d.res : {}; G = null; start(); }
+    setD({});
+    return {
+      title: function () { return title.value || '짝 맞추기'; },
+      get: function () { return { title: title.value, src: src.value, n: +nSel.value, res: res }; },
+      set: setD, reset: function () { setD({}); }, destroy: function () { clearInterval(timer); }
+    };
+  }
+});
+
+/* ---------- ✍️ 빈칸 채우기 ---------- */
+function clozeParts(t) { var P = [], re = /\[([^\]\n]{1,40})\]/g, m, last = 0; t = String(t || ''); while ((m = re.exec(t))) { P.push({ s: t.slice(last, m.index) }); P.push({ a: m[1].trim() }); last = re.lastIndex; } P.push({ s: t.slice(last) }); return P; }
+function clozeNorm(s) { return String(s || '').replace(/\s+/g, '').replace(/[.,!?·]/g, '').toLowerCase(); }
+tool({
+  key: 'cloze', name: '빈칸 채우기', icon: '✍️', group: 'dict', kind: 'ind',
+  desc: '핵심 문장의 낱말을 빈칸으로 만들어요. 학생이 채우고 채점하면 맞고 틀린 칸이 바로 보여요.',
+  summary: function (subs) {
+    return sumTable(['이름', '맞힌 칸', '틀린 칸'], subs.map(function (s) { var d = s.data || {}, A = clozeParts(d.text).filter(function (p) { return p.a != null; }), a = arr(d.ans);
+      var wrong = A.map(function (p, i) { return clozeNorm(a[i]) === clozeNorm(p.a) ? null : (i + 1) + '번(' + (str(a[i]).trim() || '빈칸') + ')'; }).filter(Boolean);
+      return [s.name || '익명', (A.length - wrong.length) + ' / ' + A.length, wrong.join(', ') || '—']; }));
+  },
+  build: function (el, ctx) {
+    var title = inp('cfg', '제목 (예: 식물의 한살이 정리)'), text = ta('cfg', '글을 붙여 넣고 빈칸으로 만들 낱말을 [ ]로 감싸요. 아래 미리 보기에서 낱말을 눌러도 돼요.\n예: 식물은 잎에서 [광합성]을 하여 [양분]을 만들어요.', 5);
+    var bankCb = h('input', { type: 'checkbox', class: 'cfg' }), prev = h('div', { class: 'czprev' });
+    var view = h('div', { class: 'czview' }), bank = h('div', { class: 'czbank' }), score = h('div', { class: 'czscore' }), ans = [], checked = 0, reveal = false, focusI = 0;
+    el.append(h('div', { class: 'tonly' }, h('span', { class: 'lbl' }, '제목'), title, h('span', { class: 'lbl' }, '📝 글'), text,
+        h('span', { class: 'lbl' }, '👆 낱말을 누르면 빈칸이 되고(뒤에 붙은 ‘을 · 는 · 에서’ 같은 말은 빼 줘요), 다시 누르면 풀려요. [ ] 자리는 글 칸에서 고칠 수 있어요'), prev, h('label', { class: 'chk' }, bankCb, ' 낱말 상자 보여 주기 (빈칸에 들어갈 낱말을 섞어서 보여 줘요)')),
+      bank, view,
+      h('div', { class: 'row', style: { alignItems: 'center', marginTop: '10px' } }, h('button', { class: 'btn pri', onclick: check }, '✅ 채점하기'),
+        h('button', { class: 'btn', onclick: function () { if (!checked) { ctx.toast('먼저 채점해 보세요'); return; } reveal = !reveal; paint(); } }, '👀 정답 보기'), score));
+    function blanks() { return clozeParts(text.value).filter(function (p) { return p.a != null; }); }
+    function paintPrev() {
+      prev.innerHTML = '';
+      clozeParts(text.value).forEach(function (p, pi) {
+        if (p.a != null) { prev.append(h('button', { class: 'czw on', onclick: function () { toggle(pi); } }, p.a)); return; }
+        p.s.split(/(\s+)/).forEach(function (w, wi) { if (!w.trim()) { prev.append(document.createTextNode(w)); return; } prev.append(h('button', { class: 'czw', onclick: function () { toggle(pi, wi); } }, w)); });
+      });
+    }
+    function toggle(pi, wi) {
+      var P = clozeParts(text.value);
+      if (wi == null) P[pi] = { s: P[pi].a };
+      else { var ws = P[pi].s.split(/(\s+)/), w = ws[wi], m = w.match(/^([^\wㄱ-ㅎ가-힣]*)(.*?)([.,!?…”’"')]*)$/); var core = m[2], tail = '', pm = core.match(/^(.{2,}?)(에서|에게|까지|부터|처럼|보다|으로|라고|하고|을|를|은|는|의|에|와|과|로)$/); if (pm) { core = pm[1]; tail = pm[2]; } ws[wi] = m[1] + '[' + core + ']' + tail + m[3]; P[pi] = { s: ws.join('') }; }
+      setTa(text, P.map(function (p) { return p.a != null ? '[' + p.a + ']' : p.s; }).join('')); ctx.dirty(); paintPrev(); paint();
+    }
+    function check() { checked++; reveal = false; ctx.dirty(); paint(); var B = blanks(), ok = B.filter(function (b, i) { return clozeNorm(ans[i]) === clozeNorm(b.a); }).length; ctx.toast(ok === B.length ? '🎉 모두 맞았어요!' : ok + ' / ' + B.length + ' 맞았어요. 빨간 칸을 다시 생각해 봐요'); }
+    function paint() {
+      var P = clozeParts(text.value), B = blanks(), k = 0;
+      view.innerHTML = ''; bank.innerHTML = '';
+      if (!B.length) { view.append(h('div', { class: 'empty-note' }, ctx.student ? '선생님이 아직 빈칸을 만들지 않았어요.' : '글을 적고 빈칸으로 만들 낱말을 [ ]로 감싸거나 미리 보기에서 눌러요.')); score.textContent = ''; return; }
+      P.forEach(function (p) {
+        if (p.a == null) { view.append(document.createTextNode(p.s)); return; }
+        (function (i) {
+          var x = h('input', { class: 'czin', value: ans[i] || '', size: Math.max(3, p.a.length + 1), 'aria-label': (i + 1) + '번 빈칸' });
+          x.style.width = Math.max(3, p.a.length * 1.2 + 1.5) + 'em';
+          var ok = clozeNorm(ans[i]) === clozeNorm(p.a);
+          if (checked && (ans[i] || '').trim()) x.classList.add(ok ? 'ok' : 'no'); else if (checked) x.classList.add('no');
+          x.addEventListener('input', function () { ans[i] = x.value; x.classList.remove('ok', 'no'); ctx.dirty(); });
+          x.addEventListener('focus', function () { focusI = i; });
+          view.append(h('span', { class: 'czb' }, h('small', {}, i + 1), x, reveal && !ok ? h('em', {}, p.a) : ''));
+        })(k++);
+      });
+      if (bankCb.checked) bank.append.apply(bank, [h('b', {}, '📦 낱말 상자')].concat(shuffle(B.map(function (b) { return b.a; })).map(function (w) {
+        return h('button', { class: 'czchip', onclick: function () { if (isRO(el)) return; var ins = $$('.czin', view), i = focusI; if (ans[i]) { var e = ans.map(function (v, j) { return v ? -1 : j; }).filter(function (j) { return j >= 0 && j < B.length; })[0]; if (e != null) i = e; } ans[i] = w; ctx.dirty(); paint(); var n = $$('.czin', view)[i + 1]; if (n) n.focus(); void ins; } }, w);
+      })));
+      var ok2 = B.filter(function (b, i) { return clozeNorm(ans[i]) === clozeNorm(b.a); }).length;
+      score.textContent = checked ? '점수 ' + ok2 + ' / ' + B.length + (checked > 1 ? ' · ' + checked + '번째 채점' : '') : '';
+      if (isRO(el)) lock(el, true);
+    }
+    text.addEventListener('input', function () { ctx.dirty(); paintPrev(); paint(); });
+    bankCb.addEventListener('change', function () { ctx.dirty(); paint(); });
+    title.addEventListener('input', function () { ctx.dirty(); });
+    function setD(d) { title.value = str(d.title, 80); setTa(text, d.text); bankCb.checked = !!d.bank; ans = arr(d.ans).map(function (a) { return str(a, 60); }); checked = d.checked | 0; reveal = false; paintPrev(); paint(); }
+    setD({});
+    return {
+      title: function () { return title.value || '빈칸 채우기'; },
+      get: function () { var B = blanks(); return { title: title.value, text: text.value, bank: bankCb.checked, ans: ans.slice(0, B.length), checked: checked, score: B.filter(function (b, i) { return clozeNorm(ans[i]) === clozeNorm(b.a); }).length + '/' + B.length }; },
+      set: setD, reset: function () { setD({}); }
+    };
+  }
+});
+
+/* ---------- 🔁 오답 다시 풀기 ---------- */
+tool({
+  key: 'retry', name: '오답 다시 풀기', icon: '🔁', group: 'dict', kind: 'live',
+  desc: '실시간 퀴즈 대회에서 틀린 문제만 모아 학생마다 다시 풀어요. 한 문제를 두 번 연달아 맞히면 목록에서 빠져요.',
+  shared: function () { return false; },
+  build: function (el, ctx) {
+    var D = { title: '', src: null, qs: [], k: '', wrong: {} }, list = [], P = null, LK = null;
+    var MK = ['①', '②', '③', '④'], OXL = ['⭕ O', '❌ X'];
+    var head = h('div', { class: 'rthead' }), tview = h('div', { class: 'tonly' }), sview = h('div', { class: 'sonly rtplay' });
+    el.append(h('div', { class: 'tonly row', style: { alignItems: 'center', marginBottom: '8px' } },
+      h('button', { class: 'btn pri', onclick: function () { pickFrom('quiz', '🏆 어떤 퀴즈의 오답을 모을까요?', load); } }, '🏆 퀴즈 결과 불러오기'),
+      h('button', { class: 'btn', onclick: function () { if (D.src) onceActs(TB(), 'quiz').then(function (l) { var a = l.filter(function (x) { return x.id === D.src.id; })[0]; if (a) load(a); else ctx.toast('그 퀴즈를 찾을 수 없어요'); }); } }, '🔄 다시 불러오기')), head, tview, sview);
+    function load(a) {
+      var d = a.data || {}, qs = arr(d.qs), k = d.k || '';
+      onceEntries(TB(), a.id).then(function (es) {
+        var W = {}, seen = {};
+        es.filter(function (e) { return e.kind === 'ans' && e.name; }).forEach(function (e) {
+          var n = normName(e.name), key = n + ':' + e.q; if (seen[key]) return; seen[key] = 1;
+          if (e.c !== qzDec(k, e.q)) (W[n] = W[n] || []).push(e.q | 0);
+          else W[n] = W[n] || [];
+        });
+        Object.keys(W).forEach(function (n) { W[n].sort(function (x, y) { return x - y; }); });
+        D = { title: a.title || '퀴즈', src: { id: a.id, title: a.title || '' }, qs: qs.map(function (q) { return { t: q.t, q: q.q, o: q.o }; }), k: k, wrong: W, names: Object.keys(W).length ? es.filter(function (e) { return e.kind === 'ans'; }).reduce(function (m, e) { m[normName(e.name)] = e.name; return m; }, {}) : {} };
+        ctx.dirty(); ctx.save(); render(); ctx.toast(Object.keys(W).length + '명의 퀴즈 결과를 불러왔어요');
+      });
+    }
+    function labels(q) { return q.t === 'ox' ? OXL : arr(q.o).map(function (o, i) { return (o || '').trim() ? MK[i] + ' ' + o : null; }); }
+    function render() {
+      head.innerHTML = '';
+      head.append(h('div', { class: 'qtitle center' }, D.src ? '🔁 ' + D.title + ' — 틀린 문제 다시 풀기' : (ctx.student ? '선생님이 아직 퀴즈를 고르지 않았어요' : '‘퀴즈 결과 불러오기’로 실시간 퀴즈 대회를 골라요')));
+      if (ctx.student) { paintStudent(); return; }
+      tview.innerHTML = '';
+      if (!D.src) return;
+      var prog = {}; list.filter(function (e) { return e.kind === 'retry'; }).forEach(function (e) { prog[normName(e.name)] = e; });
+      var names = Object.keys(D.wrong).sort(function (a, b) { return D.wrong[b].length - D.wrong[a].length || a.localeCompare(b, 'ko'); });
+      var cnt = {}; names.forEach(function (n) { D.wrong[n].forEach(function (q) { cnt[q] = (cnt[q] || 0) + 1; }); });
+      tview.append(h('span', { class: 'lbl' }, '📋 학생별 다시 풀 문제 (' + names.length + '명)'),
+        sumTable(['이름', '틀린 문제', '다시 풀기'], names.map(function (n) { var p = prog[n], w = D.wrong[n];
+          return [(D.names && D.names[n]) || n, w.length ? w.map(function (q) { return (q + 1) + '번'; }).join(', ') : '🎉 없음', !w.length ? '—' : p ? (p.left ? '남은 문제 ' + p.left + '개' : '✅ 모두 통과') + ' · ' + fmt(p.ts) : '아직']; })),
+        h('span', { class: 'lbl' }, '📊 많이 틀린 문제'),
+        h('div', {}, Object.keys(cnt).sort(function (a, b) { return cnt[b] - cnt[a]; }).slice(0, 5).map(function (q) { var Q = D.qs[q] || {}; return h('div', { class: 'rtq' }, h('b', {}, (+q + 1) + '번 · ' + cnt[q] + '명'), ' ' + (Q.q || '')); })));
+    }
+    function key() { return 'rt-' + (ctx.aid() || '') + '-' + normName(ctx.name()); }
+    function paintStudent() {
+      sview.innerHTML = '';
+      if (!D.src) return;
+      var me = normName(ctx.name());
+      if (!me || ctx.name() === '익명') { sview.append(h('div', { class: 'empty-note' }, '위에서 내 이름을 먼저 골라 주세요.')); return; }
+      if (!P || LK !== key()) {
+        LK = key(); P = App.local.get(LK, null);
+        if (!P) { var w = D.wrong[me]; P = { queue: (w || []).slice(), streak: {}, done: [], all: !w }; App.local.put(LK, P); }
+      }
+      if (P.all && !P.queue.length && !P.started) {
+        sview.append(h('div', { class: 'empty-note' }, D.wrong[me] ? '🎉 틀린 문제가 없어요!' : '이 퀴즈에 참여한 기록이 없어요.'),
+          h('div', { class: 'center' }, h('button', { class: 'btn pri', onclick: function () { P = { queue: D.qs.map(function (_, i) { return i; }), streak: {}, done: [], all: true, started: true }; App.local.put(LK, P); paintStudent(); } }, '모든 문제 연습하기')));
+        return;
+      }
+      var total = P.queue.length + P.done.length;
+      sview.append(h('div', { class: 'rtbar' }, h('i', { style: { width: (total ? P.done.length / total * 100 : 100) + '%' } })), h('p', { class: 'center hint' }, '통과 ' + P.done.length + ' / ' + total + ' · 한 문제를 두 번 연달아 맞히면 통과예요'));
+      if (!P.queue.length) { sview.append(h('div', { class: 'mmdone' }, h('b', {}, '🎉 모두 통과했어요!'), h('div', {}, '틀렸던 문제를 다시 풀어 모두 익혔어요.'))); return; }
+      var qi = P.queue[0], Q = D.qs[qi] || {}, right = qzDec(D.k, qi), fb = h('div', { class: 'rtfb' });
+      sview.append(h('div', { class: 'rtcard' }, h('small', {}, (qi + 1) + '번 문제' + (P.streak[qi] ? ' · 한 번 더 맞히면 통과!' : '')), h('div', { class: 'rtqq' }, Q.q || ''),
+        h('div', { class: 'rtopts' }, labels(Q).map(function (l, i) {
+          return l == null ? '' : h('button', { class: 'rtopt', onclick: function (e) {
+            if (fb.dataset.done) return; fb.dataset.done = 1;
+            var ok = i === right;
+            e.currentTarget.classList.add(ok ? 'ok' : 'no');
+            if (!ok) $$('.rtopt', sview).forEach(function (b, j) { if (j === right) b.classList.add('ok'); });
+            P.queue.shift();
+            if (ok) { P.streak[qi] = (P.streak[qi] || 0) + 1; if (P.streak[qi] >= 2) P.done.push(qi); else P.queue.push(qi); }
+            else { P.streak[qi] = 0; P.queue.push(qi); }
+            App.local.put(LK, P);
+            fb.textContent = ok ? (P.streak[qi] >= 2 ? '🎉 통과!' : '⭕ 맞았어요! 한 번 더 나오면 통과예요') : '❌ 아쉬워요. 정답은 ' + (labels(Q)[right] || '') + '이에요. 조금 뒤에 다시 나와요';
+            ctx.setMine({ kind: 'retry', left: P.queue.length, done: P.done.length });
+            setTimeout(paintStudent, ok ? 900 : 2200);
+          } }, l);
+        })), fb));
+    }
+    function setD(d) { D = { title: str(d.title, 80), src: d.src || null, qs: arr(d.qs), k: str(d.k, 200), wrong: d.wrong && typeof d.wrong === 'object' ? d.wrong : {}, names: d.names || {} }; render(); }
+    setD({});
+    return {
+      title: function () { return D.src ? D.title + ' 오답' : '오답 다시 풀기'; },
+      get: function () { return D; },
+      set: setD, reset: function () { setD({}); },
+      onEntries: function (l) { list = l; render(); },
+      onName: function () { P = null; render(); }
+    };
+  }
+});
+
+Object.assign(PEEK_FIELDS, {
+  memory: function (d) { var r = d.res || {}; return [['res', '🏁 기록', r.best ? '최고 ' + r.best.tries + '번 · ' + r.best.secs + '초 (' + (r.games || 1) + '판)' : '']]; },
+  cloze: function (d) {
+    var A = clozeParts(d.text).filter(function (p) { return p.a != null; }), a = arr(d.ans);
+    return [['score', '✅ 점수', d.checked ? d.score : '']].concat(A.map(function (p, i) { var v = pkT(a[i]); return ['b' + i, (i + 1) + '번 빈칸 (정답: ' + p.a + ')', v ? (clozeNorm(v) === clozeNorm(p.a) ? '⭕ ' : '❌ ') + v : '', true]; }));
+  }
+});
+
+// ---------- 묶음 안 순서 · 설명 ----------
+(function () {
+  var ORD = ['mandalart', 'mindmap', 'venn', 'kwl', 'fishbone', 'sortboard', 'flowmap', 'diamond',
+    'vote', 'wordcloud', 'wall', 'quiz', 'signal', 'spectrum', 'drawboard', 'wrapup',
+    'spell', 'flashcards', 'memory', 'cloze', 'retry', 'bingo', 'sequence', 'handwriting', 'readaloud'];
+  var pos = {}; TOOLS.forEach(function (t, i) { pos[t.key] = i; });
+  var gp = {}; TOOLS.forEach(function (t, i) { if (gp[t.group] == null) gp[t.group] = i; });
+  function rk(t) { var i = ORD.indexOf(t.key); return i >= 0 ? i : 1000 + pos[t.key]; }
+  TOOLS.sort(function (a, b) { return gp[a.group] - gp[b.group] || rk(a) - rk(b); });
+  GROUPS.forEach(function (g) {
+    if (g[0] === 'think') g[4] = '만다라트 · 마인드맵 · 벤 · KWL · 피시본 · 분류판 · 흐름도 · 다이아몬드 순위';
+    if (g[0] === 'live') g[4] = '투표 · 워드클라우드 · 담벼락 · 퀴즈 · 신호등 · 생각 수직선 · 그림 응답판';
+    if (g[0] === 'dict') g[4] = '받아쓰기 · 낱말 카드 · 짝 맞추기 · 빈칸 · 오답 · 빙고 · 바른 글씨 · 낭독';
+  });
+  Object.assign(SHORT, { sortboard: '카드를 기준별로 나누기', flowmap: '차례 · 되풀이 과정 정리', diamond: '9장 카드로 우선순위', signal: '🟢🟡🔴 도움 요청', spectrum: '찬반 정도 · 토론 전후', drawboard: '그린 답 모아 보기', memory: '낱말 · 뜻 짝 찾기 게임', cloze: '핵심 낱말 빈칸 문제', retry: '퀴즈 틀린 문제만 다시' });
+})();
 
 boot();
 </script>
