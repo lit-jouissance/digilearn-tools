@@ -1138,6 +1138,19 @@ body.has-today .home9{--side:min(560px,calc(100vh - 395px),100%)}
 .combseg{margin:0 0 12px}.combpanel[hidden]{display:none !important}.combh{margin:18px 0 8px;font-size:18px;color:#33404f}.combpanel:first-of-type .combh{margin-top:0}
 .cp-portfolio details.roster,.cp-records details.roster,.cp-wheel details.roster,.cp-speak details.roster{display:none}
 @media print{body.print-pf .panel>.combpanel.cp-portfolio{display:block !important}body.print-pf .panel>.combpanel.cp-portfolio>*:not(.pfgrid){display:none !important}body.print-pf .combseg{display:none !important}}
+/* 받아쓰기 정답: 띄어쓰기 표시 */
+.dspaced{letter-spacing:.01em}
+.dsp{display:inline-block;color:#e03131;font-size:.48em;font-weight:900;position:relative;top:.62em;margin:0 .08em;line-height:1}
+.dspt{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:15px;padding:6px 10px;border:1px solid #d7dee4;border-radius:999px;background:#fff;cursor:pointer}
+/* 영어 공책 네 줄 */
+.enote{position:relative;width:100%;max-width:100%;overflow:hidden;text-align:center;padding:.3em 0;white-space:nowrap}
+.enote .ent{position:relative;z-index:1;display:inline-block;font-family:"Helvetica Neue",Arial,"Noto Sans",sans-serif;font-weight:500;font-size:clamp(40px,10vw,110px);line-height:1.9;color:#1f2a37;padding:0 .3em}
+.enote .enbl{display:inline-block;width:0;height:0;vertical-align:baseline}
+.enl{position:absolute;left:0;right:0;height:0;border-top:2px solid #7fa7d4;z-index:0}
+.enl.l2{border-top:2px dashed #9dbbe0}
+.enl.l3{border-top-color:#e06666}
+.dbox:fullscreen .enote .ent{font-size:clamp(56px,11vw,160px)}
+body.present .enote .ent{font-size:clamp(50px,12vh,170px)}
 
 </style>
 <script>
@@ -6365,7 +6378,8 @@ function dictationTool(o) {
         h('div', { class: 'row', style: { justifyContent: 'center', margin: '12px 0' } },
           h('button', { class: 'btn', style: { fontSize: '17px', padding: '10px 22px' }, onclick: function () { go(-1); } }, '◀ 이전'),
           h('button', { class: 'btn pri', style: { fontSize: '17px', padding: '10px 22px' }, onclick: function () { go(1); } }, '다음 ▶'),
-          h('button', { class: 'btn', onclick: function () { fullscreen(ansBox); } }, '⛶ 전체 화면')),
+          h('button', { class: 'btn', onclick: function () { fullscreen(ansBox); } }, '⛶ 전체 화면'),
+          o.cols[0].lang === 'ko-KR' ? h('label', { class: 'dspt' }, (function () { var c = h('input', { type: 'checkbox' }); c.checked = App.local.get('dSpMark', true) !== false; c.onchange = function () { App.local.put('dSpMark', c.checked); renderAns(); }; return c; })(), ' 띄어쓰기 표시 ∨') : null),
         dots, h('p', { class: 'hint center' }, '번호를 누르면 그 문제로 가요. 키보드 ← → 로도 넘길 수 있어요.'));
       add(el, [h('div', { class: 'row', style: { justifyContent: 'center', marginBottom: '8px' } }, modeSeg),
         typeSeg ? h('div', { class: 'row', style: { justifyContent: 'center', marginBottom: '12px' } }, typeSeg) : null,
@@ -6418,9 +6432,40 @@ function dictationTool(o) {
         if (!L.length) { stage.append(h('div', { class: 'empty-note' }, '‘문제 만들기’에서 먼저 문제를 적어 주세요.')); return; }
         var it = L[idx];
         stage.append(h('div', { class: 'dbadge' }, it.n + '번'));
-        o.answer(it, qtype).forEach(function (a) { stage.append(h('div', { class: a.big ? 'dbig' : 'dsmall', lang: a.lang || 'ko' }, a.text || '—')); });
+        o.answer(it, qtype).forEach(function (a) {
+          if (a.big && a.lang === 'en' && a.text) stage.append(enNote(a.text));
+          else if (a.big && a.lang !== 'en' && a.text && spOn()) stage.append(h('div', { class: 'dbig dspaced', lang: 'ko' }, spaced(a.text)));
+          else stage.append(h('div', { class: a.big ? 'dbig' : 'dsmall', lang: a.lang || 'ko' }, a.text || '—'));
+        });
+        fitNotes();
         L.forEach(function (x, i) { dots.append(h('button', { class: i === idx ? 'on' : '', onclick: function () { idx = i; renderAns(); } }, x.n)); });
       }
+      // 띄어쓰기 표시 (∨) — 국어 정답
+      function spOn() { return App.local.get('dSpMark', true) !== false; }
+      function spaced(t) {
+        var w = t.trim().split(/\s+/), out = [];
+        w.forEach(function (x, i) { if (i) out.push(h('span', { class: 'dsp', 'aria-hidden': 'true', title: '띄어 써요' }, '∨'), '\u200B'); out.push(x); });
+        return out;
+      }
+      // 영어 공책 네 줄
+      function enNote(t) {
+        return h('div', { class: 'enote', lang: 'en' }, h('i', { class: 'enl l1' }), h('i', { class: 'enl l2' }), h('i', { class: 'enl l3' }), h('i', { class: 'enl l4' }),
+          h('span', { class: 'ent' }, t, h('b', { class: 'enbl' })));
+      }
+      var mcv = document.createElement('canvas').getContext('2d');
+      function fitNotes() {
+        $$('.enote', stage).forEach(function (n) {
+          var tx = $('.ent', n); tx.style.fontSize = '';
+          var fs = parseFloat(getComputedStyle(tx).fontSize);
+          while (n.scrollWidth > n.clientWidth + 1 && fs > 18) { fs -= 2; tx.style.fontSize = fs + 'px'; }
+          var cs = getComputedStyle(tx); mcv.font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+          var M = function (c) { return mcv.measureText(c); };
+          var asc = Math.max(M('bdfhklt').actualBoundingBoxAscent, M('ABHT').actualBoundingBoxAscent), xh = M('xzvwu').actualBoundingBoxAscent, desc = M('gjpqy').actualBoundingBoxDescent;
+          var base = $('.enbl', n).offsetTop, L = $$('.enl', n);
+          [base - asc, base - xh, base, base + desc].forEach(function (y, i) { L[i].style.top = Math.round(y) + 'px'; });
+        });
+      }
+      if (window.ResizeObserver) new ResizeObserver(function () { if (mode === 'ans') fitNotes(); }).observe(stage);
       function go(d) { var n = items().length; if (!n) return; idx = (idx + d + n) % n; renderAns(); }
       function fullscreen(box) {
         var fs = box.requestFullscreen || box.webkitRequestFullscreen;
