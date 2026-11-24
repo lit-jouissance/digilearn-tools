@@ -1298,6 +1298,16 @@ body.present .enote .ent{font-size:clamp(50px,12vh,170px)}
   .hwprint .hwpgrp{display:flex;flex-direction:column;width:calc(var(--cs) * var(--cols))}
   .hwprint .hc,.hwprint .hc.sp,.hwprint .hc.x{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+/* 오른쪽 입장 QR */
+.qrdock{position:fixed;right:14px;bottom:14px;z-index:42;width:156px;background:#fff;border:2px solid #d7dee4;border-radius:16px;padding:8px 10px 10px;box-shadow:0 6px 18px rgba(20,40,60,.14);display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.qrdh{display:flex;align-items:center;width:100%}.qrdh b{flex:1;font-size:14px}
+.qrx{border:0;background:#eef1f4;border-radius:8px;width:24px;height:24px;cursor:pointer;font-weight:900;color:#5b6b7a}
+.qrq{width:134px;cursor:zoom-in}.qrq svg{width:100%;height:auto;display:block}
+.qrdock small{font-size:12px;color:var(--sub)}
+.qrdock.mini{width:auto;flex-direction:row;padding:8px 14px;border-radius:999px;font:inherit;font-weight:800;font-size:14px;cursor:pointer;color:#22303c}
+body.present .qrdock:not(.mini){width:190px}body.present .qrq{width:166px}
+@media print{.qrdock{display:none !important}}
+@media (min-width:900px) and (max-width:1820px){body.qr-open main{padding-right:180px}}
 
 </style>
 <script>
@@ -4085,6 +4095,7 @@ function teacherLogin() {
 function closeView() {
   if (document.body.classList.contains('present')) togglePresent(false);
   $$('body > .modal, body > .sbs').forEach(function (m) { m.remove(); });
+  QRDock.hide();
   var V = App.V;
   if (V && !V.student && V.dirty && !V.viewing && V.inst) { clearTimeout(V.autoT); try { saveV(V).catch(function () {}); } catch (e) {} }
   if (V) clearTimeout(V.autoT);
@@ -4364,6 +4375,7 @@ function refreshBar(V, msg) {
     V.btnSub.hidden = !V.aid;
   }
   if (V.btnExp) V.btnExp.hidden = !V.aid;
+  QRDock.sync(V);
 }
 
 function openList(V) {
@@ -4431,6 +4443,28 @@ function share(V) {
       h('p', { class: 'hint' }, '학생 화면은 새 탭으로 열려요. 학생이 다른 도구로 옮겨 가지 않도록 학생 화면에는 도구 서랍이 없어요. 둘러본 뒤 그 탭을 닫으면 선생님 화면으로 돌아와요. 고친 내용은 자동 저장되면 학생 화면에도 바로 반영돼요.')]);
   }).catch(function () {});
 }
+// ---------- 오른쪽 입장 QR (학생이 나갔다가 다시 들어올 때) ----------
+var QRDock = (function () {
+  var el = null, cur = null;
+  function hide() { document.body.classList.remove('qr-open'); if (el) { el.remove(); el = null; cur = null; } }
+  function sync(V) {
+    if (!V || V.student || !V.def || V.def.kind === 'screen' || V.def.key === 'calendar' || !V.aid || (App.fire && !App.fire.isTeacher())) { hide(); return; }
+    var mini = App.local.get('qrMini', null); if (mini == null) mini = window.innerWidth < 1400;
+    var key = V.aid + '|' + mini; if (el && cur === key) return;
+    hide(); cur = key;
+    var url = studentLink(V.aid);
+    if (mini) el = h('button', { class: 'qrdock mini', title: '학생 입장 QR 펼치기', onclick: function () { App.local.put('qrMini', false); sync(V); } }, '📱 입장 QR');
+    else {
+      var q = h('div', { class: 'qrq', title: '눌러서 크게 보기', onclick: function () { bigQr(url, (V.inst.title && V.inst.title()) || V.def.name); } }); q.innerHTML = qrSvg(url);
+      el = h('div', { class: 'qrdock' },
+        h('div', { class: 'qrdh' }, h('b', {}, '📱 들어오기'), h('button', { class: 'qrx', title: '접기', onclick: function () { App.local.put('qrMini', true); sync(V); } }, '－')),
+        q, h('small', {}, '나갔다면 다시 찍어요'),
+        h('button', { class: 'btn sm', onclick: function () { copy(url, '주소를 복사했어요'); } }, '주소 복사'));
+    }
+    document.body.append(el); document.body.classList.toggle('qr-open', !mini);
+  }
+  return { sync: sync, hide: hide };
+})();
 function bigQr(url, title) {
   var o = h('div', { class: 'bigqr', onclick: function () { o.remove(); } });
   var q = h('div'); q.innerHTML = qrSvg(url);
