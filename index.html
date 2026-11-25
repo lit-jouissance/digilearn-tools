@@ -4319,7 +4319,8 @@ function autoSave(V, ms) {
   V.autoT = setTimeout(function () { if (App.V === V && V.dirty && !V.viewing && !V.student) saveV(V).catch(function () {}); }, ms || 2000);
 }
 function saveV(V) {
-  if (V.busy) return V.busyP;
+  // 저장 중에 또 저장하면(예: 정답 공개 → 바로 다음 문제) 끝나자마자 이어서 저장해요
+  if (V.busy) { if (!V.queued) V.queued = V.busyP.catch(function () {}).then(function () { V.queued = null; return V.dirty ? saveV(V) : V.aid; }); return V.queued; }
   V.busy = true; refreshBar(V, '저장 중…');
   var data = clean(V.inst.get()), rev0 = V.rev || 0, gen0 = V.gen || 0;
   var rec = { tool: V.def.key, title: str(V.inst.title() || '', 80) || '제목 없음', data: data, shared: !!(V.def.shared && V.def.shared(data)) || !!(data.peek && data.peek.on) };
@@ -8116,6 +8117,7 @@ tool({
 });
 
 // ---------- 실시간 퀴즈 대회 ----------
+var QZ_DEV = rid().slice(-8);
 function qzEnc(ans) { return ans.map(function (a, i) { return String.fromCharCode(97 + ((a | 0) + i * 7) % 26); }).join(''); }
 function qzDec(s, i) { if (!s || s.length <= i) return null; return ((s.charCodeAt(i) - 97 - i * 7) % 26 + 26) % 26; }
 tool({
@@ -8161,11 +8163,12 @@ tool({
         if (!qs.length) { toast('문제를 먼저 만들어 주세요'); return; }
         if (bad.length) { toast('문제나 보기가 빈 곳이 있어요. 채워 주세요.'); return; }
       }
-      st = { i: i == null ? st.i : i, phase: phase, at: Date.now() }; lastBeep = -1;
+      st = { i: i == null ? st.i : i, phase: phase, at: Date.now(), by: QZ_DEV }; lastBeep = -1;
       ctx.dirty(); ctx.save().catch(function () {}); render();
     }
     function restart() { list.filter(function (e) { return e.kind === 'ans'; }).forEach(function (e) { ctx.del(e.id); }); st = { i: -1, phase: 'wait', at: 0 }; ctx.dirty(); ctx.save().catch(function () {}); render(); }
-    function remain() { var q = qs[st.i]; if (!q) return 0; return Math.max(0, q.s - (Date.now() - st.at) / 1000); }
+    // 학생은 문제를 받은 때부터 셉니다 (기기 시계가 달라도, 늦게 받아도 시간이 줄지 않아요)
+    function remain() { var q = qs[st.i]; if (!q) return 0; var t0 = ctx.student ? (seenAt[st.i] || Date.now()) : st.at; return Math.max(0, q.s - (Date.now() - t0) / 1000); }
     // ---- 점수
     function answersOf(i) {
       var first = {}; list.filter(function (e) { return e.kind === 'ans' && e.q === i; }).sort(function (a, b) { return (a.ts || 0) - (b.ts || 0); })
@@ -8269,7 +8272,7 @@ tool({
         var r = remain(), c = $('.qzclock', stage);
         if (c) { c.textContent = Math.ceil(r) + '초'; c.classList.toggle('hurry', r <= 5); }
         if (!ctx.student && snd.cb.checked && r <= 5 && r > 0 && Math.ceil(r) !== lastBeep) { lastBeep = Math.ceil(r); SFX.tick(0.6); }
-        if (!ctx.student && r <= 0) go('closed');
+        if (!ctx.student && r <= 0 && (!st.by || st.by === QZ_DEV)) go('closed');   // 이 기기에서 연 문제만 저절로 닫아요
       }
     }
     tick = setInterval(loop, 250);
@@ -8281,7 +8284,7 @@ tool({
       }
       key = str(d.k, 400);
       var s = d.state && typeof d.state === 'object' ? d.state : {};
-      var prev = st; st = { i: s.i | 0, phase: ['wait', 'open', 'closed', 'reveal', 'end'].indexOf(s.phase) >= 0 ? s.phase : 'wait', at: +s.at || 0 };
+      var prev = st; st = { i: s.i | 0, phase: ['wait', 'open', 'closed', 'reveal', 'end'].indexOf(s.phase) >= 0 ? s.phase : 'wait', at: +s.at || 0, by: str(s.by, 20) };
       if (st.phase === 'wait') st.i = -1;
       if (ctx.student && st.phase === 'reveal' && revealedFx !== st.i && prev.phase !== 'reveal') { revealedFx = st.i; }
       if (!ctx.student) renderEdit();
