@@ -1308,6 +1308,11 @@ body.present .enote .ent{font-size:clamp(50px,12vh,170px)}
 body.present .qrdock:not(.mini){width:190px}body.present .qrq{width:166px}
 @media print{.qrdock{display:none !important}}
 @media (min-width:900px) and (max-width:1820px){body.qr-open main{padding-right:180px}}
+/* 타이머 직접 정하기 · 스톱워치 */
+.tmset{align-items:center;gap:6px;margin:8px 0}.tmset .tmin{width:74px;text-align:center;font-size:18px;font-weight:800;padding:6px}
+.clock.sw{font-variant-numeric:tabular-nums}
+.swlaps{max-width:460px;margin:12px auto 0;display:flex;flex-direction:column;gap:4px}
+.swlap{display:flex;gap:12px;align-items:baseline;padding:6px 12px;background:#f6f8fa;border-radius:10px;font-size:18px}.swlap b{width:64px}.swlap span{flex:1;font-weight:800;font-variant-numeric:tabular-nums}.swlap small{color:var(--sub);font-variant-numeric:tabular-nums}
 
 </style>
 <script>
@@ -3992,7 +3997,7 @@ var SHORT = {
   fishbone: '원인과 결과 찾기', storymap: '인물 · 배경 · 사건 정리', cer: '주장에 근거와 이유 대기', seethink: '그림 보고 질문 만들기',
   changed: '수업 전후 생각 비교', debate: '근거 모으고 입장 정하기', vote: '질문에 바로 투표', exitcard: '수업 마무리 소감 카드',
   thermo: '이해도 다섯 단계', wordcloud: '낱말 모아 구름 만들기', wall: '생각 붙이고 댓글 달기', picker: '발표자 뽑기 · 모둠 짜기',
-  wheel: '역할 · 순서 정하기', timer: '활동 시간 알림', dictation: '국어 10문제 회차별', engwords: '영어 15개 회차별',
+  wheel: '역할 · 순서 정하기', timer: '활동 시간 알림 · 스톱워치', dictation: '국어 10문제 회차별', engwords: '영어 15개 회차별',
   flashcards: '뒤집으며 외우기', bingo: '배운 낱말로 빙고', sequence: '순서대로 맞추기', journal: '오늘 배움 돌아보기', rubric: '기준표로 스스로 평가',
   notice: '알림 · 숙제 · 준비물', weekly: '시간표 · 준비물 · 학급 일정', calendar: '연간 학교 일정 · 수업일수', handwriting: '띄어쓰기 보며 따라 쓰기', meditate: '숨쉬기와 클래식 49곡',
   observe: '수업 중 학생 모습 기록', checklist: '과제 · 준비물 냈는지 체크', portfolio: '학생별 기록 한곳에 모아 보기', quiz: 'OX · 객관식 실시간 퀴즈',
@@ -6084,8 +6089,8 @@ tool({
 
 // ---------- 타이머 ----------
 tool({
-  key: 'timer', name: '타이머', icon: '⏱️', group: 'group', kind: 'screen',
-  desc: '모둠 활동 시간을 크게 띄워 두고, 끝나면 소리로 알려 줘요.',
+  key: 'timer', name: '타이머 · 스톱워치', icon: '⏱️', group: 'group', kind: 'screen',
+  desc: '활동 시간을 분 · 초로 직접 정해 크게 띄우고 끝나면 소리로 알려 줘요. 걸린 시간을 재는 스톱워치(구간 기록)도 있어요.',
   build: function (el, ctx) {
     var label = inp('', '무엇을 하는 시간인가요? (예: 모둠 토의)');
     var clock = h('div', { class: 'clock' }, '05:00'), prog = h('div', {}), lab = h('div', { class: 'qtitle center' });
@@ -6096,18 +6101,55 @@ tool({
       nowLine.innerHTML = ''; nowLine.append('🕒 지금 ', h('b', {}, hm(n)), endTxt ? '  ·  ' + endTxt : '');
     }
     var nowIv = setInterval(paintNow, 1000);
-    var total = 300, left = 300, running = false, endAt = 0, iv = null, ac = null, snd = sfxToggle(ctx);
+    var total = 300, left = 300, running = false, endAt = 0, iv = null, ac = null, snd = sfxToggle(ctx), mode = 'timer';
     var startBtn = h('button', { class: 'btn pri', style: { fontSize: '17px', padding: '10px 30px' }, onclick: toggle }, '시작');
-    el.append(h('span', { class: 'lbl' }, '활동 이름'), label, lab, nowLine, clock, h('div', { class: 'prog' }, prog),
+    // 직접 정하기 (분 · 초)
+    var mIn = h('input', { class: 'fld tmin', type: 'number', min: 0, max: 99, inputMode: 'numeric' }), sIn = h('input', { class: 'fld tmin', type: 'number', min: 0, max: 59, inputMode: 'numeric' });
+    function applyIn() { var sec = Math.max(0, Math.min(99, parseInt(mIn.value, 10) || 0)) * 60 + Math.max(0, Math.min(59, parseInt(sIn.value, 10) || 0)); if (sec < 5) { ctx.toast('5초 이상으로 정해 주세요'); return; } setTotal(sec); ctx.dirty(); }
+    [mIn, sIn].forEach(function (x) { x.addEventListener('keydown', function (e) { if (e.key === 'Enter') applyIn(); }); x.addEventListener('focus', function () { x.select(); }); });
+    clock.title = '눌러서 시간을 직접 정해요'; clock.style.cursor = 'pointer';
+    clock.addEventListener('click', function () { if (mode === 'timer' && !running) { mIn.focus(); } });
+    var timerBox = h('div', {}, lab, nowLine, clock, h('div', { class: 'prog' }, prog),
+      h('div', { class: 'row tmset', style: { justifyContent: 'center' } }, h('span', { class: 'hint', style: { margin: 0 } }, '⌨️ 직접 정하기'), mIn, h('b', {}, '분'), sIn, h('b', {}, '초'), h('button', { class: 'btn sm pri', onclick: applyIn }, '정하기')),
       h('div', { class: 'row', style: { justifyContent: 'center' } },
-        [1, 3, 5, 10, 15].map(function (m) { return h('button', { class: 'btn', onclick: function () { setTotal(m * 60); ctx.dirty(); } }, m + '분'); }),
-        h('button', { class: 'btn', onclick: function () { setTotal(Math.max(10, (running ? left : total) - 60)); ctx.dirty(); } }, '−1분'),
-        h('button', { class: 'btn', onclick: function () { setTotal((running ? left : total) + 60); ctx.dirty(); } }, '+1분')),
+        [1, 3, 5, 10, 15, 20].map(function (m) { return h('button', { class: 'btn', onclick: function () { setTotal(m * 60); ctx.dirty(); } }, m + '분'); }),
+        h('button', { class: 'btn', onclick: function () { adjust(-60); } }, '−1분'), h('button', { class: 'btn', onclick: function () { adjust(-10); } }, '−10초'),
+        h('button', { class: 'btn', onclick: function () { adjust(10); } }, '+10초'), h('button', { class: 'btn', onclick: function () { adjust(60); } }, '+1분')),
       h('div', { class: 'row', style: { justifyContent: 'center', marginTop: '12px' } }, startBtn, h('button', { class: 'btn', onclick: reset }, '다시'), snd.el));
-    label.addEventListener('input', function () { lab.textContent = label.value; ctx.dirty(); });
+    // ---------- 스톱워치 ----------
+    var sw = { acc: 0, t0: 0, on: false, laps: [], iv: null }, swClock = h('div', { class: 'clock sw' }, '00:00.0'), swLaps = h('div', { class: 'swlaps' });
+    var swBtn = h('button', { class: 'btn pri', style: { fontSize: '17px', padding: '10px 30px' }, onclick: swToggle }, '시작');
+    var lapBtn = h('button', { class: 'btn', onclick: swLap, disabled: true }, '🏁 구간 기록');
+    var swBox = h('div', { hidden: true }, h('div', { class: 'qtitle center' }, label.value), swClock,
+      h('div', { class: 'row', style: { justifyContent: 'center', marginTop: '6px' } }, swBtn, lapBtn, h('button', { class: 'btn', onclick: swReset }, '다시')), swLaps);
+    function swNow() { return sw.acc + (sw.on ? Date.now() - sw.t0 : 0); }
+    function fmtSw(ms) { var t = Math.floor(ms / 100), d = t % 10, sx = Math.floor(t / 10), hh = Math.floor(sx / 3600), mm = Math.floor(sx / 60) % 60, ss = sx % 60; return (hh ? hh + ':' + String(mm).padStart(2, '0') : String(mm).padStart(2, '0')) + ':' + String(ss).padStart(2, '0') + '.' + d; }
+    function swShow() { swClock.textContent = fmtSw(swNow()); }
+    function swToggle() {
+      if (sw.on) { sw.acc = swNow(); sw.on = false; clearInterval(sw.iv); swBtn.textContent = '계속'; }
+      else { sw.t0 = Date.now(); sw.on = true; clearInterval(sw.iv); sw.iv = setInterval(swShow, 100); swBtn.textContent = '멈춤'; }
+      lapBtn.disabled = !sw.on; swShow();
+    }
+    function swLap() { var t = swNow(), prev = sw.laps.length ? sw.laps[sw.laps.length - 1] : 0; sw.laps.push(t); paintLaps(); void prev; }
+    function paintLaps() {
+      swLaps.innerHTML = '';
+      sw.laps.slice().reverse().forEach(function (t, k) { var i = sw.laps.length - 1 - k, prev = i ? sw.laps[i - 1] : 0; swLaps.append(h('div', { class: 'swlap' }, h('b', {}, (i + 1) + '구간'), h('span', {}, fmtSw(t)), h('small', {}, '+' + fmtSw(t - prev)))); });
+    }
+    function swReset() { clearInterval(sw.iv); sw = { acc: 0, t0: 0, on: false, laps: [], iv: null }; swBtn.textContent = '시작'; lapBtn.disabled = true; swShow(); paintLaps(); }
+    var modeSeg = h('div', { class: 'seg' });
+    [['timer', '⏳ 타이머'], ['sw', '⏱️ 스톱워치']].forEach(function (m) { modeSeg.append(h('button', { 'data-m': m[0], onclick: function () { setMode(m[0]); ctx.dirty(); } }, m[1])); });
+    function setMode(m) { mode = m === 'sw' ? 'sw' : 'timer'; $$('button', modeSeg).forEach(function (b) { b.classList.toggle('on', b.dataset.m === mode); }); timerBox.hidden = mode !== 'timer'; swBox.hidden = mode !== 'sw'; $('.qtitle', swBox).textContent = label.value; }
+    el.append(h('div', { class: 'row', style: { justifyContent: 'center', marginBottom: '8px' } }, modeSeg), h('span', { class: 'lbl' }, '활동 이름'), label, timerBox, swBox);
+    function adjust(d) {
+      if (running) { endAt += d * 1000; left = Math.max(0, (endAt - Date.now()) / 1000); total = Math.max(total + d, Math.ceil(left)); show(); }
+      else setTotal(Math.max(5, left + d));
+      ctx.dirty();
+    }
+    label.addEventListener('input', function () { lab.textContent = label.value; $('.qtitle', swBox).textContent = label.value; ctx.dirty(); });
     function show() {
       var s = Math.max(0, Math.ceil(left));
       clock.textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+      if (!running && document.activeElement !== mIn && document.activeElement !== sIn) { mIn.value = Math.floor(total / 60); sIn.value = total % 60; }
       prog.style.width = (total ? (left / total) * 100 : 0) + '%';
       clock.classList.toggle('end', s === 0 && !running && total > 0 && left <= 0);
       paintNow();
@@ -6138,13 +6180,13 @@ tool({
         } catch (e) {}
       });
     }
-    function setD(d) { label.value = str(d.label, 60); lab.textContent = label.value; snd.cb.checked = d.sound !== false; setTotal(Math.max(10, Math.min(5940, parseInt(d.seconds, 10) || 300))); }
+    function setD(d) { label.value = str(d.label, 60); lab.textContent = label.value; snd.cb.checked = d.sound !== false; setTotal(Math.max(5, Math.min(5999, parseInt(d.seconds, 10) || 300))); setMode(d.mode); }
     setD({});
     return {
-      title: function () { return (label.value || '타이머') + ' · ' + Math.round(total / 60) + '분'; },
-      get: function () { return { label: label.value, seconds: total, sound: snd.cb.checked }; },
+      title: function () { var L = label.value.trim(); return mode === 'sw' ? (L ? L + ' · ' : '') + '스톱워치' : (L || '타이머') + ' · ' + Math.floor(total / 60) + '분' + (total % 60 ? ' ' + total % 60 + '초' : ''); },
+      get: function () { return { label: label.value, seconds: total, sound: snd.cb.checked, mode: mode }; },
       set: setD, reset: function () { setD({}); },
-      destroy: function () { stop(); clearInterval(nowIv); }
+      destroy: function () { stop(); clearInterval(nowIv); clearInterval(sw.iv); }
     };
   }
 });
@@ -10646,7 +10688,7 @@ GROUPS.splice(0, GROUPS.length,
   ['dict', '낱말 · 복습', '🔤', '#b07d00', '받아쓰기 · 낱말 카드 · 빙고 · 순서 맞추기 · 바르게 글씨 쓰기 · 낭독'],
   ['record', '평가 · 기록', '📒', '#d0457a', '학생 기록 · 자기평가 · 동료평가 · 과제 체크'],
   ['inform', '알림 · 일정', '📢', '#1c7ed6', '알림장 · 주간학습 안내 · 학사력'],
-  ['class', '학급 운영', '🏫', '#3b5bdb', '뽑기 · 타이머 · 자리 · 역할 · 명상']);
+  ['class', '학급 운영', '🏫', '#3b5bdb', '뽑기 · 타이머 · 스톱워치 · 자리 · 역할 · 명상']);
 var REGROUP = { storymap: 'deep', handwriting: 'dict', readaloud: 'dict', flashcards: 'dict', bingo: 'dict', sequence: 'dict', timer: 'class', notice: 'inform', weekly: 'inform', calendar: 'inform', checklist: 'record', rubric: 'record', peer: 'record', roles: 'class', seats: 'class', meditate: 'class' };
 // 합친 도구 안으로 들어간 예전 도구 (예전 활동·링크는 그대로 열려요)
 var RETIRE_TO = { observe: 'studentrec', portfolio: 'studentrec', records: 'studentrec', picker: 'draw', wheel: 'draw', speak: 'draw', dictation: 'spell', engwords: 'spell', exitcard: 'wrapup', thermo: 'wrapup', journal: 'wrlife', lifewrite: 'wrlife', readlog: 'wrlife', learnwrite: 'wrlife', explwrite: 'wrgenre', perswrite: 'wrgenre' };
